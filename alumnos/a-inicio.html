@@ -7,6 +7,7 @@
 <title>Distancia | Tu recorrido</title>
 
 <style>
+
 :root{
   --azul:#1f5f9e;
   --azul2:#3e8ed0;
@@ -14,7 +15,6 @@
   --verde:#4f9d78;
   --tinta:#17324d;
   --gris:#73879a;
-  --claro:#f4f9fc;
   --bloqueado:#d7e0e7;
   --borde:rgba(31,95,158,.14);
 }
@@ -25,55 +25,67 @@
 
 body{
   margin:0;
-  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
   color:var(--tinta);
 
   background:
-    radial-gradient(circle at 8% 8%,rgba(242,140,40,.10),transparent 22%),
-    radial-gradient(circle at 92% 10%,rgba(62,142,208,.11),transparent 24%),
+    radial-gradient(circle at 8% 8%,rgba(242,140,40,.08),transparent 22%),
+    radial-gradient(circle at 92% 10%,rgba(62,142,208,.08),transparent 24%),
     linear-gradient(180deg,#f8fcff,#f3f8fb 55%,#fffaf4);
 }
 
+/* CONTENEDOR */
+
 .wrap{
-  width:min(1050px,calc(100% - 28px));
+  width:min(900px,calc(100% - 18px));
   margin:auto;
-  padding:28px 0 70px;
+  padding:14px 0 28px;
 }
 
 /* CABECERA */
 
 .topline{
-  font-size:.82rem;
-  font-weight:800;
-  letter-spacing:.14em;
-  text-transform:uppercase;
+  font-size:10px;
+  font-weight:bold;
+  letter-spacing:.12em;
   color:var(--azul);
-  margin-bottom:14px;
+  margin-bottom:7px;
 }
 
 .hero{
-  border-radius:30px;
-  padding:46px 38px;
-  background:linear-gradient(135deg,#fff,#f4fbff 60%,#fff8ef);
+  border-radius:16px;
+  padding:16px 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f4fbff 60%,
+      #fff8ef
+    );
+
   border:1px solid var(--borde);
-  box-shadow:0 20px 55px rgba(31,95,158,.10);
 }
 
 .badge{
   display:inline-block;
+
   background:#eaf4fb;
   color:var(--azul);
-  padding:8px 13px;
+
+  padding:4px 8px;
+
   border-radius:999px;
-  font-size:.8rem;
-  font-weight:800;
+
+  font-size:9px;
+  font-weight:bold;
 }
 
 h1{
-  margin:15px 0 10px;
-  font-size:clamp(2.8rem,7vw,5.6rem);
-  line-height:.95;
-  letter-spacing:-.04em;
+  margin:7px 0 4px;
+
+  font-size:24px;
+  line-height:1;
 }
 
 h1 span{
@@ -81,299 +93,614 @@ h1 span{
 }
 
 .hero p{
-  max-width:720px;
-  font-size:1.08rem;
-  line-height:1.75;
-  margin:18px 0 0;
+  margin:7px 0 0;
+
+  max-width:680px;
+
+  font-size:13px;
+  line-height:1.35;
 }
 
-/* MAPA */
+/* =========================
+   MAPA
+   ========================= */
 
 .map{
-  margin-top:36px;
   position:relative;
-  padding:20px 0 10px;
+
+  margin-top:14px;
+
+  padding:
+    4px 0 8px;
 }
+
+/* LÍNEA CENTRAL */
 
 .map::before{
   content:"";
+
   position:absolute;
+
   left:50%;
+
   top:0;
   bottom:0;
-  width:6px;
-  transform:translateX(-50%);
+
+  width:3px;
+
+  transform:
+    translateX(-50%);
+
   border-radius:999px;
-  background:linear-gradient(
-    var(--verde) 0%,
-    var(--azul) 20%,
-    #dbe6ee 20%
-  );
+
+  background:#dbe6ee;
 }
 
-/* CHECKPOINT */
+/* =========================
+   CHECKPOINTS
+   ========================= */
 
 .checkpoint{
-  width:50%;
+  width:46%;
+
   position:relative;
-  padding:20px 55px;
-  margin:10px 0 30px;
+
+  min-height:62px;
+
+  margin:0;
+
+  z-index:1;
 }
+
+/* IZQUIERDA */
 
 .checkpoint:nth-child(odd){
+
   margin-left:0;
+
   text-align:right;
+
 }
 
+/* DERECHA */
+
 .checkpoint:nth-child(even){
-  margin-left:50%;
+
+  margin-left:54%;
+
   text-align:left;
+
 }
+
+/*
+   SUPERPOSICIÓN VERTICAL
+
+   A partir de la segunda tarjeta,
+   cada nueva tarjeta sube para quedar
+   parcialmente superpuesta con la anterior.
+*/
+
+.checkpoint + .checkpoint{
+  margin-top:-20px;
+}
+
+/*
+   Separamos un poco más visualmente
+   cada dos checkpoints para que no
+   quede todo pegado.
+*/
+
+.checkpoint:nth-child(4n+1){
+  margin-top:2px;
+}
+
+/* =========================
+   NODOS
+   ========================= */
 
 .node{
   position:absolute;
-  top:38px;
-  width:46px;
-  height:46px;
+
+  top:16px;
+
+  width:24px;
+  height:24px;
+
   border-radius:50%;
+
   display:grid;
   place-items:center;
-  font-size:1.25rem;
-  font-weight:900;
-  z-index:2;
+
+  font-size:10px;
+  font-weight:bold;
+
+  z-index:5;
 }
 
+/*
+   El nodo NO toca la tarjeta.
+   Queda separado de ella
+   y centrado sobre la línea.
+*/
+
 .checkpoint:nth-child(odd) .node{
-  right:-23px;
+
+  right:-50px;
+
 }
 
 .checkpoint:nth-child(even) .node{
-  left:-23px;
+
+  left:-50px;
+
 }
 
-/* ESTADOS */
+/* =========================
+   ESTADOS DE NODO
+   ========================= */
 
 .done .node{
+
   background:var(--verde);
-  color:#fff;
-  box-shadow:0 0 0 7px rgba(79,157,120,.12);
+
+  color:#ffffff;
+
+  box-shadow:
+    0 0 0 4px #f3f8fb;
+
 }
 
 .active .node{
+
   background:var(--naranja);
-  color:#fff;
-  box-shadow:0 0 0 8px rgba(242,140,40,.14);
-  animation:pulse 1.8s infinite;
+
+  color:#ffffff;
+
+  box-shadow:
+    0 0 0 4px #f3f8fb;
+
+  animation:
+    pulse 1.8s infinite;
+
 }
 
 .locked .node{
+
   background:var(--bloqueado);
+
   color:#7d8e9d;
+
+  box-shadow:
+    0 0 0 4px #f3f8fb;
+
 }
 
-/* TARJETAS */
+/* =========================
+   TARJETAS
+   ========================= */
 
 .card{
-  background:#fff;
-  border-radius:22px;
-  padding:22px;
-  border:1px solid var(--borde);
-  box-shadow:0 12px 30px rgba(31,95,158,.07);
+
+  background:#ffffff;
+
+  border-radius:11px;
+
+  padding:8px 10px;
+
+  border:
+    1px solid var(--borde);
+
+  box-shadow:
+    0 4px 12px rgba(31,95,158,.06);
+
+  position:relative;
+
 }
+
+/* Una leve inclinación le da más efecto de recorrido */
+
+.checkpoint:nth-child(odd) .card{
+  transform:rotate(-0.5deg);
+}
+
+.checkpoint:nth-child(even) .card{
+  transform:rotate(0.5deg);
+}
+
+/* COMPLETADO */
 
 .done .card{
-  border-color:rgba(79,157,120,.30);
+
+  border-color:
+    rgba(79,157,120,.35);
+
 }
+
+/* ACTIVO */
 
 .active .card{
-  border-color:rgba(242,140,40,.45);
-  box-shadow:0 14px 35px rgba(242,140,40,.12);
+
+  border-color:
+    rgba(242,140,40,.50);
+
+  box-shadow:
+    0 5px 15px rgba(242,140,40,.12);
+
 }
+
+/* BLOQUEADO */
 
 .locked .card{
-  opacity:.66;
+
+  opacity:.58;
+
   background:#f7f9fa;
+
 }
+
+/* SEMANA */
 
 .week{
-  font-size:.76rem;
-  font-weight:800;
-  letter-spacing:.12em;
+
+  font-size:7px;
+
+  font-weight:bold;
+
+  letter-spacing:.08em;
+
   text-transform:uppercase;
+
   color:var(--gris);
+
 }
+
+/* TITULO */
 
 .card h2{
-  margin:7px 0 8px;
-  font-size:1.35rem;
+
+  margin:2px 0 2px;
+
+  font-size:12px;
+
+  line-height:1.15;
+
 }
+
+/* TEXTO */
 
 .card p{
+
   margin:0;
+
   color:#5a7184;
-  line-height:1.55;
+
+  font-size:10px;
+
+  line-height:1.25;
+
 }
 
+/* =========================
+   ESTADO
+   ========================= */
+
 .status{
+
   display:inline-block;
-  margin-top:14px;
-  padding:7px 11px;
+
+  margin-top:4px;
+
+  padding:2px 6px;
+
   border-radius:999px;
-  font-size:.78rem;
-  font-weight:800;
+
+  font-size:7px;
+
+  font-weight:bold;
+
 }
 
 .done .status{
+
   background:#edf8f2;
+
   color:#327456;
+
 }
 
 .active .status{
+
   background:#fff3e4;
+
   color:#a45e17;
+
 }
 
 .locked .status{
+
   background:#eef2f5;
+
   color:#7a8995;
+
 }
 
-/* BOTON */
+/* =========================
+   BOTÓN
+   ========================= */
 
 .btn{
+
   display:inline-block;
-  margin-top:14px;
+
+  margin-top:4px;
+
   text-decoration:none;
-  color:#fff;
+
+  color:#ffffff;
+
   background:var(--azul);
-  padding:10px 15px;
+
+  padding:4px 8px;
+
   border-radius:999px;
-  font-weight:800;
-  font-size:.88rem;
+
+  font-weight:bold;
+
+  font-size:8px;
+
 }
 
 .active .btn{
+
   background:var(--naranja);
+
 }
 
 .locked .btn{
+
   display:none;
+
 }
 
-/* CIERRE */
+/* =========================
+   CIERRE
+   ========================= */
 
 .final{
-  margin-top:40px;
+
+  margin-top:10px;
+
   text-align:center;
-  background:#fff;
-  border:1px solid var(--borde);
-  border-radius:26px;
-  padding:34px 24px;
+
+  background:#ffffff;
+
+  border:
+    1px solid var(--borde);
+
+  border-radius:14px;
+
+  padding:11px;
+
 }
 
 .final h2{
-  margin:0 0 10px;
+
+  margin:0 0 3px;
+
+  font-size:14px;
+
 }
 
 .final p{
+
   margin:0;
+
+  font-size:10px;
+
   color:#617687;
-  line-height:1.6;
+
 }
+
+/* =========================
+   ANIMACIÓN
+   ========================= */
 
 @keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(242,140,40,.35)}
-  70%{box-shadow:0 0 0 16px rgba(242,140,40,0)}
-  100%{box-shadow:0 0 0 0 rgba(242,140,40,0)}
-}
 
-/* MOBILE */
-
-@media(max-width:760px){
-
-  .hero{
-    padding:34px 24px;
+  0%{
+    box-shadow:
+      0 0 0 4px #f3f8fb,
+      0 0 0 4px rgba(242,140,40,.30);
   }
 
+  70%{
+    box-shadow:
+      0 0 0 4px #f3f8fb,
+      0 0 0 11px rgba(242,140,40,0);
+  }
+
+  100%{
+    box-shadow:
+      0 0 0 4px #f3f8fb,
+      0 0 0 4px rgba(242,140,40,0);
+  }
+
+}
+
+/* =========================
+   CELULAR
+   ========================= */
+
+@media(max-width:650px){
+
+  .wrap{
+
+    width:
+      calc(100% - 12px);
+
+  }
+
+  .hero{
+
+    padding:
+      14px;
+
+  }
+
+  h1{
+
+    font-size:
+      21px;
+
+  }
+
+  .hero p{
+
+    font-size:
+      12px;
+
+  }
+
+  /*
+     En celular desaparece el zigzag
+     porque no hay ancho suficiente.
+  */
+
   .map::before{
-    left:22px;
+
+    left:12px;
+
   }
 
   .checkpoint,
-  .checkpoint:nth-child(even),
-  .checkpoint:nth-child(odd){
-    width:100%;
-    margin-left:0;
+  .checkpoint:nth-child(odd),
+  .checkpoint:nth-child(even){
+
+    width:calc(100% - 34px);
+
+    margin-left:34px;
+
+    margin-top:3px;
+
+    min-height:auto;
+
     text-align:left;
-    padding:12px 0 12px 58px;
+
+  }
+
+  .checkpoint + .checkpoint{
+
+    margin-top:4px;
+
   }
 
   .checkpoint:nth-child(odd) .node,
   .checkpoint:nth-child(even) .node{
-    left:0;
+
+    left:-34px;
+
     right:auto;
-    top:30px;
+
+    top:13px;
+
+  }
+
+  .checkpoint:nth-child(odd) .card,
+  .checkpoint:nth-child(even) .card{
+
+    transform:none;
+
   }
 
 }
+
 </style>
+
 </head>
+
 
 <body>
 
 <div class="wrap">
 
+
+  <!-- =====================
+       CABECERA
+       ===================== -->
+
   <div class="topline">
+
     DISTANCIA | TU RECORRIDO
+
   </div>
+
 
   <section class="hero">
 
     <div class="badge">
+
       🧭 TU MAPA DEL SEMESTRE
+
     </div>
 
+
     <h1>
+
       Cada semana,
       <span>un nuevo paso</span>
+
     </h1>
 
+
     <p>
-      Este recorrido se va habilitando semana a semana.
-      Cada checkpoint te propone una pequeña acción
-      para ayudarte a organizarte, avanzar y sostener
-      tu cursado en la Modalidad a Distancia.
+
+      Tu recorrido se va habilitando semana a semana.
+      Descubrí cada checkpoint y seguí avanzando.
+
     </p>
 
   </section>
 
+
+  <!-- =====================
+       RECORRIDO
+       ===================== -->
+
   <section class="map">
+
 
     <!-- SEMANA 1 -->
 
-    <div class="checkpoint done">
+    <div class="checkpoint active">
 
       <div class="node">
-        ✓
+        1
       </div>
 
       <div class="card">
 
         <div class="week">
+
           Semana 1
+
         </div>
 
         <h2>
-          🎯 Primer logro alcanzado
+
+          🎯 ¡Primer logro alcanzado!
+
         </h2>
 
         <p>
-          Verificamos que tengas todo listo
-          para comenzar tu recorrido.
+
+          Comprobá que tengas todo listo para comenzar.
+
         </p>
 
         <span class="status">
-          COMPLETADO
+
+          DISPONIBLE AHORA
+
         </span>
 
         <br>
@@ -381,7 +708,9 @@ h1 span{
         <a
           class="btn"
           href="a-semana-01.html">
-          Volver a este checkpoint
+
+          Entrar
+
         </a>
 
       </div>
@@ -391,10 +720,10 @@ h1 span{
 
     <!-- SEMANA 2 -->
 
-    <div class="checkpoint active">
+    <div class="checkpoint locked">
 
       <div class="node">
-        2
+        🔒
       </div>
 
       <div class="card">
@@ -407,22 +736,9 @@ h1 span{
           🧭 Encontrá tu propio ritmo
         </h2>
 
-        <p>
-          Esta semana el desafío es construir
-          una rutina que puedas sostener.
-        </p>
-
         <span class="status">
-          DISPONIBLE AHORA
+          BLOQUEADO
         </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="a-semana-02.html">
-          Entrar al checkpoint
-        </a>
 
       </div>
 
@@ -447,13 +763,8 @@ h1 span{
           🎒 Prepararse también es avanzar
         </h2>
 
-        <p>
-          Muy pronto vas a descubrir
-          el próximo paso del recorrido.
-        </p>
-
         <span class="status">
-          PRÓXIMAMENTE
+          BLOQUEADO
         </span>
 
       </div>
@@ -478,11 +789,6 @@ h1 span{
         <h2>
           🌟 Mirá todo lo que ya avanzaste
         </h2>
-
-        <p>
-          Un nuevo checkpoint
-          se habilitará la próxima semana.
-        </p>
 
         <span class="status">
           BLOQUEADO
@@ -511,11 +817,6 @@ h1 span{
           🔋 Cuidá tu ritmo
         </h2>
 
-        <p>
-          Seguimos avanzando,
-          paso a paso.
-        </p>
-
         <span class="status">
           BLOQUEADO
         </span>
@@ -525,7 +826,7 @@ h1 span{
     </div>
 
 
-    <!-- CHECKPOINT FUTURO -->
+    <!-- SEMANA 6 -->
 
     <div class="checkpoint locked">
 
@@ -536,43 +837,315 @@ h1 span{
       <div class="card">
 
         <div class="week">
-          Más adelante
+          Semana 6
         </div>
 
         <h2>
-          🏁 Primer tramo completado
+          🎯 Enfocá tu energía
         </h2>
 
-        <p>
-          Llegará un momento especial
-          para celebrar el cierre
-          del primer tramo del recorrido.
-        </p>
-
         <span class="status">
-          TODAVÍA NO DISPONIBLE
+          BLOQUEADO
         </span>
 
       </div>
 
     </div>
 
+
+    <!-- SEMANA 7 -->
+
+    <div class="checkpoint locked">
+
+      <div class="node">
+        🔒
+      </div>
+
+      <div class="card">
+
+        <div class="week">
+          Semana 7
+        </div>
+
+        <h2>
+          🧩 Cada pieza cuenta
+        </h2>
+
+        <span class="status">
+          BLOQUEADO
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- SEMANA 8 -->
+
+    <div class="checkpoint locked">
+
+      <div class="node">
+        🔒
+      </div>
+
+      <div class="card">
+
+        <div class="week">
+          Semana 8
+        </div>
+
+        <h2>
+          🏁 ¡Primer tramo completado!
+        </h2>
+
+        <span class="status">
+          BLOQUEADO
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- SEMANA 9 -->
+
+    <div class="checkpoint locked">
+
+      <div class="node">
+        🔒
+      </div>
+
+      <div class="card">
+
+        <div class="week">
+          Semana 9
+        </div>
+
+        <h2>
+          🚀 ¡Nuevo nivel desbloqueado!
+        </h2>
+
+        <span class="status">
+          BLOQUEADO
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- SEMANA 10 -->
+
+    <div class="checkpoint locked">
+
+      <div class="node">
+        🔒
+      </div>
+
+      <div class="card">
+
+        <div class="week">
+          Semana 10
+        </div>
+
+        <h2>
+          🧭 Volvé a encontrar tu ritmo
+        </h2>
+
+        <span class="status">
+          BLOQUEADO
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- SEMANA 11 -->
+
+    <div class="checkpoint locked">
+
+      <div class="node">
+        🔒
+      </div>
+
+      <div class="card">
+
+        <div class="week">
+          Semana 11
+        </div>
+
+        <h2>
+          🔎 Anticiparte es tu mejor estrategia
+        </h2>
+
+        <span class="status">
+          BLOQUEADO
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- SEMANA 12 -->
+
+    <div class="checkpoint locked">
+
+      <div class="node">
+        🔒
+      </div>
+
+      <div class="card">
+
+        <div class="week">
+          Semana 12
+        </div>
+
+        <h2>
+          💪 Confiá en todo lo que construiste
+        </h2>
+
+        <span class="status">
+          BLOQUEADO
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- SEMANA 13 -->
+
+    <div class="checkpoint locked">
+
+      <div class="node">
+        🔒
+      </div>
+
+      <div class="card">
+
+        <div class="week">
+          Semana 13
+        </div>
+
+        <h2>
+          📍 Checkpoint: ¿cómo venís?
+        </h2>
+
+        <span class="status">
+          BLOQUEADO
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- SEMANA 14 -->
+
+    <div class="checkpoint locked">
+
+      <div class="node">
+        🔒
+      </div>
+
+      <div class="card">
+
+        <div class="week">
+          Semana 14
+        </div>
+
+        <h2>
+          🔥 ¡Entramos en la recta final!
+        </h2>
+
+        <span class="status">
+          BLOQUEADO
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- SEMANA 15 -->
+
+    <div class="checkpoint locked">
+
+      <div class="node">
+        🔒
+      </div>
+
+      <div class="card">
+
+        <div class="week">
+          Semana 15
+        </div>
+
+        <h2>
+          ⭐ Todo lo recorrido cuenta
+        </h2>
+
+        <span class="status">
+          BLOQUEADO
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- SEMANA 16 -->
+
+    <div class="checkpoint locked">
+
+      <div class="node">
+        🏆
+      </div>
+
+      <div class="card">
+
+        <div class="week">
+          Semana 16 · Meta
+        </div>
+
+        <h2>
+          🏆 ¡Recorrido completado!
+        </h2>
+
+        <span class="status">
+          META BLOQUEADA
+        </span>
+
+      </div>
+
+    </div>
+
+
   </section>
 
+
+  <!-- =====================
+       CIERRE
+       ===================== -->
 
   <section class="final">
 
     <h2>
-      Tu recorrido se construye semana a semana.
+
+      Cada semana, un nuevo paso.
+
     </h2>
 
     <p>
-      Volvé a esta página cada viernes
-      para descubrir qué checkpoint
-      se habilitó.
+
+      Volvé para descubrir cuál se habilitó.
+
     </p>
 
   </section>
+
 
 </div>
 
