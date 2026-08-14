@@ -1,1 +1,700 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Distancia | En acción · Aulas en marcha</title>
 
+<style>
+:root{
+  --azul:#1f5f9e;
+  --azul2:#3e8ed0;
+  --naranja:#f28c28;
+  --naranja2:#ffb45c;
+  --crema:#fffaf4;
+  --tinta:#17324d;
+  --verde:#4f9d78;
+  --rojo:#c85a52;
+  --gris:#6b7d8f;
+  --borde:rgba(31,95,158,.14);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--tinta);
+  background:
+    radial-gradient(circle at 8% 5%, rgba(242,140,40,.12), transparent 24%),
+    radial-gradient(circle at 92% 12%, rgba(62,142,208,.13), transparent 25%),
+    linear-gradient(180deg,#f8fcff 0%,#f4f9fc 58%,#fffaf4 100%);
+}
+
+.wrap{
+  width:min(1080px,calc(100% - 28px));
+  margin:auto;
+  padding:28px 0 60px;
+}
+
+.topline{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  margin-bottom:14px;
+  font-size:.82rem;
+  font-weight:800;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--azul);
+}
+
+/* HERO */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  border-radius:30px;
+  padding:48px 42px 44px;
+  background:linear-gradient(135deg,#ffffff 0%,#f4fbff 60%,#fff8ef 100%);
+  border:1px solid var(--borde);
+  box-shadow:0 22px 55px rgba(31,95,158,.10);
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:250px;
+  height:250px;
+  border-radius:50%;
+  background:rgba(242,140,40,.10);
+  right:-80px;
+  top:-95px;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:330px;
+  height:170px;
+  right:-30px;
+  bottom:-50px;
+  border-radius:55% 0 0 0;
+  background:
+    repeating-radial-gradient(
+      ellipse at 88% 90%,
+      rgba(62,142,208,.18) 0 3px,
+      rgba(62,142,208,.07) 4px 11px,
+      transparent 12px 24px
+    );
+  transform:rotate(-6deg);
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:var(--azul);
+  background:#eaf4fb;
+  border:1px solid #d3e8f7;
+  border-radius:999px;
+  padding:8px 13px;
+  font-weight:800;
+  font-size:.8rem;
+}
+
+h1{
+  margin:16px 0 8px;
+  font-size:clamp(2.5rem,7vw,5.2rem);
+  line-height:.95;
+  letter-spacing:-.04em;
+}
+
+h1 span{
+  color:var(--naranja);
+}
+
+.hero p{
+  max-width:740px;
+  font-size:1.08rem;
+  line-height:1.75;
+  margin:18px 0 0;
+}
+
+.rule{
+  margin-top:28px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  color:var(--azul);
+  background:#eef6fb;
+  border-radius:999px;
+  padding:10px 14px;
+}
+
+/* SECCIÓN PRINCIPAL */
+
+.section{
+  margin-top:32px;
+  background:rgba(255,255,255,.86);
+  border:1px solid var(--borde);
+  border-radius:26px;
+  padding:30px;
+  box-shadow:0 16px 40px rgba(31,95,158,.07);
+}
+
+.section h2{
+  margin:0 0 8px;
+  font-size:clamp(1.7rem,4vw,2.4rem);
+}
+
+.section .intro{
+  margin:0 0 24px;
+  line-height:1.7;
+  color:#4d6274;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+
+/* TARJETAS INTERACTIVAS */
+
+.checkcard{
+  position:relative;
+  border:1px solid #dce8f0;
+  border-radius:20px;
+  padding:20px;
+  background:#fff;
+  cursor:pointer;
+  transition:.2s ease;
+  min-height:168px;
+}
+
+.checkcard:hover{
+  transform:translateY(-2px);
+  border-color:#bdd7e9;
+  box-shadow:0 10px 24px rgba(31,95,158,.08);
+}
+
+.checkcard.active{
+  border-color:var(--verde);
+  background:linear-gradient(180deg,#fbfffd,#f0faf5);
+  box-shadow:0 0 0 4px rgba(79,157,120,.08);
+}
+
+.status{
+  position:absolute;
+  right:14px;
+  top:14px;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  border:2px solid #d9e4eb;
+  color:transparent;
+  font-weight:900;
+  background:#fff;
+}
+
+.checkcard.active .status{
+  background:var(--verde);
+  border-color:var(--verde);
+  color:#fff;
+}
+
+.emoji{
+  font-size:2rem;
+}
+
+.checkcard h3{
+  margin:10px 0 6px;
+  font-size:1.16rem;
+}
+
+.checkcard p{
+  margin:0;
+  color:#5b7183;
+  line-height:1.55;
+  font-size:.94rem;
+}
+
+/* BARRA DE PROGRESO */
+
+.monitor{
+  margin-top:24px;
+  border-radius:22px;
+  padding:22px;
+  background:linear-gradient(135deg,#173f68,#1f5f9e);
+  color:#fff;
+}
+
+.monitor-head{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.monitor-head strong{
+  font-size:1.2rem;
+}
+
+.meter{
+  height:12px;
+  background:rgba(255,255,255,.18);
+  border-radius:999px;
+  overflow:hidden;
+  margin-top:14px;
+}
+
+.meter > div{
+  width:0%;
+  height:100%;
+  background:linear-gradient(90deg,var(--naranja),#ffd093);
+  transition:.35s ease;
+}
+
+.feedback{
+  margin-top:12px;
+  color:#e9f4fb;
+  line-height:1.55;
+}
+
+/* ALERTA */
+
+.alert{
+  margin-top:22px;
+  border-left:4px solid var(--naranja);
+  padding:16px 18px;
+  background:#fff8ee;
+  border-radius:16px;
+  line-height:1.65;
+}
+
+.alert strong{
+  color:#9b5719;
+}
+
+/* BLOQUES DE REFLEXIÓN */
+
+.focus{
+  margin-top:32px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.focusbox{
+  border-radius:22px;
+  padding:24px;
+  background:#fff;
+  border:1px solid var(--borde);
+}
+
+.focusbox h3{
+  margin:0 0 10px;
+  font-size:1.2rem;
+}
+
+.focusbox p{
+  margin:0;
+  color:#5b7183;
+  line-height:1.65;
+}
+
+.focusbox.orange{
+  background:linear-gradient(135deg,#fff8ee,#fffdf9);
+  border-color:rgba(242,140,40,.22);
+}
+
+/* CIERRE */
+
+.closing{
+  text-align:center;
+  margin-top:34px;
+  padding:34px 24px;
+  border-radius:26px;
+  background:linear-gradient(135deg,#fff 0%,#f4fbff 100%);
+  border:1px solid var(--borde);
+}
+
+.closing h2{
+  margin:0 0 10px;
+}
+
+.closing p{
+  margin:0 auto;
+  max-width:720px;
+  line-height:1.7;
+  color:#586e80;
+}
+
+.next{
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+  margin-top:18px;
+  padding:11px 16px;
+  border-radius:999px;
+  background:#eef5fa;
+  color:var(--azul);
+  font-weight:800;
+}
+
+footer{
+  text-align:center;
+  color:#7b8d9c;
+  padding:30px 0 4px;
+  font-size:.84rem;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:760px){
+
+  .hero{
+    padding:36px 24px 34px;
+  }
+
+  .section{
+    padding:24px 18px;
+  }
+
+  .grid,
+  .focus{
+    grid-template-columns:1fr;
+  }
+
+  .topline{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <div class="topline">
+    <div>DISTANCIA | EN ACCIÓN</div>
+    <div>CHECK SEMANAL DEL TUTOR</div>
+  </div>
+
+  <section class="hero">
+
+    <div class="badge">
+      🚀 PRIMER VIERNES · PUESTA EN MARCHA
+    </div>
+
+    <h1>
+      ¡Aulas <span>en marcha!</span>
+    </h1>
+
+    <p>
+      Terminamos la primera semana.
+      Antes de seguir avanzando, hagamos un control rápido:
+      no alcanza con que el aula esté abierta;
+      necesitamos comprobar que los estudiantes
+      realmente hayan podido comenzar su recorrido.
+    </p>
+
+    <div class="rule">
+      ⏱️ Un check de 1 minuto
+    </div>
+
+  </section>
+
+  <section class="section">
+
+    <h2>
+      ¿Tu grupo realmente arrancó?
+    </h2>
+
+    <p class="intro">
+      Marcá cada punto que ya verificaste esta semana.
+      La idea no es controlar por controlar:
+      es detectar temprano aquello que todavía podemos resolver a tiempo.
+    </p>
+
+    <div class="grid">
+
+      <div class="checkcard" tabindex="0">
+
+        <div class="status">
+          ✓
+        </div>
+
+        <div class="emoji">
+          👀
+        </div>
+
+        <h3>
+          Revisé los accesos
+        </h3>
+
+        <p>
+          Identifiqué qué estudiantes ya ingresaron al aula
+          y cuáles todavía no registran actividad.
+        </p>
+
+      </div>
+
+      <div class="checkcard" tabindex="0">
+
+        <div class="status">
+          ✓
+        </div>
+
+        <div class="emoji">
+          💬
+        </div>
+
+        <h3>
+          Contacté a quienes faltan
+        </h3>
+
+        <p>
+          Realicé un primer contacto con estudiantes
+          que todavía no ingresaron o no participaron.
+        </p>
+
+      </div>
+
+      <div class="checkcard" tabindex="0">
+
+        <div class="status">
+          ✓
+        </div>
+
+        <div class="emoji">
+          💻
+        </div>
+
+        <h3>
+          Verifiqué Teams
+        </h3>
+
+        <p>
+          Comprobé que el encuentro sincrónico,
+          enlaces y condiciones de acceso
+          estén funcionando correctamente.
+        </p>
+
+      </div>
+
+      <div class="checkcard" tabindex="0">
+
+        <div class="status">
+          ✓
+        </div>
+
+        <div class="emoji">
+          📚
+        </div>
+
+        <h3>
+          El aula está clara y lista
+        </h3>
+
+        <p>
+          Revisé que los estudiantes encuentren fácilmente
+          Clases, materiales, cronograma e indicaciones iniciales.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="monitor">
+
+      <div class="monitor-head">
+
+        <strong>
+          Estado de puesta en marcha
+        </strong>
+
+        <span id="count">
+          0 de 4 controles realizados
+        </span>
+
+      </div>
+
+      <div class="meter">
+        <div id="bar"></div>
+      </div>
+
+      <div class="feedback" id="feedback">
+        Empezá por el punto que todavía no hayas revisado.
+      </div>
+
+    </div>
+
+    <div class="alert">
+
+      <strong>
+        📌 Importante:
+      </strong>
+
+      si detectás un estudiante sin acceso,
+      con dificultades técnicas
+      o una situación que requiera intervención,
+      no esperes a que el problema crezca.
+
+      Contactalo y, si corresponde,
+      realizá la derivación por el canal institucional.
+
+    </div>
+
+  </section>
+
+  <section class="focus">
+
+    <div class="focusbox">
+
+      <h3>
+        👀 Detectar temprano
+      </h3>
+
+      <p>
+        Un estudiante que no ingresó durante los primeros días
+        puede estar teniendo un problema de acceso,
+        una dificultad tecnológica
+        o simplemente no haber comprendido cómo comenzar.
+      </p>
+
+    </div>
+
+    <div class="focusbox orange">
+
+      <h3>
+        🤝 Acompañar antes de que se atrase
+      </h3>
+
+      <p>
+        Un mensaje breve y oportuno puede ser suficiente
+        para reactivar el vínculo
+        y evitar que una dificultad inicial
+        se transforme en abandono.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section class="closing">
+
+    <h2>
+      Primera semana: acompañamiento activado ✅
+    </h2>
+
+    <p>
+      El objetivo de este primer check es simple:
+      saber quiénes están avanzando
+      y quiénes todavía necesitan
+      que los ayudemos a comenzar.
+    </p>
+
+    <div class="next">
+      🔜 Próximo viernes:
+      que nadie quede fuera del radar
+    </div>
+
+  </section>
+
+  <footer>
+    Coordinación de Modalidad a Distancia · IES
+  </footer>
+
+</div>
+
+<script>
+const cards = [...document.querySelectorAll('.checkcard')];
+
+const count = document.getElementById('count');
+const bar = document.getElementById('bar');
+const feedback = document.getElementById('feedback');
+
+function update(){
+
+  const selected =
+    cards.filter(
+      c => c.classList.contains('active')
+    ).length;
+
+  count.textContent =
+    `${selected} de 4 controles realizados`;
+
+  bar.style.width =
+    `${selected * 25}%`;
+
+  const messages = [
+
+    'Empezá por el punto que todavía no hayas revisado.',
+
+    'Buen comienzo. Ya activaste una parte del seguimiento.',
+
+    'Vas por la mitad. Seguí completando el control inicial.',
+
+    'Casi listo. Te queda un último punto por verificar.',
+
+    '✅ ¡Aula en marcha! Ya realizaste el control inicial del grupo.'
+
+  ];
+
+  feedback.textContent =
+    messages[selected];
+
+}
+
+cards.forEach(card => {
+
+  function toggle(){
+
+    card.classList.toggle('active');
+
+    update();
+
+  }
+
+  card.addEventListener(
+    'click',
+    toggle
+  );
+
+  card.addEventListener(
+    'keydown',
+    e => {
+
+      if(
+        e.key === 'Enter'
+        ||
+        e.key === ' '
+      ){
+
+        e.preventDefault();
+
+        toggle();
+
+      }
+
+    }
+  );
+
+});
+
+update();
+</script>
+
+</body>
+</html>
