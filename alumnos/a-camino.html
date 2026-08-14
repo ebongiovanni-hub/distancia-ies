@@ -9,14 +9,14 @@
 <style>
 
 :root{
-  --azul:#1f5f9e;
-  --celeste:#25a9e0;
-  --naranja:#f28c28;
-  --verde:#4f9d78;
-  --tinta:#17324d;
-  --gris:#73879a;
-  --bloqueado:#d9e2e8;
-  --fondo:#f5fafc;
+  --celeste:#00A6D6;
+  --azul:#1F5F9E;
+  --naranja:#F58220;
+  --tinta:#17324D;
+  --gris:#73879A;
+  --gris-claro:#DDE6EC;
+  --fondo:#F5FAFD;
+  --blanco:#FFFFFF;
 }
 
 *{
@@ -29,9 +29,9 @@ body{
   color:var(--tinta);
 
   background:
-    radial-gradient(circle at 8% 6%,rgba(242,140,40,.10),transparent 22%),
-    radial-gradient(circle at 90% 8%,rgba(37,169,224,.10),transparent 25%),
-    linear-gradient(180deg,#f9fdff,#f2f8fb 65%,#fffaf5);
+    radial-gradient(circle at 8% 6%,rgba(0,166,214,.10),transparent 22%),
+    radial-gradient(circle at 92% 10%,rgba(245,130,32,.08),transparent 22%),
+    linear-gradient(180deg,#F8FCFE,#F2F9FC 65%,#FFF9F4);
 }
 
 .wrap{
@@ -40,38 +40,56 @@ body{
   padding:14px 0 28px;
 }
 
-/* CABECERA */
+/* ========================
+   CABECERA
+   ======================== */
 
 .topline{
   font-size:10px;
   font-weight:bold;
   letter-spacing:.15em;
-  color:var(--azul);
+  color:var(--celeste);
   margin-bottom:7px;
 }
 
 .hero{
-  background:#fff;
+  background:linear-gradient(
+    135deg,
+    #FFFFFF,
+    #F2FBFE 65%,
+    #FFF7F0
+  );
+
   border-radius:18px;
   padding:16px 20px;
-  border:1px solid rgba(31,95,158,.12);
-  box-shadow:0 5px 18px rgba(31,95,158,.06);
+
+  border:1px solid rgba(0,166,214,.20);
+
+  box-shadow:
+    0 5px 18px rgba(31,95,158,.06);
+
+  border-top:4px solid var(--celeste);
 }
 
 .badge{
   display:inline-block;
-  background:#e9f7fd;
+
+  background:#E6F7FC;
   color:var(--azul);
+
   padding:4px 8px;
   border-radius:999px;
+
   font-size:9px;
   font-weight:bold;
 }
 
 h1{
   margin:7px 0 4px;
+
   font-size:24px;
   line-height:1;
+  color:var(--celeste);
 }
 
 h1 span{
@@ -80,63 +98,95 @@ h1 span{
 
 .hero p{
   margin:7px 0 0;
+
   font-size:13px;
   line-height:1.4;
+
+  color:#4F687A;
 }
 
 
 /* ========================
-   MAPA GENERAL
+   MAPA
    ======================== */
 
 .map{
   position:relative;
+
   height:1120px;
+
   margin-top:15px;
+
   border-radius:24px;
+
   overflow:hidden;
 
   background:
-    radial-gradient(circle at 20% 15%,rgba(37,169,224,.08),transparent 19%),
-    radial-gradient(circle at 80% 40%,rgba(242,140,40,.08),transparent 21%),
-    radial-gradient(circle at 25% 75%,rgba(79,157,120,.08),transparent 22%),
-    #ffffff;
+    radial-gradient(circle at 20% 15%,rgba(0,166,214,.07),transparent 19%),
+    radial-gradient(circle at 80% 40%,rgba(245,130,32,.06),transparent 21%),
+    radial-gradient(circle at 25% 75%,rgba(0,166,214,.05),transparent 22%),
+    #FFFFFF;
 
-  border:1px solid rgba(31,95,158,.10);
+  border:
+    1px solid rgba(0,166,214,.13);
+
+  box-shadow:
+    0 6px 20px rgba(31,95,158,.05);
 }
 
-/* DECORACIONES */
+
+/* ========================
+   DECORACIÓN
+   ======================== */
 
 .sun{
   position:absolute;
+
   width:55px;
   height:55px;
-  border-radius:50%;
-  background:#ffd58f;
-  top:35px;
-  right:45px;
-  opacity:.8;
-}
 
-.mountain{
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:100%;
-  height:150px;
-  opacity:.10;
+  border-radius:50%;
 
   background:
-    linear-gradient(
-      145deg,
-      transparent 0 15%,
-      #1f5f9e 15% 30%,
-      transparent 30% 38%,
-      #f28c28 38% 52%,
-      transparent 52% 62%,
-      #1f5f9e 62% 78%,
-      transparent 78%
-    );
+    rgba(245,130,32,.20);
+
+  top:35px;
+  right:45px;
+}
+
+
+/* pequeños círculos decorativos */
+
+.decor1,
+.decor2,
+.decor3{
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.decor1{
+  width:14px;
+  height:14px;
+  background:rgba(0,166,214,.18);
+  left:7%;
+  top:20%;
+}
+
+.decor2{
+  width:9px;
+  height:9px;
+  background:rgba(245,130,32,.25);
+  right:10%;
+  top:35%;
+}
+
+.decor3{
+  width:12px;
+  height:12px;
+  background:rgba(31,95,158,.15);
+  left:12%;
+  top:70%;
 }
 
 
@@ -146,52 +196,98 @@ h1 span{
 
 .road{
   position:absolute;
+
   inset:0;
+
   width:100%;
   height:100%;
+
   pointer-events:none;
 }
 
+
+/* borde del camino */
+
 .road-shadow{
   fill:none;
-  stroke:#dce6ec;
-  stroke-width:18;
+
+  stroke:#DCE8EE;
+
+  stroke-width:20;
+
   stroke-linecap:round;
   stroke-linejoin:round;
 }
+
+
+/* interior del camino */
 
 .road-line{
   fill:none;
-  stroke:#ffffff;
-  stroke-width:10;
+
+  stroke:#FFFFFF;
+
+  stroke-width:12;
+
   stroke-linecap:round;
   stroke-linejoin:round;
 }
 
-.road-progress{
+
+/* línea central */
+
+.road-center{
   fill:none;
-  stroke:var(--naranja);
-  stroke-width:6;
+
+  stroke:rgba(0,166,214,.20);
+
+  stroke-width:2;
+
+  stroke-dasharray:7 9;
+
   stroke-linecap:round;
-  stroke-dasharray:10 9;
 }
 
+
+/* tramo recorrido */
+
+.road-progress{
+  fill:none;
+
+  stroke:var(--naranja);
+
+  stroke-width:7;
+
+  stroke-linecap:round;
+
+  stroke-dasharray:10 8;
+}
+
+
 /* ========================
-   CHECKPOINT
+   CHECKPOINTS
    ======================== */
 
 .cp{
   position:absolute;
+
   width:150px;
+
   text-align:center;
-  transform:translate(-50%,-50%);
+
+  transform:
+    translate(-50%,-50%);
 }
+
+
+/* CÍRCULO */
 
 .dot{
   width:36px;
   height:36px;
 
-  margin:0 auto 5px;
+  margin:
+    0 auto 5px;
 
   border-radius:50%;
 
@@ -201,65 +297,108 @@ h1 span{
   font-size:13px;
   font-weight:bold;
 
-  border:4px solid #fff;
+  border:
+    4px solid #FFFFFF;
 
   box-shadow:
-    0 3px 9px rgba(31,95,158,.17);
+    0 3px 9px rgba(31,95,158,.18);
 }
+
+
+/* COMPLETADO */
+
+.cp.done .dot{
+  background:var(--celeste);
+  color:#FFFFFF;
+}
+
 
 /* ACTIVO */
 
 .cp.active .dot{
   background:var(--naranja);
-  color:#fff;
+  color:#FFFFFF;
 
-  animation:pulse 1.8s infinite;
+  animation:
+    pulse 1.8s infinite;
 }
 
-/* COMPLETADO */
-
-.cp.done .dot{
-  background:var(--verde);
-  color:#fff;
-}
 
 /* BLOQUEADO */
 
 .cp.locked .dot{
-  background:var(--bloqueado);
-  color:#73879a;
+  background:var(--gris-claro);
+  color:#7B8D9B;
 }
 
-/* TARJETITA */
+
+/* ========================
+   TARJETAS
+   ======================== */
 
 .label{
-  background:#fff;
+  background:#FFFFFF;
 
   border-radius:10px;
 
   padding:6px 7px;
 
-  border:1px solid rgba(31,95,158,.13);
+  border:
+    1px solid rgba(31,95,158,.13);
 
   box-shadow:
     0 3px 10px rgba(31,95,158,.07);
 }
 
+
+/* ACTIVO */
+
 .cp.active .label{
-  border:1px solid rgba(242,140,40,.45);
+  border:
+    1px solid rgba(245,130,32,.55);
+
+  box-shadow:
+    0 4px 13px rgba(245,130,32,.12);
 }
 
-.cp.locked .label{
-  opacity:.60;
+
+/* COMPLETADO */
+
+.cp.done .label{
+  border:
+    1px solid rgba(0,166,214,.40);
 }
+
+
+/* BLOQUEADO */
+
+.cp.locked .label{
+  opacity:.58;
+
+  background:#F8FAFB;
+}
+
+
+/* SEMANA */
 
 .week{
   font-size:7px;
+
   font-weight:bold;
-  color:var(--gris);
+
+  color:var(--celeste);
+
   text-transform:uppercase;
+
   letter-spacing:.08em;
 }
+
+.locked .week{
+  color:var(--gris);
+}
+
+
+/* TITULO */
 
 .label strong{
   display:block;
@@ -268,7 +407,14 @@ h1 span{
 
   font-size:11px;
   line-height:1.15;
+
+  color:var(--azul);
 }
+
+
+/* ========================
+   ESTADOS
+   ======================== */
 
 .state{
   display:inline-block;
@@ -280,43 +426,64 @@ h1 span{
   border-radius:999px;
 
   font-size:6px;
+
   font-weight:bold;
 }
 
+
+/* DISPONIBLE */
+
 .active .state{
-  background:#fff2e3;
-  color:#a45b14;
+  background:#FFF0E4;
+  color:#C4610C;
 }
+
+
+/* COMPLETADO */
 
 .done .state{
-  background:#edf8f2;
-  color:#327456;
+  background:#E7F7FC;
+  color:#087EA3;
 }
+
+
+/* BLOQUEADO */
 
 .locked .state{
-  background:#eef2f5;
-  color:#7a8995;
+  background:#EEF2F5;
+  color:#7A8995;
 }
 
-/* BOTON */
+
+/* ========================
+   BOTÓN
+   ======================== */
 
 .btn{
   display:inline-block;
 
   margin-top:4px;
 
-  padding:4px 8px;
+  padding:4px 9px;
 
   border-radius:999px;
 
   background:var(--naranja);
 
-  color:#fff;
+  color:#FFFFFF;
 
   text-decoration:none;
 
   font-size:8px;
+
   font-weight:bold;
+
+  box-shadow:
+    0 3px 8px rgba(245,130,32,.18);
+}
+
+.btn:hover{
+  background:#DF7114;
 }
 
 .locked .btn{
@@ -350,7 +517,9 @@ h1 span{
 .c16{ left:82%; top:83%; }
 
 
-/* META */
+/* ========================
+   META
+   ======================== */
 
 .finish{
   position:absolute;
@@ -362,23 +531,34 @@ h1 span{
 
   border-radius:12px;
 
-  background:#17324d;
+  background:
+    linear-gradient(
+      135deg,
+      var(--celeste),
+      var(--azul)
+    );
 
-  color:white;
+  color:#FFFFFF;
 
   font-size:10px;
   font-weight:bold;
 
   box-shadow:
-    0 4px 12px rgba(23,50,77,.18);
+    0 4px 12px rgba(31,95,158,.18);
+
+  border-bottom:
+    3px solid var(--naranja);
 }
 
 
-/* CIERRE */
+/* ========================
+   CIERRE
+   ======================== */
 
 .final{
   margin-top:12px;
-  background:white;
+
+  background:#FFFFFF;
 
   border-radius:14px;
 
@@ -386,37 +566,47 @@ h1 span{
 
   text-align:center;
 
-  border:1px solid rgba(31,95,158,.10);
+  border:
+    1px solid rgba(0,166,214,.18);
+
+  border-bottom:
+    4px solid var(--naranja);
 }
 
 .final strong{
   font-size:13px;
+
+  color:var(--celeste);
 }
 
 .final p{
   margin:3px 0 0;
+
   color:var(--gris);
+
   font-size:10px;
 }
 
 
-/* ANIMACION */
+/* ========================
+   ANIMACIÓN
+   ======================== */
 
 @keyframes pulse{
 
   0%{
     box-shadow:
-      0 0 0 0 rgba(242,140,40,.35);
+      0 0 0 0 rgba(245,130,32,.40);
   }
 
   70%{
     box-shadow:
-      0 0 0 10px rgba(242,140,40,0);
+      0 0 0 11px rgba(245,130,32,0);
   }
 
   100%{
     box-shadow:
-      0 0 0 0 rgba(242,140,40,0);
+      0 0 0 0 rgba(245,130,32,0);
   }
 
 }
@@ -447,9 +637,13 @@ h1 span{
     top:25px;
     bottom:25px;
 
-    width:4px;
+    width:5px;
 
-    background:#dce6ec;
+    background:
+      linear-gradient(
+        var(--naranja) 0 5%,
+        #DCE8EE 5%
+      );
 
     border-radius:999px;
   }
@@ -467,7 +661,8 @@ h1 span{
 
     transform:none;
 
-    width:calc(100% - 52px);
+    width:
+      calc(100% - 52px);
 
     margin-left:52px;
 
@@ -516,6 +711,9 @@ h1 span{
 
 <div class="wrap">
 
+
+  <!-- CABECERA -->
+
   <div class="topline">
     DISTANCIA | TU RECORRIDO
   </div>
@@ -540,10 +738,17 @@ h1 span{
   </section>
 
 
+  <!-- MAPA -->
+
   <section class="map">
 
+
+    <!-- decoración -->
+
     <div class="sun"></div>
-    <div class="mountain"></div>
+    <div class="decor1"></div>
+    <div class="decor2"></div>
+    <div class="decor3"></div>
 
 
     <!-- CAMINO -->
@@ -552,8 +757,6 @@ h1 span{
       class="road"
       viewBox="0 0 1000 1120"
       preserveAspectRatio="none">
-
-      <!-- camino general -->
 
       <path
         class="road-shadow"
@@ -591,7 +794,25 @@ h1 span{
         "
       />
 
-      <!-- tramo habilitado -->
+      <path
+        class="road-center"
+        d="
+        M120 90
+        C230 70 290 150 390 150
+        S610 80 700 110
+        S900 140 860 220
+        S680 300 560 285
+        S260 250 160 350
+        S240 470 390 470
+        S720 390 850 510
+        S680 640 570 625
+        S260 580 150 700
+        S260 840 400 830
+        S700 760 820 900
+        "
+      />
+
+      <!-- RECORRIDO ACTUAL -->
 
       <path
         class="road-progress"
@@ -604,7 +825,7 @@ h1 span{
     </svg>
 
 
-    <!-- 1 -->
+    <!-- SEMANA 1 -->
 
     <div class="cp active c1">
 
@@ -639,19 +860,15 @@ h1 span{
     </div>
 
 
-    <!-- 2 -->
+    <!-- SEMANA 2 -->
 
     <div class="cp locked c2">
 
-      <div class="dot">
-        🔒
-      </div>
+      <div class="dot">🔒</div>
 
       <div class="label">
 
-        <div class="week">
-          Semana 2
-        </div>
+        <div class="week">Semana 2</div>
 
         <strong>
           🧭 Encontrá tu ritmo
@@ -666,7 +883,7 @@ h1 span{
     </div>
 
 
-    <!-- 3 -->
+    <!-- SEMANA 3 -->
 
     <div class="cp locked c3">
 
@@ -687,7 +904,7 @@ h1 span{
     </div>
 
 
-    <!-- 4 -->
+    <!-- SEMANA 4 -->
 
     <div class="cp locked c4">
 
@@ -708,7 +925,7 @@ h1 span{
     </div>
 
 
-    <!-- 5 -->
+    <!-- SEMANA 5 -->
 
     <div class="cp locked c5">
 
@@ -729,7 +946,7 @@ h1 span{
     </div>
 
 
-    <!-- 6 -->
+    <!-- SEMANA 6 -->
 
     <div class="cp locked c6">
 
@@ -750,7 +967,7 @@ h1 span{
     </div>
 
 
-    <!-- 7 -->
+    <!-- SEMANA 7 -->
 
     <div class="cp locked c7">
 
@@ -771,7 +988,7 @@ h1 span{
     </div>
 
 
-    <!-- 8 -->
+    <!-- SEMANA 8 -->
 
     <div class="cp locked c8">
 
@@ -792,7 +1009,7 @@ h1 span{
     </div>
 
 
-    <!-- 9 -->
+    <!-- SEMANA 9 -->
 
     <div class="cp locked c9">
 
@@ -813,7 +1030,7 @@ h1 span{
     </div>
 
 
-    <!-- 10 -->
+    <!-- SEMANA 10 -->
 
     <div class="cp locked c10">
 
@@ -834,7 +1051,7 @@ h1 span{
     </div>
 
 
-    <!-- 11 -->
+    <!-- SEMANA 11 -->
 
     <div class="cp locked c11">
 
@@ -855,7 +1072,7 @@ h1 span{
     </div>
 
 
-    <!-- 12 -->
+    <!-- SEMANA 12 -->
 
     <div class="cp locked c12">
 
@@ -876,7 +1093,7 @@ h1 span{
     </div>
 
 
-    <!-- 13 -->
+    <!-- SEMANA 13 -->
 
     <div class="cp locked c13">
 
@@ -897,7 +1114,7 @@ h1 span{
     </div>
 
 
-    <!-- 14 -->
+    <!-- SEMANA 14 -->
 
     <div class="cp locked c14">
 
@@ -918,7 +1135,7 @@ h1 span{
     </div>
 
 
-    <!-- 15 -->
+    <!-- SEMANA 15 -->
 
     <div class="cp locked c15">
 
@@ -939,7 +1156,7 @@ h1 span{
     </div>
 
 
-    <!-- 16 -->
+    <!-- SEMANA 16 -->
 
     <div class="cp locked c16">
 
@@ -966,17 +1183,22 @@ h1 span{
     </div>
 
 
+    <!-- META -->
+
     <div class="finish">
       🏁 META
     </div>
 
+
   </section>
 
+
+  <!-- CIERRE -->
 
   <section class="final">
 
     <strong>
-      Cada viernes, una nueva parada.
+      💙🧡 Cada viernes, una nueva parada.
     </strong>
 
     <p>
@@ -984,6 +1206,7 @@ h1 span{
     </p>
 
   </section>
+
 
 </div>
 
