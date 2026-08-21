@@ -251,10 +251,28 @@ h1 span{color:var(--orange)}
 }
 .next h2{margin:7px 0 4px;font-size:1.5rem}
 .next p{margin:0;opacity:.9;font-size:.95rem}
+.back{text-align:center;margin-top:20px}
+.back a{
+  display:inline-block;
+  padding:9px 18px;
+  border:1px solid var(--blue);
+  border-radius:999px;
+  color:var(--blue);
+  background:#fff;
+  text-decoration:none;
+  font-size:.88rem;
+  font-weight:700;
+  transition:.2s;
+}
+.back a:hover{
+  background:var(--blue);
+  color:#fff;
+  transform:translateY(-1px);
+}
 footer{
   text-align:center;
   color:#8192a2;
-  margin-top:22px;
+  margin-top:18px;
   font-size:.86rem;
 }
 @media(max-width:720px){
@@ -324,7 +342,10 @@ footer{
   <h2>🧭 Encontrá tu ritmo</h2>
   <p>La próxima etapa es organizarte de una manera que puedas sostener semana a semana.</p>
 </section>
-<footer>Coordinación de Modalidad Distancia</footer>
+<div class="back">
+  <a href="a-camino.html">← Volver a TU RECORRIDO</a>
+</div>
+<footer>Modalidad Distancia - IES</footer>
 </div>
 <script>
 const cards=[...document.querySelectorAll(".check")];
