@@ -568,52 +568,38 @@ h1 span{color:var(--naranja)}
 
 <script>
 const calendario=[
-  {semana:1,fecha:20260814},
-  {semana:2,fecha:20260821},
-  {semana:3,fecha:20260828},
-  {semana:4,fecha:20260904},
-  {semana:5,fecha:20260911},
-  {semana:6,fecha:20260918},
-  {semana:7,fecha:20260925},
-  {semana:8,fecha:20261002},
-  {semana:9,fecha:20261009},
-  {semana:10,fecha:20261016},
-  {semana:11,fecha:20261023},
-  {semana:12,fecha:20261030},
-  {semana:13,fecha:20261106},
-  {semana:14,fecha:20261113},
-  {semana:15,fecha:20261120},
-  {semana:16,fecha:20261127}
+  [1,2026,8,14],
+  [2,2026,8,21],
+  [3,2026,8,28],
+  [4,2026,9,4],
+  [5,2026,9,11],
+  [6,2026,9,18],
+  [7,2026,9,25],
+  [8,2026,10,2],
+  [9,2026,10,9],
+  [10,2026,10,16],
+  [11,2026,10,23],
+  [12,2026,10,30],
+  [13,2026,11,6],
+  [14,2026,11,13],
+  [15,2026,11,20],
+  [16,2026,11,27]
 ];
 
-function obtenerFechaArgentina(){
-  const partes=new Intl.DateTimeFormat("en-US",{
-    timeZone:"America/Argentina/Cordoba",
-    year:"numeric",
-    month:"2-digit",
-    day:"2-digit"
-  }).formatToParts(new Date());
-
-  let anio="";
-  let mes="";
-  let dia="";
-
-  partes.forEach(parte=>{
-    if(parte.type==="year") anio=parte.value;
-    if(parte.type==="month") mes=parte.value;
-    if(parte.type==="day") dia=parte.value;
-  });
-
-  return Number(anio+mes+dia);
-}
-
 function obtenerSemanaActual(){
-  const hoy=obtenerFechaArgentina();
+  const hoy=new Date();
+  const fechaHoy=new Date(hoy.getFullYear(),hoy.getMonth(),hoy.getDate()).getTime();
   let semanaActual=0;
 
   calendario.forEach(item=>{
-    if(hoy>=item.fecha){
-      semanaActual=item.semana;
+    const semana=item[0];
+    const anio=item[1];
+    const mes=item[2];
+    const dia=item[3];
+    const fechaActivacion=new Date(anio,mes-1,dia).getTime();
+
+    if(fechaHoy>=fechaActivacion){
+      semanaActual=semana;
     }
   });
 
@@ -622,6 +608,8 @@ function obtenerSemanaActual(){
 
 function actualizarRecorrido(){
   const semanaActual=obtenerSemanaActual();
+
+  console.log("Semana detectada:",semanaActual);
 
   document.querySelectorAll(".cp[data-week]").forEach(cp=>{
     const semana=Number(cp.dataset.week);
@@ -638,7 +626,7 @@ function actualizarRecorrido(){
       boton.textContent="Volver al check";
     }else if(semana===semanaActual){
       cp.classList.add("active");
-      dot.textContent=String(semana);
+      dot.textContent=semana;
       estado.textContent="DISPONIBLE AHORA";
       boton.textContent="Hacer check";
     }else{
