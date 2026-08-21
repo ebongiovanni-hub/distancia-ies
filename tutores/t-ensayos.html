@@ -41,7 +41,7 @@ body{
   margin-bottom:7px;
 }
 .topline{
-  font-size:14px;
+  font-size:16px;
   font-weight:bold;
   letter-spacing:.15em;
   color:var(--celeste);
@@ -688,5 +688,91 @@ if(document.readyState==="loading"){
   actualizarRecorrido();
 }
 </script>
+
+<script>
+function obtenerFechaArgentina(){
+  const ahora=new Date();
+  const partes=new Intl.DateTimeFormat("en-CA",{
+    timeZone:"America/Argentina/Cordoba",
+    year:"numeric",
+    month:"2-digit",
+    day:"2-digit"
+  }).formatToParts(ahora);
+
+  const datos={};
+  partes.forEach(p=>{
+    if(p.type!=="literal") datos[p.type]=p.value;
+  });
+
+  return new Date(
+    Number(datos.year),
+    Number(datos.month)-1,
+    Number(datos.day)
+  );
+}
+
+function obtenerSemanaActual(){
+  const hoy=obtenerFechaArgentina();
+  const inicio=new Date(2026,7,14); // 14/08/2026
+
+  const diferencia=hoy-inicio;
+  const dias=Math.floor(diferencia/(1000*60*60*24));
+
+  if(dias<0) return 0;
+
+  const semana=Math.floor(dias/7)+1;
+
+  return Math.min(semana,16);
+}
+
+function actualizarRecorrido(){
+  const semanaActual=obtenerSemanaActual();
+
+  console.log("Semana actual:",semanaActual);
+
+  document.querySelectorAll(".cp[data-week]").forEach(cp=>{
+    const semana=Number(cp.dataset.week);
+    const dot=cp.querySelector(".dot");
+    const state=cp.querySelector(".state");
+    const boton=cp.querySelector(".btn");
+
+    cp.classList.remove("done","active","locked");
+
+    if(semana<semanaActual){
+      cp.classList.add("done");
+      dot.textContent="✓";
+      state.textContent="COMPLETADO";
+      boton.textContent="Volver al check";
+      boton.href="t-semana-"+String(semana).padStart(2,"0")+".html";
+    }else if(semana===semanaActual){
+      cp.classList.add("active");
+      dot.textContent=semana;
+      state.textContent="DISPONIBLE AHORA";
+      boton.textContent="Hacer check";
+      boton.href="t-semana-"+String(semana).padStart(2,"0")+".html";
+    }else{
+      cp.classList.add("locked");
+      dot.textContent="🔒";
+      state.textContent=semana===16?"META BLOQUEADA":"BLOQUEADO";
+      boton.removeAttribute("href");
+    }
+  });
+
+  const progreso=semanaActual<=1?0:Math.min(100,((semanaActual-1)/15)*100);
+
+  const camino=document.getElementById("roadProgress");
+  if(camino){
+    camino.style.strokeDasharray=progreso+" "+(100-progreso);
+  }
+
+  document.documentElement.style.setProperty(
+    "--progreso-mobile",
+    progreso+"%"
+  );
+}
+
+document.addEventListener("DOMContentLoaded",actualizarRecorrido);
+</script>
+  
 </body>
 </html>
