@@ -2,946 +2,423 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Distancia | Tu recorrido · Semana 2</title>
-
 <style>
 :root{
   --azul:#1f5f9e;
   --azul2:#3e8ed0;
   --naranja:#f28c28;
   --naranja2:#ffb45c;
-  --crema:#fffaf4;
   --tinta:#17324d;
-  --suave:#edf6fc;
-  --verde:#4f9d78;
   --gris:#6b7d8f;
-  --borde:rgba(31,95,158,.15);
+  --borde:#dbe7f1;
+  --fondo:#edf5fa;
 }
-
-*{
-  box-sizing:border-box;
-}
-
+*{box-sizing:border-box}
 body{
   margin:0;
   font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   color:var(--tinta);
-
   background:
-    radial-gradient(circle at 8% 8%, rgba(242,140,40,.12), transparent 22%),
-    radial-gradient(circle at 92% 12%, rgba(62,142,208,.12), transparent 24%),
-    linear-gradient(180deg,#f8fcff 0%,#f3f8fb 55%,#fffaf4 100%);
+    radial-gradient(circle at 10% 0%,rgba(242,140,40,.14),transparent 26%),
+    radial-gradient(circle at 90% 8%,rgba(62,142,208,.15),transparent 28%),
+    var(--fondo);
 }
-
-.wrap{
-  width:min(1080px,calc(100% - 28px));
-  margin:auto;
-  padding:28px 0 60px;
-}
-
-.topline{
+.wrap{max-width:980px;margin:auto;padding:18px 18px 50px}
+.brandbar{
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  gap:16px;
-  margin-bottom:14px;
-  font-size:.82rem;
+  justify-content:space-between;
+  gap:20px;
+  min-height:62px;
+  padding:0 5px;
+  margin-bottom:8px;
+}
+.topline{
+  font-size:.9rem;
   font-weight:800;
   letter-spacing:.14em;
   text-transform:uppercase;
   color:var(--azul);
 }
-
-.progress-mini{
-  display:flex;
-  gap:7px;
-  align-items:center;
+.logo-ies{
+  display:block;
+  width:auto;
+  height:58px;
+  object-fit:contain;
 }
-
-.dot{
-  width:9px;
-  height:9px;
-  border-radius:50%;
-  background:#dbe6ee;
-}
-
-.dot.done{
-  background:var(--naranja);
-}
-
-.dot.now{
-  background:var(--azul);
-  box-shadow:0 0 0 5px rgba(31,95,158,.10);
-}
-
-/* HERO */
-
 .hero{
   position:relative;
   overflow:hidden;
-  border-radius:30px;
-  padding:48px 42px 42px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ffffff 0%,
-      #f4fbff 60%,
-      #fff8ef 100%
-    );
-
+  border-radius:24px;
+  padding:25px 26px 24px;
+  background:linear-gradient(135deg,#fff 0%,#eef7ff 58%,#fff7ec 100%);
   border:1px solid var(--borde);
-
-  box-shadow:
-    0 22px 55px rgba(31,95,158,.10);
+  box-shadow:0 12px 34px rgba(23,50,77,.07);
 }
-
 .hero::before{
   content:"";
   position:absolute;
-
-  width:240px;
-  height:240px;
+  width:220px;
+  height:220px;
   border-radius:50%;
-
-  background:
-    rgba(242,140,40,.10);
-
+  background:rgba(242,140,40,.10);
   right:-70px;
   top:-75px;
 }
-
 .hero::after{
   content:"";
   position:absolute;
-
-  width:330px;
-  height:170px;
-
+  width:280px;
+  height:150px;
   right:-25px;
   bottom:-35px;
-
   border-radius:55% 0 0 0;
-
-  background:
-    repeating-radial-gradient(
-      ellipse at 88% 90%,
-      rgba(62,142,208,.18) 0 3px,
-      rgba(62,142,208,.07) 4px 11px,
-      transparent 12px 24px
-    );
-
+  background:repeating-radial-gradient(ellipse at 88% 90%,rgba(62,142,208,.15) 0 3px,rgba(62,142,208,.06) 4px 11px,transparent 12px 24px);
   transform:rotate(-6deg);
 }
-
 .badge{
+  position:relative;
+  z-index:1;
   display:inline-flex;
   align-items:center;
   gap:8px;
-
   color:var(--azul);
-
   background:#eaf4fb;
-
   border:1px solid #d3e8f7;
-
   border-radius:999px;
-
-  padding:8px 13px;
-
+  padding:6px 11px;
   font-weight:800;
-  font-size:.8rem;
+  font-size:.76rem;
 }
-
 h1{
-  margin:16px 0 8px;
-
-  font-size:
-    clamp(2.5rem,7vw,5.4rem);
-
-  line-height:.95;
-  letter-spacing:-.04em;
+  position:relative;
+  z-index:1;
+  margin:11px 0 8px;
+  font-size:clamp(1.8rem,4vw,2.8rem);
+  line-height:1.05;
+  letter-spacing:-.02em;
 }
-
-h1 span{
-  color:var(--naranja);
-}
-
+h1 span{color:var(--naranja)}
 .hero p{
+  position:relative;
+  z-index:1;
   max-width:700px;
-
-  font-size:1.08rem;
-  line-height:1.75;
-
-  margin:18px 0 0;
+  font-size:1rem;
+  line-height:1.55;
+  margin:12px 0 0;
+  color:#4f6375;
 }
-
 .path{
+  position:relative;
+  z-index:1;
   display:flex;
   align-items:center;
   gap:7px;
-
-  margin-top:28px;
-
+  margin-top:20px;
   flex-wrap:wrap;
-
   color:var(--gris);
-
-  font-size:.92rem;
+  font-size:.86rem;
   font-weight:700;
 }
-
-.path strong{
-  color:var(--azul);
-}
-
-.arrow{
-  color:#aac1d3;
-}
-
-/* SECCIÓN PRINCIPAL */
-
+.path strong{color:var(--azul)}
+.arrow{color:#aac1d3}
 .section{
-  margin-top:34px;
-
-  background:
-    rgba(255,255,255,.82);
-
-  border:
-    1px solid var(--borde);
-
-  border-radius:26px;
-
-  padding:30px;
-
-  box-shadow:
-    0 16px 40px rgba(31,95,158,.07);
+  margin-top:22px;
+  background:rgba(255,255,255,.88);
+  border:1px solid var(--borde);
+  border-radius:20px;
+  padding:22px;
+  box-shadow:0 8px 24px rgba(23,50,77,.05);
 }
-
 .section h2{
   margin:0 0 8px;
-
-  font-size:
-    clamp(1.7rem,4vw,2.4rem);
+  font-size:1.5rem;
 }
-
 .section .intro{
-  margin:0 0 24px;
-
-  line-height:1.7;
-
+  margin:0 0 18px;
+  line-height:1.6;
   color:#4c6275;
+  font-size:.96rem;
 }
-
 .grid{
   display:grid;
-
-  grid-template-columns:
-    repeat(2,1fr);
-
-  gap:16px;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
 }
-
-/* TARJETAS */
-
 .choice{
-  border:
-    1px solid #dce8f0;
-
-  border-radius:20px;
-
-  padding:20px;
-
+  border:1px solid #dce8f0;
+  border-radius:18px;
+  padding:17px;
   background:#fff;
-
   cursor:pointer;
-
   transition:.2s ease;
-
   position:relative;
-
-  min-height:160px;
+  min-height:138px;
 }
-
 .choice:hover{
   transform:translateY(-2px);
-
   border-color:#bfd8ea;
-
-  box-shadow:
-    0 10px 24px rgba(31,95,158,.08);
+  box-shadow:0 9px 20px rgba(31,95,158,.08);
 }
-
 .choice.active{
   border-color:var(--azul2);
-
-  background:
-    linear-gradient(
-      180deg,
-      #f8fcff,
-      #eef8ff
-    );
-
-  box-shadow:
-    0 0 0 4px rgba(62,142,208,.08);
+  background:linear-gradient(180deg,#f8fcff,#eef8ff);
+  box-shadow:0 0 0 4px rgba(62,142,208,.08);
 }
-
-.choice .emoji{
-  font-size:2rem;
-}
-
-.choice h3{
-  margin:10px 0 6px;
-
-  font-size:1.15rem;
-}
-
+.choice .emoji{font-size:1.55rem}
+.choice h3{margin:8px 0 5px;font-size:1rem}
 .choice p{
   margin:0;
-
   color:#5b7183;
-
-  line-height:1.55;
-
-  font-size:.94rem;
+  line-height:1.5;
+  font-size:.92rem;
 }
-
 .check{
   position:absolute;
-
   right:14px;
   top:14px;
-
-  width:28px;
-  height:28px;
-
+  width:26px;
+  height:26px;
   border-radius:50%;
-
   display:grid;
   place-items:center;
-
-  border:
-    2px solid #d9e4eb;
-
+  border:2px solid #d9e4eb;
   color:transparent;
-
   font-weight:900;
-
   background:#fff;
 }
-
 .choice.active .check{
   background:var(--azul);
-
   border-color:var(--azul);
-
   color:#fff;
 }
-
-/* BARRA */
-
 .rhythm-box{
-  margin-top:24px;
-
-  border-radius:22px;
-
-  padding:22px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #173f68,
-      #1f5f9e
-    );
-
+  margin-top:20px;
+  border-radius:18px;
+  padding:18px;
+  background:linear-gradient(135deg,#173f68,#1f5f9e);
   color:#fff;
 }
-
 .rhythm-head{
   display:flex;
-
   justify-content:space-between;
-
   gap:16px;
-
   align-items:center;
-
   flex-wrap:wrap;
 }
-
-.rhythm-head strong{
-  font-size:1.2rem;
-}
-
+.rhythm-head strong{font-size:1.08rem}
+#count{font-size:.9rem}
 .meter{
-  height:12px;
-
-  background:
-    rgba(255,255,255,.18);
-
+  height:11px;
+  background:rgba(255,255,255,.18);
   border-radius:999px;
-
   overflow:hidden;
-
-  margin-top:14px;
+  margin-top:13px;
 }
-
-.meter > div{
+.meter>div{
   width:0%;
-
   height:100%;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--naranja),
-      #ffd093
-    );
-
+  background:linear-gradient(90deg,var(--naranja),#ffd093);
   transition:.35s ease;
 }
-
 .feedback{
-  margin-top:12px;
-
+  margin-top:11px;
   color:#e9f4fb;
-
   line-height:1.5;
+  font-size:.92rem;
 }
-
-/* TIP */
-
 .tipbox{
   display:grid;
-
-  grid-template-columns:
-    54px 1fr;
-
-  gap:14px;
-
+  grid-template-columns:48px 1fr;
+  gap:12px;
   align-items:start;
-
-  border-left:
-    4px solid var(--naranja);
-
-  padding:
-    16px 18px;
-
-  margin-top:22px;
-
+  border-left:4px solid var(--naranja);
+  padding:14px 16px;
+  margin-top:18px;
   background:#fff8ee;
-
-  border-radius:16px;
+  border-radius:14px;
+  font-size:.92rem;
+  line-height:1.5;
 }
-
 .tipicon{
-  width:44px;
-  height:44px;
-
+  width:40px;
+  height:40px;
   border-radius:50%;
-
   display:grid;
   place-items:center;
-
   background:#ffe7c8;
-
-  font-size:1.4rem;
+  font-size:1.25rem;
 }
-
-/* CIERRE */
-
 .cta{
   text-align:center;
-
-  margin-top:34px;
-
-  padding:
-    34px 24px;
-
-  border-radius:26px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #fff 0%,
-      #fff8ef 100%
-    );
-
-  border:
-    1px solid rgba(242,140,40,.22);
+  margin-top:24px;
+  padding:20px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#fff 0%,#fff8ef 100%);
+  border:1px solid rgba(242,140,40,.22);
 }
-
-.cta h2{
-  margin:0 0 10px;
-}
-
+.cta h2{margin:0 0 8px;font-size:1.5rem}
 .cta p{
   margin:0 auto;
-
   max-width:640px;
-
-  line-height:1.7;
-
+  line-height:1.6;
   color:#586e80;
+  font-size:.95rem;
 }
-
 .next{
   display:inline-flex;
-
-  gap:10px;
-
+  gap:8px;
   align-items:center;
-
-  margin-top:18px;
-
-  padding:
-    11px 16px;
-
+  margin-top:16px;
+  padding:9px 14px;
   border-radius:999px;
-
   background:#eef5fa;
-
   color:var(--azul);
-
+  font-size:.88rem;
   font-weight:800;
 }
-
+.back{text-align:center;margin-top:20px}
+.back a{
+  display:inline-block;
+  padding:9px 18px;
+  border:1px solid var(--azul);
+  border-radius:999px;
+  color:var(--azul);
+  background:#fff;
+  text-decoration:none;
+  font-size:.88rem;
+  font-weight:700;
+  transition:.2s;
+}
+.back a:hover{
+  background:var(--azul);
+  color:#fff;
+  transform:translateY(-1px);
+}
 footer{
   text-align:center;
-
   color:#7b8d9c;
-
-  padding:
-    30px 0 4px;
-
-  font-size:.84rem;
+  margin-top:18px;
+  font-size:.86rem;
 }
-
-/* RESPONSIVE */
-
 @media(max-width:760px){
-
-  .hero{
-    padding:
-      36px 24px 34px;
-  }
-
-  .section{
-    padding:
-      24px 18px;
-  }
-
-  .grid{
-    grid-template-columns:1fr;
-  }
-
-  .topline{
-    align-items:flex-start;
-
-    flex-direction:column;
-  }
-
+  .wrap{padding:14px 12px 38px}
+  .brandbar{padding:0 2px}
+  .topline{font-size:.78rem}
+  .logo-ies{height:50px}
+  .hero{padding:22px 18px}
+  h1{font-size:clamp(1.7rem,8vw,2.3rem)}
+  .section{padding:20px 17px}
+  .grid{grid-template-columns:1fr}
 }
 </style>
 </head>
-
 <body>
-
 <div class="wrap">
-
-  <!-- CABECERA -->
-
-  <div class="topline">
-
-    <div>
-      DISTANCIA | TU RECORRIDO
-    </div>
-
-    <div
-      class="progress-mini"
-      aria-label="Recorrido semanal">
-
-      <span class="dot done"></span>
-      <span class="dot now"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-
-    </div>
-
-  </div>
-
-
-  <!-- HERO -->
-
-  <section class="hero">
-
-    <div class="badge">
-      🧭 SEMANA 2 · NUEVO PASO
-    </div>
-
-    <h1>
-      Encontrá tu
-      <span>propio ritmo</span>
-    </h1>
-
-    <p>
-      La primera semana fue para ubicarnos.
-      Ahora empieza algo igual de importante:
-      descubrir una forma de estudiar
-      que puedas sostener en el tiempo.
-
-      No se trata de hacer todo de golpe.
-      Se trata de avanzar con constancia.
-    </p>
-
-    <div class="path">
-
-      <strong>
-        🎯 Primer logro
-      </strong>
-
-      <span class="arrow">
-        →
-      </span>
-
-      <strong>
-        🧭 Tu ritmo
-      </strong>
-
-      <span class="arrow">
-        →
-      </span>
-
-      <span>
-        🔒 Próximo paso
-      </span>
-
-      <span class="arrow">
-        →
-      </span>
-
-      <span>
-        🔒 Seguimos avanzando
-      </span>
-
-    </div>
-
-  </section>
-
-
-  <!-- HÁBITOS -->
-
-  <section class="section">
-
-    <h2>
-      Armá tu ritmo de estudio
-    </h2>
-
-    <p class="intro">
-      Elegí las acciones que querés incorporar
-      a tu semana.
-
-      No hay una única manera correcta:
-      la mejor rutina es la que realmente
-      podés sostener.
-    </p>
-
-
-    <div class="grid">
-
-
-      <div class="choice" tabindex="0">
-
-        <div class="check">
-          ✓
-        </div>
-
-        <div class="emoji">
-          📅
-        </div>
-
-        <h3>
-          Reservar un momento
-        </h3>
-
-        <p>
-          Elegir uno o más momentos
-          de la semana para dedicarle
-          tiempo al cursado.
-        </p>
-
-      </div>
-
-
-      <div class="choice" tabindex="0">
-
-        <div class="check">
-          ✓
-        </div>
-
-        <div class="emoji">
-          💻
-        </div>
-
-        <h3>
-          Entrar regularmente
-        </h3>
-
-        <p>
-          No esperar a una entrega
-          para ingresar a IES Virtual
-          y revisar las novedades.
-        </p>
-
-      </div>
-
-
-      <div class="choice" tabindex="0">
-
-        <div class="check">
-          ✓
-        </div>
-
-        <div class="emoji">
-          👀
-        </div>
-
-        <h3>
-          Mirar qué viene
-        </h3>
-
-        <p>
-          Revisar Clases y el cronograma
-          para anticiparte
-          a lo que vas a necesitar.
-        </p>
-
-      </div>
-
-
-      <div class="choice" tabindex="0">
-
-        <div class="check">
-          ✓
-        </div>
-
-        <div class="emoji">
-          🙋
-        </div>
-
-        <h3>
-          Preguntar a tiempo
-        </h3>
-
-        <p>
-          No acumular dudas.
-          Consultar cuando algo
-          no se entiende
-          o aparece una dificultad.
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <!-- PROGRESO -->
-
-    <div class="rhythm-box">
-
-      <div class="rhythm-head">
-
-        <strong>
-          Tu ritmo esta semana
-        </strong>
-
-        <span id="count">
-          0 de 4 hábitos elegidos
-        </span>
-
-      </div>
-
-      <div class="meter">
-
-        <div id="bar"></div>
-
-      </div>
-
-      <div
-        class="feedback"
-        id="feedback">
-
-        Elegí al menos una acción
-        para empezar a construir tu rutina.
-
-      </div>
-
-    </div>
-
-
-    <!-- CONSEJO -->
-
-    <div class="tipbox">
-
-      <div class="tipicon">
-        💡
-      </div>
-
-      <div>
-
-        <strong>
-          Un consejo:
-        </strong>
-
-        <br>
-
-        No hace falta estudiar
-        muchas horas seguidas.
-
-        Es más útil entrar con frecuencia,
-        saber qué viene
-        y distribuir el trabajo
-        durante la semana.
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CIERRE -->
-
-  <section class="cta">
-
-    <h2>
-      Tu recorrido no tiene que parecerse
-      al de nadie más.
-    </h2>
-
-    <p>
-      Lo importante es que encuentres
-      una organización que te permita
-      seguir avanzando.
-
-      Esta semana,
-      el objetivo no es correr:
-      es encontrar un ritmo
-      que puedas sostener.
-    </p>
-
-    <div class="next">
-      🔜 Próximo viernes:
-      un nuevo paso
-    </div>
-
-  </section>
-
-
-  <footer>
-    Coordinación de Modalidad a Distancia · IES
-  </footer>
-
+<div class="brandbar">
+  <div class="topline">DISTANCIA | TU RECORRIDO</div>
+  <img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
 </div>
-
-
+<section class="hero">
+  <div class="badge">🧭 SEMANA 2 · NUEVO PASO</div>
+  <h1>Encontrá tu <span>propio ritmo</span></h1>
+  <p>La primera semana fue para ubicarnos. Ahora empieza algo igual de importante: descubrir una forma de estudiar que puedas sostener en el tiempo. No se trata de hacer todo de golpe. Se trata de avanzar con constancia.</p>
+  <div class="path">
+    <strong>🎯 Primer logro</strong>
+    <span class="arrow">→</span>
+    <strong>🧭 Tu ritmo</strong>
+    <span class="arrow">→</span>
+    <span>🔒 Próximo paso</span>
+    <span class="arrow">→</span>
+    <span>🔒 Seguimos avanzando</span>
+  </div>
+</section>
+<section class="section">
+  <h2>Armá tu ritmo de estudio</h2>
+  <p class="intro">Elegí las acciones que querés incorporar a tu semana. No hay una única manera correcta: la mejor rutina es la que realmente podés sostener.</p>
+  <div class="grid">
+    <div class="choice" tabindex="0">
+      <div class="check">✓</div>
+      <div class="emoji">📅</div>
+      <h3>Reservar un momento</h3>
+      <p>Elegir uno o más momentos de la semana para dedicarle tiempo al cursado.</p>
+    </div>
+    <div class="choice" tabindex="0">
+      <div class="check">✓</div>
+      <div class="emoji">💻</div>
+      <h3>Entrar regularmente</h3>
+      <p>No esperar a una entrega para ingresar a IES Virtual y revisar las novedades.</p>
+    </div>
+    <div class="choice" tabindex="0">
+      <div class="check">✓</div>
+      <div class="emoji">👀</div>
+      <h3>Mirar qué viene</h3>
+      <p>Revisar Clases y el cronograma para anticiparte a lo que vas a necesitar.</p>
+    </div>
+    <div class="choice" tabindex="0">
+      <div class="check">✓</div>
+      <div class="emoji">🙋</div>
+      <h3>Preguntar a tiempo</h3>
+      <p>No acumular dudas. Consultar cuando algo no se entiende o aparece una dificultad.</p>
+    </div>
+  </div>
+  <div class="rhythm-box">
+    <div class="rhythm-head">
+      <strong>Tu ritmo esta semana</strong>
+      <span id="count">0 de 4 hábitos elegidos</span>
+    </div>
+    <div class="meter"><div id="bar"></div></div>
+    <div class="feedback" id="feedback">Elegí al menos una acción para empezar a construir tu rutina.</div>
+  </div>
+  <div class="tipbox">
+    <div class="tipicon">💡</div>
+    <div><strong>Un consejo:</strong><br>No hace falta estudiar muchas horas seguidas. Es más útil entrar con frecuencia, saber qué viene y distribuir el trabajo durante la semana.</div>
+  </div>
+</section>
+<section class="cta">
+  <h2>Tu recorrido no tiene que parecerse al de nadie más.</h2>
+  <p>Lo importante es que encuentres una organización que te permita seguir avanzando. Esta semana, el objetivo no es correr: es encontrar un ritmo que puedas sostener.</p>
+  <div class="next">🔜 Próximo viernes: un nuevo paso</div>
+</section>
+<div class="back">
+  <a href="a-camino.html">← Volver a TU RECORRIDO</a>
+</div>
+<footer>Modalidad Distancia - IES</footer>
+</div>
 <script>
-
-const choices =
-  [...document.querySelectorAll('.choice')];
-
-const count =
-  document.getElementById('count');
-
-const bar =
-  document.getElementById('bar');
-
-const feedback =
-  document.getElementById('feedback');
-
-
+const choices=[...document.querySelectorAll(".choice")];
+const count=document.getElementById("count");
+const bar=document.getElementById("bar");
+const feedback=document.getElementById("feedback");
 function update(){
-
-  const selected =
-    choices.filter(
-      choice =>
-        choice.classList.contains('active')
-    ).length;
-
-
-  count.textContent =
-    `${selected} de 4 hábitos elegidos`;
-
-
-  bar.style.width =
-    `${selected * 25}%`;
-
-
-  const messages = [
-
-    'Elegí al menos una acción para empezar a construir tu rutina.',
-
-    '¡Buen comienzo! Un pequeño hábito puede hacer una gran diferencia.',
-
-    'Ya estás construyendo una rutina más sostenible.',
-
-    'Muy bien. Tu ritmo empieza a tomar forma.',
-
-    '🧭 ¡Tu ritmo está en marcha! Ahora lo importante es sostenerlo.'
-
+  const selected=choices.filter(choice=>choice.classList.contains("active")).length;
+  count.textContent=`${selected} de 4 hábitos elegidos`;
+  bar.style.width=`${selected*25}%`;
+  const messages=[
+    "Elegí al menos una acción para empezar a construir tu rutina.",
+    "¡Buen comienzo! Un pequeño hábito puede hacer una gran diferencia.",
+    "Ya estás construyendo una rutina más sostenible.",
+    "Muy bien. Tu ritmo empieza a tomar forma.",
+    "🧭 ¡Tu ritmo está en marcha! Ahora lo importante es sostenerlo."
   ];
-
-
-  feedback.textContent =
-    messages[selected];
-
+  feedback.textContent=messages[selected];
 }
-
-
-choices.forEach(choice => {
-
+choices.forEach(choice=>{
   function toggle(){
-
-    choice.classList.toggle('active');
-
+    choice.classList.toggle("active");
     update();
-
   }
-
-
-  choice.addEventListener(
-    'click',
-    toggle
-  );
-
-
-  choice.addEventListener(
-    'keydown',
-    event => {
-
-      if(
-        event.key === 'Enter'
-        ||
-        event.key === ' '
-      ){
-
-        event.preventDefault();
-
-        toggle();
-
-      }
-
+  choice.addEventListener("click",toggle);
+  choice.addEventListener("keydown",event=>{
+    if(event.key==="Enter"||event.key===" "){
+      event.preventDefault();
+      toggle();
     }
-  );
-
+  });
 });
-
-
 update();
-
 </script>
-
 </body>
 </html>
