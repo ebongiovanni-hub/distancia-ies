@@ -2164,72 +2164,21 @@ const calendario = [
 */
 
 function obtenerFechaArgentina(){
+  const ahora = new Date();
 
-  const partes =
-    new Intl.DateTimeFormat(
-
-      "en-CA",
-
-      {
-
-        timeZone:
-          "America/Argentina/Cordoba",
-
-        year:
-          "numeric",
-
-        month:
-          "2-digit",
-
-        day:
-          "2-digit"
-
-      }
-
+  const fechaArgentina = new Date(
+    ahora.toLocaleString(
+      "en-US",
+      {timeZone:"America/Argentina/Cordoba"}
     )
-
-    .formatToParts(
-      new Date()
-    );
-
-
-  const datos = {};
-
-
-  partes.forEach(
-
-    parte => {
-
-      if(
-        parte.type !== "literal"
-      ){
-
-        datos[parte.type] =
-          parte.value;
-
-      }
-
-    }
-
   );
 
+  const anio = fechaArgentina.getFullYear();
+  const mes = String(fechaArgentina.getMonth() + 1).padStart(2,"0");
+  const dia = String(fechaArgentina.getDate()).padStart(2,"0");
 
-  return (
-
-    datos.year +
-
-    "-" +
-
-    datos.month +
-
-    "-" +
-
-    datos.day
-
-  );
-
+  return `${anio}-${mes}-${dia}`;
 }
-
 
 
 /*
