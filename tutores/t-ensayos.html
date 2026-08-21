@@ -688,26 +688,5 @@ if(document.readyState==="loading"){
   actualizarRecorrido();
 }
 </script>
-
-<script>
-document.addEventListener("DOMContentLoaded",function(){
-  const semana1=document.querySelector('[data-week="1"]');
-  const semana2=document.querySelector('[data-week="2"]');
-
-  semana1.classList.remove("locked","active");
-  semana1.classList.add("done");
-  semana1.querySelector(".dot").textContent="✓";
-  semana1.querySelector(".state").textContent="COMPLETADO";
-
-  semana2.classList.remove("locked","done");
-  semana2.classList.add("active");
-  semana2.querySelector(".dot").textContent="2";
-  semana2.querySelector(".state").textContent="DISPONIBLE AHORA";
-});
-</script>
-</body>
-</html>
-
-  
 </body>
 </html>
