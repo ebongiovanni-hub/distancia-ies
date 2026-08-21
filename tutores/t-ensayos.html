@@ -1,17 +1,10 @@
-
 <!doctype html>
 <html lang="es">
-
 <head>
-
 <meta charset="utf-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Distancia en Acción</title>
-
 <style>
-
 :root{
   --celeste:#00A6D6;
   --azul:#1F5F9E;
@@ -19,2495 +12,681 @@
   --tinta:#17324D;
   --gris:#73879A;
   --gris-claro:#DDE6EC;
-  --fondo:#F5FAFD;
-  --blanco:#FFFFFF;
-
-  /* Se actualiza automáticamente */
   --progreso-mobile:0%;
 }
-
-
-*{
-  box-sizing:border-box;
-}
-
-
+*{box-sizing:border-box}
 body{
-
   margin:0;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
+  font-family:Arial,Helvetica,sans-serif;
   color:var(--tinta);
-
   background:
-
-    radial-gradient(
-      circle at 8% 6%,
-      rgba(0,166,214,.10),
-      transparent 22%
-    ),
-
-    radial-gradient(
-      circle at 92% 10%,
-      rgba(245,130,32,.08),
-      transparent 22%
-    ),
-
-    linear-gradient(
-      180deg,
-      #F8FCFE,
-      #F2F9FC 65%,
-      #FFF9F4
-    );
-
+    radial-gradient(circle at 8% 6%,rgba(0,166,214,.10),transparent 22%),
+    radial-gradient(circle at 92% 10%,rgba(245,130,32,.08),transparent 22%),
+    linear-gradient(180deg,#F8FCFE,#F2F9FC 65%,#FFF9F4);
 }
-
-
-/* =====================================================
-   CONTENEDOR
-   ===================================================== */
-
 .wrap{
-
-  width:
-    min(
-      980px,
-      calc(100% - 20px)
-    );
-
+  width:min(980px,calc(100% - 20px));
   margin:auto;
-
-  padding:
-    14px 0 28px;
-
+  padding:14px 0 28px;
 }
 
-
-/* =====================================================
-   FRANJA SUPERIOR + LOGO
-   ===================================================== */
-
+/* CABECERA INSTITUCIONAL */
 .brandbar{
-
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
   gap:20px;
-
+  min-height:66px;
+  padding:0 5px;
   margin-bottom:7px;
-
-  padding:
-    0 4px;
-
 }
-
-
 .topline{
-
   font-size:11px;
-
   font-weight:bold;
-
   letter-spacing:.15em;
-
   color:var(--celeste);
-
 }
-
-
 .logo-ies{
-
   display:block;
-
   width:auto;
-
-  height:64px;
-
+  height:62px;
   object-fit:contain;
-
 }
 
-
-/* =====================================================
-   CABECERA
-   ===================================================== */
-
+/* PRESENTACIÓN */
 .hero{
-
-  background:
-
-    linear-gradient(
-      135deg,
-      #FFFFFF,
-      #F2FBFE 65%,
-      #FFF7F0
-    );
-
+  background:linear-gradient(135deg,#FFF,#F2FBFE 65%,#FFF7F0);
   border-radius:18px;
-
-  padding:
-    18px 22px;
-
-  border:
-    1px solid
-    rgba(0,166,214,.20);
-
-  border-top:
-    4px solid
-    var(--celeste);
-
-  box-shadow:
-    0 5px 18px
-    rgba(31,95,158,.06);
-
+  padding:18px 22px;
+  border:1px solid rgba(0,166,214,.20);
+  border-top:4px solid var(--celeste);
+  box-shadow:0 5px 18px rgba(31,95,158,.06);
 }
-
-
 .badge{
-
   display:inline-block;
-
   background:#E6F7FC;
-
   color:var(--azul);
-
-  padding:
-    5px 9px;
-
+  padding:5px 9px;
   border-radius:999px;
-
   font-size:10px;
-
   font-weight:bold;
-
 }
-
-
 h1{
-
-  margin:
-    8px 0 5px;
-
+  margin:8px 0 5px;
   font-size:26px;
-
   line-height:1;
-
   color:var(--celeste);
-
 }
-
-
-h1 span{
-
-  color:var(--naranja);
-
-}
-
-
+h1 span{color:var(--naranja)}
 .hero p{
-
-  margin:
-    8px 0 0;
-
+  margin:8px 0 0;
   max-width:720px;
-
   font-size:14px;
-
   line-height:1.45;
-
   color:#4F687A;
-
 }
 
-
-/* =====================================================
-   MAPA
-   ===================================================== */
-
+/* MAPA */
 .map{
-
   position:relative;
-
   height:1120px;
-
   margin-top:15px;
-
   border-radius:24px;
-
   overflow:hidden;
-
   background:
-
-    radial-gradient(
-      circle at 20% 15%,
-      rgba(0,166,214,.07),
-      transparent 19%
-    ),
-
-    radial-gradient(
-      circle at 80% 40%,
-      rgba(245,130,32,.06),
-      transparent 21%
-    ),
-
-    radial-gradient(
-      circle at 25% 75%,
-      rgba(0,166,214,.05),
-      transparent 22%
-    ),
-
-    #FFFFFF;
-
-  border:
-    1px solid
-    rgba(0,166,214,.13);
-
-  box-shadow:
-    0 6px 20px
-    rgba(31,95,158,.05);
-
+    radial-gradient(circle at 20% 15%,rgba(0,166,214,.07),transparent 19%),
+    radial-gradient(circle at 80% 40%,rgba(245,130,32,.06),transparent 21%),
+    radial-gradient(circle at 25% 75%,rgba(0,166,214,.05),transparent 22%),
+    #FFF;
+  border:1px solid rgba(0,166,214,.13);
+  box-shadow:0 6px 20px rgba(31,95,158,.05);
 }
 
-
-/* =====================================================
-   DECORACIÓN
-   ===================================================== */
-
+/* DECORACIÓN */
 .sun{
-
   position:absolute;
-
   width:55px;
   height:55px;
-
   border-radius:50%;
-
-  background:
-    rgba(245,130,32,.20);
-
+  background:rgba(245,130,32,.20);
   top:35px;
-
   right:45px;
-
 }
-
-
-.decor1,
-.decor2,
-.decor3{
-
+.decor1,.decor2,.decor3{
   position:absolute;
-
   border-radius:50%;
-
   pointer-events:none;
-
 }
+.decor1{width:14px;height:14px;background:rgba(0,166,214,.18);left:7%;top:20%}
+.decor2{width:9px;height:9px;background:rgba(245,130,32,.25);right:10%;top:35%}
+.decor3{width:12px;height:12px;background:rgba(31,95,158,.15);left:12%;top:70%}
 
-
-.decor1{
-
-  width:14px;
-  height:14px;
-
-  background:
-    rgba(0,166,214,.18);
-
-  left:7%;
-
-  top:20%;
-
-}
-
-
-.decor2{
-
-  width:9px;
-  height:9px;
-
-  background:
-    rgba(245,130,32,.25);
-
-  right:10%;
-
-  top:35%;
-
-}
-
-
-.decor3{
-
-  width:12px;
-  height:12px;
-
-  background:
-    rgba(31,95,158,.15);
-
-  left:12%;
-
-  top:70%;
-
-}
-
-
-/* =====================================================
-   CAMINO
-   ===================================================== */
-
+/* CAMINO */
 .road{
-
   position:absolute;
-
   inset:0;
-
   width:100%;
   height:100%;
-
   pointer-events:none;
-
 }
-
-
 .road-shadow{
-
   fill:none;
-
   stroke:#DCE8EE;
-
   stroke-width:20;
-
   stroke-linecap:round;
-
   stroke-linejoin:round;
-
 }
-
-
 .road-line{
-
   fill:none;
-
-  stroke:#FFFFFF;
-
+  stroke:#FFF;
   stroke-width:12;
-
   stroke-linecap:round;
-
   stroke-linejoin:round;
-
 }
-
-
 .road-center{
-
   fill:none;
-
-  stroke:
-    rgba(0,166,214,.20);
-
+  stroke:rgba(0,166,214,.20);
   stroke-width:2;
-
-  stroke-dasharray:
-    7 9;
-
+  stroke-dasharray:7 9;
   stroke-linecap:round;
-
 }
-
-
-/* CAMINO RECORRIDO */
-
 .road-progress{
-
   fill:none;
-
-  stroke:
-    var(--naranja);
-
+  stroke:var(--naranja);
   stroke-width:7;
-
   stroke-linecap:round;
-
-  stroke-dasharray:
-    0 100;
-
-  transition:
-    stroke-dasharray .8s ease;
-
+  transition:stroke-dasharray .6s ease;
 }
 
-
-/* =====================================================
-   CHECKPOINTS
-   ===================================================== */
-
+/* CHECKPOINTS */
 .cp{
-
   position:absolute;
-
   width:165px;
-
   text-align:center;
-
-  transform:
-    translate(
-      -50%,
-      -50%
-    );
-
+  transform:translate(-50%,-50%);
 }
-
-
 .dot{
-
   width:38px;
   height:38px;
-
-  margin:
-    0 auto 6px;
-
+  margin:0 auto 6px;
   border-radius:50%;
-
   display:grid;
-
   place-items:center;
-
   font-size:14px;
-
   font-weight:bold;
-
-  border:
-    4px solid
-    #FFFFFF;
-
-  box-shadow:
-    0 3px 9px
-    rgba(31,95,158,.18);
-
+  border:4px solid #FFF;
+  box-shadow:0 3px 9px rgba(31,95,158,.18);
 }
-
-
-/* =====================================================
-   ESTADOS
-   ===================================================== */
-
-
-/* COMPLETADO */
-
-.cp.done .dot{
-
-  background:
-    var(--celeste);
-
-  color:#FFFFFF;
-
-}
-
-
-/* ACTUAL */
-
+.cp.done .dot{background:var(--celeste);color:#FFF}
 .cp.active .dot{
-
-  background:
-    var(--naranja);
-
-  color:#FFFFFF;
-
-  animation:
-    pulse
-    1.8s
-    infinite;
-
+  background:var(--naranja);
+  color:#FFF;
+  animation:pulse 1.8s infinite;
 }
-
-
-/* BLOQUEADO */
-
-.cp.locked .dot{
-
-  background:
-    var(--gris-claro);
-
-  color:#7B8D9B;
-
-}
-
-
-/* =====================================================
-   TARJETAS
-   ===================================================== */
+.cp.locked .dot{background:var(--gris-claro);color:#7B8D9B}
 
 .label{
-
-  background:#FFFFFF;
-
+  background:#FFF;
   border-radius:11px;
-
-  padding:
-    8px 9px;
-
-  border:
-    1px solid
-    rgba(31,95,158,.13);
-
-  box-shadow:
-    0 3px 10px
-    rgba(31,95,158,.07);
-
+  padding:8px 9px;
+  border:1px solid rgba(31,95,158,.13);
+  box-shadow:0 3px 10px rgba(31,95,158,.07);
 }
-
-
-/* ACTIVO */
-
 .cp.active .label{
-
-  border:
-    1px solid
-    rgba(245,130,32,.55);
-
-  box-shadow:
-    0 4px 13px
-    rgba(245,130,32,.12);
-
+  border:1px solid rgba(245,130,32,.55);
+  box-shadow:0 4px 13px rgba(245,130,32,.12);
 }
-
-
-/* COMPLETADO */
-
-.cp.done .label{
-
-  border:
-    1px solid
-    rgba(0,166,214,.40);
-
-}
-
-
-/* BLOQUEADO */
-
-.cp.locked .label{
-
-  opacity:.58;
-
-  background:#F8FAFB;
-
-}
-
-
-/* =====================================================
-   SEMANA
-   ===================================================== */
+.cp.done .label{border:1px solid rgba(0,166,214,.40)}
+.cp.locked .label{opacity:.58;background:#F8FAFB}
 
 .week{
-
   font-size:9px;
-
   font-weight:bold;
-
   color:var(--celeste);
-
   text-transform:uppercase;
-
   letter-spacing:.08em;
-
 }
-
-
-.locked .week{
-
-  color:var(--gris);
-
-}
-
-
-/* =====================================================
-   TÍTULO CHECKPOINT
-   ===================================================== */
-
+.locked .week{color:var(--gris)}
 .label strong{
-
   display:block;
-
   margin-top:4px;
-
   font-size:13px;
-
   line-height:1.25;
-
   color:var(--azul);
-
 }
-
-
-/* =====================================================
-   ESTADO
-   ===================================================== */
-
 .state{
-
   display:inline-block;
-
   margin-top:6px;
-
-  padding:
-    3px 7px;
-
+  padding:3px 7px;
   border-radius:999px;
-
   font-size:8px;
-
   font-weight:bold;
-
 }
-
-
-.active .state{
-
-  background:#FFF0E4;
-
-  color:#C4610C;
-
-}
-
-
-.done .state{
-
-  background:#E7F7FC;
-
-  color:#087EA3;
-
-}
-
-
-.locked .state{
-
-  background:#EEF2F5;
-
-  color:#7A8995;
-
-}
-
-
-/* =====================================================
-   BOTÓN
-   ===================================================== */
+.active .state{background:#FFF0E4;color:#C4610C}
+.done .state{background:#E7F7FC;color:#087EA3}
+.locked .state{background:#EEF2F5;color:#7A8995}
 
 .btn{
-
   display:inline-block;
-
   margin-top:6px;
-
-  padding:
-    6px 11px;
-
+  padding:6px 11px;
   border-radius:999px;
-
-  background:
-    var(--naranja);
-
-  color:#FFFFFF;
-
+  background:var(--naranja);
+  color:#FFF;
   text-decoration:none;
-
   font-size:10px;
-
   font-weight:bold;
-
-  box-shadow:
-    0 3px 8px
-    rgba(245,130,32,.18);
-
+  box-shadow:0 3px 8px rgba(245,130,32,.18);
 }
+.btn:hover{background:#DF7114}
+.done .btn{background:var(--celeste)}
+.done .btn:hover{background:#008CB5}
+.locked .btn{display:none}
 
+/* POSICIONES */
+.c1{left:14%;top:8%}
+.c2{left:38%;top:13%}
+.c3{left:68%;top:10%}
+.c4{left:86%;top:19%}
+.c5{left:72%;top:28%}
+.c6{left:43%;top:25%}
+.c7{left:17%;top:32%}
+.c8{left:31%;top:42%}
+.c9{left:62%;top:39%}
+.c10{left:84%;top:48%}
+.c11{left:68%;top:58%}
+.c12{left:39%;top:55%}
+.c13{left:15%;top:64%}
+.c14{left:32%;top:75%}
+.c15{left:62%;top:72%}
+.c16{left:82%;top:83%}
 
-.btn:hover{
-
-  background:#DF7114;
-
-}
-
-
-/* BOTÓN DE SEMANA COMPLETADA */
-
-.done .btn{
-
-  background:
-    var(--celeste);
-
-}
-
-
-.done .btn:hover{
-
-  background:#008CB5;
-
-}
-
-
-/* BLOQUEADA: SIN BOTÓN */
-
-.locked .btn{
-
-  display:none;
-
-}
-
-
-/* =====================================================
-   POSICIONES
-   ===================================================== */
-
-.c1 {
-  left:14%;
-  top:8%;
-}
-
-.c2 {
-  left:38%;
-  top:13%;
-}
-
-.c3 {
-  left:68%;
-  top:10%;
-}
-
-.c4 {
-  left:86%;
-  top:19%;
-}
-
-
-.c5 {
-  left:72%;
-  top:28%;
-}
-
-.c6 {
-  left:43%;
-  top:25%;
-}
-
-.c7 {
-  left:17%;
-  top:32%;
-}
-
-
-.c8 {
-  left:31%;
-  top:42%;
-}
-
-.c9 {
-  left:62%;
-  top:39%;
-}
-
-.c10{
-  left:84%;
-  top:48%;
-}
-
-
-.c11{
-  left:68%;
-  top:58%;
-}
-
-.c12{
-  left:39%;
-  top:55%;
-}
-
-.c13{
-  left:15%;
-  top:64%;
-}
-
-
-.c14{
-  left:32%;
-  top:75%;
-}
-
-.c15{
-  left:62%;
-  top:72%;
-}
-
-.c16{
-  left:82%;
-  top:83%;
-}
-
-
-/* =====================================================
-   META
-   ===================================================== */
-
+/* META */
 .finish{
-
   position:absolute;
-
   right:7%;
-
   bottom:3%;
-
-  padding:
-    8px 13px;
-
+  padding:8px 13px;
   border-radius:12px;
-
-  background:
-
-    linear-gradient(
-      135deg,
-      var(--celeste),
-      var(--azul)
-    );
-
-  color:#FFFFFF;
-
+  background:linear-gradient(135deg,var(--celeste),var(--azul));
+  color:#FFF;
   font-size:11px;
-
   font-weight:bold;
-
-  box-shadow:
-    0 4px 12px
-    rgba(31,95,158,.18);
-
-  border-bottom:
-    3px solid
-    var(--naranja);
-
+  box-shadow:0 4px 12px rgba(31,95,158,.18);
+  border-bottom:3px solid var(--naranja);
 }
 
-
-/* =====================================================
-   ACCIONES
-   ===================================================== */
-
+/* ACCIONES */
 .actions{
-
   margin-top:12px;
-
-  background:#FFFFFF;
-
-  border:
-    1px solid
-    rgba(0,166,214,.18);
-
+  background:#FFF;
+  border:1px solid rgba(0,166,214,.18);
   border-radius:16px;
-
   padding:13px;
-
 }
-
-
 .actions-title{
-
   text-align:center;
-
   font-size:13px;
-
   font-weight:bold;
-
   color:var(--celeste);
-
   margin-bottom:9px;
-
 }
-
-
 .actions-grid{
-
   display:grid;
-
-  grid-template-columns:
-    repeat(
-      6,
-      1fr
-    );
-
+  grid-template-columns:repeat(6,1fr);
   gap:6px;
-
 }
-
-
 .action{
-
   text-align:center;
-
-  padding:
-    8px 5px;
-
+  padding:8px 5px;
   border-radius:9px;
-
   background:#F4FAFD;
-
   color:var(--azul);
-
   font-size:10px;
-
   font-weight:bold;
-
 }
-
-
 .action span{
-
   display:block;
-
   font-size:17px;
-
   margin-bottom:3px;
-
 }
 
-
-/* =====================================================
-   CIERRE
-   ===================================================== */
-
+/* CIERRE */
 .final{
-
   margin-top:12px;
-
-  background:#FFFFFF;
-
+  background:#FFF;
   border-radius:14px;
-
   padding:13px;
-
   text-align:center;
-
-  border:
-    1px solid
-    rgba(0,166,214,.18);
-
-  border-bottom:
-    4px solid
-    var(--naranja);
-
+  border:1px solid rgba(0,166,214,.18);
+  border-bottom:4px solid var(--naranja);
 }
-
-
-.final strong{
-
-  font-size:14px;
-
-  color:var(--celeste);
-
-}
-
-
-.final p{
-
-  margin:
-    4px 0 0;
-
-  color:var(--gris);
-
-  font-size:11px;
-
-}
-
-
-/* =====================================================
-   ANIMACIÓN
-   ===================================================== */
+.final strong{font-size:14px;color:var(--celeste)}
+.final p{margin:4px 0 0;color:var(--gris);font-size:11px}
 
 @keyframes pulse{
-
-  0%{
-
-    box-shadow:
-      0 0 0 0
-      rgba(245,130,32,.40);
-
-  }
-
-  70%{
-
-    box-shadow:
-      0 0 0 11px
-      rgba(245,130,32,0);
-
-  }
-
-  100%{
-
-    box-shadow:
-      0 0 0 0
-      rgba(245,130,32,0);
-
-  }
-
+  0%{box-shadow:0 0 0 0 rgba(245,130,32,.40)}
+  70%{box-shadow:0 0 0 11px rgba(245,130,32,0)}
+  100%{box-shadow:0 0 0 0 rgba(245,130,32,0)}
 }
 
-
-/* =====================================================
-   CELULAR
-   ===================================================== */
-
+/* CELULAR */
 @media(max-width:650px){
-
-
-  .brandbar{
-
-    padding:
-      0 3px;
-
-  }
-
-
-  .topline{
-
-    font-size:10px;
-
-  }
-
-
-  .logo-ies{
-
-    height:54px;
-
-  }
-
-
-  .map{
-
-    height:auto;
-
-    min-height:1280px;
-
-  }
-
-
-  .road{
-
-    display:none;
-
-  }
-
-
+  .brandbar{padding:0 3px}
+  .topline{font-size:10px}
+  .logo-ies{height:52px}
+  .map{height:auto;min-height:1280px}
+  .road{display:none}
   .map::before{
-
     content:"";
-
     position:absolute;
-
     left:27px;
-
     top:25px;
     bottom:25px;
-
     width:5px;
-
-    background:
-
-      linear-gradient(
-        to bottom,
-
-        var(--naranja) 0%,
-
-        var(--naranja)
-        var(--progreso-mobile),
-
-        #DCE8EE
-        var(--progreso-mobile),
-
-        #DCE8EE 100%
-      );
-
+    background:linear-gradient(
+      to bottom,
+      var(--naranja) 0%,
+      var(--naranja) var(--progreso-mobile),
+      #DCE8EE var(--progreso-mobile),
+      #DCE8EE 100%
+    );
     border-radius:999px;
-
   }
-
-
-  .cp,
-  .c1,.c2,.c3,.c4,
-  .c5,.c6,.c7,.c8,
-  .c9,.c10,.c11,.c12,
-  .c13,.c14,.c15,.c16{
-
+  .cp,.c1,.c2,.c3,.c4,.c5,.c6,.c7,.c8,.c9,.c10,.c11,.c12,.c13,.c14,.c15,.c16{
     position:relative;
-
     left:auto;
     top:auto;
-
     transform:none;
-
-    width:
-      calc(100% - 52px);
-
+    width:calc(100% - 52px);
     margin-left:52px;
-
     margin-top:10px;
-
     text-align:left;
-
   }
-
-
   .dot{
-
     position:absolute;
-
     left:-43px;
-
     top:7px;
-
     width:32px;
     height:32px;
-
     font-size:11px;
-
     margin:0;
-
   }
-
-
-  .label{
-
-    min-height:52px;
-
-  }
-
-
+  .label{min-height:52px}
   .finish{
-
     position:relative;
-
     right:auto;
     bottom:auto;
-
-    margin:
-      18px 15px 10px 52px;
-
+    margin:18px 15px 10px 52px;
     display:inline-block;
-
   }
-
-
-  .actions-grid{
-
-    grid-template-columns:
-      repeat(
-        3,
-        1fr
-      );
-
-  }
-
+  .actions-grid{grid-template-columns:repeat(3,1fr)}
 }
-
 </style>
-
 </head>
 
-
 <body>
-
 <div class="wrap">
 
+<div class="brandbar">
+  <div class="topline">DISTANCIA EN ACCIÓN</div>
+  <img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
+</div>
 
-  <!-- =====================================================
-       IDENTIDAD + LOGO
-       ===================================================== -->
+<section class="hero">
+  <div class="badge">🗺️ TU MAPA DE GESTIÓN TUTORIAL</div>
+  <h1>Cada semana, <span>una acción clave</span></h1>
+  <p>
+    Este recorrido acompaña tu tarea tutorial durante todo el semestre.
+    Cada viernes se habilita un nuevo checkpoint para revisar una acción concreta de seguimiento,
+    comunicación, acompañamiento y gestión.
+  </p>
+</section>
 
-  <div class="brandbar">
+<section class="map">
 
-    <div class="topline">
+<div class="sun"></div>
+<div class="decor1"></div>
+<div class="decor2"></div>
+<div class="decor3"></div>
 
-      DISTANCIA EN ACCIÓN
+<svg class="road" viewBox="0 0 1000 1120" preserveAspectRatio="none">
+  <path class="road-shadow" d="M120 90 C230 70 290 150 390 150 S610 80 700 110 S900 140 860 220 S680 300 560 285 S260 250 160 350 S240 470 390 470 S720 390 850 510 S680 640 570 625 S260 580 150 700 S260 840 400 830 S700 760 820 900"/>
+  <path class="road-line" d="M120 90 C230 70 290 150 390 150 S610 80 700 110 S900 140 860 220 S680 300 560 285 S260 250 160 350 S240 470 390 470 S720 390 850 510 S680 640 570 625 S260 580 150 700 S260 840 400 830 S700 760 820 900"/>
+  <path class="road-center" d="M120 90 C230 70 290 150 390 150 S610 80 700 110 S900 140 860 220 S680 300 560 285 S260 250 160 350 S240 470 390 470 S720 390 850 510 S680 640 570 625 S260 580 150 700 S260 840 400 830 S700 760 820 900"/>
+  <path id="roadProgress" class="road-progress" pathLength="100" d="M120 90 C230 70 290 150 390 150 S610 80 700 110 S900 140 860 220 S680 300 560 285 S260 250 160 350 S240 470 390 470 S720 390 850 510 S680 640 570 625 S260 580 150 700 S260 840 400 830 S700 760 820 900"/>
+</svg>
 
-    </div>
-
-
-    <img
-      class="logo-ies"
-      src="../imagenes/LOGO_IES21.png"
-      alt="Colegio Universitario IES"
-    >
-
+<div class="cp locked c1" data-week="1">
+  <div class="dot">🔒</div>
+  <div class="label">
+    <div class="week">Semana 1</div>
+    <strong>🚀 ¡Aulas en marcha!</strong>
+    <span class="state">BLOQUEADO</span><br>
+    <a class="btn">Hacer check</a>
   </div>
-
-
-
-  <!-- =====================================================
-       CABECERA
-       ===================================================== -->
-
-  <section class="hero">
-
-    <div class="badge">
-
-      🗺️ TU MAPA DE GESTIÓN TUTORIAL
-
-    </div>
-
-
-    <h1>
-
-      Cada semana,
-      <span>una acción clave</span>
-
-    </h1>
-
-
-    <p>
-
-      Este recorrido acompaña tu tarea tutorial
-      durante todo el semestre.
-
-      Cada viernes se habilita un nuevo checkpoint
-      para revisar una acción concreta de seguimiento,
-      comunicación, acompañamiento y gestión.
-
-    </p>
-
-  </section>
-
-
-
-  <!-- =====================================================
-       MAPA
-       ===================================================== -->
-
-  <section class="map">
-
-
-    <!-- DECORACIÓN -->
-
-    <div class="sun"></div>
-
-    <div class="decor1"></div>
-
-    <div class="decor2"></div>
-
-    <div class="decor3"></div>
-
-
-
-    <!-- =====================================================
-         CAMINO
-         ===================================================== -->
-
-    <svg
-      class="road"
-      viewBox="0 0 1000 1120"
-      preserveAspectRatio="none"
-    >
-
-
-      <path
-        class="road-shadow"
-        d="
-        M120 90
-        C230 70 290 150 390 150
-        S610 80 700 110
-        S900 140 860 220
-        S680 300 560 285
-        S260 250 160 350
-        S240 470 390 470
-        S720 390 850 510
-        S680 640 570 625
-        S260 580 150 700
-        S260 840 400 830
-        S700 760 820 900
-        "
-      />
-
-
-      <path
-        class="road-line"
-        d="
-        M120 90
-        C230 70 290 150 390 150
-        S610 80 700 110
-        S900 140 860 220
-        S680 300 560 285
-        S260 250 160 350
-        S240 470 390 470
-        S720 390 850 510
-        S680 640 570 625
-        S260 580 150 700
-        S260 840 400 830
-        S700 760 820 900
-        "
-      />
-
-
-      <path
-        class="road-center"
-        d="
-        M120 90
-        C230 70 290 150 390 150
-        S610 80 700 110
-        S900 140 860 220
-        S680 300 560 285
-        S260 250 160 350
-        S240 470 390 470
-        S720 390 850 510
-        S680 640 570 625
-        S260 580 150 700
-        S260 840 400 830
-        S700 760 820 900
-        "
-      />
-
-
-      <!-- PROGRESO AUTOMÁTICO -->
-
-      <path
-        id="roadProgress"
-        class="road-progress"
-        pathLength="100"
-        d="
-        M120 90
-        C230 70 290 150 390 150
-        S610 80 700 110
-        S900 140 860 220
-        S680 300 560 285
-        S260 250 160 350
-        S240 470 390 470
-        S720 390 850 510
-        S680 640 570 625
-        S260 580 150 700
-        S260 840 400 830
-        S700 760 820 900
-        "
-      />
-
-
-    </svg>
-
-
-
-    <!-- =====================================================
-         SEMANA 1
-         ===================================================== -->
-
-    <div
-      class="cp locked c1"
-      data-week="1"
-    >
-
-      <div class="dot">
-        🔒
-      </div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 1
-        </div>
-
-        <strong>
-          🚀 ¡Aulas en marcha!
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a class="btn">
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- =====================================================
-         SEMANA 2
-         ===================================================== -->
-
-    <div
-      class="cp locked c2"
-      data-week="2"
-    >
-
-      <div class="dot">
-        🔒
-      </div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 2
-        </div>
-
-        <strong>
-          👀 Que nadie quede fuera del radar
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a class="btn">
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- SEMANA 3 -->
-
-    <div
-      class="cp locked c3"
-      data-week="3"
-    >
-
-      <div class="dot">
-        🔒
-      </div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 3
-        </div>
-
-        <strong>
-          🎯 Anticiparnos hace la diferencia
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a class="btn">
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- SEMANA 4 -->
-
-    <div
-      class="cp locked c4"
-      data-week="4"
-    >
-
-      <div class="dot">
-        🔒
-      </div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 4
-        </div>
-
-        <strong>
-          ✍️ Devolver también es enseñar
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a class="btn">
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- SEMANA 5 -->
-
-    <div
-      class="cp locked c5"
-      data-week="5"
-    >
-
-      <div class="dot">
-        🔒
-      </div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 5
-        </div>
-
-        <strong>
-          📡 Seguimiento activo
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a class="btn">
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- SEMANA 6 -->
-
-    <div
-      class="cp locked c6"
-      data-week="6"
-    >
-
-      <div class="dot">
-        🔒
-      </div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 6
-        </div>
-
-        <strong>
-          🧭 Antes de avanzar, hagamos un check
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a class="btn">
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- SEMANA 7 -->
-
-    <div
-      class="cp locked c7"
-      data-week="7"
-    >
-
-      <div class="dot">
-        🔒
-      </div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 7
-        </div>
-
-        <strong>
-          📊 Información al día
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a class="btn">
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- SEMANA 8 -->
-
-    <div
-      class="cp locked c8"
-      data-week="8"
-    >
-
-      <div class="dot">
-        🔒
-      </div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 8
-        </div>
-
-        <strong>
-          🏁 Cerramos un tramo
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a class="btn">
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- SEMANA 9 -->
-
-    <div
-      class="cp locked c9"
-      data-week="9"
-    >
-
-      <div class="dot">
-        🔒
-      </div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 9
-        </div>
-
-        <strong>
-          🚀 ¡Nuevo ciclo en marcha!
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a class="btn">
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- SEMANA 10 -->
-
-    <div
-      class="cp locked c10"
-      data-week="10"
-    >
-
-      <div class="dot">
-        🔒
-      </div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 10
-        </div>
-
-        <strong>
-          🔎 Detectar temprano para acompañar mejor
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a class="btn">
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- SEMANA 11 -->
-
-    <div
-      class="cp locked c11"
-      data-week="11"
-    >
-
-      <div class="dot">
-        🔒
-      </div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 11
-        </div>
-
-        <strong>
-          💬 Una respuesta a tiempo cambia el recorrido
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a class="btn">
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- SEMANA 12 -->
-
-    <div
-      class="cp locked c12"
-      data-week="12"
-    >
-
-      <div class="dot">
-        🔒
-      </div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 12
-        </div>
-
-        <strong>
-          🎯 Acompañar también es estar atentos
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a class="btn">
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- SEMANA 13 -->
-
-    <div
-      class="cp locked c13"
-      data-week="13"
-    >
-
-      <div class="dot">
-        🔒
-      </div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 13
-        </div>
-
-        <strong>
-          📍 Checkpoint del tutor
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a class="btn">
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- SEMANA 14 -->
-
-    <div
-      class="cp locked c14"
-      data-week="14"
-    >
-
-      <div class="dot">
-        🔒
-      </div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 14
-        </div>
-
-        <strong>
-          🔥 ¡Entramos en la recta final!
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a class="btn">
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- SEMANA 15 -->
-
-    <div
-      class="cp locked c15"
-      data-week="15"
-    >
-
-      <div class="dot">
-        🔒
-      </div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 15
-        </div>
-
-        <strong>
-          🧩 Que no queden cabos sueltos
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a class="btn">
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- SEMANA 16 -->
-
-    <div
-      class="cp locked c16"
-      data-week="16"
-    >
-
-      <div class="dot">
-        🔒
-      </div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 16
-        </div>
-
-        <strong>
-          🏆 ¡Acompañamiento cumplido!
-        </strong>
-
-        <span class="state">
-          META BLOQUEADA
-        </span>
-
-        <br>
-
-        <a class="btn">
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- META -->
-
-    <div class="finish">
-
-      🏁 META
-
-    </div>
-
-
-  </section>
-
-
-
-  <!-- =====================================================
-       EJES DEL ROL
-       ===================================================== -->
-
-  <section class="actions">
-
-    <div class="actions-title">
-
-      ACCIONES QUE SOSTIENEN EL RECORRIDO
-
-    </div>
-
-
-    <div class="actions-grid">
-
-
-      <div class="action">
-
-        <span>👀</span>
-
-        Detectar
-
-      </div>
-
-
-      <div class="action">
-
-        <span>💬</span>
-
-        Contactar
-
-      </div>
-
-
-      <div class="action">
-
-        <span>🤝</span>
-
-        Acompañar
-
-      </div>
-
-
-      <div class="action">
-
-        <span>✍️</span>
-
-        Corregir
-
-      </div>
-
-
-      <div class="action">
-
-        <span>📊</span>
-
-        Registrar
-
-      </div>
-
-
-      <div class="action">
-
-        <span>↗️</span>
-
-        Derivar
-
-      </div>
-
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =====================================================
-       CIERRE
-       ===================================================== -->
-
-  <section class="final">
-
-    <strong>
-
-      💙🧡 Cada viernes, una acción clave.
-
-    </strong>
-
-
-    <p>
-
-      Volvé para descubrir qué nuevo checkpoint
-      se habilitó en DISTANCIA EN ACCIÓN.
-
-    </p>
-
-  </section>
-
+</div>
+
+<div class="cp locked c2" data-week="2">
+  <div class="dot">🔒</div>
+  <div class="label">
+    <div class="week">Semana 2</div>
+    <strong>👀 Que nadie quede fuera del radar</strong>
+    <span class="state">BLOQUEADO</span><br>
+    <a class="btn">Hacer check</a>
+  </div>
+</div>
+
+<div class="cp locked c3" data-week="3">
+  <div class="dot">🔒</div>
+  <div class="label">
+    <div class="week">Semana 3</div>
+    <strong>🎯 Anticiparnos hace la diferencia</strong>
+    <span class="state">BLOQUEADO</span><br>
+    <a class="btn">Hacer check</a>
+  </div>
+</div>
+
+<div class="cp locked c4" data-week="4">
+  <div class="dot">🔒</div>
+  <div class="label">
+    <div class="week">Semana 4</div>
+    <strong>✍️ Devolver también es enseñar</strong>
+    <span class="state">BLOQUEADO</span><br>
+    <a class="btn">Hacer check</a>
+  </div>
+</div>
+
+<div class="cp locked c5" data-week="5">
+  <div class="dot">🔒</div>
+  <div class="label">
+    <div class="week">Semana 5</div>
+    <strong>📡 Seguimiento activo</strong>
+    <span class="state">BLOQUEADO</span><br>
+    <a class="btn">Hacer check</a>
+  </div>
+</div>
+
+<div class="cp locked c6" data-week="6">
+  <div class="dot">🔒</div>
+  <div class="label">
+    <div class="week">Semana 6</div>
+    <strong>🧭 Antes de avanzar, hagamos un check</strong>
+    <span class="state">BLOQUEADO</span><br>
+    <a class="btn">Hacer check</a>
+  </div>
+</div>
+
+<div class="cp locked c7" data-week="7">
+  <div class="dot">🔒</div>
+  <div class="label">
+    <div class="week">Semana 7</div>
+    <strong>📊 Información al día</strong>
+    <span class="state">BLOQUEADO</span><br>
+    <a class="btn">Hacer check</a>
+  </div>
+</div>
+
+<div class="cp locked c8" data-week="8">
+  <div class="dot">🔒</div>
+  <div class="label">
+    <div class="week">Semana 8</div>
+    <strong>🏁 Cerramos un tramo</strong>
+    <span class="state">BLOQUEADO</span><br>
+    <a class="btn">Hacer check</a>
+  </div>
+</div>
+
+<div class="cp locked c9" data-week="9">
+  <div class="dot">🔒</div>
+  <div class="label">
+    <div class="week">Semana 9</div>
+    <strong>🚀 ¡Nuevo ciclo en marcha!</strong>
+    <span class="state">BLOQUEADO</span><br>
+    <a class="btn">Hacer check</a>
+  </div>
+</div>
+
+<div class="cp locked c10" data-week="10">
+  <div class="dot">🔒</div>
+  <div class="label">
+    <div class="week">Semana 10</div>
+    <strong>🔎 Detectar temprano para acompañar mejor</strong>
+    <span class="state">BLOQUEADO</span><br>
+    <a class="btn">Hacer check</a>
+  </div>
+</div>
+
+<div class="cp locked c11" data-week="11">
+  <div class="dot">🔒</div>
+  <div class="label">
+    <div class="week">Semana 11</div>
+    <strong>💬 Una respuesta a tiempo cambia el recorrido</strong>
+    <span class="state">BLOQUEADO</span><br>
+    <a class="btn">Hacer check</a>
+  </div>
+</div>
+
+<div class="cp locked c12" data-week="12">
+  <div class="dot">🔒</div>
+  <div class="label">
+    <div class="week">Semana 12</div>
+    <strong>🎯 Acompañar también es estar atentos</strong>
+    <span class="state">BLOQUEADO</span><br>
+    <a class="btn">Hacer check</a>
+  </div>
+</div>
+
+<div class="cp locked c13" data-week="13">
+  <div class="dot">🔒</div>
+  <div class="label">
+    <div class="week">Semana 13</div>
+    <strong>📍 Checkpoint del tutor</strong>
+    <span class="state">BLOQUEADO</span><br>
+    <a class="btn">Hacer check</a>
+  </div>
+</div>
+
+<div class="cp locked c14" data-week="14">
+  <div class="dot">🔒</div>
+  <div class="label">
+    <div class="week">Semana 14</div>
+    <strong>🔥 ¡Entramos en la recta final!</strong>
+    <span class="state">BLOQUEADO</span><br>
+    <a class="btn">Hacer check</a>
+  </div>
+</div>
+
+<div class="cp locked c15" data-week="15">
+  <div class="dot">🔒</div>
+  <div class="label">
+    <div class="week">Semana 15</div>
+    <strong>🧩 Que no queden cabos sueltos</strong>
+    <span class="state">BLOQUEADO</span><br>
+    <a class="btn">Hacer check</a>
+  </div>
+</div>
+
+<div class="cp locked c16" data-week="16">
+  <div class="dot">🔒</div>
+  <div class="label">
+    <div class="week">Semana 16</div>
+    <strong>🏆 ¡Acompañamiento cumplido!</strong>
+    <span class="state">META BLOQUEADA</span><br>
+    <a class="btn">Hacer check</a>
+  </div>
+</div>
+
+<div class="finish">🏁 META</div>
+</section>
+
+<section class="actions">
+  <div class="actions-title">ACCIONES QUE SOSTIENEN EL RECORRIDO</div>
+  <div class="actions-grid">
+    <div class="action"><span>👀</span>Detectar</div>
+    <div class="action"><span>💬</span>Contactar</div>
+    <div class="action"><span>🤝</span>Acompañar</div>
+    <div class="action"><span>✍️</span>Corregir</div>
+    <div class="action"><span>📊</span>Registrar</div>
+    <div class="action"><span>↗️</span>Derivar</div>
+  </div>
+</section>
+
+<section class="final">
+  <strong>💙🧡 Cada viernes, una acción clave.</strong>
+  <p>Volvé para descubrir qué nuevo checkpoint se habilitó en DISTANCIA EN ACCIÓN.</p>
+</section>
 
 </div>
 
-
-
-<!-- =====================================================
-     AUTOMATIZACIÓN
-     ===================================================== -->
-
 <script>
-
-
-/*
-  ==========================================================
-  CALENDARIO DE ACTIVACIÓN
-  ==========================================================
-*/
-
-const calendario = [
-
-  { semana:1,  fecha:"2026-08-14" },
-
-  { semana:2,  fecha:"2026-08-21" },
-
-  { semana:3,  fecha:"2026-08-28" },
-
-  { semana:4,  fecha:"2026-09-04" },
-
-  { semana:5,  fecha:"2026-09-11" },
-
-  { semana:6,  fecha:"2026-09-18" },
-
-  { semana:7,  fecha:"2026-09-25" },
-
-  { semana:8,  fecha:"2026-10-02" },
-
-  { semana:9,  fecha:"2026-10-09" },
-
-  { semana:10, fecha:"2026-10-16" },
-
-  { semana:11, fecha:"2026-10-23" },
-
-  { semana:12, fecha:"2026-10-30" },
-
-  { semana:13, fecha:"2026-11-06" },
-
-  { semana:14, fecha:"2026-11-13" },
-
-  { semana:15, fecha:"2026-11-20" },
-
-  { semana:16, fecha:"2026-11-27" }
-
+const calendario=[
+  {semana:1,fecha:"2026-08-14"},
+  {semana:2,fecha:"2026-08-21"},
+  {semana:3,fecha:"2026-08-28"},
+  {semana:4,fecha:"2026-09-04"},
+  {semana:5,fecha:"2026-09-11"},
+  {semana:6,fecha:"2026-09-18"},
+  {semana:7,fecha:"2026-09-25"},
+  {semana:8,fecha:"2026-10-02"},
+  {semana:9,fecha:"2026-10-09"},
+  {semana:10,fecha:"2026-10-16"},
+  {semana:11,fecha:"2026-10-23"},
+  {semana:12,fecha:"2026-10-30"},
+  {semana:13,fecha:"2026-11-06"},
+  {semana:14,fecha:"2026-11-13"},
+  {semana:15,fecha:"2026-11-20"},
+  {semana:16,fecha:"2026-11-27"}
 ];
 
-
-
-/*
-  ==========================================================
-  FECHA ACTUAL EN ARGENTINA
-  ==========================================================
-*/
-
-function obtenerFechaArgentina(){
-  const ahora = new Date();
-
-  const fechaArgentina = new Date(
-    ahora.toLocaleString(
-      "en-US",
-      {timeZone:"America/Argentina/Cordoba"}
-    )
-  );
-
-  const anio = fechaArgentina.getFullYear();
-  const mes = String(fechaArgentina.getMonth() + 1).padStart(2,"0");
-  const dia = String(fechaArgentina.getDate()).padStart(2,"0");
-
-  return `${anio}-${mes}-${dia}`;
+function fechaTextoAUTC(texto){
+  const p=texto.split("-").map(Number);
+  return Date.UTC(p[0],p[1]-1,p[2]);
 }
 
-
-/*
-  ==========================================================
-  DETERMINAR SEMANA ACTUAL
-  ==========================================================
-*/
+function hoyArgentinaUTC(){
+  /* Argentina trabaja en UTC-3 durante 2026.
+     Restamos 3 horas y luego tomamos la fecha resultante. */
+  const ahoraArgentina=new Date(Date.now()-(3*60*60*1000));
+  return Date.UTC(
+    ahoraArgentina.getUTCFullYear(),
+    ahoraArgentina.getUTCMonth(),
+    ahoraArgentina.getUTCDate()
+  );
+}
 
 function obtenerSemanaActual(){
-
-  const hoy =
-    obtenerFechaArgentina();
-
-
-  let semanaActual = 0;
-
-
-  calendario.forEach(
-
-    item => {
-
-      if(
-        hoy >= item.fecha
-      ){
-
-        semanaActual =
-          item.semana;
-
-      }
-
-    }
-
-  );
-
-
-  return semanaActual;
-
+  const hoy=hoyArgentinaUTC();
+  let actual=0;
+  calendario.forEach(item=>{
+    if(hoy>=fechaTextoAUTC(item.fecha)) actual=item.semana;
+  });
+  return actual;
 }
-
-
-
-/*
-  ==========================================================
-  ACTUALIZAR TODO EL CAMINO
-  ==========================================================
-*/
 
 function actualizarRecorrido(){
-
-
-  const semanaActual =
-    obtenerSemanaActual();
-
-
-  const checkpoints =
-    document.querySelectorAll(
-      ".cp[data-week]"
-    );
-
-
-  checkpoints.forEach(
-
-    checkpoint => {
-
-
-      const semana =
-
-        Number(
-          checkpoint.dataset.week
-        );
-
-
-      const dot =
-
-        checkpoint.querySelector(
-          ".dot"
-        );
-
-
-      const state =
-
-        checkpoint.querySelector(
-          ".state"
-        );
-
-
-      const boton =
-
-        checkpoint.querySelector(
-          ".btn"
-        );
-
-
-
-      /*
-        LIMPIAMOS ESTADOS
-      */
-
-      checkpoint
-        .classList
-        .remove(
-          "done",
-          "active",
-          "locked"
-        );
-
-
-
-      /*
-        ==========================================
-        SEMANAS YA PASADAS
-        ==========================================
-      */
-
-      if(
-        semana < semanaActual
-      ){
-
-
-        checkpoint
-          .classList
-          .add(
-            "done"
-          );
-
-
-        dot.textContent =
-          "✓";
-
-
-        state.textContent =
-          "COMPLETADO";
-
-
-        boton.textContent =
-          "Volver al check";
-
-
-        boton.href =
-
-          "t-semana-" +
-
-          String(semana)
-            .padStart(
-              2,
-              "0"
-            ) +
-
-          ".html";
-
-      }
-
-
-
-      /*
-        ==========================================
-        SEMANA ACTUAL
-        ==========================================
-      */
-
-      else if(
-        semana === semanaActual
-      ){
-
-
-        checkpoint
-          .classList
-          .add(
-            "active"
-          );
-
-
-        dot.textContent =
-          semana;
-
-
-        state.textContent =
-          "DISPONIBLE AHORA";
-
-
-        boton.textContent =
-          "Hacer check";
-
-
-        boton.href =
-
-          "t-semana-" +
-
-          String(semana)
-            .padStart(
-              2,
-              "0"
-            ) +
-
-          ".html";
-
-      }
-
-
-
-      /*
-        ==========================================
-        SEMANAS FUTURAS
-        ==========================================
-      */
-
-      else{
-
-
-        checkpoint
-          .classList
-          .add(
-            "locked"
-          );
-
-
-        dot.textContent =
-          "🔒";
-
-
-        if(
-          semana === 16
-        ){
-
-          state.textContent =
-            "META BLOQUEADA";
-
-        }
-
-        else{
-
-          state.textContent =
-            "BLOQUEADO";
-
-        }
-
-
-        boton.removeAttribute(
-          "href"
-        );
-
-      }
-
+  const semanaActual=obtenerSemanaActual();
+  console.log("Semana actual detectada:",semanaActual);
+
+  document.querySelectorAll(".cp[data-week]").forEach(cp=>{
+    const semana=Number(cp.dataset.week);
+    const dot=cp.querySelector(".dot");
+    const state=cp.querySelector(".state");
+    const boton=cp.querySelector(".btn");
+
+    cp.classList.remove("done","active","locked");
+
+    if(semana<semanaActual){
+      cp.classList.add("done");
+      dot.textContent="✓";
+      state.textContent="COMPLETADO";
+      boton.textContent="Volver al check";
+      boton.href="t-semana-"+String(semana).padStart(2,"0")+".html";
+    }else if(semana===semanaActual){
+      cp.classList.add("active");
+      dot.textContent=String(semana);
+      state.textContent="DISPONIBLE AHORA";
+      boton.textContent="Hacer check";
+      boton.href="t-semana-"+String(semana).padStart(2,"0")+".html";
+    }else{
+      cp.classList.add("locked");
+      dot.textContent="🔒";
+      state.textContent=semana===16?"META BLOQUEADA":"BLOQUEADO";
+      boton.removeAttribute("href");
     }
+  });
 
-  );
-
-
-
-  /*
-    ========================================================
-    CAMINO NARANJA
-    ========================================================
-  */
-
-  const progreso =
-
-    semanaActual === 0
-
-      ? 0
-
-      : (
-          (semanaActual - 1)
-          /
-          15
-        )
-        * 100;
-
-
-
-  const camino =
-
-    document.getElementById(
-      "roadProgress"
-    );
-
-
-  if(camino){
-
-    camino.style.strokeDasharray =
-
-      progreso +
-
-      " " +
-
-      (100 - progreso);
-
-  }
-
-
-
-  /*
-    ========================================================
-    CAMINO EN CELULAR
-    ========================================================
-  */
-
-  document
-    .documentElement
-    .style
-    .setProperty(
-
-      "--progreso-mobile",
-
-      progreso + "%"
-
-    );
-
+  const progreso=semanaActual<=1?0:Math.min(100,((semanaActual-1)/15)*100);
+  const camino=document.getElementById("roadProgress");
+  if(camino) camino.style.strokeDasharray=progreso+" "+(100-progreso);
+  document.documentElement.style.setProperty("--progreso-mobile",progreso+"%");
 }
 
-
-
-/*
-  ==========================================================
-  EJECUTAR AUTOMÁTICAMENTE
-  ==========================================================
-*/
-
-document.addEventListener(
-
-  "DOMContentLoaded",
-
-  actualizarRecorrido
-
-);
-
+if(document.readyState==="loading"){
+  document.addEventListener("DOMContentLoaded",actualizarRecorrido);
+}else{
+  actualizarRecorrido();
+}
 </script>
-
-
 </body>
-
 </html>
