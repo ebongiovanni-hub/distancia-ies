@@ -1,0 +1,145 @@
+body.tema-check{
+background:
+radial-gradient(circle at 10% 10%,rgba(113,64,140,.14),transparent 24%),
+radial-gradient(circle at 90% 8%,rgba(173,3,78,.09),transparent 24%),
+radial-gradient(circle at 48% 92%,rgba(0,170,228,.07),transparent 25%),
+linear-gradient(180deg,#F5EFF8 0%,#FCF9FD 52%,#F2F6FA 100%);
+}
+.tema-check .hero{
+position:relative;
+background:
+radial-gradient(circle at 86% 18%,rgba(173,3,78,.09),transparent 24%),
+linear-gradient(125deg,#FFFFFF 0%,#F5EDF8 56%,#EDE2F3 100%);
+border-top:5px solid #71408C;
+border-color:rgba(113,64,140,.20);
+box-shadow:0 15px 36px rgba(79,46,96,.11);
+}
+.tema-check .hero::before{
+content:"";
+position:absolute;
+width:250px;
+height:210px;
+right:-65px;
+top:-70px;
+background:
+radial-gradient(circle at 20% 30%,rgba(113,64,140,.18) 0 5px,transparent 6px),
+radial-gradient(circle at 52% 18%,rgba(173,3,78,.14) 0 7px,transparent 8px),
+radial-gradient(circle at 75% 48%,rgba(0,170,228,.13) 0 5px,transparent 6px),
+radial-gradient(circle at 38% 70%,rgba(113,64,140,.13) 0 6px,transparent 7px),
+radial-gradient(circle at 82% 82%,rgba(173,3,78,.10) 0 4px,transparent 5px);
+pointer-events:none;
+}
+.tema-check .hero::after{
+content:"";
+position:absolute;
+width:220px;
+height:120px;
+right:10px;
+bottom:-48px;
+background:
+linear-gradient(32deg,transparent 0 22%,rgba(113,64,140,.08) 22% 24%,transparent 24% 48%,rgba(173,3,78,.07) 48% 50%,transparent 50%);
+pointer-events:none;
+}
+.tema-check .badge{
+background:#F0E4F5;
+border:1px solid rgba(113,64,140,.22);
+color:#71408C;
+}
+.tema-check h1{color:#1F344C}
+.tema-check h1 span{color:#71408C}
+.tema-check .hero p{color:#645A6A}
+.tema-check .rule{
+background:#F0E5F5;
+border-color:rgba(113,64,140,.18);
+color:#71408C;
+}
+.tema-check .section{
+background:rgba(255,255,255,.95);
+border-color:rgba(113,64,140,.15);
+box-shadow:0 12px 30px rgba(79,46,96,.07);
+}
+.tema-check .section h2{color:#1F344C}
+.tema-check .intro{color:#655E69}
+.tema-check .checkcard,
+.tema-check .choice{
+background:#FFF;
+border-color:#E4D9E9;
+}
+.tema-check .checkcard:hover,
+.tema-check .choice:hover{
+border-color:#BA94CB;
+box-shadow:0 9px 20px rgba(113,64,140,.09);
+}
+.tema-check .checkcard.active,
+.tema-check .choice.active{
+border-color:#71408C;
+background:linear-gradient(145deg,#FFFDFF,#F2E8F6);
+box-shadow:0 0 0 3px rgba(113,64,140,.08);
+}
+.tema-check .checkcard.active .status,
+.tema-check .choice.active .check{
+background:#71408C;
+border-color:#71408C;
+}
+.tema-check .checkcard h3,
+.tema-check .choice h3{color:#1F344C}
+.tema-check .checkcard p,
+.tema-check .choice p{color:#685F6D}
+.tema-check .monitor,
+.tema-check .rhythm-box{
+background:linear-gradient(125deg,#EEE2F3,#FAF6FC);
+border-color:rgba(113,64,140,.22);
+color:#1F344C;
+}
+.tema-check .monitor-head strong{color:#71408C}
+.tema-check .meter,
+.tema-check .bar{background:#E4D9E9}
+.tema-check .meter>div,
+.tema-check .bar span{
+background:linear-gradient(90deg,#71408C,#AD034E);
+}
+.tema-check .feedback,
+.tema-check .small{color:#685D6D}
+.tema-check .alert,
+.tema-check .help,
+.tema-check .tipbox{
+background:#F7F0FA;
+border-left-color:#71408C;
+color:#625568;
+}
+.tema-check .alert strong,
+.tema-check .help strong,
+.tema-check .tipbox strong{color:#71408C}
+.tema-check .focusbox{
+background:#FFF;
+border-color:#E4D9E9;
+}
+.tema-check .focusbox h3{color:#1F344C}
+.tema-check .focusbox.orange{
+background:linear-gradient(135deg,#F1E6F5,#FFF5F8);
+border-color:rgba(173,3,78,.15);
+}
+.tema-check .focusbox.orange h3{color:#AD034E}
+.tema-check .closing,
+.tema-check .cta,
+.tema-check .next-panel{
+background:linear-gradient(125deg,#EEE2F3 0%,#F8F1FA 58%,#FFFFFF 100%);
+border-color:rgba(113,64,140,.18);
+box-shadow:0 10px 26px rgba(79,46,96,.07);
+}
+.tema-check .closing h2,
+.tema-check .cta h2,
+.tema-check .next-panel h2{color:#1F344C}
+.tema-check .next{
+background:#EADBF0;
+color:#71408C;
+}
+.tema-check .back a{
+border-color:#71408C;
+color:#71408C;
+background:#FFF;
+}
+.tema-check .back a:hover{
+background:#71408C;
+color:#FFF;
+}
