@@ -1,1 +1,23 @@
-
+body.tema-logro{background:radial-gradient(circle at 10% 8%,rgba(0,170,228,.13),transparent 24%),radial-gradient(circle at 90% 10%,rgba(255,162,0,.13),transparent 24%),linear-gradient(180deg,#EDF8FC,#FCFDFD 52%,#FFF8E9)}
+.tema-logro .hero{background:linear-gradient(125deg,#1F344C 0%,#1F5F9E 58%,#0084B1 100%);border-top-color:#FFA200;border-color:rgba(0,170,228,.25);box-shadow:0 18px 42px rgba(31,52,76,.17);color:#FFF}
+.tema-logro .hero::before{background:rgba(255,162,0,.15)}
+.tema-logro .hero::after{background:repeating-radial-gradient(circle at 88% 88%,rgba(255,255,255,.13) 0 3px,rgba(255,162,0,.07) 4px 10px,transparent 11px 23px)}
+.tema-logro .badge{background:rgba(255,255,255,.13);color:#FFF;border-color:rgba(255,255,255,.20)}
+.tema-logro h1{color:#FFF}
+.tema-logro h1 span{color:#FFD064}
+.tema-logro .hero p,.tema-logro .sub{color:rgba(255,255,255,.88)}
+.tema-logro .rule{background:rgba(255,255,255,.12);color:#FFF}
+.tema-logro .section{border-color:rgba(0,170,228,.17)}
+.tema-logro .section h2{color:#1F5F9E}
+.tema-logro .choice.active,.tema-logro .checkcard.active,.tema-logro .check.selected{border-color:#FFA200;background:linear-gradient(180deg,#FFF,#FFF7DE)}
+.tema-logro .monitor,.tema-logro .rhythm-box{background:linear-gradient(135deg,#E8F7FC,#FFF7DE);border-color:rgba(255,162,0,.22);color:#1F5F9E}
+.tema-logro .meter>div,.tema-logro .bar span{background:linear-gradient(90deg,#00AAE4,#FFA200)}
+.tema-logro .alert,.tema-logro .help,.tema-logro .tipbox{background:#FFF8E5;border-left-color:#FFA200;color:#685A38}
+.tema-logro .alert strong,.tema-logro .help strong,.tema-logro .tipbox strong{color:#A96800}
+.tema-logro .tipicon{background:#FFE9AE}
+.tema-logro .focusbox.orange{background:linear-gradient(135deg,#EAF8FC,#FFF5D9);border-color:rgba(255,162,0,.20)}
+.tema-logro .focusbox.orange h3{color:#A96800}
+.tema-logro .closing,.tema-logro .cta,.tema-logro .next-panel{background:linear-gradient(125deg,#1F344C,#1F5F9E 65%,#0084B1);color:#FFF;border-color:rgba(0,170,228,.22)}
+.tema-logro .closing h2,.tema-logro .cta h2,.tema-logro .next-panel h2{color:#FFF}
+.tema-logro .closing p,.tema-logro .cta p,.tema-logro .next-panel p{color:rgba(255,255,255,.87)}
+.tema-logro .next{background:rgba(255,255,255,.13);color:#FFD064}
