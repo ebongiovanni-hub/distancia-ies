@@ -1,1 +1,56 @@
-
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Distancia en Acción · Semana 9</title>
+<link rel="stylesheet" href="../css/semanas.css">
+<link rel="stylesheet" href="../css/semana-inicio.css">
+</head>
+<body class="tema-inicio">
+<div class="wrap">
+<div class="brandbar">
+<div class="topline">DISTANCIA | EN ACCIÓN</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
+</div>
+<section class="hero">
+<div class="badge">🚀 SEMANA 9 · NUEVO CICLO</div>
+<h1>¡Nuevo ciclo <span>en marcha!</span></h1>
+<p>Comienza una nueva etapa del semestre. Es un buen momento para volver a mirar el aula, reconocer quiénes se incorporan a este tramo y activar desde el inicio las condiciones que facilitan el acompañamiento.</p>
+<div class="rule">🚀 Empezar bien facilita todo lo que viene después</div>
+</section>
+<section class="section">
+<h2>Activemos este nuevo comienzo</h2>
+<p class="intro">Marcá las acciones que ya realizaste para poner en marcha este nuevo tramo con una mirada tutorial activa.</p>
+<div class="checks">
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">🏫</div><h3>Revisé mis aulas</h3><p>Confirmé que los espacios, materiales e información necesaria estén disponibles para comenzar.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">👥</div><h3>Miré quiénes comienzan</h3><p>Reconocí la composición actual de mis grupos y quiénes requieren una mirada inicial más cercana.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">💬</div><h3>Activé la comunicación</h3><p>Dejé claro cómo será el contacto y dónde pueden realizar consultas durante este tramo.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">📅</div><h3>Miré lo que viene</h3><p>Revisé el cronograma para anticipar los principales momentos de las próximas semanas.</p></div>
+</div>
+<div class="monitor">
+<div class="monitor-head"><strong>Nuevo ciclo</strong><span id="count">0 de 4 acciones realizadas</span></div>
+<div class="meter"><div id="bar"></div></div>
+<div class="feedback" id="feedback">Empezá por revisar cómo está preparado este nuevo tramo.</div>
+</div>
+</section>
+<section class="focus">
+<div class="focusbox"><h3>🚀 Un nuevo comienzo reactiva la mirada</h3><p>Aunque el semestre ya esté avanzado, un nuevo tramo vuelve a requerir presencia, observación y comunicación temprana.</p></div>
+<div class="focusbox orange"><h3>👀 Las primeras señales vuelven a importar</h3><p>Las próximas semanas serán clave para reconocer rápidamente quién logra incorporarse al ritmo y quién necesita apoyo.</p></div>
+</section>
+<section class="closing">
+<h2>Nuevo ciclo activado 🚀</h2>
+<p>Con el aula preparada y la mirada tutorial nuevamente enfocada, empieza una nueva etapa del acompañamiento.</p>
+<div class="next">🔎 Próximo viernes: detectar temprano para acompañar mejor</div>
+</section>
+<div class="back"><a href="t-camino.html">← Volver a DISTANCIA EN ACCIÓN</a></div>
+<footer class="footer-proyecto"></footer>
+</div>
+<script>
+const cards=[...document.querySelectorAll(".checkcard")],count=document.getElementById("count"),bar=document.getElementById("bar"),feedback=document.getElementById("feedback");
+function update(){const s=cards.filter(c=>c.classList.contains("active")).length;count.textContent=`${s} de 4 acciones realizadas`;bar.style.width=`${s*25}%`;feedback.textContent=["Empezá por revisar cómo está preparado este nuevo tramo.","Buen comienzo. El nuevo ciclo empieza a activarse.","Vas poniendo en marcha una base clara.","¡Casi listo! Falta una última acción.","🚀 ¡Nuevo ciclo activado! Ahora empieza el seguimiento."][s]}
+cards.forEach(c=>{function toggle(){c.classList.toggle("active");update()}c.addEventListener("click",toggle);c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle()}})});update();
+</script>
+<script src="../js/firma.js"></script>
+</body>
+</html>
