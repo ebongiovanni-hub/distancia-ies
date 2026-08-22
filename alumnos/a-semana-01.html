@@ -3,384 +3,149 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Distancia | Primer logro alcanzado</title>
-<style>
-:root{
-  --blue:#1769aa;
-  --blue2:#2f86cf;
-  --orange:#f28c28;
-  --orange2:#ffae52;
-  --ink:#17324d;
-  --muted:#5f7182;
-  --bg:#edf5fa;
-  --card:#ffffff;
-  --ok:#2d8c67;
-  --line:#dbe7f1;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  color:var(--ink);
-  background:
-    radial-gradient(circle at 10% 0%,rgba(242,140,40,.14),transparent 26%),
-    radial-gradient(circle at 90% 8%,rgba(47,134,207,.15),transparent 28%),
-    var(--bg);
-}
-.wrapper{max-width:980px;margin:auto;padding:18px 18px 50px}
-.brandbar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  min-height:62px;
-  padding:0 5px;
-  margin-bottom:8px;
-}
-.kicker{
-  font-size:.9rem;
-  font-weight:800;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--blue);
-}
-.logo-ies{
-  display:block;
-  width:auto;
-  height:58px;
-  object-fit:contain;
-}
-.hero{
-  position:relative;
-  overflow:hidden;
-  background:linear-gradient(135deg,#fff 0%,#eef7ff 58%,#fff7ec 100%);
-  border:1px solid var(--line);
-  border-radius:24px;
-  padding:25px 26px 24px;
-  box-shadow:0 12px 34px rgba(23,50,77,.07);
-}
-.hero:after{
-  content:"";
-  position:absolute;
-  right:-50px;
-  bottom:-90px;
-  width:230px;
-  height:230px;
-  background:var(--orange);
-  border-radius:50%;
-  opacity:.10;
-}
-h1{
-  position:relative;
-  z-index:1;
-  font-size:clamp(1.8rem,4vw,2.8rem);
-  line-height:1.05;
-  margin:0 0 10px;
-}
-h1 span{color:var(--orange)}
-.sub{
-  position:relative;
-  z-index:1;
-  font-size:1rem;
-  line-height:1.55;
-  color:var(--muted);
-  max-width:720px;
-}
-.progress{
-  position:relative;
-  z-index:1;
-  margin-top:22px;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
-}
-.node{
-  width:36px;
-  height:36px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  border:2px solid var(--line);
-  background:#fff;
-  font-weight:800;
-  color:#8aa0b5;
-  font-size:.9rem;
-}
-.node.active{background:var(--orange);color:#fff;border-color:var(--orange)}
-.node.done{background:var(--blue);color:#fff;border-color:var(--blue)}
-.track{height:4px;flex:1;min-width:36px;background:var(--line);border-radius:99px}
-.track.done{background:linear-gradient(90deg,var(--blue),var(--orange))}
-.section{margin-top:22px}
-.intro{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:20px;
-  line-height:1.6;
-  font-size:.98rem;
-  box-shadow:0 8px 24px rgba(23,50,77,.05);
-}
-.intro strong{color:var(--blue)}
-.checks{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-  margin-top:16px;
-}
-.check{
-  width:100%;
-  text-align:left;
-  border:1px solid var(--line);
-  background:var(--card);
-  border-radius:18px;
-  padding:17px;
-  cursor:pointer;
-  transition:.2s transform,.2s border,.2s box-shadow;
-  position:relative;
-  min-height:135px;
-}
-.check:hover{
-  transform:translateY(-2px);
-  box-shadow:0 9px 20px rgba(23,50,77,.08);
-}
-.check.selected{
-  border-color:#8fd4b9;
-  background:#f1fbf7;
-}
-.check .top{
-  display:flex;
-  gap:12px;
-  align-items:center;
-}
-.ico{
-  width:42px;
-  height:42px;
-  border-radius:13px;
-  background:#edf6fe;
-  color:var(--blue);
-  display:grid;
-  place-items:center;
-  font-size:1.3rem;
-  flex:0 0 auto;
-}
-.selected .ico{background:#dff5ec;color:var(--ok)}
-.check h3{margin:0;font-size:1rem}
-.check p{
-  margin:9px 0 0;
-  color:var(--muted);
-  line-height:1.5;
-  font-size:.92rem;
-}
-.mark{
-  position:absolute;
-  right:14px;
-  top:14px;
-  width:26px;
-  height:26px;
-  border-radius:50%;
-  border:2px solid #c9d8e5;
-  display:grid;
-  place-items:center;
-  color:transparent;
-  font-weight:900;
-}
-.selected .mark{
-  background:var(--ok);
-  border-color:var(--ok);
-  color:#fff;
-}
-.result{
-  margin-top:20px;
-  border-radius:20px;
-  padding:20px;
-  border:1px dashed #c8d9e8;
-  background:linear-gradient(135deg,#fff,#f7fbff);
-  text-align:center;
-}
-.result.complete{
-  border-style:solid;
-  border-color:#b8e4d3;
-  background:linear-gradient(135deg,#f3fcf8,#fff9f0);
-}
-.result h2{margin:0 0 9px;font-size:1.5rem}
-.bar{
-  height:11px;
-  background:#e5edf4;
-  border-radius:999px;
-  overflow:hidden;
-  margin:14px auto 8px;
-  max-width:500px;
-}
-.bar span{
-  display:block;
-  height:100%;
-  width:0;
-  background:linear-gradient(90deg,var(--blue),var(--orange));
-  transition:width .35s ease;
-}
-.small{font-size:.9rem;color:var(--muted)}
-.help{
-  margin-top:14px;
-  padding:14px 16px;
-  background:#fff6ec;
-  border:1px solid #ffd5aa;
-  border-radius:14px;
-  color:#744514;
-  display:none;
-  text-align:left;
-  font-size:.92rem;
-  line-height:1.5;
-}
-.help.show{display:block}
-.next{
-  margin-top:24px;
-  background:linear-gradient(135deg,var(--blue),#0f4f82);
-  color:#fff;
-  border-radius:20px;
-  padding:20px;
-  text-align:center;
-  box-shadow:0 12px 28px rgba(23,105,170,.18);
-}
-.next .label{
-  font-size:.76rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  opacity:.78;
-  font-weight:800;
-}
-.next h2{margin:7px 0 4px;font-size:1.5rem}
-.next p{margin:0;opacity:.9;font-size:.95rem}
-.back{text-align:center;margin-top:20px}
-.back a{
-  display:inline-block;
-  padding:9px 18px;
-  border:1px solid var(--blue);
-  border-radius:999px;
-  color:var(--blue);
-  background:#fff;
-  text-decoration:none;
-  font-size:.88rem;
-  font-weight:700;
-  transition:.2s;
-}
-.back a:hover{
-  background:var(--blue);
-  color:#fff;
-  transform:translateY(-1px);
-}
-footer{
-  text-align:center;
-  color:#8192a2;
-  margin-top:18px;
-  font-size:.86rem;
-}
-@media(max-width:720px){
-  .checks{grid-template-columns:1fr}
-  .hero{padding:22px 18px}
-  .wrapper{padding:14px 12px 38px}
-  .brandbar{padding:0 2px}
-  .kicker{font-size:.78rem}
-  .logo-ies{height:50px}
-  h1{font-size:clamp(1.7rem,8vw,2.3rem)}
-}
-</style>
+<title>Distancia | Tu recorrido · Semana 1</title>
+<link rel="stylesheet" href="../css/a-semanas.css">
+<link rel="stylesheet" href="../css/a-semana-inicio.css">
 </head>
-<body>
-<div class="wrapper">
+<body class="tema-inicio">
+<div class="wrap">
 <div class="brandbar">
-  <div class="kicker">DISTANCIA | TU RECORRIDO</div>
-  <img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
+<div class="topline">DISTANCIA | TU RECORRIDO</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
 </div>
+
 <section class="hero">
-  <h1>🎯 ¡Primer logro <span>alcanzado!</span></h1>
-  <div class="sub">Completaste tu primera semana en Modalidad Distancia. Antes de seguir, hacé un pequeño checkpoint y comprobá que tenés todo listo para avanzar.</div>
-  <div class="progress" aria-label="Progreso del recorrido">
-    <div class="node done">✓</div><div class="track done"></div>
-    <div class="node active">1</div><div class="track"></div>
-    <div class="node">2</div><div class="track"></div>
-    <div class="node">3</div><div class="track"></div>
-    <div class="node">🏆</div>
-  </div>
+<div class="badge">🚀 SEMANA 1 · PRIMER LOGRO</div>
+<h1>¡Aulas <span>en marcha!</span></h1>
+<p>Hace apenas unos días comenzaste este recorrido. Ya conociste tus aulas, empezaste a ubicar tus espacios de estudio y diste el primer paso en esta etapa.</p>
+<div class="rule">🎯 Primer desafío: comprobar que todo esté listo para avanzar</div>
 </section>
-<section class="section intro">
-  Hace apenas unos días comenzaste este recorrido. Ya conociste tus aulas, empezaste a ubicar tus espacios de estudio y diste el primer paso en esta etapa. <strong>Ahora revisemos juntos cuatro cosas simples.</strong>
-</section>
+
 <section class="section">
-  <div class="checks" id="checks">
-    <button class="check" data-help="Si te falta alguna materia o no podés ingresar a un aula, comunicate con Atención Académica para que podamos ayudarte.">
-      <div class="mark">✓</div>
-      <div class="top"><div class="ico">🏫</div><h3>MIS AULAS</h3></div>
-      <p>¿Puedo ingresar a todas mis materias en IES Virtual?</p>
-    </button>
-    <button class="check" data-help="Si todavía no encontraste la sección Clases, buscala dentro de cada aula: allí vas a ver qué contenidos y actividades corresponden cada semana.">
-      <div class="mark">✓</div>
-      <div class="top"><div class="ico">📚</div><h3>CLASES</h3></div>
-      <p>¿Ya sé dónde encontrar lo que tengo que estudiar y hacer cada semana?</p>
-    </button>
-    <button class="check" data-help="Si aún no revisaste los cronogramas, hacelo ahora. Tener visibles las fechas próximas te ayuda a organizarte sin acumular tareas.">
-      <div class="mark">✓</div>
-      <div class="top"><div class="ico">📅</div><h3>MI ORGANIZACIÓN</h3></div>
-      <p>¿Revisé los cronogramas y sé qué tengo por delante?</p>
-    </button>
-    <button class="check" data-help="Si no ubicás tus encuentros por Teams, revisá la información de cada materia y asegurate de que cámara, micrófono y acceso funcionen correctamente.">
-      <div class="mark">✓</div>
-      <div class="top"><div class="ico">💻</div><h3>TEAMS</h3></div>
-      <p>¿Ya ubiqué cuándo y cómo participar de mis encuentros?</p>
-    </button>
-  </div>
-  <div class="result" id="result">
-    <h2 id="resultTitle">Marcá lo que ya tenés listo</h2>
-    <div class="small" id="resultText">Tu progreso se actualizará a medida que completes el checkpoint.</div>
-    <div class="bar"><span id="bar"></span></div>
-    <div class="small"><strong id="pct">0%</strong> del checkpoint completado</div>
-    <div class="help" id="helpBox"></div>
-  </div>
+<h2>Tu primer check</h2>
+<p class="intro">Hace apenas unos días comenzaste este recorrido. Ya conociste tus aulas, empezaste a ubicar tus espacios de estudio y diste el primer paso en esta etapa. <strong>Ahora revisemos juntos cuatro cosas simples.</strong></p>
+
+<div class="checks">
+
+<div class="check" tabindex="0">
+<div class="mark">✓</div>
+<div class="top">
+<div class="ico">🏫</div>
+<h3>MIS AULAS</h3>
+</div>
+<p>¿Puedo ingresar a todas mis materias en IES Virtual?</p>
+</div>
+
+<div class="check" tabindex="0">
+<div class="mark">✓</div>
+<div class="top">
+<div class="ico">📚</div>
+<h3>CLASES</h3>
+</div>
+<p>¿Ya sé dónde encontrar lo que tengo que estudiar y hacer cada semana?</p>
+</div>
+
+<div class="check" tabindex="0">
+<div class="mark">✓</div>
+<div class="top">
+<div class="ico">📅</div>
+<h3>MI ORGANIZACIÓN</h3>
+</div>
+<p>¿Revisé los cronogramas y sé qué tengo por delante?</p>
+</div>
+
+<div class="check" tabindex="0">
+<div class="mark">✓</div>
+<div class="top">
+<div class="ico">💻</div>
+<h3>TEAMS</h3>
+</div>
+<p>¿Ya ubiqué cuándo y cómo participar de mis encuentros?</p>
+</div>
+
+</div>
+
+<div class="monitor">
+<div class="monitor-head">
+<strong>Tu primer logro</strong>
+<span id="count">0 de 4 listos</span>
+</div>
+<div class="meter"><div id="bar"></div></div>
+<div class="feedback" id="feedback">Marcá cada punto que ya tengas resuelto.</div>
+</div>
+
+<div class="alert">
+<strong>💡 ¿Algo no está funcionando?</strong><br>
+No lo dejes para después. Si no podés ingresar a una materia, no encontrás una clase o tenés alguna dificultad para ubicarte, consultá a tiempo.
+</div>
 </section>
-<section class="next">
-  <div class="label">Próximo desafío</div>
-  <h2>🧭 Encontrá tu ritmo</h2>
-  <p>La próxima etapa es organizarte de una manera que puedas sostener semana a semana.</p>
+
+<section class="focus">
+<div class="focusbox">
+<h3>🧭 Primero, ubicarnos</h3>
+<p>Conocer tus aulas, encontrar las clases y saber qué viene te permite empezar el cursado con mayor seguridad.</p>
+</div>
+
+<div class="focusbox orange">
+<h3>🙋 Pedir ayuda también es avanzar</h3>
+<p>Si algo no funciona como esperabas, consultar a tiempo evita que una dificultad pequeña se transforme en un problema más adelante.</p>
+</div>
 </section>
+
+<section class="cta">
+<h2>Primer paso completado 🚀</h2>
+<p>Si ya pudiste resolver estos cuatro puntos, tu recorrido está oficialmente en marcha.</p>
+<div class="next">🧭 Próximo desafío: encontrá tu ritmo</div>
+</section>
+
 <div class="back">
-  <a href="a-camino.html">← Volver a TU RECORRIDO</a>
+<a href="a-camino.html">← Volver a TU RECORRIDO</a>
 </div>
-<footer>Modalidad Distancia - IES</footer>
+
+<footer class="footer-proyecto"></footer>
 </div>
+
 <script>
-const cards=[...document.querySelectorAll(".check")];
+const checks=[...document.querySelectorAll(".checks>.check")];
+const count=document.getElementById("count");
 const bar=document.getElementById("bar");
-const pct=document.getElementById("pct");
-const result=document.getElementById("result");
-const title=document.getElementById("resultTitle");
-const text=document.getElementById("resultText");
-const helpBox=document.getElementById("helpBox");
+const feedback=document.getElementById("feedback");
+
 function update(){
-  const selected=cards.filter(c=>c.classList.contains("selected")).length;
-  const percent=Math.round(selected/cards.length*100);
-  bar.style.width=percent+"%";
-  pct.textContent=percent+"%";
-  if(selected===cards.length){
-    result.classList.add("complete");
-    title.textContent="🏆 ¡Misión cumplida!";
-    text.textContent="Tu primera semana está completa. Ya sabés dónde estás: ahora empieza lo más importante, encontrar tu propio ritmo.";
-    helpBox.classList.remove("show");
-  }else{
-    result.classList.remove("complete");
-    title.textContent=selected===0?"Marcá lo que ya tenés listo":"¡Vas avanzando!";
-    text.textContent=selected===0?"Tu progreso se actualizará a medida que completes el checkpoint.":"Completá los puntos que faltan. Si alguno todavía no está resuelto, usá la orientación de abajo.";
-    const missing=cards.filter(c=>!c.classList.contains("selected"));
-    helpBox.innerHTML="<strong>¿Qué te falta?</strong><br>"+missing.map(c=>"• "+c.dataset.help).join("<br><br>");
-    helpBox.classList.add("show");
-  }
+const selected=checks.filter(item=>item.classList.contains("selected")).length;
+count.textContent=`${selected} de 4 listos`;
+bar.style.width=`${selected*25}%`;
+
+const messages=[
+"Marcá cada punto que ya tengas resuelto.",
+"¡Buen comienzo! Ya tenés una parte de tu recorrido preparada.",
+"Vas muy bien. Ya resolviste la mitad de este primer check.",
+"¡Casi listo! Te queda solamente un punto por revisar.",
+"🚀 ¡Primer logro completado! Tus aulas están en marcha."
+];
+
+feedback.textContent=messages[selected];
 }
-cards.forEach(card=>{
-  card.addEventListener("click",()=>{
-    card.classList.toggle("selected");
-    update();
-  });
+
+checks.forEach(item=>{
+function toggle(){
+item.classList.toggle("selected");
+update();
+}
+
+item.addEventListener("click",toggle);
+
+item.addEventListener("keydown",event=>{
+if(event.key==="Enter"||event.key===" "){
+event.preventDefault();
+toggle();
+}
 });
+});
+
 update();
 </script>
+
+<script src="../js/firma.js"></script>
 </body>
 </html>
