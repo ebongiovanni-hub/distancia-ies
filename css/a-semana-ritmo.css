@@ -1,1 +1,21 @@
-
+body.tema-ritmo{background:radial-gradient(circle at 10% 8%,rgba(76,182,132,.14),transparent 24%),radial-gradient(circle at 90% 12%,rgba(0,170,228,.08),transparent 24%),linear-gradient(180deg,#EDF8F2,#FAFDFC 55%,#EFF7F5)}
+.tema-ritmo .hero{background:linear-gradient(135deg,#F7FFFB,#E8F7EF 62%,#EDF9FC);border-top-color:#4CB684;border-color:rgba(76,182,132,.22)}
+.tema-ritmo .hero::before{background:rgba(76,182,132,.10)}
+.tema-ritmo .hero::after{background:repeating-radial-gradient(ellipse at 88% 90%,rgba(76,182,132,.14) 0 3px,rgba(76,182,132,.04) 4px 11px,transparent 12px 24px)}
+.tema-ritmo .badge{background:#E4F5EC;color:#348760;border-color:rgba(76,182,132,.20)}
+.tema-ritmo h1{color:#1F344C}
+.tema-ritmo h1 span{color:#4CB684}
+.tema-ritmo .rule{background:#E7F6EE;color:#348760}
+.tema-ritmo .section{border-color:rgba(76,182,132,.17)}
+.tema-ritmo .section h2{color:#2D7E59}
+.tema-ritmo .choice.active,.tema-ritmo .checkcard.active,.tema-ritmo .check.selected{border-color:#4CB684;background:linear-gradient(180deg,#FFF,#EAF8F1)}
+.tema-ritmo .monitor,.tema-ritmo .rhythm-box{background:linear-gradient(135deg,#E4F6EC,#F7FCF9);border-color:rgba(76,182,132,.22);color:#2D7E59}
+.tema-ritmo .meter>div,.tema-ritmo .bar span{background:linear-gradient(90deg,#4CB684,#00AAE4)}
+.tema-ritmo .alert,.tema-ritmo .help,.tema-ritmo .tipbox{background:#EEF9F3;border-left-color:#4CB684;color:#496B5A}
+.tema-ritmo .alert strong,.tema-ritmo .help strong,.tema-ritmo .tipbox strong{color:#2D7E59}
+.tema-ritmo .tipicon{background:#DDF2E7}
+.tema-ritmo .focusbox.orange{background:linear-gradient(135deg,#EAF8F1,#F3FBFD);border-color:rgba(76,182,132,.18)}
+.tema-ritmo .focusbox.orange h3{color:#348760}
+.tema-ritmo .closing,.tema-ritmo .cta,.tema-ritmo .next-panel{background:linear-gradient(135deg,#E5F6ED,#F7FCF9);border-color:rgba(76,182,132,.22)}
+.tema-ritmo .closing h2,.tema-ritmo .cta h2,.tema-ritmo .next-panel h2{color:#2D7E59}
+.tema-ritmo .next{background:#DDF2E7;color:#2D7E59}
