@@ -1,1 +1,56 @@
-
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Distancia en Acción · Semana 10</title>
+<link rel="stylesheet" href="../css/semanas.css">
+<link rel="stylesheet" href="../css/semana-radar.css">
+</head>
+<body class="tema-radar">
+<div class="wrap">
+<div class="brandbar">
+<div class="topline">DISTANCIA | EN ACCIÓN</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
+</div>
+<section class="hero">
+<div class="badge">🔎 SEMANA 10 · DETECCIÓN TEMPRANA</div>
+<h1>Detectar temprano para <span>acompañar mejor</span></h1>
+<p>En las primeras semanas de este nuevo tramo, pequeñas señales pueden anticipar dificultades mayores. Una baja participación, una ausencia reiterada o una consulta que no llega también pueden decirnos que alguien necesita que nos acerquemos.</p>
+<div class="rule">👀 Esta semana: volvemos a encender el radar</div>
+</section>
+<section class="section">
+<h2>¿Quién necesita que nos acerquemos?</h2>
+<p class="intro">Marcá las acciones que ya realizaste para detectar tempranamente situaciones que podrían requerir acompañamiento.</p>
+<div class="checks">
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">👀</div><h3>Revisé la participación</h3><p>Identifiqué estudiantes con poca o ninguna actividad reciente.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">📅</div><h3>Observé continuidad</h3><p>Miré si la actividad se sostiene o si aparecen interrupciones que requieren atención.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">💬</div><h3>Hice contacto temprano</h3><p>Me comuniqué antes de que una señal de desconexión se transforme en una ausencia prolongada.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">🧭</div><h3>Definí la próxima acción</h3><p>Decidí si corresponde continuar observando, volver a contactar o derivar la situación.</p></div>
+</div>
+<div class="monitor">
+<div class="monitor-head"><strong>Radar activo</strong><span id="count">0 de 4 acciones realizadas</span></div>
+<div class="meter"><div id="bar"></div></div>
+<div class="feedback" id="feedback">Empezá mirando qué señales aparecen en tu grupo.</div>
+</div>
+</section>
+<section class="focus">
+<div class="focusbox"><h3>🔎 Una señal pequeña puede ser importante</h3><p>No toda baja actividad implica un problema, pero observar temprano nos da la posibilidad de comprender qué está pasando.</p></div>
+<div class="focusbox orange"><h3>💬 El contacto puede cambiar el recorrido</h3><p>Un mensaje oportuno puede ser suficiente para que un estudiante retome, consulte o nos permita conocer una dificultad.</p></div>
+</section>
+<section class="closing">
+<h2>Detectar temprano nos da tiempo para actuar.</h2>
+<p>El radar no busca controlar: busca reconocer a tiempo dónde puede hacer falta acompañamiento.</p>
+<div class="next">💬 Próximo viernes: una respuesta a tiempo cambia el recorrido</div>
+</section>
+<div class="back"><a href="t-camino.html">← Volver a DISTANCIA EN ACCIÓN</a></div>
+<footer class="footer-proyecto"></footer>
+</div>
+<script>
+const cards=[...document.querySelectorAll(".checkcard")],count=document.getElementById("count"),bar=document.getElementById("bar"),feedback=document.getElementById("feedback");
+function update(){const s=cards.filter(c=>c.classList.contains("active")).length;count.textContent=`${s} de 4 acciones realizadas`;bar.style.width=`${s*25}%`;feedback.textContent=["Empezá mirando qué señales aparecen en tu grupo.","Buen comienzo. El radar ya está activo.","Vas construyendo una mirada más completa.","¡Casi listo! Falta una última acción.","🔎 ¡Radar activo! Detectar temprano nos permite actuar con más tiempo."][s]}
+cards.forEach(c=>{function toggle(){c.classList.toggle("active");update()}c.addEventListener("click",toggle);c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle()}})});update();
+</script>
+<script src="../js/firma.js"></script>
+</body>
+</html>
