@@ -1,1 +1,56 @@
-
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Distancia en Acción · Semana 16</title>
+<link rel="stylesheet" href="../css/semanas.css">
+<link rel="stylesheet" href="../css/semana-inicio.css">
+</head>
+<body class="tema-inicio">
+<div class="wrap">
+<div class="brandbar">
+<div class="topline">DISTANCIA | EN ACCIÓN</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
+</div>
+<section class="hero">
+<div class="badge">🏆 SEMANA 16 · META ALCANZADA</div>
+<h1>¡Acompañamiento <span>cumplido!</span></h1>
+<p>Durante dieciséis semanas sostuviste una tarea que muchas veces ocurre detrás de escena: mirar, detectar, responder, orientar, corregir, registrar y acompañar. Esta última parada es para reconocer ese recorrido.</p>
+<div class="rule">🏆 Cada acción tutorial también construye la experiencia del estudiante</div>
+</section>
+<section class="section">
+<h2>Miramos todo lo que sostuviste</h2>
+<p class="intro">Marcá las acciones que formaron parte de tu recorrido durante el semestre. No es una evaluación: es una forma de reconocer el trabajo tutorial realizado.</p>
+<div class="checks">
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">👀</div><h3>Estuve atento al recorrido</h3><p>Observé participación, cambios y señales que podían requerir acompañamiento.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">💬</div><h3>Sostuve la comunicación</h3><p>Respondí, orienté y generé contacto cuando fue necesario.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">✍️</div><h3>Acompañé el aprendizaje</h3><p>Realicé devoluciones y acciones que ayudaron a los estudiantes a seguir avanzando.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">🤝</div><h3>Articulé cuando hizo falta</h3><p>Registré, derivé y trabajé con otros espacios institucionales cuando una situación lo requería.</p></div>
+</div>
+<div class="monitor">
+<div class="monitor-head"><strong>Tu recorrido tutorial</strong><span id="count">0 de 4 dimensiones reconocidas</span></div>
+<div class="meter"><div id="bar"></div></div>
+<div class="feedback" id="feedback">Reconocé una dimensión de la tarea que sostuviste durante el semestre.</div>
+</div>
+</section>
+<section class="focus">
+<div class="focusbox"><h3>🤝 Acompañar también deja huella</h3><p>Muchas acciones tutoriales parecen pequeñas, pero juntas construyen presencia, orientación y continuidad.</p></div>
+<div class="focusbox orange"><h3>🧭 Cada semestre también enseña</h3><p>La experiencia acumulada nos permite revisar prácticas y comenzar el próximo recorrido con nuevas herramientas.</p></div>
+</section>
+<section class="closing">
+<h2>🏆 ¡Recorrido completado!</h2>
+<p>Gracias por sostener el acompañamiento durante todo el semestre. Cada semana fue una acción y cada acción ayudó a construir el recorrido de nuestros estudiantes.</p>
+<div class="next">✨ Este recorrido termina. Lo aprendido continúa.</div>
+</section>
+<div class="back"><a href="t-camino.html">← Volver a DISTANCIA EN ACCIÓN</a></div>
+<footer class="footer-proyecto"></footer>
+</div>
+<script>
+const cards=[...document.querySelectorAll(".checkcard")],count=document.getElementById("count"),bar=document.getElementById("bar"),feedback=document.getElementById("feedback");
+function update(){const s=cards.filter(c=>c.classList.contains("active")).length;count.textContent=`${s} de 4 dimensiones reconocidas`;bar.style.width=`${s*25}%`;feedback.textContent=["Reconocé una dimensión de la tarea que sostuviste durante el semestre.","Ya identificaste una parte de tu recorrido tutorial.","Tu acompañamiento tuvo distintas dimensiones.","Mirá todo lo que sostuviste durante estas semanas.","🏆 ¡Acompañamiento cumplido! El recorrido tutorial está completo."][s]}
+cards.forEach(c=>{function toggle(){c.classList.toggle("active");update()}c.addEventListener("click",toggle);c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle()}})});update();
+</script>
+<script src="../js/firma.js"></script>
+</body>
+</html>
