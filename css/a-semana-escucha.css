@@ -1,1 +1,21 @@
-
+body.tema-escucha{background:radial-gradient(circle at 10% 8%,rgba(113,64,140,.13),transparent 24%),radial-gradient(circle at 90% 12%,rgba(173,3,78,.08),transparent 24%),linear-gradient(180deg,#F6F0F8,#FCFAFD 55%,#F4F2F8)}
+.tema-escucha .hero{background:linear-gradient(130deg,#FFF,#F5EDF8 60%,#EFE3F4);border-top-color:#71408C;border-color:rgba(113,64,140,.20)}
+.tema-escucha .hero::before{background:rgba(173,3,78,.07)}
+.tema-escucha .hero::after{background:repeating-radial-gradient(circle at 88% 88%,rgba(113,64,140,.13) 0 4px,rgba(173,3,78,.05) 5px 10px,transparent 11px 23px)}
+.tema-escucha .badge{background:#F0E4F5;color:#71408C;border-color:rgba(113,64,140,.20)}
+.tema-escucha h1{color:#1F344C}
+.tema-escucha h1 span{color:#71408C}
+.tema-escucha .rule{background:#F0E5F5;color:#71408C}
+.tema-escucha .section{border-color:rgba(113,64,140,.15)}
+.tema-escucha .section h2{color:#71408C}
+.tema-escucha .choice.active,.tema-escucha .checkcard.active,.tema-escucha .check.selected{border-color:#71408C;background:linear-gradient(180deg,#FFF,#F2E8F6)}
+.tema-escucha .monitor,.tema-escucha .rhythm-box{background:linear-gradient(135deg,#EEE2F3,#FAF6FC);border-color:rgba(113,64,140,.22);color:#71408C}
+.tema-escucha .meter>div,.tema-escucha .bar span{background:linear-gradient(90deg,#71408C,#AD034E)}
+.tema-escucha .alert,.tema-escucha .help,.tema-escucha .tipbox{background:#F7F0FA;border-left-color:#71408C;color:#625568}
+.tema-escucha .alert strong,.tema-escucha .help strong,.tema-escucha .tipbox strong{color:#71408C}
+.tema-escucha .tipicon{background:#EADBF0}
+.tema-escucha .focusbox.orange{background:linear-gradient(135deg,#F1E6F5,#FFF5F8);border-color:rgba(173,3,78,.15)}
+.tema-escucha .focusbox.orange h3{color:#AD034E}
+.tema-escucha .closing,.tema-escucha .cta,.tema-escucha .next-panel{background:linear-gradient(135deg,#EEE2F3,#FAF6FC);border-color:rgba(113,64,140,.20)}
+.tema-escucha .closing h2,.tema-escucha .cta h2,.tema-escucha .next-panel h2{color:#71408C}
+.tema-escucha .next{background:#EADBF0;color:#71408C}
