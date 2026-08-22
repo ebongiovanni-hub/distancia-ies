@@ -1,1 +1,117 @@
-
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Distancia | Tu recorrido · Semana 6</title>
+<link rel="stylesheet" href="../css/a-semanas.css">
+<link rel="stylesheet" href="../css/a-semana-foco.css">
+</head>
+<body class="tema-foco">
+<div class="wrap">
+<div class="brandbar">
+<div class="topline">DISTANCIA | TU RECORRIDO</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
+</div>
+<section class="hero">
+<div class="badge">🎯 SEMANA 6 · FOCO</div>
+<h1>Enfocá <span>tu energía</span></h1>
+<p>Cuando hay varias cosas por hacer, no siempre necesitamos hacer más: muchas veces necesitamos decidir mejor dónde poner la atención. Esta semana te proponemos elegir prioridades y avanzar paso a paso.</p>
+<div class="path">
+<strong>🔋 Cuidá tu ritmo</strong>
+<span class="arrow">→</span>
+<strong>🎯 Enfocá tu energía</strong>
+<span class="arrow">→</span>
+<span>🔒 Próximo paso</span>
+</div>
+</section>
+<section class="section">
+<h2>Elegí dónde poner el foco</h2>
+<p class="intro">Marcá las acciones que pueden ayudarte a ordenar mejor tus prioridades esta semana. No se trata de hacer todo al mismo tiempo, sino de empezar por lo que más necesita tu atención.</p>
+<div class="grid">
+<div class="choice" tabindex="0">
+<div class="check">✓</div>
+<div class="emoji">📌</div>
+<h3>Identificar lo importante</h3>
+<p>Revisar qué tareas, contenidos o fechas requieren atención primero.</p>
+</div>
+<div class="choice" tabindex="0">
+<div class="check">✓</div>
+<div class="emoji">🧩</div>
+<h3>Dividir una tarea grande</h3>
+<p>Transformar una actividad extensa en pequeños pasos más fáciles de abordar.</p>
+</div>
+<div class="choice" tabindex="0">
+<div class="check">✓</div>
+<div class="emoji">⏳</div>
+<h3>Evitar dejar todo para después</h3>
+<p>Empezar aunque sea con una parte pequeña de aquello que venís postergando.</p>
+</div>
+<div class="choice" tabindex="0">
+<div class="check">✓</div>
+<div class="emoji">🙋</div>
+<h3>Resolver un bloqueo</h3>
+<p>Identificar una duda o dificultad concreta y pedir ayuda para poder seguir avanzando.</p>
+</div>
+</div>
+<div class="rhythm-box">
+<div class="rhythm-head">
+<strong>Tu foco esta semana</strong>
+<span id="count">0 de 4 acciones elegidas</span>
+</div>
+<div class="meter"><div id="bar"></div></div>
+<div class="feedback" id="feedback">Elegí una acción concreta para empezar a enfocar tu energía.</div>
+</div>
+<div class="tipbox">
+<div class="tipicon">💡</div>
+<div><strong>Una estrategia simple:</strong><br>Cuando todo parece urgente, elegí una sola cosa que puedas resolver hoy. Avanzar en algo concreto suele ayudar a ordenar lo demás.</div>
+</div>
+</section>
+<section class="focus">
+<div class="focusbox">
+<h3>🎯 Menos dispersión, más avance</h3>
+<p>Concentrarte en una prioridad durante un tiempo definido puede ser mucho más efectivo que intentar atender varias cosas al mismo tiempo.</p>
+</div>
+<div class="focusbox orange">
+<h3>✨ Un paso terminado libera espacio</h3>
+<p>Cerrar una tarea pendiente también reduce la sensación de acumulación y te permite mirar con más claridad lo que sigue.</p>
+</div>
+</section>
+<section class="cta">
+<h2>Tu energía vale: elegí dónde ponerla.</h2>
+<p>Esta semana no necesitás resolver todo. Elegí una prioridad, avanzá sobre ella y después seguí con el próximo paso.</p>
+<div class="next">🔜 Próximo viernes: cada pieza cuenta</div>
+</section>
+<div class="back"><a href="a-camino.html">← Volver a TU RECORRIDO</a></div>
+<footer class="footer-proyecto"></footer>
+</div>
+<script>
+const choices=[...document.querySelectorAll(".choice")];
+const count=document.getElementById("count");
+const bar=document.getElementById("bar");
+const feedback=document.getElementById("feedback");
+function update(){
+const selected=choices.filter(choice=>choice.classList.contains("active")).length;
+count.textContent=`${selected} de 4 acciones elegidas`;
+bar.style.width=`${selected*25}%`;
+const messages=[
+"Elegí una acción concreta para empezar a enfocar tu energía.",
+"Buen comienzo. Ya definiste una prioridad.",
+"Vas ordenando mejor dónde poner tu atención.",
+"¡Casi listo! Tu semana empieza a tener más claridad.",
+"🎯 ¡Foco activado! Ahora avanzá paso a paso."
+];
+feedback.textContent=messages[selected];
+}
+choices.forEach(choice=>{
+function toggle(){choice.classList.toggle("active");update();}
+choice.addEventListener("click",toggle);
+choice.addEventListener("keydown",event=>{
+if(event.key==="Enter"||event.key===" "){event.preventDefault();toggle();}
+});
+});
+update();
+</script>
+<script src="../js/firma.js"></script>
+</body>
+</html>
