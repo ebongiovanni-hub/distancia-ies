@@ -1,1 +1,56 @@
-
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Distancia en Acción · Semana 11</title>
+<link rel="stylesheet" href="../css/semanas.css">
+<link rel="stylesheet" href="../css/semana-feedback.css">
+</head>
+<body class="tema-feedback">
+<div class="wrap">
+<div class="brandbar">
+<div class="topline">DISTANCIA | EN ACCIÓN</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
+</div>
+<section class="hero">
+<div class="badge">💬 SEMANA 11 · RESPONDER TAMBIÉN ES ACOMPAÑAR</div>
+<h1>Una respuesta a tiempo <span>cambia el recorrido</span></h1>
+<p>En la Modalidad Distancia, una consulta sin respuesta puede convertirse rápidamente en incertidumbre. La devolución oportuna no necesita resolver todo de inmediato: muchas veces alcanza con orientar, confirmar que recibimos el mensaje y dejar claro cuál será el próximo paso.</p>
+<div class="rule">💬 Presencia también es responder</div>
+</section>
+<section class="section">
+<h2>¿Cómo viene tu comunicación esta semana?</h2>
+<p class="intro">Marcá las acciones que ya realizaste para sostener una comunicación clara, cercana y oportuna con tus estudiantes.</p>
+<div class="checks">
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">📥</div><h3>Revisé las consultas</h3><p>Comprobé que no haya mensajes o pedidos importantes pendientes de respuesta.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">💬</div><h3>Respondí con claridad</h3><p>Brindé una orientación concreta o indiqué claramente cómo continuar.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">⏱️</div><h3>Evité silencios prolongados</h3><p>Cuando una resolución requería más tiempo, confirmé al estudiante que su consulta había sido recibida.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">➡️</div><h3>Derivé cuando correspondía</h3><p>Cuando la respuesta dependía de otra área, orienté correctamente el próximo paso.</p></div>
+</div>
+<div class="monitor">
+<div class="monitor-head"><strong>Comunicación activa</strong><span id="count">0 de 4 acciones realizadas</span></div>
+<div class="meter"><div id="bar"></div></div>
+<div class="feedback" id="feedback">Empezá revisando si quedó alguna consulta esperando respuesta.</div>
+</div>
+</section>
+<section class="focus">
+<div class="focusbox"><h3>⏱️ Oportunidad no significa inmediatez</h3><p>No siempre podemos resolver una consulta en el momento. Pero sí podemos evitar que el estudiante quede sin saber qué está pasando.</p></div>
+<div class="focusbox orange"><h3>💬 Una respuesta también construye vínculo</h3><p>Orientar con claridad transmite presencia y ayuda a que el estudiante pueda seguir avanzando.</p></div>
+</section>
+<section class="closing">
+<h2>Responder también es acompañar.</h2>
+<p>Una comunicación clara y oportuna puede evitar incertidumbre, sostener el vínculo y facilitar el próximo paso.</p>
+<div class="next">🎯 Próximo viernes: acompañar también es estar atentos</div>
+</section>
+<div class="back"><a href="t-camino.html">← Volver a DISTANCIA EN ACCIÓN</a></div>
+<footer class="footer-proyecto"></footer>
+</div>
+<script>
+const cards=[...document.querySelectorAll(".checkcard")],count=document.getElementById("count"),bar=document.getElementById("bar"),feedback=document.getElementById("feedback");
+function update(){const s=cards.filter(c=>c.classList.contains("active")).length;count.textContent=`${s} de 4 acciones realizadas`;bar.style.width=`${s*25}%`;feedback.textContent=["Empezá revisando si quedó alguna consulta esperando respuesta.","Buen comienzo. Ya estás reduciendo silencios.","La comunicación empieza a estar más ordenada.","¡Casi listo! Queda una última acción por revisar.","💬 ¡Comunicación activa! Una respuesta oportuna también sostiene el recorrido."][s]}
+cards.forEach(c=>{function toggle(){c.classList.toggle("active");update()}c.addEventListener("click",toggle);c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle()}})});update();
+</script>
+<script src="../js/firma.js"></script>
+</body>
+</html>
