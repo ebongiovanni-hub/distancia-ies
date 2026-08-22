@@ -137,13 +137,24 @@ estadoEnvio.className="estado-envio error";
 estadoEnvio.textContent="Por favor, respondé las cuatro preguntas obligatorias antes de enviar.";
 return;
 }
-const datos={experiencia:experiencia.value,acompanamiento:acompanamiento.value,nivel:nivel.value,cambio:cambio.value,mejora:document.getElementById("mejora").value.trim()};
+const datos={
+experiencia:experiencia.value,
+acompanamiento:acompanamiento.value,
+nivel:nivel.value,
+cambio:cambio.value,
+mejora:document.getElementById("mejora").value.trim()
+};
 btnEnviar.disabled=true;
 btnEnviar.textContent="Enviando...";
 estadoEnvio.className="estado-envio";
 estadoEnvio.textContent="";
 try{
-await fetch(FORM_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(datos)});
+await fetch(FORM_URL,{
+method:"POST",
+mode:"no-cors",
+headers:{"Content-Type":"text/plain;charset=utf-8"},
+body:JSON.stringify(datos)
+});
 encuesta.style.display="none";
 estadoEnvio.className="estado-envio ok";
 estadoEnvio.innerHTML="<strong>✓ ¡Gracias por responder!</strong><br>Tu aporte fue enviado correctamente.";
