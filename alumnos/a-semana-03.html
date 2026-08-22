@@ -1,1 +1,121 @@
-
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Distancia | Tu recorrido · Semana 3</title>
+<link rel="stylesheet" href="../css/a-semanas.css">
+<link rel="stylesheet" href="../css/a-semana-anticipacion.css">
+</head>
+<body class="tema-anticipacion">
+<div class="wrap">
+<div class="brandbar">
+<div class="topline">DISTANCIA | TU RECORRIDO</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
+</div>
+<section class="hero">
+<div class="badge">🎒 SEMANA 3 · PREPARARNOS</div>
+<h1>Prepararse también <span>es avanzar</span></h1>
+<p>Ya empezaste a encontrar tu ritmo. Ahora llega un buen momento para mirar un poco más adelante. Las primeras Instancias Evaluativas que se aproximan corresponden a las materias del primer bimestre, y anticiparte puede ayudarte a llegar con más tranquilidad y organización.</p>
+<div class="path">
+<strong>🎯 Primer logro</strong>
+<span class="arrow">→</span>
+<strong>🧭 Tu ritmo</strong>
+<span class="arrow">→</span>
+<strong>🎒 Prepararnos</strong>
+<span class="arrow">→</span>
+<span>🔒 Próximo paso</span>
+</div>
+</section>
+<section class="section">
+<h2>¿Qué podés hacer esta semana?</h2>
+<p class="intro">Si estás cursando materias del primer bimestre, este check te ayuda a prepararte para las próximas Instancias Evaluativas. Si tus materias son cuatrimestrales o corresponden al segundo bimestre, también podés usarlo para ordenar y anticipar tu recorrido.</p>
+<div class="grid">
+<div class="choice" tabindex="0">
+<div class="check">✓</div>
+<div class="emoji">📅</div>
+<h3>Revisar las fechas</h3>
+<p>Ubicar cuándo serán las próximas Instancias Evaluativas de las materias del primer bimestre.</p>
+</div>
+<div class="choice" tabindex="0">
+<div class="check">✓</div>
+<div class="emoji">📚</div>
+<h3>Mirar los contenidos</h3>
+<p>Revisar qué temas venís trabajando y qué materiales necesitás tener presentes.</p>
+</div>
+<div class="choice" tabindex="0">
+<div class="check">✓</div>
+<div class="emoji">🧩</div>
+<h3>Detectar lo que falta</h3>
+<p>Identificar contenidos pendientes, actividades atrasadas o temas que todavía necesitás reforzar.</p>
+</div>
+<div class="choice" tabindex="0">
+<div class="check">✓</div>
+<div class="emoji">🙋</div>
+<h3>Resolver dudas a tiempo</h3>
+<p>Consultar ahora aquello que todavía no comprendés, sin esperar a los últimos días.</p>
+</div>
+</div>
+<div class="rhythm-box">
+<div class="rhythm-head">
+<strong>Tu preparación esta semana</strong>
+<span id="count">0 de 4 acciones realizadas</span>
+</div>
+<div class="meter"><div id="bar"></div></div>
+<div class="feedback" id="feedback">Empezá por revisar qué se aproxima en tus materias.</div>
+</div>
+<div class="tipbox">
+<div class="tipicon">💡</div>
+<div><strong>Una idea importante:</strong><br>Prepararte no significa estudiar todo de una vez. Significa saber qué viene, reconocer dónde estás y distribuir mejor tu tiempo.</div>
+</div>
+</section>
+<section class="focus">
+<div class="focusbox">
+<h3>🗓️ Anticiparte baja la presión</h3>
+<p>Cuando conocés las fechas y los contenidos con tiempo, podés organizar pequeñas acciones durante varios días en lugar de concentrar todo al final.</p>
+</div>
+<div class="focusbox orange">
+<h3>🎯 Hoy no necesitás saberlo todo</h3>
+<p>El objetivo de esta semana es identificar qué necesitás reforzar y empezar a trabajar sobre eso. Cada pequeño avance cuenta.</p>
+</div>
+</section>
+<section class="cta">
+<h2>Un poco de anticipación puede cambiar mucho.</h2>
+<p>Especialmente si cursás materias del primer bimestre, esta semana es una oportunidad para llegar mejor preparado a las primeras Instancias Evaluativas y evitar que todo se acumule sobre la fecha.</p>
+<div class="next">🔜 Próximo viernes: tu experiencia también cuenta</div>
+</section>
+<div class="back">
+<a href="a-camino.html">← Volver a TU RECORRIDO</a>
+</div>
+<footer class="footer-proyecto"></footer>
+</div>
+<script>
+const choices=[...document.querySelectorAll(".choice")];
+const count=document.getElementById("count");
+const bar=document.getElementById("bar");
+const feedback=document.getElementById("feedback");
+function update(){
+const selected=choices.filter(choice=>choice.classList.contains("active")).length;
+count.textContent=`${selected} de 4 acciones realizadas`;
+bar.style.width=`${selected*25}%`;
+const messages=[
+"Empezá por revisar qué se aproxima en tus materias.",
+"Buen comienzo. Ya diste el primer paso para anticiparte.",
+"Vas por la mitad. Tu preparación empieza a tomar forma.",
+"¡Casi listo! Te queda una última acción por revisar.",
+"🎒 ¡Preparación activada! Ahora sabés mejor qué viene y cómo encararlo."
+];
+feedback.textContent=messages[selected];
+}
+choices.forEach(choice=>{
+function toggle(){choice.classList.toggle("active");update();}
+choice.addEventListener("click",toggle);
+choice.addEventListener("keydown",event=>{
+if(event.key==="Enter"||event.key===" "){event.preventDefault();toggle();}
+});
+});
+update();
+</script>
+<script src="../js/firma.js"></script>
+</body>
+</html>
