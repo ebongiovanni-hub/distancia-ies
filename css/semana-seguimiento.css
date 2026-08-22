@@ -1,114 +1,144 @@
 body.tema-seguimiento{
-  background:
-    radial-gradient(circle at 12% 8%,rgba(76,182,132,.13),transparent 24%),
-    radial-gradient(circle at 88% 12%,rgba(0,166,214,.10),transparent 26%),
-    radial-gradient(circle at 50% 90%,rgba(31,95,158,.06),transparent 22%),
-    linear-gradient(180deg,#F0F9F5 0%,#EDF7F8 58%,#F4F8FB 100%);
+background:
+radial-gradient(circle at 12% 10%,rgba(76,182,132,.16),transparent 24%),
+radial-gradient(circle at 88% 12%,rgba(0,170,228,.10),transparent 26%),
+radial-gradient(circle at 20% 88%,rgba(31,52,76,.06),transparent 24%),
+linear-gradient(180deg,#EFF8F3 0%,#F7FBF9 52%,#EEF6F8 100%);
 }
 .tema-seguimiento .hero{
-  background:
-    radial-gradient(circle at 86% 18%,rgba(76,182,132,.12),transparent 25%),
-    radial-gradient(circle at 76% 76%,rgba(0,166,214,.07),transparent 30%),
-    linear-gradient(135deg,#FFFFFF 0%,#EFF9F5 58%,#F2FAFC 100%);
-  border-top-color:#4CB684;
+position:relative;
+background:
+radial-gradient(circle at 86% 18%,rgba(76,182,132,.15),transparent 26%),
+linear-gradient(125deg,#FFFFFF 0%,#EFF9F4 58%,#E7F5F2 100%);
+border-top:5px solid #4CB684;
+border-color:rgba(76,182,132,.20);
+box-shadow:0 15px 34px rgba(53,112,84,.10);
 }
 .tema-seguimiento .hero::before{
-  width:240px;
-  height:240px;
-  right:-80px;
-  top:-90px;
-  background:rgba(76,182,132,.09);
+content:"";
+position:absolute;
+width:240px;
+height:240px;
+right:-85px;
+top:-95px;
+border-radius:50% 35% 55% 40%;
+background:rgba(76,182,132,.10);
+transform:rotate(18deg);
+pointer-events:none;
 }
 .tema-seguimiento .hero::after{
-  width:300px;
-  height:170px;
-  right:-35px;
-  bottom:-45px;
-  background:repeating-radial-gradient(
-    ellipse at 88% 90%,
-    rgba(76,182,132,.13) 0 3px,
-    rgba(0,166,214,.05) 4px 11px,
-    transparent 12px 24px
-  );
+content:"";
+position:absolute;
+width:260px;
+height:150px;
+right:-30px;
+bottom:-55px;
+border-radius:65% 40% 0 0;
+background:
+radial-gradient(circle at 25% 55%,rgba(0,170,228,.10) 0 5px,transparent 6px),
+radial-gradient(circle at 48% 42%,rgba(76,182,132,.12) 0 6px,transparent 7px),
+radial-gradient(circle at 72% 60%,rgba(31,52,76,.07) 0 4px,transparent 5px);
+pointer-events:none;
 }
 .tema-seguimiento .badge{
-  background:#EAF8F1;
-  border-color:rgba(76,182,132,.20);
-  color:#397E5D;
+background:#E7F6EE;
+border:1px solid rgba(76,182,132,.22);
+color:#397E5D;
 }
+.tema-seguimiento h1{color:#1F344C}
 .tema-seguimiento h1 span{color:#4CB684}
+.tema-seguimiento .hero p{color:#50685B}
 .tema-seguimiento .rule{
-  background:#EAF8F1;
-  color:#397E5D;
+background:#EAF7F0;
+border-color:rgba(76,182,132,.18);
+color:#397E5D;
 }
 .tema-seguimiento .section{
-  background:rgba(255,255,255,.93);
-  border-color:rgba(76,182,132,.15);
+background:rgba(255,255,255,.94);
+border-color:rgba(76,182,132,.16);
+box-shadow:0 12px 28px rgba(48,103,78,.07);
 }
-.tema-seguimiento .section h2{color:var(--azul)}
+.tema-seguimiento .section h2{color:#1F344C}
+.tema-seguimiento .intro{color:#56685E}
+.tema-seguimiento .checkcard,
+.tema-seguimiento .choice{
+background:#FFFFFF;
+border-color:#D8E7DF;
+}
+.tema-seguimiento .checkcard:hover,
+.tema-seguimiento .choice:hover{
+border-color:#9FD3B8;
+box-shadow:0 9px 20px rgba(76,182,132,.09);
+}
 .tema-seguimiento .checkcard.active,
 .tema-seguimiento .choice.active{
-  border-color:#4CB684;
-  background:linear-gradient(180deg,#FBFFFD,#EDF9F3);
-  box-shadow:0 0 0 3px rgba(76,182,132,.08);
+border-color:#4CB684;
+background:linear-gradient(145deg,#FCFFFD,#EAF7F0);
+box-shadow:0 0 0 3px rgba(76,182,132,.08);
 }
 .tema-seguimiento .checkcard.active .status,
 .tema-seguimiento .choice.active .check{
-  background:#4CB684;
-  border-color:#4CB684;
+background:#4CB684;
+border-color:#4CB684;
 }
+.tema-seguimiento .checkcard h3,
+.tema-seguimiento .choice h3{color:#1F344C}
+.tema-seguimiento .checkcard p,
+.tema-seguimiento .choice p{color:#5D7167}
 .tema-seguimiento .monitor,
 .tema-seguimiento .rhythm-box{
-  background:linear-gradient(135deg,#EDF9F3,#F7FCFB);
-  border-color:rgba(76,182,132,.20);
-  color:var(--azul);
+background:linear-gradient(125deg,#DFF3E8,#F3FAF6);
+border-color:rgba(76,182,132,.22);
+color:#1F344C;
 }
+.tema-seguimiento .monitor-head strong{color:#397E5D}
 .tema-seguimiento .meter,
-.tema-seguimiento .bar{
-  background:#DFECE6;
-}
+.tema-seguimiento .bar{background:#D8E6DE}
 .tema-seguimiento .meter>div,
 .tema-seguimiento .bar span{
-  background:linear-gradient(90deg,#4CB684,var(--celeste));
+background:linear-gradient(90deg,#4CB684,#00AAE4);
 }
 .tema-seguimiento .feedback,
-.tema-seguimiento .small{
-  color:#56766A;
-}
+.tema-seguimiento .small{color:#567166}
 .tema-seguimiento .alert,
 .tema-seguimiento .help,
 .tema-seguimiento .tipbox{
-  background:#F3FBF7;
-  border-left-color:#4CB684;
-  color:#4F675D;
+background:#F0F8F4;
+border-left-color:#4CB684;
+color:#50655A;
 }
 .tema-seguimiento .alert strong,
 .tema-seguimiento .help strong,
-.tema-seguimiento .tipbox strong{
-  color:#397E5D;
-}
+.tema-seguimiento .tipbox strong{color:#397E5D}
 .tema-seguimiento .focusbox{
-  border-color:rgba(76,182,132,.15);
+background:#FFFFFF;
+border-color:#D8E7DF;
 }
+.tema-seguimiento .focusbox h3{color:#1F344C}
 .tema-seguimiento .focusbox.orange{
-  background:linear-gradient(135deg,#EEF9F3,#FFFFFF);
-  border-color:rgba(76,182,132,.20);
+background:linear-gradient(135deg,#EAF7F0,#F8FCFA);
+border-color:rgba(76,182,132,.20);
 }
 .tema-seguimiento .closing,
 .tema-seguimiento .cta,
 .tema-seguimiento .next-panel{
-  background:linear-gradient(135deg,#F2FAF6,#FFFFFF);
-  border-color:rgba(76,182,132,.16);
+background:linear-gradient(125deg,#E5F5EC 0%,#F5FBF8 60%,#FFFFFF 100%);
+border-color:rgba(76,182,132,.18);
+box-shadow:0 10px 24px rgba(48,103,78,.07);
 }
+.tema-seguimiento .closing h2,
+.tema-seguimiento .cta h2,
+.tema-seguimiento .next-panel h2{color:#1F344C}
 .tema-seguimiento .next{
-  background:#E8F7F0;
-  color:#397E5D;
+background:#DDF1E6;
+color:#397E5D;
 }
 .tema-seguimiento .back a{
-  border-color:#4CB684;
-  color:#397E5D;
+border-color:#4CB684;
+color:#397E5D;
+background:#FFF;
 }
 .tema-seguimiento .back a:hover{
-  background:#4CB684;
-  color:#FFF;
+background:#4CB684;
+color:#FFF;
 }
