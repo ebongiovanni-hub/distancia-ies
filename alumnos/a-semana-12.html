@@ -1,1 +1,57 @@
-
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Distancia | Tu recorrido · Semana 12</title>
+<link rel="stylesheet" href="../css/a-semanas.css">
+<link rel="stylesheet" href="../css/a-semana-construccion.css">
+</head>
+<body class="tema-construccion">
+<div class="wrap">
+<div class="brandbar">
+<div class="topline">DISTANCIA | TU RECORRIDO</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
+</div>
+<section class="hero">
+<div class="badge">💪 SEMANA 12 · CONFIANZA</div>
+<h1>Confiá en <span>lo construido</span></h1>
+<p>Ya atravesaste buena parte del semestre. En este momento es fácil mirar solamente lo que falta, pero también es importante recordar todo lo que aprendiste, resolviste y sostuviste hasta acá.</p>
+<div class="path"><strong>🔎 Anticiparte</strong><span class="arrow">→</span><strong>💪 Confiar</strong><span class="arrow">→</span><span>🔒 Próximo paso</span></div>
+</section>
+<section class="section">
+<h2>Reconocé tus herramientas</h2>
+<p class="intro">Marcá aquello que hoy forma parte de tus recursos para afrontar lo que queda del recorrido.</p>
+<div class="grid">
+<div class="choice" tabindex="0"><div class="tick">✓</div><div class="emoji">🧠</div><h3>Ya aprendí cómo aprendo</h3><p>Reconozco mejor qué estrategias me ayudan a comprender y organizarme.</p></div>
+<div class="choice" tabindex="0"><div class="tick">✓</div><div class="emoji">🧭</div><h3>Sé volver al rumbo</h3><p>Si me atraso o pierdo ritmo, tengo más herramientas para reorganizarme.</p></div>
+<div class="choice" tabindex="0"><div class="tick">✓</div><div class="emoji">🙋</div><h3>Sé pedir ayuda</h3><p>No necesito resolver todo en soledad: conozco los espacios donde puedo consultar.</p></div>
+<div class="choice" tabindex="0"><div class="tick">✓</div><div class="emoji">💪</div><h3>Ya superé dificultades</h3><p>Recuerdo situaciones que al principio parecían difíciles y que finalmente pude resolver.</p></div>
+</div>
+<div class="rhythm-box">
+<div class="rhythm-head"><strong>Tus herramientas</strong><span id="count">0 de 4 reconocidas</span></div>
+<div class="meter"><div id="bar"></div></div>
+<div class="feedback" id="feedback">Reconocé una herramienta que hoy tengas y al comienzo no.</div>
+</div>
+<div class="tipbox"><div class="tipicon">🧩</div><div><strong>La confianza también se construye:</strong><br>No consiste en pensar que todo será fácil, sino en saber que ya tenés recursos para enfrentar lo que venga.</div></div>
+</section>
+<section class="focus">
+<div class="focusbox"><h3>🧠 Tu experiencia también es una herramienta</h3><p>Cada dificultad resuelta te deja conocimiento para enfrentar situaciones nuevas con más recursos.</p></div>
+<div class="focusbox orange"><h3>💪 No empezás desde cero</h3><p>Lo que queda del semestre se construye sobre todo lo que ya hiciste hasta acá.</p></div>
+</section>
+<section class="cta">
+<h2>Todo lo recorrido también te sostiene.</h2>
+<p>Antes de mirar lo que falta, reconocé lo que ya tenés. Esas herramientas van a acompañarte durante el tramo final.</p>
+<div class="next">💬 Próximo viernes: queremos volver a escucharte</div>
+</section>
+<div class="back"><a href="a-camino.html">← Volver a TU RECORRIDO</a></div>
+<footer class="footer-proyecto"></footer>
+</div>
+<script>
+const choices=[...document.querySelectorAll(".choice")],count=document.getElementById("count"),bar=document.getElementById("bar"),feedback=document.getElementById("feedback");
+function update(){const s=choices.filter(c=>c.classList.contains("active")).length;count.textContent=`${s} de 4 reconocidas`;bar.style.width=`${s*25}%`;feedback.textContent=["Reconocé una herramienta que hoy tengas y al comienzo no.","Ya identificaste algo que construiste durante el recorrido.","Vas reconociendo los recursos que hoy tenés disponibles.","Muy bien. Tu experiencia ya te dio varias herramientas.","💪 ¡Mirá todo lo que construiste! Usalo para seguir avanzando."][s]}
+choices.forEach(c=>{function toggle(){c.classList.toggle("active");update()}c.addEventListener("click",toggle);c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle()}})});update();
+</script>
+<script src="../js/firma.js"></script>
+</body>
+</html>
