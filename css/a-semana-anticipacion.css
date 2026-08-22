@@ -1,1 +1,21 @@
-
+body.tema-anticipacion{background:radial-gradient(circle at 10% 8%,rgba(255,104,89,.13),transparent 24%),radial-gradient(circle at 90% 12%,rgba(255,162,0,.10),transparent 24%),linear-gradient(180deg,#FFF3EE,#FFFBF8 55%,#FFF7ED)}
+.tema-anticipacion .hero{background:linear-gradient(130deg,#FFF,#FFF1EA 58%,#FFE7D8);border-top-color:#FF6859;border-color:rgba(255,104,89,.22)}
+.tema-anticipacion .hero::before{background:rgba(255,162,0,.10)}
+.tema-anticipacion .hero::after{background:repeating-linear-gradient(135deg,rgba(255,104,89,.09) 0 4px,transparent 4px 17px)}
+.tema-anticipacion .badge{background:#FFEAE4;color:#D65346;border-color:rgba(255,104,89,.20)}
+.tema-anticipacion h1{color:#1F344C}
+.tema-anticipacion h1 span{color:#FF6859}
+.tema-anticipacion .rule{background:#FFF0E9;color:#D65346}
+.tema-anticipacion .section{border-color:rgba(255,104,89,.16)}
+.tema-anticipacion .section h2{color:#D65346}
+.tema-anticipacion .choice.active,.tema-anticipacion .checkcard.active,.tema-anticipacion .check.selected{border-color:#FF6859;background:linear-gradient(180deg,#FFF,#FFF0EB)}
+.tema-anticipacion .monitor,.tema-anticipacion .rhythm-box{background:linear-gradient(135deg,#FFF0E8,#FFF9F4);border-color:rgba(255,104,89,.22);color:#B84A40}
+.tema-anticipacion .meter>div,.tema-anticipacion .bar span{background:linear-gradient(90deg,#FF6859,#FFA200)}
+.tema-anticipacion .alert,.tema-anticipacion .help,.tema-anticipacion .tipbox{background:#FFF4E9;border-left-color:#FF6859;color:#705447}
+.tema-anticipacion .alert strong,.tema-anticipacion .help strong,.tema-anticipacion .tipbox strong{color:#D65346}
+.tema-anticipacion .tipicon{background:#FFE2D4}
+.tema-anticipacion .focusbox.orange{background:linear-gradient(135deg,#FFF0E9,#FFF8E9);border-color:rgba(255,104,89,.20)}
+.tema-anticipacion .focusbox.orange h3{color:#D65346}
+.tema-anticipacion .closing,.tema-anticipacion .cta,.tema-anticipacion .next-panel{background:linear-gradient(135deg,#FFF0E8,#FFF8F2);border-color:rgba(255,104,89,.22)}
+.tema-anticipacion .closing h2,.tema-anticipacion .cta h2,.tema-anticipacion .next-panel h2{color:#D65346}
+.tema-anticipacion .next{background:#FFE5DC;color:#D65346}
