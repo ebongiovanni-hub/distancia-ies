@@ -1,1 +1,160 @@
-
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Distancia | En acción · Semana 6</title>
+<link rel="stylesheet" href="../css/semanas.css">
+<link rel="stylesheet" href="../css/semana-check.css">
+<style>
+.encuesta{display:grid;gap:18px}
+.pregunta{background:#fff;border:1px solid #E4D9E9;border-radius:16px;padding:18px}
+.pregunta h3{margin:0 0 6px;color:#1F344C;font-size:1.05rem}
+.pregunta .aclaracion{margin:0 0 14px;color:#73879A;font-size:.88rem}
+.opciones{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.opcion{position:relative}
+.opcion input{position:absolute;opacity:0;pointer-events:none}
+.opcion label{display:block;border:1px solid #E2D8E7;border-radius:13px;padding:12px 14px;background:#fff;color:#5A5260;cursor:pointer;transition:.2s;font-size:.92rem}
+.opcion label:hover{border-color:#BA94CB;background:#FBF7FC}
+.opcion input:checked+label{border-color:#71408C;background:#F2E8F6;color:#71408C;font-weight:700;box-shadow:0 0 0 2px rgba(113,64,140,.06)}
+.escala{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin-top:12px}
+.escala .opcion label{text-align:center;font-size:1.05rem;font-weight:800;padding:12px 5px}
+.extremos{display:flex;justify-content:space-between;margin-top:7px;color:#73879A;font-size:.78rem}
+textarea{width:100%;min-height:110px;resize:vertical;border:1px solid #E2D8E7;border-radius:13px;padding:13px;font:inherit;color:#17324D;background:#fff;outline:none}
+textarea:focus{border-color:#71408C;box-shadow:0 0 0 3px rgba(113,64,140,.07)}
+.enviar{text-align:center;margin-top:4px}
+.btn-enviar{border:0;border-radius:999px;background:#71408C;color:#fff;padding:12px 24px;font-size:.94rem;font-weight:800;cursor:pointer;transition:.2s;box-shadow:0 6px 16px rgba(113,64,140,.18)}
+.btn-enviar:hover{transform:translateY(-1px);background:#623477}
+.btn-enviar:disabled{opacity:.55;cursor:wait;transform:none}
+.estado-envio{display:none;margin-top:18px;border-radius:16px;padding:17px;text-align:center;line-height:1.5}
+.estado-envio.ok{display:block;background:#EEF8F3;border:1px solid #B9DFC9;color:#397E5D}
+.estado-envio.error{display:block;background:#FFF1F0;border:1px solid #F0CBC7;color:#9C443D}
+.anonimo{display:flex;align-items:flex-start;gap:10px;margin-top:16px;padding:13px 15px;border-radius:13px;background:#F7F0FA;color:#625568;font-size:.88rem;line-height:1.5}
+@media(max-width:760px){.opciones{grid-template-columns:1fr}.escala{grid-template-columns:repeat(5,1fr)}}
+</style>
+</head>
+<body class="tema-check">
+<div class="wrap">
+<div class="brandbar">
+<div class="topline">DISTANCIA | EN ACCIÓN</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
+</div>
+<section class="hero">
+<div class="badge">🧭 SEMANA 6 · PUNTO DE ESCUCHA</div>
+<h1>Antes de avanzar, <span>hagamos un check</span></h1>
+<p>Ya recorrimos varias semanas juntos. Este es un buen momento para hacer una pequeña pausa y conocer cómo viene siendo tu experiencia como tutor. Queremos saber qué está funcionando y en qué aspectos podemos acompañarte mejor.</p>
+<div class="rule">💬 Tu experiencia también nos ayuda a mejorar</div>
+</section>
+<section class="section">
+<h2>Queremos escucharte</h2>
+<p class="intro">Son solo cuatro preguntas y la respuesta es anónima. No buscamos evaluar tu tarea: queremos conocer tu experiencia para seguir mejorando el acompañamiento de la Modalidad Distancia.</p>
+<form id="encuesta" class="encuesta">
+<div class="pregunta">
+<h3>1. ¿Cómo venís transitando estas primeras semanas como tutor?</h3>
+<p class="aclaracion">Elegí la opción que mejor represente tu experiencia hasta ahora.</p>
+<div class="opciones">
+<div class="opcion"><input type="radio" id="exp1" name="experiencia" value="Muy bien" required><label for="exp1">😊 Muy bien</label></div>
+<div class="opcion"><input type="radio" id="exp2" name="experiencia" value="Bien"><label for="exp2">🙂 Bien</label></div>
+<div class="opcion"><input type="radio" id="exp3" name="experiencia" value="Con algunas dificultades"><label for="exp3">😐 Con algunas dificultades</label></div>
+<div class="opcion"><input type="radio" id="exp4" name="experiencia" value="Necesito más acompañamiento"><label for="exp4">🧭 Necesito más acompañamiento</label></div>
+</div>
+</div>
+<div class="pregunta">
+<h3>2. ¿En qué aspecto sentís que podríamos acompañarte mejor?</h3>
+<p class="aclaracion">Elegí el aspecto en el que hoy sería más útil contar con apoyo.</p>
+<div class="opciones">
+<div class="opcion"><input type="radio" id="acom1" name="acompanamiento" value="Organización del aula virtual" required><label for="acom1">💻 Organización del aula virtual</label></div>
+<div class="opcion"><input type="radio" id="acom2" name="acompanamiento" value="Seguimiento de estudiantes"><label for="acom2">👀 Seguimiento de estudiantes</label></div>
+<div class="opcion"><input type="radio" id="acom3" name="acompanamiento" value="Instancias Evaluativas"><label for="acom3">📝 Instancias Evaluativas</label></div>
+<div class="opcion"><input type="radio" id="acom4" name="acompanamiento" value="Procesos y gestiones académicas"><label for="acom4">📋 Procesos y gestiones académicas</label></div>
+<div class="opcion"><input type="radio" id="acom5" name="acompanamiento" value="Herramientas digitales"><label for="acom5">🛠️ Herramientas digitales</label></div>
+<div class="opcion"><input type="radio" id="acom6" name="acompanamiento" value="Otro"><label for="acom6">💬 Otro aspecto</label></div>
+</div>
+</div>
+<div class="pregunta">
+<h3>3. ¿Qué nivel de acompañamiento sentís que tenés en tu tarea tutorial?</h3>
+<p class="aclaracion">Marcá una opción del 1 al 5.</p>
+<div class="escala">
+<div class="opcion"><input type="radio" id="nivel1" name="nivel" value="1" required><label for="nivel1">1</label></div>
+<div class="opcion"><input type="radio" id="nivel2" name="nivel" value="2"><label for="nivel2">2</label></div>
+<div class="opcion"><input type="radio" id="nivel3" name="nivel" value="3"><label for="nivel3">3</label></div>
+<div class="opcion"><input type="radio" id="nivel4" name="nivel" value="4"><label for="nivel4">4</label></div>
+<div class="opcion"><input type="radio" id="nivel5" name="nivel" value="5"><label for="nivel5">5</label></div>
+</div>
+<div class="extremos"><span>Necesito más apoyo</span><span>Me siento muy acompañado</span></div>
+</div>
+<div class="pregunta">
+<h3>4. Si pudieras mejorar una sola cosa de la Modalidad Distancia, ¿cuál sería?</h3>
+<p class="aclaracion">Esta pregunta es opcional. Podés contarnos aquello que consideres más importante.</p>
+<textarea id="mejora" name="mejora" maxlength="800" placeholder="Escribí acá tu sugerencia..."></textarea>
+</div>
+<div class="anonimo"><span>🔒</span><span><strong>Esta encuesta es anónima.</strong> No solicitamos nombre, correo ni ningún otro dato personal. Nos interesa conocer tu experiencia para seguir mejorando.</span></div>
+<div class="enviar"><button type="submit" class="btn-enviar" id="btnEnviar">Enviar mi respuesta</button></div>
+</form>
+<div class="estado-envio" id="estadoEnvio"></div>
+</section>
+<section class="focus">
+<div class="focusbox">
+<h3>👂 Escuchar también es gestionar</h3>
+<p>Conocer cómo se vive la tarea tutorial nos permite detectar necesidades que muchas veces no aparecen en los procedimientos cotidianos.</p>
+</div>
+<div class="focusbox orange">
+<h3>💡 Mejorar a partir de la experiencia</h3>
+<p>Cada respuesta nos aporta una mirada concreta para revisar procesos, fortalecer apoyos y construir una Modalidad Distancia cada vez más cercana.</p>
+</div>
+</section>
+<section class="closing">
+<h2>Gracias por detenerte un minuto 💜</h2>
+<p>Tu mirada también forma parte de este recorrido. Escuchar, revisar y mejorar son parte del mismo proceso de acompañamiento.</p>
+<div class="next">🔜 Próximo viernes: seguimos avanzando</div>
+</section>
+<div class="back"><a href="t-camino.html">← Volver a DISTANCIA EN ACCIÓN</a></div>
+<footer class="footer-proyecto"></footer>
+</div>
+<script>
+const FORM_URL="https://script.google.com/macros/s/AKfycbzL7nIu2w1K5dGB9BKySzRdvuOqtBWKXA2xlTA9sV2hDjjX-lbXf0b24H4ZHYkLvPGLYw/exec";
+const encuesta=document.getElementById("encuesta");
+const btnEnviar=document.getElementById("btnEnviar");
+const estadoEnvio=document.getElementById("estadoEnvio");
+encuesta.addEventListener("submit",async e=>{
+e.preventDefault();
+const experiencia=document.querySelector('input[name="experiencia"]:checked');
+const acompanamiento=document.querySelector('input[name="acompanamiento"]:checked');
+const nivel=document.querySelector('input[name="nivel"]:checked');
+if(!experiencia||!acompanamiento||!nivel){
+estadoEnvio.className="estado-envio error";
+estadoEnvio.textContent="Por favor, respondé las tres preguntas obligatorias antes de enviar.";
+return;
+}
+const datos={
+experiencia:experiencia.value,
+acompanamiento:acompanamiento.value,
+nivel:nivel.value,
+mejora:document.getElementById("mejora").value.trim()
+};
+btnEnviar.disabled=true;
+btnEnviar.textContent="Enviando...";
+estadoEnvio.className="estado-envio";
+estadoEnvio.textContent="";
+try{
+await fetch(FORM_URL,{
+method:"POST",
+mode:"no-cors",
+headers:{"Content-Type":"text/plain;charset=utf-8"},
+body:JSON.stringify(datos)
+});
+encuesta.style.display="none";
+estadoEnvio.className="estado-envio ok";
+estadoEnvio.innerHTML="<strong>✓ ¡Gracias por responder!</strong><br>Tu aporte fue enviado. Seguimos construyendo juntos una mejor experiencia en Modalidad Distancia.";
+}catch(error){
+btnEnviar.disabled=false;
+btnEnviar.textContent="Enviar mi respuesta";
+estadoEnvio.className="estado-envio error";
+estadoEnvio.textContent="No pudimos enviar la respuesta. Por favor, intentá nuevamente.";
+}
+});
+</script>
+<script src="../js/interacciones.js"></script>
+<script src="../js/firma.js"></script>
+</body>
+</html>
