@@ -1,0 +1,114 @@
+body.tema-anticipacion{
+  background:
+    radial-gradient(circle at 12% 8%,rgba(245,130,32,.15),transparent 24%),
+    radial-gradient(circle at 88% 12%,rgba(0,166,214,.10),transparent 26%),
+    radial-gradient(circle at 50% 90%,rgba(245,130,32,.06),transparent 22%),
+    linear-gradient(180deg,#FFF7EF 0%,#F4F9FB 58%,#EEF7FA 100%);
+}
+.tema-anticipacion .hero{
+  background:
+    radial-gradient(circle at 86% 18%,rgba(245,130,32,.14),transparent 25%),
+    radial-gradient(circle at 76% 76%,rgba(0,166,214,.07),transparent 30%),
+    linear-gradient(135deg,#FFFFFF 0%,#FFF5E9 58%,#F3FAFD 100%);
+  border-top-color:var(--naranja);
+}
+.tema-anticipacion .hero::before{
+  width:240px;
+  height:240px;
+  right:-80px;
+  top:-90px;
+  background:rgba(245,130,32,.10);
+}
+.tema-anticipacion .hero::after{
+  width:300px;
+  height:170px;
+  right:-35px;
+  bottom:-45px;
+  background:repeating-radial-gradient(
+    ellipse at 88% 90%,
+    rgba(245,130,32,.14) 0 3px,
+    rgba(0,166,214,.05) 4px 11px,
+    transparent 12px 24px
+  );
+}
+.tema-anticipacion .badge{
+  background:#FFF0E2;
+  border-color:rgba(245,130,32,.22);
+  color:#B86116;
+}
+.tema-anticipacion h1 span{color:var(--naranja)}
+.tema-anticipacion .rule{
+  background:#FFF2E6;
+  color:#B86116;
+}
+.tema-anticipacion .section{
+  background:rgba(255,255,255,.93);
+  border-color:rgba(245,130,32,.15);
+}
+.tema-anticipacion .section h2{color:var(--azul)}
+.tema-anticipacion .checkcard.active,
+.tema-anticipacion .choice.active{
+  border-color:var(--naranja);
+  background:linear-gradient(180deg,#FFFDFC,#FFF4E9);
+  box-shadow:0 0 0 3px rgba(245,130,32,.08);
+}
+.tema-anticipacion .checkcard.active .status,
+.tema-anticipacion .choice.active .check{
+  background:var(--naranja);
+  border-color:var(--naranja);
+}
+.tema-anticipacion .monitor,
+.tema-anticipacion .rhythm-box{
+  background:linear-gradient(135deg,#FFF4E8,#FFFDFC);
+  border-color:rgba(245,130,32,.22);
+  color:var(--azul);
+}
+.tema-anticipacion .meter,
+.tema-anticipacion .bar{
+  background:#F1E4D7;
+}
+.tema-anticipacion .meter>div,
+.tema-anticipacion .bar span{
+  background:linear-gradient(90deg,var(--naranja),var(--celeste));
+}
+.tema-anticipacion .feedback,
+.tema-anticipacion .small{
+  color:#6A625B;
+}
+.tema-anticipacion .alert,
+.tema-anticipacion .help,
+.tema-anticipacion .tipbox{
+  background:#FFF7EF;
+  border-left-color:var(--naranja);
+  color:#66503A;
+}
+.tema-anticipacion .alert strong,
+.tema-anticipacion .help strong,
+.tema-anticipacion .tipbox strong{
+  color:#A75B17;
+}
+.tema-anticipacion .focusbox{
+  border-color:rgba(245,130,32,.15);
+}
+.tema-anticipacion .focusbox.orange{
+  background:linear-gradient(135deg,#FFF3E5,#FFFFFF);
+  border-color:rgba(245,130,32,.22);
+}
+.tema-anticipacion .closing,
+.tema-anticipacion .cta,
+.tema-anticipacion .next-panel{
+  background:linear-gradient(135deg,#FFF8F0,#FFFFFF);
+  border-color:rgba(245,130,32,.17);
+}
+.tema-anticipacion .next{
+  background:#FFF0E2;
+  color:#A75B17;
+}
+.tema-anticipacion .back a{
+  border-color:var(--naranja);
+  color:#A75B17;
+}
+.tema-anticipacion .back a:hover{
+  background:var(--naranja);
+  color:#FFF;
+}
