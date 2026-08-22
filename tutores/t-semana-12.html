@@ -1,1 +1,56 @@
-
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Distancia en Acción · Semana 12</title>
+<link rel="stylesheet" href="../css/semanas.css">
+<link rel="stylesheet" href="../css/semana-seguimiento.css">
+</head>
+<body class="tema-seguimiento">
+<div class="wrap">
+<div class="brandbar">
+<div class="topline">DISTANCIA | EN ACCIÓN</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
+</div>
+<section class="hero">
+<div class="badge">🎯 SEMANA 12 · ACOMPAÑAMIENTO ACTIVO</div>
+<h1>Acompañar también es <span>estar atentos</span></h1>
+<p>A medida que avanza el semestre, algunas dificultades pueden aparecer de forma menos evidente. Una baja en la participación, entregas que empiezan a faltar o cambios en la comunicación pueden ser señales para volver a acercarnos.</p>
+<div class="rule">👀 Esta semana: mirar nuevamente, incluso a quienes venían bien</div>
+</section>
+<section class="section">
+<h2>¿A quién conviene volver a mirar?</h2>
+<p class="intro">Marcá las acciones que ya realizaste. El seguimiento no se limita a quienes tuvieron dificultades desde el comienzo: también implica reconocer cambios en trayectorias que venían siendo sostenidas.</p>
+<div class="checks">
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">📉</div><h3>Observé cambios de ritmo</h3><p>Identifiqué estudiantes cuya participación disminuyó respecto de semanas anteriores.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">📝</div><h3>Revisé actividades pendientes</h3><p>Miré si comenzaron a acumularse entregas, tareas o instancias que antes se sostenían con regularidad.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">💬</div><h3>Volví a contactar</h3><p>Me comuniqué cuando detecté un cambio significativo para conocer qué estaba sucediendo.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">🧭</div><h3>Definí cómo continuar</h3><p>Decidí si corresponde acompañar, observar nuevamente o derivar la situación.</p></div>
+</div>
+<div class="monitor">
+<div class="monitor-head"><strong>Mirada activa</strong><span id="count">0 de 4 acciones realizadas</span></div>
+<div class="meter"><div id="bar"></div></div>
+<div class="feedback" id="feedback">Empezá revisando si algo cambió en el recorrido de tus estudiantes.</div>
+</div>
+</section>
+<section class="focus">
+<div class="focusbox"><h3>📉 Un cambio también es una señal</h3><p>No hace falta esperar una desconexión total. Una modificación sostenida en el ritmo puede ser suficiente para acercarnos.</p></div>
+<div class="focusbox orange"><h3>🤝 Acompañar es permanecer disponibles</h3><p>La presencia tutorial también se construye volviendo a mirar y generando nuevas oportunidades de contacto.</p></div>
+</section>
+<section class="closing">
+<h2>La atención sostenida también acompaña.</h2>
+<p>Detectar cambios durante el recorrido nos permite intervenir antes de que una dificultad se profundice.</p>
+<div class="next">📍 Próximo viernes: checkpoint del tutor</div>
+</section>
+<div class="back"><a href="t-camino.html">← Volver a DISTANCIA EN ACCIÓN</a></div>
+<footer class="footer-proyecto"></footer>
+</div>
+<script>
+const cards=[...document.querySelectorAll(".checkcard")],count=document.getElementById("count"),bar=document.getElementById("bar"),feedback=document.getElementById("feedback");
+function update(){const s=cards.filter(c=>c.classList.contains("active")).length;count.textContent=`${s} de 4 acciones realizadas`;bar.style.width=`${s*25}%`;feedback.textContent=["Empezá revisando si algo cambió en el recorrido de tus estudiantes.","Ya activaste una nueva mirada sobre el grupo.","Vas detectando mejor los cambios en las trayectorias.","¡Casi listo! Falta una última acción por revisar.","🎯 ¡Mirada activa! Estar atentos también es acompañar."][s]}
+cards.forEach(c=>{function toggle(){c.classList.toggle("active");update()}c.addEventListener("click",toggle);c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle()}})});update();
+</script>
+<script src="../js/firma.js"></script>
+</body>
+</html>
