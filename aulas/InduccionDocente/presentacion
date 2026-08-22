@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Inducción Docente | Modalidad Presencial</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--celeste:#22a9e0;--azul:#0877b9;--naranja:#f58220;--oscuro:#18344d;--gris:#657b8b;--claro:#f4fafe;--blanco:#fff}
+html,body{width:100%;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#fff;color:var(--oscuro)}
+body{padding:0}
+.contenedor{max-width:1200px;min-height:410px;margin:auto;padding:18px 26px 14px;position:relative;overflow:hidden;background:linear-gradient(135deg,#fff 0%,#f3fbff 62%,#fff7f0 100%);border-radius:22px}
+.orbe{position:absolute;border-radius:50%;pointer-events:none}
+.o1{width:270px;height:270px;background:rgba(34,169,224,.08);right:-90px;top:-120px}
+.o2{width:160px;height:160px;background:rgba(245,130,32,.07);left:-65px;bottom:-80px}
+.top{display:flex;justify-content:flex-end;position:relative;z-index:2}
+.badge{background:#e6f7fd;color:var(--azul);font-size:10px;font-weight:800;letter-spacing:1px;padding:6px 12px;border-radius:20px;text-transform:uppercase}
+.hero{text-align:center;position:relative;z-index:2;margin-top:-3px}
+.hero .mini{font-size:11px;font-weight:800;letter-spacing:1.4px;color:var(--naranja);text-transform:uppercase;margin-bottom:5px}
+.hero h1{font-size:30px;line-height:1.05;letter-spacing:-.5px}
+.hero h1 span{color:var(--celeste)}
+.hero p{max-width:720px;margin:7px auto 0;font-size:13px;line-height:1.5;color:var(--gris)}
+.hero strong{color:var(--azul)}
+.modulos{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:17px;position:relative;z-index:2}
+.card{border:1px solid #e3edf3;background:#fff;border-radius:17px;padding:13px 12px;min-height:112px;cursor:pointer;box-shadow:0 7px 20px rgba(28,76,105,.07);transition:.25s;text-align:left;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-5px);box-shadow:0 13px 28px rgba(28,76,105,.14);border-color:#c8e8f6}
+.card::after{content:"";position:absolute;width:55px;height:55px;border-radius:50%;right:-20px;bottom:-25px;background:rgba(34,169,224,.07)}
+.numero{font-size:10px;font-weight:900;color:var(--naranja);letter-spacing:1px;margin-bottom:7px}
+.icono{font-size:21px;margin-bottom:5px}
+.card h3{font-size:13px;line-height:1.2;margin-bottom:5px}
+.card p{font-size:10.5px;line-height:1.35;color:#7d8e9a}
+.card4{background:linear-gradient(135deg,#0877b9,#22a9e0);border:none;color:#fff}
+.card4 .numero{color:#ffd3ae}
+.card4 p{color:#eaf9ff}
+.card4::after{background:rgba(255,255,255,.08)}
+.inferior{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:14px;position:relative;z-index:2;flex-wrap:wrap}
+.btn{border:0;border-radius:11px;padding:9px 17px;font-family:inherit;font-size:11.5px;font-weight:800;cursor:pointer;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-naranja{background:var(--naranja);color:#fff;box-shadow:0 6px 16px rgba(245,130,32,.25)}
+.btn-claro{background:#fff;color:var(--azul);border:1px solid #dceaf2}
+.cierre{text-align:center;margin-top:10px;position:relative;z-index:2}
+.cierre p{font-size:10.5px;color:#7d8e9a}
+.cierre strong{color:var(--oscuro)}
+.pie{text-align:center;margin-top:6px;font-size:9px;color:#a0adb5;position:relative;z-index:2}
+.modal{position:fixed;inset:0;background:rgba(18,45,65,.78);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:18px;z-index:9999}
+.modal.activo{display:flex}
+.modalbox{width:min(520px,94vw);max-height:85vh;overflow:auto;background:#fff;border-radius:22px;padding:25px 26px;box-shadow:0 28px 80px rgba(0,0,0,.30);animation:entrada .25s ease}
+@keyframes entrada{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+.cerrar{float:right;width:31px;height:31px;border:0;border-radius:50%;background:#eff5f7;color:#516878;font-size:17px;cursor:pointer}
+.modalIcon{font-size:30px;margin:3px 0 10px}
+.modalbox .sobre{font-size:10px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--naranja);margin-bottom:5px}
+.modalbox h2{font-size:22px;margin-bottom:9px}
+.modalbox p{font-size:13.5px;line-height:1.65;color:var(--gris);margin-bottom:8px}
+.modalbox strong{color:var(--azul)}
+.destacado{margin-top:13px;padding:12px 14px;background:#f2faff;border-left:3px solid var(--celeste);border-radius:0 11px 11px 0;font-size:12.5px;line-height:1.55;color:#526c7d}
+@media(max-width:760px){
+.contenedor{border-radius:0;padding:16px;min-height:auto}
+.modulos{grid-template-columns:repeat(2,1fr)}
+.hero h1{font-size:26px}
+}
+@media(max-width:430px){
+.modulos{grid-template-columns:1fr 1fr;gap:8px}
+.card{padding:11px 9px}
+}
+</style>
+</head>
+<body>
+
+<section class="contenedor">
+<div class="orbe o1"></div>
+<div class="orbe o2"></div>
+
+<div class="top">
+<div class="badge">Modalidad Presencial</div>
+</div>
+
+<div class="hero">
+<div class="mini">Bienvenido/a a IES</div>
+<h1>Inducción <span>Docente</span></h1>
+<p>Un recorrido <strong>simple, práctico y cercano</strong> para conocer IES, comprender cómo trabajamos y contar con las herramientas esenciales para tu tarea docente.</p>
+</div>
+
+<div class="modulos">
+
+<div class="card" onclick="abrir('m1')">
+<div class="numero">01 · CONOCÉ</div>
+<div class="icono">🏛️</div>
+<h3>La Institución</h3>
+<p>Quiénes somos, cómo nos organizamos y con quién podés contar.</p>
+</div>
+
+<div class="card" onclick="abrir('m2')">
+<div class="numero">02 · ENSEÑÁ</div>
+<div class="icono">🧭</div>
+<h3>Metodología Áulica</h3>
+<p>Nuestra manera de enseñar, acompañar y evaluar los aprendizajes.</p>
+</div>
+
+<div class="card" onclick="abrir('m3')">
+<div class="numero">03 · GESTIONÁ</div>
+<div class="icono">💻</div>
+<h3>Sistema de Autogestión</h3>
+<p>Las herramientas necesarias para gestionar tu actividad académica.</p>
+</div>
+
+<div class="card card4" onclick="abrir('m4')">
+<div class="numero">04 · SÉ PARTE</div>
+<div class="icono">🤝</div>
+<h3>Vida Institucional</h3>
+<p>Acuerdos, responsabilidades y pautas para nuestra comunidad educativa.</p>
+</div>
+
+</div>
+
+<div class="inferior">
+<button class="btn btn-claro" onclick="abrir('bienvenida')">✨ ¿Por qué este espacio?</button>
+<button class="btn btn-naranja" onclick="abrir('inicio')">🚀 ¿Cómo comienzo?</button>
+</div>
+
+<div class="cierre">
+<p><strong>Tu recorrido en IES comienza acá.</strong> Este espacio también estará disponible cuando necesites volver a consultar.</p>
+</div>
+
+<div class="pie">Modalidad Presencial · Colegio Universitario IES</div>
+</section>
+
+
+<div class="modal" id="modal" onclick="cerrarFondo(event)">
+<div class="modalbox">
+<button class="cerrar" onclick="cerrar()">×</button>
+<div class="modalIcon" id="modalIcon"></div>
+<div class="sobre" id="modalSobre"></div>
+<h2 id="modalTitulo"></h2>
+<div id="modalTexto"></div>
+</div>
+</div>
+
+<script>
+const contenido={
+m1:{
+icon:'🏛️',
+sobre:'Módulo 01',
+titulo:'La Institución',
+texto:`<p>Comenzar a enseñar en una institución también significa comenzar a conocerla.</p>
+<p>En este módulo vas a descubrir <strong>quiénes somos, cómo nos organizamos y qué personas y áreas acompañan tu tarea</strong>.</p>
+<div class="destacado">El objetivo es que puedas ubicarte rápidamente dentro de IES y saber con quién contar cuando necesites orientación o acompañamiento.</div>`
+},
+m2:{
+icon:'🧭',
+sobre:'Módulo 02',
+titulo:'Metodología Áulica',
+texto:`<p>Conocer una institución también implica comprender su manera de enseñar.</p>
+<p>Este módulo te acerca a los principales criterios que orientan nuestra <strong>enseñanza, el acompañamiento de los estudiantes y la evaluación de los aprendizajes</strong>.</p>
+<div class="destacado">Una mirada práctica sobre cómo desarrollamos la experiencia educativa en IES.</div>`
+},
+m3:{
+icon:'💻',
+sobre:'Módulo 03',
+titulo:'Sistema de Autogestión',
+texto:`<p>Parte de la tarea docente también implica gestionar información y procedimientos académicos.</p>
+<p>Acá vas a incorporar las <strong>herramientas necesarias para desenvolverte con autonomía</strong> en las tareas habituales vinculadas con tu actividad académica.</p>
+<div class="destacado">La tecnología al servicio de una gestión docente más simple y organizada.</div>`
+},
+m4:{
+icon:'🤝',
+sobre:'Módulo 04',
+titulo:'Vida Institucional y Responsabilidad Docente',
+texto:`<p>Ser parte de IES significa también compartir acuerdos y responsabilidades.</p>
+<p>En este módulo conocerás las pautas que nos ayudan a construir una comunidad educativa <strong>segura, respetuosa, responsable y comprometida</strong>.</p>
+<div class="destacado">No se trata solamente de conocer normas: se trata de comprender cómo construimos juntos nuestra vida institucional.</div>`
+},
+bienvenida:{
+icon:'✨',
+sobre:'Una invitación',
+titulo:'Ser parte de IES',
+texto:`<p>Esta inducción fue creada para acompañarte en tus primeros pasos, pero también para que tengas un espacio al cual regresar cada vez que necesites <strong>resolver una duda, consultar un procedimiento o encontrar un recurso</strong>.</p>
+<p>Cada docente que se incorpora trae conocimientos, experiencias, ideas y nuevas formas de mirar la enseñanza. Ese aporte enriquece nuestra institución y nos permite seguir construyendo una educación que evoluciona, se transforma y aprende.</p>
+<div class="destacado"><strong>Queremos que este espacio te acompañe hoy y durante todo tu recorrido en IES.</strong></div>`
+},
+inicio:{
+icon:'🚀',
+sobre:'Tu punto de partida',
+titulo:'¿Cómo comienzo?',
+texto:`<p>Ingresá a la sección <strong>Clases</strong> del aula y comenzá por la <strong>Presentación</strong>.</p>
+<p>Desde allí, avanzá en orden por los cuatro módulos hasta llegar a la instancia de cierre.</p>
+<p>La propuesta es <strong>100 % autogestionada</strong>, por lo que podés avanzar de manera autónoma siguiendo el recorrido propuesto.</p>
+<div class="destacado"><strong>Presentación → Módulo 1 → Módulo 2 → Módulo 3 → Módulo 4 → Cierre</strong></div>`
+}
+};
+
+function abrir(id){
+const d=contenido[id];
+document.getElementById('modalIcon').textContent=d.icon;
+document.getElementById('modalSobre').textContent=d.sobre;
+document.getElementById('modalTitulo').textContent=d.titulo;
+document.getElementById('modalTexto').innerHTML=d.texto;
+document.getElementById('modal').classList.add('activo');
+}
+function cerrar(){document.getElementById('modal').classList.remove('activo')}
+function cerrarFondo(e){if(e.target.id==='modal')cerrar()}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')cerrar()});
+</script>
+
+</body>
+</html>
