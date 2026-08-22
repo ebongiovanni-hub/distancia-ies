@@ -1,0 +1,114 @@
+body.tema-seguimiento{
+  background:
+    radial-gradient(circle at 12% 8%,rgba(76,182,132,.13),transparent 24%),
+    radial-gradient(circle at 88% 12%,rgba(0,166,214,.10),transparent 26%),
+    radial-gradient(circle at 50% 90%,rgba(31,95,158,.06),transparent 22%),
+    linear-gradient(180deg,#F0F9F5 0%,#EDF7F8 58%,#F4F8FB 100%);
+}
+.tema-seguimiento .hero{
+  background:
+    radial-gradient(circle at 86% 18%,rgba(76,182,132,.12),transparent 25%),
+    radial-gradient(circle at 76% 76%,rgba(0,166,214,.07),transparent 30%),
+    linear-gradient(135deg,#FFFFFF 0%,#EFF9F5 58%,#F2FAFC 100%);
+  border-top-color:#4CB684;
+}
+.tema-seguimiento .hero::before{
+  width:240px;
+  height:240px;
+  right:-80px;
+  top:-90px;
+  background:rgba(76,182,132,.09);
+}
+.tema-seguimiento .hero::after{
+  width:300px;
+  height:170px;
+  right:-35px;
+  bottom:-45px;
+  background:repeating-radial-gradient(
+    ellipse at 88% 90%,
+    rgba(76,182,132,.13) 0 3px,
+    rgba(0,166,214,.05) 4px 11px,
+    transparent 12px 24px
+  );
+}
+.tema-seguimiento .badge{
+  background:#EAF8F1;
+  border-color:rgba(76,182,132,.20);
+  color:#397E5D;
+}
+.tema-seguimiento h1 span{color:#4CB684}
+.tema-seguimiento .rule{
+  background:#EAF8F1;
+  color:#397E5D;
+}
+.tema-seguimiento .section{
+  background:rgba(255,255,255,.93);
+  border-color:rgba(76,182,132,.15);
+}
+.tema-seguimiento .section h2{color:var(--azul)}
+.tema-seguimiento .checkcard.active,
+.tema-seguimiento .choice.active{
+  border-color:#4CB684;
+  background:linear-gradient(180deg,#FBFFFD,#EDF9F3);
+  box-shadow:0 0 0 3px rgba(76,182,132,.08);
+}
+.tema-seguimiento .checkcard.active .status,
+.tema-seguimiento .choice.active .check{
+  background:#4CB684;
+  border-color:#4CB684;
+}
+.tema-seguimiento .monitor,
+.tema-seguimiento .rhythm-box{
+  background:linear-gradient(135deg,#EDF9F3,#F7FCFB);
+  border-color:rgba(76,182,132,.20);
+  color:var(--azul);
+}
+.tema-seguimiento .meter,
+.tema-seguimiento .bar{
+  background:#DFECE6;
+}
+.tema-seguimiento .meter>div,
+.tema-seguimiento .bar span{
+  background:linear-gradient(90deg,#4CB684,var(--celeste));
+}
+.tema-seguimiento .feedback,
+.tema-seguimiento .small{
+  color:#56766A;
+}
+.tema-seguimiento .alert,
+.tema-seguimiento .help,
+.tema-seguimiento .tipbox{
+  background:#F3FBF7;
+  border-left-color:#4CB684;
+  color:#4F675D;
+}
+.tema-seguimiento .alert strong,
+.tema-seguimiento .help strong,
+.tema-seguimiento .tipbox strong{
+  color:#397E5D;
+}
+.tema-seguimiento .focusbox{
+  border-color:rgba(76,182,132,.15);
+}
+.tema-seguimiento .focusbox.orange{
+  background:linear-gradient(135deg,#EEF9F3,#FFFFFF);
+  border-color:rgba(76,182,132,.20);
+}
+.tema-seguimiento .closing,
+.tema-seguimiento .cta,
+.tema-seguimiento .next-panel{
+  background:linear-gradient(135deg,#F2FAF6,#FFFFFF);
+  border-color:rgba(76,182,132,.16);
+}
+.tema-seguimiento .next{
+  background:#E8F7F0;
+  color:#397E5D;
+}
+.tema-seguimiento .back a{
+  border-color:#4CB684;
+  color:#397E5D;
+}
+.tema-seguimiento .back a:hover{
+  background:#4CB684;
+  color:#FFF;
+}
