@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Inducción Docente | IES</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--celeste:#24a9e1;--azul:#0875b7;--naranja:#f58220;--oscuro:#17324d;--gris:#6d7f8d}
+body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:var(--oscuro)}
+.portada{height:330px;max-width:1200px;margin:auto;position:relative;overflow:hidden;background:linear-gradient(135deg,#fff 0%,#f3fbff 65%,#fff7f0 100%);border-radius:22px;padding:18px 28px}
+.orbe{position:absolute;border-radius:50%;opacity:.09}
+.o1{width:220px;height:220px;background:var(--celeste);right:-70px;top:-100px}
+.o2{width:130px;height:130px;background:var(--naranja);left:-50px;bottom:-60px}
+.top{display:flex;justify-content:flex-end;position:relative;z-index:2}
+.badge{font-size:10px;font-weight:800;letter-spacing:.8px;color:var(--azul);background:#e8f7fd;padding:7px 12px;border-radius:20px}
+.intro{text-align:center;margin-top:-4px;position:relative;z-index:2}
+.intro h1{font-size:29px;line-height:1;color:var(--oscuro)}
+.intro h1 span{color:var(--celeste)}
+.intro p{font-size:13px;color:var(--gris);margin-top:6px}
+.tarjetas{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:17px;position:relative;z-index:2}
+.card{background:#fff;border:1px solid #e6eef3;border-radius:16px;padding:11px 9px;text-align:center;cursor:pointer;transition:.25s;min-height:98px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 6px 18px #234f7010}
+.card:hover{transform:translateY(-4px);box-shadow:0 11px 24px #234f701b;border-color:#cfeaf7}
+.icono{font-size:22px;margin-bottom:5px}
+.card h3{font-size:13px;margin-bottom:3px}
+.card span{font-size:10.5px;color:#8b9aa5}
+.card.cert{background:linear-gradient(135deg,var(--azul),var(--celeste));color:#fff;border:none}
+.card.cert span{color:#eaf9ff}
+.accion{text-align:center;margin-top:12px;position:relative;z-index:2}
+.btn{display:inline-block;background:var(--naranja);color:#fff;border:0;border-radius:11px;padding:8px 18px;font-size:12px;font-weight:800;cursor:pointer;box-shadow:0 6px 16px #f5822030;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.pie{text-align:center;font-size:9px;color:#9aa7b1;margin-top:6px;position:relative;z-index:2}
+.modal{position:fixed;inset:0;background:#17324dcc;backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:18px;z-index:9999}
+.modal.activo{display:flex}
+.modalbox{width:min(430px,95%);background:#fff;border-radius:20px;padding:24px;box-shadow:0 25px 70px #0004;animation:entrada .25s ease}
+@keyframes entrada{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+.cerrar{float:right;width:30px;height:30px;border:0;border-radius:50%;background:#f0f5f7;cursor:pointer;font-size:17px;color:var(--oscuro)}
+.modalicon{font-size:30px;margin-bottom:10px}
+.modalbox h2{font-size:21px;margin-bottom:8px}
+.modalbox p{font-size:14px;line-height:1.55;color:var(--gris)}
+.modalbox strong{color:var(--azul)}
+@media(max-width:700px){
+.portada{height:auto;padding:18px}
+.tarjetas{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<section class="portada">
+<div class="orbe o1"></div>
+<div class="orbe o2"></div>
+
+<div class="top">
+<div class="badge">AUTOGESTIONADA</div>
+</div>
+
+<div class="intro">
+<h1>Inducción <span>Docente</span></h1>
+<p>Todo lo esencial para comenzar tu experiencia docente en IES.</p>
+</div>
+
+<div class="tarjetas">
+
+<div class="card" onclick="abrir('recorrido')">
+<div class="icono">🗺️</div>
+<h3>Tu recorrido</h3>
+<span>4 módulos para conocer IES</span>
+</div>
+
+<div class="card" onclick="abrir('trabajamos')">
+<div class="icono">✨</div>
+<h3>Cómo trabajamos</h3>
+<span>Lo esencial para tu tarea docente</span>
+</div>
+
+<div class="card" onclick="abrir('ritmo')">
+<div class="icono">🧭</div>
+<h3>A tu ritmo</h3>
+<span>100 % autogestionada</span>
+</div>
+
+<div class="card cert" onclick="abrir('cert')">
+<div class="icono">🏆</div>
+<h3>Llegá al 100 %</h3>
+<span>Obtené tu certificación</span>
+</div>
+
+</div>
+
+<div class="accion">
+<button class="btn" onclick="abrir('inicio')">🚀 ¿Cómo comienzo?</button>
+</div>
+
+<div class="pie">Modalidad Distancia - IES</div>
+</section>
+
+<div class="modal" id="modal" onclick="fondoCerrar(event)">
+<div class="modalbox">
+<button class="cerrar" onclick="cerrar()">×</button>
+<div class="modalicon" id="mIcon"></div>
+<h2 id="mTitulo"></h2>
+<p id="mTexto"></p>
+</div>
+</div>
+
+<script>
+const datos={
+recorrido:{
+i:'🗺️',
+t:'Tu recorrido',
+x:'La propuesta está organizada en <strong>cuatro módulos centrales</strong>, acompañados por una presentación inicial y una instancia de cierre. Vas a conocer progresivamente la institución, la metodología, el sistema de autogestión y las responsabilidades vinculadas a tu tarea docente.'
+},
+trabajamos:{
+i:'✨',
+t:'Conocé cómo trabajamos',
+x:'A lo largo del recorrido vas a descubrir aspectos esenciales de la <strong>vida institucional</strong>, la metodología áulica, las herramientas que vas a utilizar y los criterios que orientan la tarea docente en IES.'
+},
+ritmo:{
+i:'🧭',
+t:'Avanzá a tu ritmo',
+x:'Esta propuesta es <strong>completamente autogestionada</strong>. No tiene profesor a cargo: podés recorrer los contenidos y completar las actividades de manera autónoma, respetando tu propio ritmo.'
+},
+cert:{
+i:'🏆',
+t:'Completá el 100 %',
+x:'Al finalizar el <strong>100 % de la propuesta</strong> y completar las actividades previstas, obtendrás la certificación correspondiente a la Inducción Docente.'
+},
+inicio:{
+i:'🚀',
+t:'¿Cómo comienzo?',
+x:'Ingresá a la sección <strong>Clases</strong> y comenzá por la <strong>Presentación</strong>. Desde allí, avanzá en orden por los cuatro módulos hasta llegar al cierre y completar el 100 % de la propuesta.'
+}
+};
+
+function abrir(k){
+const d=datos[k];
+document.getElementById('mIcon').textContent=d.i;
+document.getElementById('mTitulo').textContent=d.t;
+document.getElementById('mTexto').innerHTML=d.x;
+document.getElementById('modal').classList.add('activo');
+}
+
+function cerrar(){
+document.getElementById('modal').classList.remove('activo');
+}
+
+function fondoCerrar(e){
+if(e.target.id==='modal')cerrar();
+}
+</script>
+
+</body>
+</html>
