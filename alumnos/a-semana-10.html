@@ -1,1 +1,57 @@
-
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Distancia | Tu recorrido · Semana 10</title>
+<link rel="stylesheet" href="../css/a-semanas.css">
+<link rel="stylesheet" href="../css/a-semana-ritmo.css">
+</head>
+<body class="tema-ritmo">
+<div class="wrap">
+<div class="brandbar">
+<div class="topline">DISTANCIA | TU RECORRIDO</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
+</div>
+<section class="hero">
+<div class="badge">🧭 SEMANA 10 · REAJUSTAR</div>
+<h1>Volvé a encontrar <span>tu ritmo</span></h1>
+<p>Los ritmos cambian. Después de varias semanas, quizás tu organización inicial ya no funcione igual. Esta etapa te invita a revisar, ajustar y volver a encontrar una forma sostenible de avanzar.</p>
+<div class="path"><strong>🚀 Nuevo tramo</strong><span class="arrow">→</span><strong>🧭 Reajustar el ritmo</strong><span class="arrow">→</span><span>🔒 Próximo paso</span></div>
+</section>
+<section class="section">
+<h2>Hacé un pequeño ajuste</h2>
+<p class="intro">No necesitás cambiar todo. Elegí aquello que hoy pueda ayudarte a recuperar equilibrio y continuidad.</p>
+<div class="grid">
+<div class="choice" tabindex="0"><div class="tick">✓</div><div class="emoji">📅</div><h3>Reordenar mi semana</h3><p>Volver a mirar mis tiempos actuales y decidir cuándo puedo estudiar realmente.</p></div>
+<div class="choice" tabindex="0"><div class="tick">✓</div><div class="emoji">📚</div><h3>Revisar pendientes</h3><p>Identificar qué quedó atrás y decidir qué necesito resolver primero.</p></div>
+<div class="choice" tabindex="0"><div class="tick">✓</div><div class="emoji">🎯</div><h3>Simplificar prioridades</h3><p>Elegir pocas metas concretas en lugar de intentar resolver todo al mismo tiempo.</p></div>
+<div class="choice" tabindex="0"><div class="tick">✓</div><div class="emoji">🙋</div><h3>Volver a pedir ayuda</h3><p>Consultar si aparece una dificultad que está frenando mi avance.</p></div>
+</div>
+<div class="rhythm-box">
+<div class="rhythm-head"><strong>Tu reajuste</strong><span id="count">0 de 4 acciones elegidas</span></div>
+<div class="meter"><div id="bar"></div></div>
+<div class="feedback" id="feedback">Elegí un pequeño ajuste que puedas aplicar esta semana.</div>
+</div>
+<div class="tipbox"><div class="tipicon">🌱</div><div><strong>Tu organización puede cambiar:</strong><br>Una rutina útil es aquella que se adapta a tu realidad, no aquella que intentás sostener aunque ya no funcione.</div></div>
+</section>
+<section class="focus">
+<div class="focusbox"><h3>⚖️ Ajustar no es retroceder</h3><p>Modificar una estrategia cuando deja de funcionar es una forma inteligente de sostener el recorrido.</p></div>
+<div class="focusbox orange"><h3>🧭 Volver al rumbo también cuenta</h3><p>No importa si alguna semana fue más difícil. Lo importante es encontrar el próximo paso posible.</p></div>
+</section>
+<section class="cta">
+<h2>Tu ritmo no tiene que ser perfecto. Tiene que ser posible.</h2>
+<p>Elegí un ajuste pequeño y probalo esta semana. A veces eso alcanza para volver a tomar impulso.</p>
+<div class="next">🔎 Próximo viernes: anticiparte es tu estrategia</div>
+</section>
+<div class="back"><a href="a-camino.html">← Volver a TU RECORRIDO</a></div>
+<footer class="footer-proyecto"></footer>
+</div>
+<script>
+const choices=[...document.querySelectorAll(".choice")],count=document.getElementById("count"),bar=document.getElementById("bar"),feedback=document.getElementById("feedback");
+function update(){const s=choices.filter(c=>c.classList.contains("active")).length;count.textContent=`${s} de 4 acciones elegidas`;bar.style.width=`${s*25}%`;feedback.textContent=["Elegí un pequeño ajuste que puedas aplicar esta semana.","Buen comienzo. Un cambio pequeño puede ayudarte mucho.","Tu organización empieza a recuperar equilibrio.","¡Casi listo! Ya estás reajustando tu recorrido.","🧭 ¡Ritmo reajustado! Ahora lo importante es sostenerlo."][s]}
+choices.forEach(c=>{function toggle(){c.classList.toggle("active");update()}c.addEventListener("click",toggle);c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle()}})});update();
+</script>
+<script src="../js/firma.js"></script>
+</body>
+</html>
