@@ -1,1 +1,56 @@
-
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Distancia en Acción · Semana 8</title>
+<link rel="stylesheet" href="../css/semanas.css">
+<link rel="stylesheet" href="../css/semana-check.css">
+</head>
+<body class="tema-check">
+<div class="wrap">
+<div class="brandbar">
+<div class="topline">DISTANCIA | EN ACCIÓN</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
+</div>
+<section class="hero">
+<div class="badge">🏁 SEMANA 8 · CIERRE DE TRAMO</div>
+<h1>Cerramos un tramo, <span>miramos el recorrido</span></h1>
+<p>Llegamos a un punto importante del semestre. Antes de avanzar, vale la pena revisar que las situaciones detectadas durante estas semanas hayan tenido seguimiento y que no queden temas abiertos sin una próxima acción definida.</p>
+<div class="rule">🧭 Cerrar también es revisar</div>
+</section>
+<section class="section">
+<h2>Un último check antes de seguir</h2>
+<p class="intro">Marcá aquello que ya está resuelto. No buscamos sumar tareas: queremos cerrar este tramo con una mirada ordenada sobre lo trabajado.</p>
+<div class="checks">
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">👀</div><h3>Revisé los casos acompañados</h3><p>Volví sobre las situaciones que requirieron seguimiento durante estas semanas.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">💬</div><h3>Confirmé los contactos pendientes</h3><p>Verifiqué que no haya comunicaciones importantes que hayan quedado sin respuesta o seguimiento.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">📝</div><h3>Dejé la información actualizada</h3><p>Registré aquello que será útil recuperar cuando comience el próximo tramo.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">➡️</div><h3>Definí qué continúa</h3><p>Identifiqué qué situaciones necesitan seguir siendo observadas durante las próximas semanas.</p></div>
+</div>
+<div class="monitor">
+<div class="monitor-head"><strong>Cierre del tramo</strong><span id="count">0 de 4 puntos revisados</span></div>
+<div class="meter"><div id="bar"></div></div>
+<div class="feedback" id="feedback">Empezá revisando un punto antes de cerrar este tramo.</div>
+</div>
+</section>
+<section class="focus">
+<div class="focusbox"><h3>🏁 Cerrar no significa terminar</h3><p>Algunas situaciones quedan resueltas y otras continúan. Lo importante es saber claramente cuáles necesitan seguir en el radar.</p></div>
+<div class="focusbox orange"><h3>🧭 Un buen cierre facilita el próximo comienzo</h3><p>Dejar información clara permite retomar el seguimiento sin perder contexto ni repetir trabajo.</p></div>
+</section>
+<section class="closing">
+<h2>Primer tramo completado ✅</h2>
+<p>Lo trabajado hasta acá nos da una base más clara para comenzar la siguiente etapa del acompañamiento.</p>
+<div class="next">🚀 Próximo viernes: nuevo ciclo en marcha</div>
+</section>
+<div class="back"><a href="t-camino.html">← Volver a DISTANCIA EN ACCIÓN</a></div>
+<footer class="footer-proyecto"></footer>
+</div>
+<script>
+const cards=[...document.querySelectorAll(".checkcard")],count=document.getElementById("count"),bar=document.getElementById("bar"),feedback=document.getElementById("feedback");
+function update(){const s=cards.filter(c=>c.classList.contains("active")).length;count.textContent=`${s} de 4 puntos revisados`;bar.style.width=`${s*25}%`;feedback.textContent=["Empezá revisando un punto antes de cerrar este tramo.","Ya hay una parte del cierre revisada.","Vas ordenando lo trabajado hasta acá.","¡Casi listo! Falta un último punto.","🏁 ¡Tramo cerrado! Seguimos con una mirada más clara."][s]}
+cards.forEach(c=>{function toggle(){c.classList.toggle("active");update()}c.addEventListener("click",toggle);c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle()}})});update();
+</script>
+<script src="../js/firma.js"></script>
+</body>
+</html>
