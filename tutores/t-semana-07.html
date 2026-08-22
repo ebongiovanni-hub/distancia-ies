@@ -1,1 +1,56 @@
-
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Distancia en Acción · Semana 7</title>
+<link rel="stylesheet" href="../css/semanas.css">
+<link rel="stylesheet" href="../css/semana-seguimiento.css">
+</head>
+<body class="tema-seguimiento">
+<div class="wrap">
+<div class="brandbar">
+<div class="topline">DISTANCIA | EN ACCIÓN</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
+</div>
+<section class="hero">
+<div class="badge">📊 SEMANA 7 · INFORMACIÓN AL DÍA</div>
+<h1>Lo que registramos también <span>acompaña</span></h1>
+<p>El seguimiento no termina cuando hacemos contacto con un estudiante. Registrar lo que observamos, mantener la información actualizada y revisar los cambios nos permite sostener un acompañamiento más ordenado y oportuno.</p>
+<div class="rule">📡 Esta semana: mirar, actualizar y dejar registro</div>
+</section>
+<section class="section">
+<h2>¿Tu seguimiento está actualizado?</h2>
+<p class="intro">Marcá las acciones que ya realizaste. El objetivo es que la información disponible refleje lo que realmente está pasando con tus estudiantes.</p>
+<div class="checks">
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">👀</div><h3>Revisé la actividad reciente</h3><p>Volví a mirar participación, ingresos y señales que puedan requerir seguimiento.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">📝</div><h3>Actualicé la información</h3><p>Registré contactos, novedades o situaciones que sea importante conservar.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">🔄</div><h3>Revisé cambios</h3><p>Comprobé si estudiantes que necesitaban acompañamiento retomaron su actividad.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">↗️</div><h3>Derivé cuando correspondía</h3><p>Identifiqué situaciones que requieren intervención de otra área y las canalicé a tiempo.</p></div>
+</div>
+<div class="monitor">
+<div class="monitor-head"><strong>Seguimiento actualizado</strong><span id="count">0 de 4 acciones realizadas</span></div>
+<div class="meter"><div id="bar"></div></div>
+<div class="feedback" id="feedback">Empezá revisando qué cambió desde tu último seguimiento.</div>
+</div>
+</section>
+<section class="focus">
+<div class="focusbox"><h3>📌 Registrar evita empezar de cero</h3><p>Una información clara permite recuperar rápidamente el contexto y tomar mejores decisiones en el próximo contacto.</p></div>
+<div class="focusbox orange"><h3>🔄 El seguimiento es dinámico</h3><p>Una situación puede cambiar de una semana a otra. Por eso revisar nuevamente es tan importante como detectar por primera vez.</p></div>
+</section>
+<section class="closing">
+<h2>Información al día, acompañamiento más claro.</h2>
+<p>Cada actualización ayuda a construir una mirada más completa sobre el recorrido de nuestros estudiantes.</p>
+<div class="next">🏁 Próximo viernes: cerramos un tramo</div>
+</section>
+<div class="back"><a href="t-camino.html">← Volver a DISTANCIA EN ACCIÓN</a></div>
+<footer class="footer-proyecto"></footer>
+</div>
+<script>
+const cards=[...document.querySelectorAll(".checkcard")],count=document.getElementById("count"),bar=document.getElementById("bar"),feedback=document.getElementById("feedback");
+function update(){const s=cards.filter(c=>c.classList.contains("active")).length;count.textContent=`${s} de 4 acciones realizadas`;bar.style.width=`${s*25}%`;feedback.textContent=["Empezá revisando qué cambió desde tu último seguimiento.","Buen comienzo. Ya hay información actualizada.","Vas construyendo un seguimiento más claro.","¡Casi listo! Queda una última acción por revisar.","📊 ¡Seguimiento actualizado! La información acompaña tu próxima decisión."][s]}
+cards.forEach(c=>{function toggle(){c.classList.toggle("active");update()}c.addEventListener("click",toggle);c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle()}})});update();
+</script>
+<script src="../js/firma.js"></script>
+</body>
+</html>
