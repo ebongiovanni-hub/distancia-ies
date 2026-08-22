@@ -1,1 +1,21 @@
-
+body.tema-construccion{background:radial-gradient(circle at 10% 8%,rgba(84,77,184,.13),transparent 24%),radial-gradient(circle at 90% 12%,rgba(0,170,228,.07),transparent 24%),linear-gradient(180deg,#F1F0FA,#FBFBFE 55%,#F1F5FA)}
+.tema-construccion .hero{background:linear-gradient(130deg,#FFF,#F0EFFB 58%,#E8E8F8);border-top-color:#544DB8;border-color:rgba(84,77,184,.20)}
+.tema-construccion .hero::before{background:rgba(84,77,184,.09)}
+.tema-construccion .hero::after{background:repeating-linear-gradient(45deg,rgba(84,77,184,.07) 0 5px,transparent 5px 17px)}
+.tema-construccion .badge{background:#EAE9F8;color:#544DB8;border-color:rgba(84,77,184,.20)}
+.tema-construccion h1{color:#1F344C}
+.tema-construccion h1 span{color:#544DB8}
+.tema-construccion .rule{background:#ECEBFA;color:#544DB8}
+.tema-construccion .section{border-color:rgba(84,77,184,.16)}
+.tema-construccion .section h2{color:#544DB8}
+.tema-construccion .choice.active,.tema-construccion .checkcard.active,.tema-construccion .check.selected{border-color:#544DB8;background:linear-gradient(180deg,#FFF,#F0EFFB)}
+.tema-construccion .monitor,.tema-construccion .rhythm-box{background:linear-gradient(135deg,#EAE9F8,#F8F8FD);border-color:rgba(84,77,184,.22);color:#544DB8}
+.tema-construccion .meter>div,.tema-construccion .bar span{background:linear-gradient(90deg,#544DB8,#00AAE4)}
+.tema-construccion .alert,.tema-construccion .help,.tema-construccion .tipbox{background:#F2F1FA;border-left-color:#544DB8;color:#5A5872}
+.tema-construccion .alert strong,.tema-construccion .help strong,.tema-construccion .tipbox strong{color:#544DB8}
+.tema-construccion .tipicon{background:#E1E0F4}
+.tema-construccion .focusbox.orange{background:linear-gradient(135deg,#ECEBFA,#EEF8FC);border-color:rgba(84,77,184,.18)}
+.tema-construccion .focusbox.orange h3{color:#544DB8}
+.tema-construccion .closing,.tema-construccion .cta,.tema-construccion .next-panel{background:linear-gradient(135deg,#EAE9F8,#F8F8FD);border-color:rgba(84,77,184,.20)}
+.tema-construccion .closing h2,.tema-construccion .cta h2,.tema-construccion .next-panel h2{color:#544DB8}
+.tema-construccion .next{background:#E1E0F4;color:#544DB8}
