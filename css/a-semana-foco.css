@@ -1,1 +1,21 @@
-
+body.tema-foco{background:radial-gradient(circle at 10% 8%,rgba(255,162,0,.15),transparent 24%),radial-gradient(circle at 90% 12%,rgba(255,104,89,.09),transparent 24%),linear-gradient(180deg,#FFF8E9,#FFFDF7 55%,#FFF4E8)}
+.tema-foco .hero{background:linear-gradient(130deg,#FFFDF5,#FFF4D7 60%,#FFE9D8);border-top-color:#FFA200;border-color:rgba(255,162,0,.23)}
+.tema-foco .hero::before{background:rgba(255,162,0,.13)}
+.tema-foco .hero::after{background:repeating-radial-gradient(circle at 88% 90%,rgba(255,162,0,.16) 0 3px,rgba(255,104,89,.05) 4px 10px,transparent 11px 22px)}
+.tema-foco .badge{background:#FFF0C9;color:#B36F00;border-color:rgba(255,162,0,.22)}
+.tema-foco h1{color:#1F344C}
+.tema-foco h1 span{color:#E88C00}
+.tema-foco .rule{background:#FFF1CE;color:#A96800}
+.tema-foco .section{border-color:rgba(255,162,0,.18)}
+.tema-foco .section h2{color:#B36F00}
+.tema-foco .choice.active,.tema-foco .checkcard.active,.tema-foco .check.selected{border-color:#FFA200;background:linear-gradient(180deg,#FFF,#FFF6DC)}
+.tema-foco .monitor,.tema-foco .rhythm-box{background:linear-gradient(135deg,#FFF2CD,#FFFAEC);border-color:rgba(255,162,0,.25);color:#9D6507}
+.tema-foco .meter>div,.tema-foco .bar span{background:linear-gradient(90deg,#FFA200,#FF6859)}
+.tema-foco .alert,.tema-foco .help,.tema-foco .tipbox{background:#FFF7DF;border-left-color:#FFA200;color:#6D5A35}
+.tema-foco .alert strong,.tema-foco .help strong,.tema-foco .tipbox strong{color:#A96800}
+.tema-foco .tipicon{background:#FFE9AE}
+.tema-foco .focusbox.orange{background:linear-gradient(135deg,#FFF4D5,#FFF0E8);border-color:rgba(255,162,0,.22)}
+.tema-foco .focusbox.orange h3{color:#B36F00}
+.tema-foco .closing,.tema-foco .cta,.tema-foco .next-panel{background:linear-gradient(135deg,#FFF2CF,#FFF9E9);border-color:rgba(255,162,0,.23)}
+.tema-foco .closing h2,.tema-foco .cta h2,.tema-foco .next-panel h2{color:#A96800}
+.tema-foco .next{background:#FFEAB5;color:#9D6507}
