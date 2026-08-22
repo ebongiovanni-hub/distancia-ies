@@ -1,1 +1,57 @@
-
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Distancia | Tu recorrido · Semana 16</title>
+<link rel="stylesheet" href="../css/a-semanas.css">
+<link rel="stylesheet" href="../css/a-semana-logro.css">
+</head>
+<body class="tema-logro">
+<div class="wrap">
+<div class="brandbar">
+<div class="topline">DISTANCIA | TU RECORRIDO</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
+</div>
+<section class="hero">
+<div class="badge">🏆 SEMANA 16 · META ALCANZADA</div>
+<h1>¡Recorrido <span>completado!</span></h1>
+<p>Dieciséis semanas atrás empezaste este camino. Hoy llegás a la meta con experiencias, aprendizajes y herramientas que no estaban al comienzo. Esta última parada no es para mirar lo que falta: es para reconocer todo lo recorrido.</p>
+<div class="rule">🏆 Llegar también es mirar cuánto creciste</div>
+</section>
+<section class="section">
+<h2>Tu recorrido en cuatro logros</h2>
+<p class="intro">Marcá aquello que sentís que este semestre dejó en vos. No hay una única forma de completar el recorrido: cada experiencia fue diferente.</p>
+<div class="grid">
+<div class="choice" tabindex="0"><div class="tick">✓</div><div class="emoji">🧭</div><h3>Aprendí a organizarme mejor</h3><p>Encontré estrategias para manejar mis tiempos y sostener el cursado.</p></div>
+<div class="choice" tabindex="0"><div class="tick">✓</div><div class="emoji">💻</div><h3>Me adapté a la Modalidad Distancia</h3><p>Hoy me manejo con mayor seguridad dentro de los espacios y herramientas del cursado.</p></div>
+<div class="choice" tabindex="0"><div class="tick">✓</div><div class="emoji">🙋</div><h3>Aprendí a buscar apoyo</h3><p>Reconozco mejor dónde consultar y cómo actuar cuando aparece una dificultad.</p></div>
+<div class="choice" tabindex="0"><div class="tick">✓</div><div class="emoji">💪</div><h3>Descubrí que puedo seguir avanzando</h3><p>Atravesé semanas fáciles y otras más exigentes, pero pude construir mi propio recorrido.</p></div>
+</div>
+<div class="rhythm-box">
+<div class="rhythm-head"><strong>Tu recorrido</strong><span id="count">0 de 4 logros reconocidos</span></div>
+<div class="meter"><div id="bar"></div></div>
+<div class="feedback" id="feedback">Elegí algo que este semestre haya dejado en tu experiencia.</div>
+</div>
+<div class="tipbox"><div class="tipicon">🏆</div><div><strong>La meta también es un nuevo punto de partida:</strong><br>Todo lo que aprendiste sobre tu forma de estudiar puede acompañarte en los próximos desafíos.</div></div>
+</section>
+<section class="focus">
+<div class="focusbox"><h3>🗺️ El recorrido fue tuyo</h3><p>No todos avanzamos de la misma manera ni al mismo ritmo. Lo importante es reconocer el camino que vos pudiste construir.</p></div>
+<div class="focusbox orange"><h3>🚀 Lo aprendido sigue con vos</h3><p>Los contenidos cambian, pero las estrategias, experiencias y aprendizajes sobre cómo estudiar también forman parte de tu formación.</p></div>
+</section>
+<section class="cta">
+<h2>🏆 ¡Meta alcanzada!</h2>
+<p>Gracias por ser parte de este recorrido. Cada semana fue un paso y cada paso dejó un aprendizaje.</p>
+<div class="next">✨ Este camino termina. Lo aprendido continúa.</div>
+</section>
+<div class="back"><a href="a-camino.html">← Volver a TU RECORRIDO</a></div>
+<footer class="footer-proyecto"></footer>
+</div>
+<script>
+const choices=[...document.querySelectorAll(".choice")],count=document.getElementById("count"),bar=document.getElementById("bar"),feedback=document.getElementById("feedback");
+function update(){const s=choices.filter(c=>c.classList.contains("active")).length;count.textContent=`${s} de 4 logros reconocidos`;bar.style.width=`${s*25}%`;feedback.textContent=["Elegí algo que este semestre haya dejado en tu experiencia.","Ya reconociste un aprendizaje de tu recorrido.","Tu recorrido dejó más de una herramienta.","Mirá cuánto construiste durante estas semanas.","🏆 ¡Recorrido completado! Todo esto también forma parte de lo que aprendiste."][s]}
+choices.forEach(c=>{function toggle(){c.classList.toggle("active");update()}c.addEventListener("click",toggle);c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle()}})});update();
+</script>
+<script src="../js/firma.js"></script>
+</body>
+</html>
