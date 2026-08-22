@@ -1,1 +1,57 @@
-
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Distancia | Tu recorrido · Semana 11</title>
+<link rel="stylesheet" href="../css/a-semanas.css">
+<link rel="stylesheet" href="../css/a-semana-anticipacion.css">
+</head>
+<body class="tema-anticipacion">
+<div class="wrap">
+<div class="brandbar">
+<div class="topline">DISTANCIA | TU RECORRIDO</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
+</div>
+<section class="hero">
+<div class="badge">🔎 SEMANA 11 · MIRAR ADELANTE</div>
+<h1>Anticiparte es <span>tu estrategia</span></h1>
+<p>Cuando el semestre avanza, mirar solamente lo que tenés que hacer hoy puede no alcanzar. Anticiparte unos días te permite organizar mejor el tiempo, detectar dificultades y evitar acumulaciones.</p>
+<div class="path"><strong>🧭 Tu ritmo</strong><span class="arrow">→</span><strong>🔎 Anticiparte</strong><span class="arrow">→</span><span>🔒 Próximo paso</span></div>
+</section>
+<section class="section">
+<h2>Mirar un poco más adelante</h2>
+<p class="intro">Elegí las acciones que pueden ayudarte a anticipar lo que viene durante las próximas semanas.</p>
+<div class="grid">
+<div class="choice" tabindex="0"><div class="tick">✓</div><div class="emoji">📅</div><h3>Revisar próximas fechas</h3><p>Mirar el cronograma y ubicar con tiempo los próximos compromisos académicos.</p></div>
+<div class="choice" tabindex="0"><div class="tick">✓</div><div class="emoji">📚</div><h3>Reconocer qué necesito preparar</h3><p>Identificar contenidos, lecturas o actividades que van a requerir más dedicación.</p></div>
+<div class="choice" tabindex="0"><div class="tick">✓</div><div class="emoji">⏳</div><h3>Empezar antes</h3><p>Dar un primer paso sobre una tarea futura antes de que se transforme en urgente.</p></div>
+<div class="choice" tabindex="0"><div class="tick">✓</div><div class="emoji">🙋</div><h3>Resolver dudas con margen</h3><p>Consultar aquello que todavía no tengo claro mientras todavía hay tiempo para trabajarlo.</p></div>
+</div>
+<div class="rhythm-box">
+<div class="rhythm-head"><strong>Tu anticipación</strong><span id="count">0 de 4 acciones realizadas</span></div>
+<div class="meter"><div id="bar"></div></div>
+<div class="feedback" id="feedback">Empezá mirando qué tenés por delante.</div>
+</div>
+<div class="tipbox"><div class="tipicon">💡</div><div><strong>Anticiparse no significa adelantarse a todo:</strong><br>Alcanza con saber qué viene y empezar a preparar aquello que va a necesitar más tiempo.</div></div>
+</section>
+<section class="focus">
+<div class="focusbox"><h3>🔎 Lo que ves antes se puede organizar mejor</h3><p>Una fecha conocida con tiempo permite repartir el esfuerzo y reducir la presión de último momento.</p></div>
+<div class="focusbox orange"><h3>⏳ Ganar tiempo cambia la experiencia</h3><p>Empezar un poco antes puede hacer que una tarea difícil se vuelva mucho más manejable.</p></div>
+</section>
+<section class="cta">
+<h2>Mirar adelante también es avanzar.</h2>
+<p>Esta semana el desafío es simple: identificar qué viene y hacer hoy una pequeña acción que te ayude mañana.</p>
+<div class="next">💪 Próximo viernes: confiá en lo construido</div>
+</section>
+<div class="back"><a href="a-camino.html">← Volver a TU RECORRIDO</a></div>
+<footer class="footer-proyecto"></footer>
+</div>
+<script>
+const choices=[...document.querySelectorAll(".choice")],count=document.getElementById("count"),bar=document.getElementById("bar"),feedback=document.getElementById("feedback");
+function update(){const s=choices.filter(c=>c.classList.contains("active")).length;count.textContent=`${s} de 4 acciones realizadas`;bar.style.width=`${s*25}%`;feedback.textContent=["Empezá mirando qué tenés por delante.","Buen comienzo. Ya estás mirando un poco más allá.","Vas construyendo una mejor anticipación.","¡Casi listo! Lo que viene empieza a estar más claro.","🔎 ¡Anticipación activada! Ahora tenés más margen para organizarte."][s]}
+choices.forEach(c=>{function toggle(){c.classList.toggle("active");update()}c.addEventListener("click",toggle);c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle()}})});update();
+</script>
+<script src="../js/firma.js"></script>
+</body>
+</html>
