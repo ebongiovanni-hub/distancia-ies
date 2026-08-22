@@ -1,1 +1,56 @@
-
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Distancia en Acción · Semana 14</title>
+<link rel="stylesheet" href="../css/semanas.css">
+<link rel="stylesheet" href="../css/semana-anticipacion.css">
+</head>
+<body class="tema-anticipacion">
+<div class="wrap">
+<div class="brandbar">
+<div class="topline">DISTANCIA | EN ACCIÓN</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
+</div>
+<section class="hero">
+<div class="badge">🔥 SEMANA 14 · RECTA FINAL</div>
+<h1>Entramos en la <span>recta final</span></h1>
+<p>El cierre del semestre empieza a acercarse. Este es un momento clave para anticiparnos, revisar situaciones pendientes y ayudar a que ningún estudiante llegue a las últimas semanas sin saber qué necesita resolver.</p>
+<div class="rule">⏰ Anticiparnos ahora puede simplificar el cierre</div>
+</section>
+<section class="section">
+<h2>Preparemos el tramo final</h2>
+<p class="intro">Marcá las acciones que ya realizaste para tener una mirada clara sobre lo que queda por delante.</p>
+<div class="checks">
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">📋</div><h3>Revisé situaciones pendientes</h3><p>Identifiqué estudiantes con actividades, procesos o situaciones académicas que todavía requieren atención.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">📅</div><h3>Miré las próximas fechas</h3><p>Revisé los momentos importantes del cierre para poder orientar con anticipación.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">💬</div><h3>Comuniqué lo necesario</h3><p>Me aseguré de que quienes necesitan actuar sepan qué tienen pendiente y cuál es el próximo paso.</p></div>
+<div class="checkcard" tabindex="0"><div class="status">✓</div><div class="emoji">↗️</div><h3>Derivé lo que corresponde</h3><p>Canalicé con tiempo aquellas situaciones que requieren intervención de otra área.</p></div>
+</div>
+<div class="monitor">
+<div class="monitor-head"><strong>Recta final preparada</strong><span id="count">0 de 4 acciones realizadas</span></div>
+<div class="meter"><div id="bar"></div></div>
+<div class="feedback" id="feedback">Empezá identificando qué necesita atención antes del cierre.</div>
+</div>
+</section>
+<section class="focus">
+<div class="focusbox"><h3>⏰ Lo que se anticipa se puede gestionar mejor</h3><p>Detectar un pendiente con margen permite orientar, contactar o derivar sin trabajar bajo la presión de los últimos días.</p></div>
+<div class="focusbox orange"><h3>🎯 Ahora importa priorizar</h3><p>No todo requiere la misma intervención. Una buena lectura del grupo ayuda a concentrar la energía donde más se necesita.</p></div>
+</section>
+<section class="closing">
+<h2>La recta final empieza antes del último día.</h2>
+<p>Anticipar situaciones y comunicar con claridad puede hacer que el cierre sea mucho más ordenado para todos.</p>
+<div class="next">🧩 Próximo viernes: que no queden cabos sueltos</div>
+</section>
+<div class="back"><a href="t-camino.html">← Volver a DISTANCIA EN ACCIÓN</a></div>
+<footer class="footer-proyecto"></footer>
+</div>
+<script>
+const cards=[...document.querySelectorAll(".checkcard")],count=document.getElementById("count"),bar=document.getElementById("bar"),feedback=document.getElementById("feedback");
+function update(){const s=cards.filter(c=>c.classList.contains("active")).length;count.textContent=`${s} de 4 acciones realizadas`;bar.style.width=`${s*25}%`;feedback.textContent=["Empezá identificando qué necesita atención antes del cierre.","Buen comienzo. Ya anticipaste una acción importante.","La recta final empieza a ordenarse.","¡Casi listo! Falta una última acción por revisar.","🔥 ¡Recta final preparada! Anticiparse hace la diferencia."][s]}
+cards.forEach(c=>{function toggle(){c.classList.toggle("active");update()}c.addEventListener("click",toggle);c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle()}})});update();
+</script>
+<script src="../js/firma.js"></script>
+</body>
+</html>
