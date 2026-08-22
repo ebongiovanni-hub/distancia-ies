@@ -1,113 +1,152 @@
 body.tema-radar{
-  background:
-    radial-gradient(circle at 12% 8%,rgba(0,166,214,.16),transparent 24%),
-    radial-gradient(circle at 88% 14%,rgba(31,95,158,.10),transparent 26%),
-    radial-gradient(circle at 50% 90%,rgba(245,130,32,.07),transparent 22%),
-    linear-gradient(180deg,#EDF8FC 0%,#E5F2F7 58%,#F9F3EC 100%);
+background:
+radial-gradient(circle at 10% 8%,rgba(0,170,228,.18),transparent 24%),
+radial-gradient(circle at 90% 10%,rgba(24,196,255,.13),transparent 25%),
+radial-gradient(circle at 48% 92%,rgba(31,52,76,.06),transparent 24%),
+linear-gradient(180deg,#EAF8FD 0%,#F5FBFE 52%,#EEF6FA 100%);
 }
 .tema-radar .hero{
-  background:
-    radial-gradient(circle at 88% 18%,rgba(0,166,214,.13),transparent 25%),
-    radial-gradient(circle at 76% 75%,rgba(31,95,158,.08),transparent 30%),
-    linear-gradient(135deg,#FFFFFF 0%,#EAF7FC 58%,#F8FBFD 100%);
-  border-top-color:var(--celeste);
+position:relative;
+background:
+radial-gradient(circle at 88% 20%,rgba(0,170,228,.16),transparent 25%),
+radial-gradient(circle at 78% 75%,rgba(24,196,255,.10),transparent 30%),
+linear-gradient(125deg,#FFFFFF 0%,#EAF8FD 58%,#DDF4FC 100%);
+border-top:5px solid #00AAE4;
+border-color:rgba(0,170,228,.20);
+box-shadow:0 15px 36px rgba(0,113,152,.11);
 }
 .tema-radar .hero::before{
-  width:240px;
-  height:240px;
-  right:-80px;
-  top:-90px;
-  background:rgba(0,166,214,.09);
+content:"";
+position:absolute;
+width:250px;
+height:250px;
+right:-75px;
+top:-95px;
+border-radius:50%;
+border:22px solid rgba(0,170,228,.07);
+box-shadow:
+0 0 0 22px rgba(0,170,228,.045),
+0 0 0 46px rgba(0,170,228,.025);
+pointer-events:none;
 }
 .tema-radar .hero::after{
-  width:300px;
-  height:170px;
-  right:-35px;
-  bottom:-45px;
-  background:repeating-radial-gradient(
-    ellipse at 88% 90%,
-    rgba(0,166,214,.16) 0 3px,
-    rgba(31,95,158,.06) 4px 11px,
-    transparent 12px 24px
-  );
+content:"";
+position:absolute;
+width:250px;
+height:150px;
+right:-25px;
+bottom:-55px;
+background:repeating-radial-gradient(circle at 72% 40%,rgba(0,170,228,.13) 0 2px,transparent 3px 14px);
+opacity:.8;
+pointer-events:none;
 }
 .tema-radar .badge{
-  background:#E4F6FB;
-  border-color:rgba(0,166,214,.20);
-  color:var(--azul);
+background:#DDF5FC;
+border:1px solid rgba(0,170,228,.22);
+color:#007198;
 }
-.tema-radar h1 span{color:var(--celeste)}
+.tema-radar h1{color:#1F344C}
+.tema-radar h1 span{color:#00AAE4}
+.tema-radar .hero p{color:#4E6878}
 .tema-radar .rule{
-  background:#E5F6FB;
-  color:var(--azul);
+background:#DFF5FC;
+border-color:rgba(0,170,228,.18);
+color:#007198;
 }
 .tema-radar .section{
-  background:rgba(255,255,255,.92);
-  border-color:rgba(0,166,214,.17);
+background:rgba(255,255,255,.95);
+border-color:rgba(0,170,228,.16);
+box-shadow:0 12px 30px rgba(0,113,152,.07);
+}
+.tema-radar .section h2{color:#1F344C}
+.tema-radar .intro{color:#586E7C}
+.tema-radar .checkcard,
+.tema-radar .choice,
+.tema-radar .radar-card{
+background:#FFFFFF;
+border-color:#D6E8F0;
+}
+.tema-radar .checkcard:hover,
+.tema-radar .choice:hover,
+.tema-radar .radar-card:hover{
+border-color:#7FD5F0;
+box-shadow:0 9px 20px rgba(0,170,228,.09);
 }
 .tema-radar .checkcard.active,
-.tema-radar .choice.active{
-  border-color:var(--celeste);
-  background:linear-gradient(180deg,#F8FCFE,#EAF8FC);
-  box-shadow:0 0 0 3px rgba(0,166,214,.08);
+.tema-radar .choice.active,
+.tema-radar .radar-card.active{
+border-color:#00AAE4;
+background:linear-gradient(145deg,#FCFEFF,#E7F8FD);
+box-shadow:0 0 0 3px rgba(0,170,228,.08);
 }
 .tema-radar .checkcard.active .status,
-.tema-radar .choice.active .check{
-  background:var(--celeste);
-  border-color:var(--celeste);
+.tema-radar .choice.active .check,
+.tema-radar .radar-card.active .status{
+background:#00AAE4;
+border-color:#00AAE4;
 }
+.tema-radar .checkcard h3,
+.tema-radar .choice h3,
+.tema-radar .radar-card h3{color:#1F344C}
+.tema-radar .checkcard p,
+.tema-radar .choice p,
+.tema-radar .radar-card p{color:#587180}
 .tema-radar .monitor,
 .tema-radar .rhythm-box{
-  background:linear-gradient(135deg,#EAF7FC,#F7FCFE);
-  border-color:rgba(0,166,214,.22);
-  color:var(--azul);
+background:linear-gradient(125deg,#DDF5FC,#F1FAFD);
+border-color:rgba(0,170,228,.22);
+color:#1F344C;
 }
+.tema-radar .monitor-head strong{color:#007198}
 .tema-radar .meter,
-.tema-radar .bar{
-  background:#DCEBF1;
-}
+.tema-radar .bar{background:#D5E9F0}
 .tema-radar .meter>div,
 .tema-radar .bar span{
-  background:linear-gradient(90deg,var(--celeste),var(--azul));
+background:linear-gradient(90deg,#00AAE4,#1F344C);
 }
 .tema-radar .feedback,
-.tema-radar .small{
-  color:#527184;
-}
+.tema-radar .small{color:#527184}
 .tema-radar .alert,
 .tema-radar .help,
-.tema-radar .tipbox{
-  background:#F4FBFD;
-  border-left-color:var(--celeste);
-  color:#4C6576;
+.tema-radar .tipbox,
+.tema-radar .radar-alert{
+background:#EEF9FD;
+border-left-color:#00AAE4;
+color:#4C6575;
 }
 .tema-radar .alert strong,
 .tema-radar .help strong,
-.tema-radar .tipbox strong{
-  color:var(--azul);
-}
+.tema-radar .tipbox strong,
+.tema-radar .radar-alert strong{color:#007198}
 .tema-radar .focusbox{
-  border-color:rgba(0,166,214,.16);
+background:#FFFFFF;
+border-color:#D6E8F0;
 }
+.tema-radar .focusbox h3{color:#1F344C}
 .tema-radar .focusbox.orange{
-  background:linear-gradient(135deg,#EEF9FC,#FFFFFF);
-  border-color:rgba(0,166,214,.20);
+background:linear-gradient(135deg,#E7F8FD,#F8FCFE);
+border-color:rgba(0,170,228,.20);
 }
 .tema-radar .closing,
 .tema-radar .cta,
 .tema-radar .next-panel{
-  background:linear-gradient(135deg,#F3FAFD,#FFFFFF);
-  border-color:rgba(0,166,214,.17);
+background:linear-gradient(125deg,#DDF5FC 0%,#F1FAFD 60%,#FFFFFF 100%);
+border-color:rgba(0,170,228,.18);
+box-shadow:0 10px 26px rgba(0,113,152,.07);
 }
+.tema-radar .closing h2,
+.tema-radar .cta h2,
+.tema-radar .next-panel h2{color:#1F344C}
 .tema-radar .next{
-  background:#E3F5FA;
-  color:var(--azul);
+background:#D5F1FA;
+color:#007198;
 }
 .tema-radar .back a{
-  border-color:var(--celeste);
-  color:var(--azul);
+border-color:#00AAE4;
+color:#007198;
+background:#FFFFFF;
 }
 .tema-radar .back a:hover{
-  background:var(--celeste);
-  color:#FFF;
+background:#00AAE4;
+color:#FFFFFF;
 }
