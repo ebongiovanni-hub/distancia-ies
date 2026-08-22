@@ -1,1 +1,140 @@
-
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Distancia | Tu recorrido · Semana 4</title>
+<link rel="stylesheet" href="../css/a-semanas.css">
+<link rel="stylesheet" href="../css/a-semana-escucha.css">
+<style>
+.encuesta{display:grid;gap:16px}
+.pregunta{background:#fff;border:1px solid #E4D9E9;border-radius:16px;padding:18px}
+.pregunta h3{margin:0 0 7px;color:#1F344C;font-size:1.05rem}
+.aclaracion{margin:0 0 13px;color:#73879A;font-size:.88rem}
+.opciones{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.opcion{position:relative}
+.opcion input{position:absolute;opacity:0;pointer-events:none}
+.opcion label{display:block;border:1px solid #E2D8E7;border-radius:13px;padding:12px 14px;background:#fff;color:#5A5260;cursor:pointer;transition:.2s;font-size:.92rem}
+.opcion label:hover{border-color:#BA94CB;background:#FBF7FC}
+.opcion input:checked+label{border-color:#71408C;background:#F2E8F6;color:#71408C;font-weight:700;box-shadow:0 0 0 2px rgba(113,64,140,.06)}
+.escala{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+.escala label{text-align:center!important;font-weight:800!important}
+.extremos{display:flex;justify-content:space-between;margin-top:7px;color:#73879A;font-size:.78rem}
+textarea{width:100%;min-height:105px;resize:vertical;border:1px solid #E2D8E7;border-radius:13px;padding:13px;font:inherit;color:#17324D;outline:none}
+textarea:focus{border-color:#71408C;box-shadow:0 0 0 3px rgba(113,64,140,.07)}
+.anonimo{display:flex;gap:10px;margin-top:15px;padding:13px 15px;border-radius:13px;background:#F7F0FA;color:#625568;font-size:.88rem;line-height:1.5}
+.enviar{text-align:center;margin-top:4px}
+.btn-enviar{border:0;border-radius:999px;background:#71408C;color:#fff;padding:12px 24px;font-size:.94rem;font-weight:800;cursor:pointer}
+.estado-envio{display:none;margin-top:16px;border-radius:15px;padding:16px;text-align:center}
+.estado-envio.ok{display:block;background:#EEF8F3;color:#397E5D;border:1px solid #B9DFC9}
+.estado-envio.error{display:block;background:#FFF1F0;color:#9C443D;border:1px solid #F0CBC7}
+@media(max-width:760px){.opciones{grid-template-columns:1fr}.escala{grid-template-columns:repeat(5,1fr)}}
+</style>
+</head>
+<body class="tema-escucha">
+<div class="wrap">
+<div class="brandbar">
+<div class="topline">DISTANCIA | TU RECORRIDO</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
+</div>
+<section class="hero">
+<div class="badge">💬 SEMANA 4 · QUEREMOS ESCUCHARTE</div>
+<h1>Tu experiencia <span>también cuenta</span></h1>
+<p>Ya llevamos algunas semanas recorriendo juntos la Modalidad Distancia. Este es un buen momento para hacer una pequeña pausa y saber cómo viene siendo tu experiencia.</p>
+<div class="rule">💜 Tu mirada nos ayuda a mejorar</div>
+</section>
+<section class="section">
+<h2>Contanos cómo viene tu recorrido</h2>
+<p class="intro">Son solo cuatro preguntas. La encuesta es anónima y no busca evaluar tu desempeño: queremos conocer tu experiencia para acompañarte mejor.</p>
+<form id="encuesta" class="encuesta">
+<div class="pregunta">
+<h3>1. ¿Cómo venís transitando estas primeras semanas?</h3>
+<p class="aclaracion">Elegí la opción que mejor represente tu experiencia.</p>
+<div class="opciones">
+<div class="opcion"><input type="radio" id="exp1" name="experiencia" value="Muy bien" required><label for="exp1">😊 Muy bien</label></div>
+<div class="opcion"><input type="radio" id="exp2" name="experiencia" value="Bien"><label for="exp2">🙂 Bien</label></div>
+<div class="opcion"><input type="radio" id="exp3" name="experiencia" value="Con algunas dificultades"><label for="exp3">😐 Con algunas dificultades</label></div>
+<div class="opcion"><input type="radio" id="exp4" name="experiencia" value="Necesito ayuda"><label for="exp4">🧭 Necesito más ayuda</label></div>
+</div>
+</div>
+<div class="pregunta">
+<h3>2. ¿En qué aspecto te vendría mejor contar con más acompañamiento?</h3>
+<div class="opciones">
+<div class="opcion"><input type="radio" id="acom1" name="acompanamiento" value="Organización del estudio" required><label for="acom1">📅 Organización del estudio</label></div>
+<div class="opcion"><input type="radio" id="acom2" name="acompanamiento" value="Uso de IES Virtual"><label for="acom2">💻 Uso de IES Virtual</label></div>
+<div class="opcion"><input type="radio" id="acom3" name="acompanamiento" value="Contenidos de las materias"><label for="acom3">📚 Contenidos de las materias</label></div>
+<div class="opcion"><input type="radio" id="acom4" name="acompanamiento" value="Instancias Evaluativas"><label for="acom4">📝 Instancias Evaluativas</label></div>
+<div class="opcion"><input type="radio" id="acom5" name="acompanamiento" value="Comunicación con docentes"><label for="acom5">💬 Comunicación con docentes</label></div>
+<div class="opcion"><input type="radio" id="acom6" name="acompanamiento" value="Otro"><label for="acom6">➕ Otro aspecto</label></div>
+</div>
+</div>
+<div class="pregunta">
+<h3>3. ¿Qué nivel de acompañamiento sentís que tenés en la Modalidad Distancia?</h3>
+<p class="aclaracion">Marcá una opción del 1 al 5.</p>
+<div class="escala">
+<div class="opcion"><input type="radio" id="nivel1" name="nivel" value="1" required><label for="nivel1">1</label></div>
+<div class="opcion"><input type="radio" id="nivel2" name="nivel" value="2"><label for="nivel2">2</label></div>
+<div class="opcion"><input type="radio" id="nivel3" name="nivel" value="3"><label for="nivel3">3</label></div>
+<div class="opcion"><input type="radio" id="nivel4" name="nivel" value="4"><label for="nivel4">4</label></div>
+<div class="opcion"><input type="radio" id="nivel5" name="nivel" value="5"><label for="nivel5">5</label></div>
+</div>
+<div class="extremos"><span>Necesito más apoyo</span><span>Me siento muy acompañado</span></div>
+</div>
+<div class="pregunta">
+<h3>4. Si pudieras mejorar una sola cosa de tu experiencia en Modalidad Distancia, ¿cuál sería?</h3>
+<p class="aclaracion">Esta respuesta es opcional.</p>
+<textarea id="mejora" name="mejora" maxlength="800" placeholder="Contanos lo que consideres importante..."></textarea>
+</div>
+<div class="anonimo"><span>🔒</span><span><strong>Tu respuesta es anónima.</strong> No solicitamos nombre, correo ni ningún otro dato personal.</span></div>
+<div class="enviar"><button type="submit" class="btn-enviar" id="btnEnviar">Enviar mi respuesta</button></div>
+</form>
+<div class="estado-envio" id="estadoEnvio"></div>
+</section>
+<section class="focus">
+<div class="focusbox">
+<h3>👂 Queremos saber cómo lo estás viviendo</h3>
+<p>Las plataformas y los procesos son importantes, pero también lo es conocer cómo se vive realmente la experiencia de estudiar a distancia.</p>
+</div>
+<div class="focusbox orange">
+<h3>💡 Tu experiencia puede generar mejoras</h3>
+<p>Las respuestas nos ayudan a detectar dificultades, revisar procesos y fortalecer aquello que está funcionando bien.</p>
+</div>
+</section>
+<section class="cta">
+<h2>Gracias por compartir tu mirada 💜</h2>
+<p>Escucharte también forma parte de acompañarte durante este recorrido.</p>
+<div class="next">🔜 Próximo viernes: cuidá tu ritmo</div>
+</section>
+<div class="back"><a href="a-camino.html">← Volver a TU RECORRIDO</a></div>
+<footer class="footer-proyecto"></footer>
+</div>
+<script>
+const FORM_URL="PEGAR_AQUI_URL_APPS_SCRIPT_ALUMNOS";
+const encuesta=document.getElementById("encuesta");
+const btnEnviar=document.getElementById("btnEnviar");
+const estadoEnvio=document.getElementById("estadoEnvio");
+encuesta.addEventListener("submit",async e=>{
+e.preventDefault();
+const experiencia=document.querySelector('input[name="experiencia"]:checked');
+const acompanamiento=document.querySelector('input[name="acompanamiento"]:checked');
+const nivel=document.querySelector('input[name="nivel"]:checked');
+if(!experiencia||!acompanamiento||!nivel){estadoEnvio.className="estado-envio error";estadoEnvio.textContent="Por favor, respondé las tres preguntas obligatorias.";return;}
+const datos={experiencia:experiencia.value,acompanamiento:acompanamiento.value,nivel:nivel.value,mejora:document.getElementById("mejora").value.trim()};
+btnEnviar.disabled=true;
+btnEnviar.textContent="Enviando...";
+try{
+await fetch(FORM_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(datos)});
+encuesta.style.display="none";
+estadoEnvio.className="estado-envio ok";
+estadoEnvio.innerHTML="<strong>✓ ¡Gracias por responder!</strong><br>Tu aporte fue enviado correctamente.";
+}catch(error){
+btnEnviar.disabled=false;
+btnEnviar.textContent="Enviar mi respuesta";
+estadoEnvio.className="estado-envio error";
+estadoEnvio.textContent="No pudimos enviar tu respuesta. Intentá nuevamente.";
+}
+});
+</script>
+<script src="../js/firma.js"></script>
+</body>
+</html>
