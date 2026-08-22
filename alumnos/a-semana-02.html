@@ -32,25 +32,25 @@
 <p class="intro">Elegí las acciones que querés incorporar a tu semana. No hay una única manera correcta: la mejor rutina es la que realmente podés sostener.</p>
 <div class="grid">
 <div class="choice" tabindex="0">
-<div class="check">✓</div>
+<div class="tick">✓</div>
 <div class="emoji">📅</div>
 <h3>Reservar un momento</h3>
 <p>Elegir uno o más momentos de la semana para dedicarle tiempo al cursado.</p>
 </div>
 <div class="choice" tabindex="0">
-<div class="check">✓</div>
+<div class="tick">✓</div>
 <div class="emoji">💻</div>
 <h3>Entrar regularmente</h3>
 <p>No esperar a una entrega para ingresar a IES Virtual y revisar las novedades.</p>
 </div>
 <div class="choice" tabindex="0">
-<div class="check">✓</div>
+<div class="tick">✓</div>
 <div class="emoji">👀</div>
 <h3>Mirar qué viene</h3>
 <p>Revisar Clases y el cronograma para anticiparte a lo que vas a necesitar.</p>
 </div>
 <div class="choice" tabindex="0">
-<div class="check">✓</div>
+<div class="tick">✓</div>
 <div class="emoji">🙋</div>
 <h3>Preguntar a tiempo</h3>
 <p>No acumular dudas. Consultar cuando algo no se entiende o aparece una dificultad.</p>
@@ -74,9 +74,7 @@
 <p>Lo importante es que encuentres una organización que te permita seguir avanzando. Esta semana, el objetivo no es correr: es encontrar un ritmo que puedas sostener.</p>
 <div class="next">🔜 Próximo viernes: un nuevo paso</div>
 </section>
-<div class="back">
-<a href="a-camino.html">← Volver a TU RECORRIDO</a>
-</div>
+<div class="back"><a href="a-camino.html">← Volver a TU RECORRIDO</a></div>
 <footer>Modalidad Distancia - IES</footer>
 </div>
 <script>
@@ -88,26 +86,14 @@ function update(){
 const selected=choices.filter(choice=>choice.classList.contains("active")).length;
 count.textContent=`${selected} de 4 hábitos elegidos`;
 bar.style.width=`${selected*25}%`;
-const messages=[
-"Elegí al menos una acción para empezar a construir tu rutina.",
-"¡Buen comienzo! Un pequeño hábito puede hacer una gran diferencia.",
-"Ya estás construyendo una rutina más sostenible.",
-"Muy bien. Tu ritmo empieza a tomar forma.",
-"🧭 ¡Tu ritmo está en marcha! Ahora lo importante es sostenerlo."
-];
+const messages=["Elegí al menos una acción para empezar a construir tu rutina.","¡Buen comienzo! Un pequeño hábito puede hacer una gran diferencia.","Ya estás construyendo una rutina más sostenible.","Muy bien. Tu ritmo empieza a tomar forma.","🧭 ¡Tu ritmo está en marcha! Ahora lo importante es sostenerlo."];
 feedback.textContent=messages[selected];
 }
 choices.forEach(choice=>{
-function toggle(){
-choice.classList.toggle("active");
-update();
-}
+function toggle(){choice.classList.toggle("active");update();}
 choice.addEventListener("click",toggle);
 choice.addEventListener("keydown",event=>{
-if(event.key==="Enter"||event.key===" "){
-event.preventDefault();
-toggle();
-}
+if(event.key==="Enter"||event.key===" "){event.preventDefault();toggle();}
 });
 });
 update();
