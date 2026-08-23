@@ -1,1296 +1,324 @@
 <!doctype html>
 <html lang="es">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-  <title>Distancia | Tu recorrido</title>
-
-  <link rel="stylesheet" href="../css/a-camino.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Distancia | Tu recorrido</title>
+<link rel="stylesheet" href="../css/a-camino.css">
 </head>
-
 <body>
-
 <div class="wrap">
-
-  <!-- CABECERA -->
-  <div class="brandbar">
-
-    <div class="topline">
-      DISTANCIA | TU RECORRIDO
-    </div>
-
-    <img
-      class="logo-ies"
-      src="../imagenes/LOGO_IES21.png"
-      alt="Colegio Universitario IES"
-    >
-
-  </div>
-
-
-  <!-- PRESENTACIÓN -->
-  <section class="hero">
-
-    <div class="badge">
-      🗺️ TU MAPA DEL SEMESTRE
-    </div>
-
-    <h1>
-      El camino ya comenzó.
-      <span>¿Seguimos?</span>
-    </h1>
-
-    <p>
-      Cada semana se habilita una nueva parada.
-      Avanzá checkpoint por checkpoint hasta llegar a la meta.
-    </p>
-
-  </section>
-
-
-  <!-- MAPA -->
-  <section class="map" id="mapaRecorrido">
-
-    <div class="sun"></div>
-
-    <div class="decor1"></div>
-    <div class="decor2"></div>
-    <div class="decor3"></div>
-
-
-    <!-- CAMINO -->
-    <svg
-      class="road"
-      viewBox="0 0 1000 1120"
-      preserveAspectRatio="none"
-      aria-hidden="true"
-    >
-
-      <path
-        class="road-shadow"
-        d="M120 90 C230 70 290 150 390 150
-           S610 80 700 110
-           S900 140 860 220
-           S680 300 560 285
-           S260 250 160 350
-           S240 470 390 470
-           S720 390 850 510
-           S680 640 570 625
-           S260 580 150 700
-           S260 840 400 830
-           S700 760 820 900"
-      />
-
-      <path
-        class="road-line"
-        d="M120 90 C230 70 290 150 390 150
-           S610 80 700 110
-           S900 140 860 220
-           S680 300 560 285
-           S260 250 160 350
-           S240 470 390 470
-           S720 390 850 510
-           S680 640 570 625
-           S260 580 150 700
-           S260 840 400 830
-           S700 760 820 900"
-      />
-
-      <path
-        class="road-center"
-        d="M120 90 C230 70 290 150 390 150
-           S610 80 700 110
-           S900 140 860 220
-           S680 300 560 285
-           S260 250 160 350
-           S240 470 390 470
-           S720 390 850 510
-           S680 640 570 625
-           S260 580 150 700
-           S260 840 400 830
-           S700 760 820 900"
-      />
-
-      <path
-        id="roadProgress"
-        class="road-progress"
-        pathLength="100"
-        d="M120 90 C230 70 290 150 390 150
-           S610 80 700 110
-           S900 140 860 220
-           S680 300 560 285
-           S260 250 160 350
-           S240 470 390 470
-           S720 390 850 510
-           S680 640 570 625
-           S260 580 150 700
-           S260 840 400 830
-           S700 760 820 900"
-      />
-
-    </svg>
-
-
-    <!-- PING -->
-    <div
-      id="pingCompanion"
-      class="ping-companion"
-      aria-hidden="true"
-    >
-      <img
-        id="pingImagen"
-        src="../imagenes/ping/ping-neutral.png"
-        alt=""
-      >
-    </div>
-
-
-    <!-- SEMANA 1 -->
-    <div class="cp locked c1" data-week="1">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 1
-        </div>
-
-        <strong>
-          🎯 Primer logro
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="a-semana-01.html"
-        >
-          Entrar
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 2 -->
-    <div class="cp locked c2" data-week="2">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 2
-        </div>
-
-        <strong>
-          🧭 Encontrá tu ritmo
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="a-semana-02.html"
-        >
-          Entrar
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 3 -->
-    <div class="cp locked c3" data-week="3">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 3
-        </div>
-
-        <strong>
-          🎒 Prepararse también es avanzar
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="a-semana-03.html"
-        >
-          Entrar
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 4 -->
-    <div class="cp locked c4" data-week="4">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 4
-        </div>
-
-        <strong>
-          💬 Tu experiencia también cuenta
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="a-semana-04.html"
-        >
-          Entrar
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 5 -->
-    <div class="cp locked c5" data-week="5">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 5
-        </div>
-
-        <strong>
-          🔋 Cuidá tu ritmo
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="a-semana-05.html"
-        >
-          Entrar
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 6 -->
-    <div class="cp locked c6" data-week="6">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 6
-        </div>
-
-        <strong>
-          🎯 Enfocá tu energía
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="a-semana-06.html"
-        >
-          Entrar
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 7 -->
-    <div class="cp locked c7" data-week="7">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 7
-        </div>
-
-        <strong>
-          🧩 Cada pieza cuenta
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="a-semana-07.html"
-        >
-          Entrar
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 8 -->
-    <div class="cp locked c8" data-week="8">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 8
-        </div>
-
-        <strong>
-          🏁 Primer tramo completado
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="a-semana-08.html"
-        >
-          Entrar
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 9 -->
-    <div class="cp locked c9" data-week="9">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 9
-        </div>
-
-        <strong>
-          🚀 Nuevo nivel desbloqueado
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="a-semana-09.html"
-        >
-          Entrar
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 10 -->
-    <div class="cp locked c10" data-week="10">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 10
-        </div>
-
-        <strong>
-          🧭 Volvé a encontrar tu ritmo
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="a-semana-10.html"
-        >
-          Entrar
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 11 -->
-    <div class="cp locked c11" data-week="11">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 11
-        </div>
-
-        <strong>
-          🔎 Anticiparte es tu estrategia
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="a-semana-11.html"
-        >
-          Entrar
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 12 -->
-    <div class="cp locked c12" data-week="12">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 12
-        </div>
-
-        <strong>
-          💪 Confiá en lo construido
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="a-semana-12.html"
-        >
-          Entrar
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 13 -->
-    <div class="cp locked c13" data-week="13">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 13
-        </div>
-
-        <strong>
-          💬 Queremos volver a escucharte
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="a-semana-13.html"
-        >
-          Entrar
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 14 -->
-    <div class="cp locked c14" data-week="14">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 14
-        </div>
-
-        <strong>
-          🔥 Recta final
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="a-semana-14.html"
-        >
-          Entrar
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 15 -->
-    <div class="cp locked c15" data-week="15">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 15
-        </div>
-
-        <strong>
-          ⭐ Todo lo recorrido cuenta
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="a-semana-15.html"
-        >
-          Entrar
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 16 -->
-    <div class="cp locked c16" data-week="16">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 16
-        </div>
-
-        <strong>
-          🏆 Recorrido completado
-        </strong>
-
-        <span class="state">
-          META BLOQUEADA
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="a-semana-16.html"
-        >
-          Entrar
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="finish">
-      🏁 META
-    </div>
-
-  </section>
-
-
-  <!-- CIERRE -->
-  <section class="final">
-
-    <strong>
-      💙🧡 Cada viernes, una nueva parada.
-    </strong>
-
-    <p>
-      Volvé para descubrir qué checkpoint se habilitó en TU RECORRIDO.
-    </p>
-
-  </section>
-
+<div class="brandbar">
+<div class="topline">DISTANCIA | TU RECORRIDO</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
 </div>
-
-
+<section class="hero">
+<div class="badge">🗺️ TU MAPA DEL SEMESTRE</div>
+<h1>El camino ya comenzó. <span>¿Seguimos?</span></h1>
+<p>Cada semana se habilita una nueva parada. Avanzá checkpoint por checkpoint hasta llegar a la meta.</p>
+</section>
+<section class="map" id="mapaRecorrido">
+<div class="sun"></div>
+<div class="decor1"></div>
+<div class="decor2"></div>
+<div class="decor3"></div>
+<svg class="road" viewBox="0 0 1000 1120" preserveAspectRatio="none" aria-hidden="true">
+<path class="road-shadow" d="M120 90 C230 70 290 150 390 150 S610 80 700 110 S900 140 860 220 S680 300 560 285 S260 250 160 350 S240 470 390 470 S720 390 850 510 S680 640 570 625 S260 580 150 700 S260 840 400 830 S700 760 820 900"/>
+<path class="road-line" d="M120 90 C230 70 290 150 390 150 S610 80 700 110 S900 140 860 220 S680 300 560 285 S260 250 160 350 S240 470 390 470 S720 390 850 510 S680 640 570 625 S260 580 150 700 S260 840 400 830 S700 760 820 900"/>
+<path class="road-center" d="M120 90 C230 70 290 150 390 150 S610 80 700 110 S900 140 860 220 S680 300 560 285 S260 250 160 350 S240 470 390 470 S720 390 850 510 S680 640 570 625 S260 580 150 700 S260 840 400 830 S700 760 820 900"/>
+<path id="roadProgress" class="road-progress" pathLength="100" d="M120 90 C230 70 290 150 390 150 S610 80 700 110 S900 140 860 220 S680 300 560 285 S260 250 160 350 S240 470 390 470 S720 390 850 510 S680 640 570 625 S260 580 150 700 S260 840 400 830 S700 760 820 900"/>
+</svg>
+<div id="pingCompanion" class="ping-companion" aria-hidden="true">
+<img src="../imagenes/ping/ping-neutral.png" alt="">
+</div>
+<div class="cp locked c1" data-week="1">
+<div class="dot">🔒</div>
+<div class="label">
+<div class="week">Semana 1</div>
+<strong>🎯 Primer logro</strong>
+<span class="state">BLOQUEADO</span><br>
+<a class="btn" href="a-semana-01.html">Entrar</a>
+</div>
+</div>
+<div class="cp locked c2" data-week="2">
+<div class="dot">🔒</div>
+<div class="label">
+<div class="week">Semana 2</div>
+<strong>🧭 Encontrá tu ritmo</strong>
+<span class="state">BLOQUEADO</span><br>
+<a class="btn" href="a-semana-02.html">Entrar</a>
+</div>
+</div>
+<div class="cp locked c3" data-week="3">
+<div class="dot">🔒</div>
+<div class="label">
+<div class="week">Semana 3</div>
+<strong>🎒 Prepararse también es avanzar</strong>
+<span class="state">BLOQUEADO</span><br>
+<a class="btn" href="a-semana-03.html">Entrar</a>
+</div>
+</div>
+<div class="cp locked c4" data-week="4">
+<div class="dot">🔒</div>
+<div class="label">
+<div class="week">Semana 4</div>
+<strong>💬 Tu experiencia también cuenta</strong>
+<span class="state">BLOQUEADO</span><br>
+<a class="btn" href="a-semana-04.html">Entrar</a>
+</div>
+</div>
+<div class="cp locked c5" data-week="5">
+<div class="dot">🔒</div>
+<div class="label">
+<div class="week">Semana 5</div>
+<strong>🔋 Cuidá tu ritmo</strong>
+<span class="state">BLOQUEADO</span><br>
+<a class="btn" href="a-semana-05.html">Entrar</a>
+</div>
+</div>
+<div class="cp locked c6" data-week="6">
+<div class="dot">🔒</div>
+<div class="label">
+<div class="week">Semana 6</div>
+<strong>🎯 Enfocá tu energía</strong>
+<span class="state">BLOQUEADO</span><br>
+<a class="btn" href="a-semana-06.html">Entrar</a>
+</div>
+</div>
+<div class="cp locked c7" data-week="7">
+<div class="dot">🔒</div>
+<div class="label">
+<div class="week">Semana 7</div>
+<strong>🧩 Cada pieza cuenta</strong>
+<span class="state">BLOQUEADO</span><br>
+<a class="btn" href="a-semana-07.html">Entrar</a>
+</div>
+</div>
+<div class="cp locked c8" data-week="8">
+<div class="dot">🔒</div>
+<div class="label">
+<div class="week">Semana 8</div>
+<strong>🏁 Primer tramo completado</strong>
+<span class="state">BLOQUEADO</span><br>
+<a class="btn" href="a-semana-08.html">Entrar</a>
+</div>
+</div>
+<div class="cp locked c9" data-week="9">
+<div class="dot">🔒</div>
+<div class="label">
+<div class="week">Semana 9</div>
+<strong>🚀 Nuevo nivel desbloqueado</strong>
+<span class="state">BLOQUEADO</span><br>
+<a class="btn" href="a-semana-09.html">Entrar</a>
+</div>
+</div>
+<div class="cp locked c10" data-week="10">
+<div class="dot">🔒</div>
+<div class="label">
+<div class="week">Semana 10</div>
+<strong>🧭 Volvé a encontrar tu ritmo</strong>
+<span class="state">BLOQUEADO</span><br>
+<a class="btn" href="a-semana-10.html">Entrar</a>
+</div>
+</div>
+<div class="cp locked c11" data-week="11">
+<div class="dot">🔒</div>
+<div class="label">
+<div class="week">Semana 11</div>
+<strong>🔎 Anticiparte es tu estrategia</strong>
+<span class="state">BLOQUEADO</span><br>
+<a class="btn" href="a-semana-11.html">Entrar</a>
+</div>
+</div>
+<div class="cp locked c12" data-week="12">
+<div class="dot">🔒</div>
+<div class="label">
+<div class="week">Semana 12</div>
+<strong>💪 Confiá en lo construido</strong>
+<span class="state">BLOQUEADO</span><br>
+<a class="btn" href="a-semana-12.html">Entrar</a>
+</div>
+</div>
+<div class="cp locked c13" data-week="13">
+<div class="dot">🔒</div>
+<div class="label">
+<div class="week">Semana 13</div>
+<strong>💬 Queremos volver a escucharte</strong>
+<span class="state">BLOQUEADO</span><br>
+<a class="btn" href="a-semana-13.html">Entrar</a>
+</div>
+</div>
+<div class="cp locked c14" data-week="14">
+<div class="dot">🔒</div>
+<div class="label">
+<div class="week">Semana 14</div>
+<strong>🔥 Recta final</strong>
+<span class="state">BLOQUEADO</span><br>
+<a class="btn" href="a-semana-14.html">Entrar</a>
+</div>
+</div>
+<div class="cp locked c15" data-week="15">
+<div class="dot">🔒</div>
+<div class="label">
+<div class="week">Semana 15</div>
+<strong>⭐ Todo lo recorrido cuenta</strong>
+<span class="state">BLOQUEADO</span><br>
+<a class="btn" href="a-semana-15.html">Entrar</a>
+</div>
+</div>
+<div class="cp locked c16" data-week="16">
+<div class="dot">🔒</div>
+<div class="label">
+<div class="week">Semana 16</div>
+<strong>🏆 Recorrido completado</strong>
+<span class="state">META BLOQUEADA</span><br>
+<a class="btn" href="a-semana-16.html">Entrar</a>
+</div>
+</div>
+<div class="finish">🏁 META</div>
+</section>
+<section class="final">
+<strong>💙🧡 Cada viernes, una nueva parada.</strong>
+<p>Volvé para descubrir qué checkpoint se habilitó en TU RECORRIDO.</p>
+</section>
+</div>
 <script>
-
-const calendario = [
-
-  {semana:1,fecha:20260814},
-  {semana:2,fecha:20260821},
-  {semana:3,fecha:20260828},
-  {semana:4,fecha:20260904},
-  {semana:5,fecha:20260911},
-  {semana:6,fecha:20260918},
-  {semana:7,fecha:20260925},
-  {semana:8,fecha:20261002},
-
-  {semana:9,fecha:20261009},
-  {semana:10,fecha:20261016},
-  {semana:11,fecha:20261023},
-  {semana:12,fecha:20261030},
-
-  {semana:13,fecha:20261106},
-  {semana:14,fecha:20261113},
-  {semana:15,fecha:20261120},
-  {semana:16,fecha:20261127}
-
+const calendario=[
+{semana:1,fecha:20260814},
+{semana:2,fecha:20260821},
+{semana:3,fecha:20260828},
+{semana:4,fecha:20260904},
+{semana:5,fecha:20260911},
+{semana:6,fecha:20260918},
+{semana:7,fecha:20260925},
+{semana:8,fecha:20261002},
+{semana:9,fecha:20261009},
+{semana:10,fecha:20261016},
+{semana:11,fecha:20261023},
+{semana:12,fecha:20261030},
+{semana:13,fecha:20261106},
+{semana:14,fecha:20261113},
+{semana:15,fecha:20261120},
+{semana:16,fecha:20261127}
 ];
-
-
 function numeroFecha(fecha){
-
-  const partes =
-    new Intl.DateTimeFormat(
-      "en-US",
-      {
-        timeZone:"America/Argentina/Cordoba",
-        year:"numeric",
-        month:"2-digit",
-        day:"2-digit"
-      }
-    ).formatToParts(fecha);
-
-  let anio="";
-  let mes="";
-  let dia="";
-
-  partes.forEach(p=>{
-
-    if(p.type==="year"){
-      anio=p.value;
-    }
-
-    if(p.type==="month"){
-      mes=p.value;
-    }
-
-    if(p.type==="day"){
-      dia=p.value;
-    }
-
-  });
-
-  return Number(anio+mes+dia);
-
+const partes=new Intl.DateTimeFormat("en-US",{timeZone:"America/Argentina/Cordoba",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(fecha);
+let anio="",mes="",dia="";
+partes.forEach(p=>{
+if(p.type==="year") anio=p.value;
+if(p.type==="month") mes=p.value;
+if(p.type==="day") dia=p.value;
+});
+return Number(anio+mes+dia);
 }
-
-
 function obtenerSemana(fecha){
-
-  const hoy=numeroFecha(fecha);
-
-  let semanaActual=0;
-
-  calendario.forEach(item=>{
-
-    if(hoy>=item.fecha){
-      semanaActual=item.semana;
-    }
-
-  });
-
-  return semanaActual;
-
+const hoy=numeroFecha(fecha);
+let semanaActual=0;
+calendario.forEach(item=>{
+if(hoy>=item.fecha) semanaActual=item.semana;
+});
+return semanaActual;
 }
-
-
-/* ------------------------------------------------
-   PING
------------------------------------------------- */
-
-const pingCompanion =
-  document.getElementById("pingCompanion");
-
-const pingImagen =
-  document.getElementById("pingImagen");
-
-
-function imagenPingParaSemana(semana){
-
-  if(semana===0){
-    return "ping-neutral.png";
-  }
-
-  if(semana<=3){
-    return "ping-curioso.png";
-  }
-
-  if(semana<=7){
-    return "ping-expectante.png";
-  }
-
-  if(semana===8){
-    return "ping-contento.png";
-  }
-
-  if(semana<=12){
-    return "ping-curioso.png";
-  }
-
-  if(semana<=15){
-    return "ping-contento.png";
-  }
-
-  return "ping-celebra.png";
-
-}
-
-
-function cambiarPing(archivo){
-
-  pingImagen.src =
-    "../imagenes/ping/" + archivo;
-
-}
-
-
-function animarPing(tipo="rebote"){
-
-  pingCompanion.classList.remove(
-    "ping-aparece",
-    "ping-rebota",
-    "ping-celebra"
-  );
-
-  void pingCompanion.offsetWidth;
-
-  if(tipo==="aparece"){
-
-    pingCompanion.classList.add(
-      "ping-aparece"
-    );
-
-  }else if(tipo==="celebra"){
-
-    pingCompanion.classList.add(
-      "ping-celebra"
-    );
-
-  }else{
-
-    pingCompanion.classList.add(
-      "ping-rebota"
-    );
-
-  }
-
-}
-
-
 function ubicarPing(){
-
-  const mapa =
-    document.getElementById(
-      "mapaRecorrido"
-    );
-
-  const activo =
-    document.querySelector(
-      ".cp.active"
-    );
-
-  if(!mapa){
-    return;
-  }
-
-
-  /*
-    Antes del inicio del recorrido.
-  */
-
-  if(!activo){
-
-    pingCompanion.style.left="7%";
-    pingCompanion.style.top="1.5%";
-
-    return;
-
-  }
-
-
-  /*
-    MÓVIL
-  */
-
-  if(window.innerWidth<=650){
-
-    const mapaRect =
-      mapa.getBoundingClientRect();
-
-    const activoRect =
-      activo.getBoundingClientRect();
-
-    const top =
-      activoRect.bottom -
-      mapaRect.top +
-      5;
-
-    pingCompanion.style.left="auto";
-    pingCompanion.style.right="10px";
-    pingCompanion.style.top=
-      top+"px";
-
-    return;
-
-  }
-
-
-  /*
-    ESCRITORIO
-  */
-
-  const mapaRect =
-    mapa.getBoundingClientRect();
-
-  const activoRect =
-    activo.getBoundingClientRect();
-
-
-  let left =
-    activoRect.right -
-    mapaRect.left +
-    12;
-
-
-  let top =
-    activoRect.top -
-    mapaRect.top -
-    65;
-
-
-  /*
-    Evita salir por la derecha.
-  */
-
-  if(left >
-     mapaRect.width-130){
-
-    left =
-      activoRect.left -
-      mapaRect.left -
-      110;
-
-  }
-
-
-  /*
-    Evita salir por arriba.
-  */
-
-  if(top<8){
-
-    top =
-      activoRect.bottom -
-      mapaRect.top +
-      8;
-
-  }
-
-
-  pingCompanion.style.right="auto";
-
-  pingCompanion.style.left=
-    left+"px";
-
-  pingCompanion.style.top=
-    top+"px";
-
+const ping=document.getElementById("pingCompanion");
+const mapa=document.getElementById("mapaRecorrido");
+const activo=document.querySelector(".cp.active");
+if(!ping||!mapa||!activo){
+if(ping) ping.classList.remove("visible");
+return;
 }
-
-
-/* ------------------------------------------------
-   PINTAR RECORRIDO
------------------------------------------------- */
-
+if(ping.parentElement!==activo) activo.appendChild(ping);
+ping.classList.remove("ping-izquierda","ping-derecha","visible");
+if(window.innerWidth<=650){
+ping.classList.add("ping-mobile");
+}else{
+ping.classList.remove("ping-mobile");
+const mapaRect=mapa.getBoundingClientRect();
+const activoRect=activo.getBoundingClientRect();
+const centroActivo=activoRect.left+(activoRect.width/2);
+const centroMapa=mapaRect.left+(mapaRect.width/2);
+if(centroActivo>centroMapa) ping.classList.add("ping-izquierda");
+else ping.classList.add("ping-derecha");
+}
+requestAnimationFrame(()=>{
+requestAnimationFrame(()=>{
+ping.classList.add("visible");
+});
+});
+}
+function activarReaccionPing(){
+const activo=document.querySelector(".cp.active");
+const ping=document.getElementById("pingCompanion");
+if(!activo||!ping) return;
+const reaccion=()=>{
+ping.classList.remove("reacciona");
+void ping.offsetWidth;
+ping.classList.add("reacciona");
+};
+activo.addEventListener("mouseenter",reaccion);
+activo.addEventListener("focusin",reaccion);
+}
 function pintarRecorrido(semanaActual){
-
-  document
-    .querySelectorAll(
-      ".cp[data-week]"
-    )
-    .forEach(cp=>{
-
-      const semana =
-        Number(cp.dataset.week);
-
-      const dot =
-        cp.querySelector(".dot");
-
-      const estado =
-        cp.querySelector(".state");
-
-      const boton =
-        cp.querySelector(".btn");
-
-
-      cp.classList.remove(
-        "done",
-        "active",
-        "locked"
-      );
-
-
-      /*
-        SEMANAS COMPLETADAS
-      */
-
-      if(semana<semanaActual){
-
-        cp.classList.add("done");
-
-        dot.textContent="✓";
-
-        estado.textContent=
-          "COMPLETADO";
-
-        boton.textContent=
-          "Volver";
-
-      }
-
-
-      /*
-        SEMANA ACTUAL
-      */
-
-      else if(
-        semana===semanaActual
-      ){
-
-        cp.classList.add("active");
-
-        dot.textContent=
-          semana;
-
-        estado.textContent=
-          "DISPONIBLE AHORA";
-
-        boton.textContent=
-          "Entrar";
-
-      }
-
-
-      /*
-        SEMANAS FUTURAS
-      */
-
-      else{
-
-        cp.classList.add(
-          "locked"
-        );
-
-        dot.textContent="🔒";
-
-        estado.textContent =
-          semana===16
-          ? "META BLOQUEADA"
-          : "BLOQUEADO";
-
-      }
-
-  });
-
-
-  /*
-    PROGRESO DEL CAMINO
-  */
-
-  const progreso =
-    semanaActual<=1
-      ? 0
-      : Math.min(
-          100,
-          ((semanaActual-1)/15)*100
-        );
-
-
-  const camino =
-    document.getElementById(
-      "roadProgress"
-    );
-
-
-  if(camino){
-
-    camino.style.strokeDasharray =
-      progreso+" "+(100-progreso);
-
-  }
-
-
-  document.documentElement
-    .style.setProperty(
-      "--progreso-mobile",
-      progreso+"%"
-    );
-
-
-  /*
-    CONFIGURACIÓN DE PING
-  */
-
-  cambiarPing(
-    imagenPingParaSemana(
-      semanaActual
-    )
-  );
-
-
-  requestAnimationFrame(()=>{
-
-    ubicarPing();
-
-    if(semanaActual===16){
-
-      animarPing("celebra");
-
-    }else{
-
-      animarPing("aparece");
-
-    }
-
-  });
-
-
-  /*
-    REACCIÓN DE PING
-    AL CHECKPOINT ACTIVO
-  */
-
-  const activo =
-    document.querySelector(
-      ".cp.active"
-    );
-
-
-  if(activo){
-
-    activo.addEventListener(
-      "mouseenter",
-      ()=>{
-        animarPing("rebote");
-      }
-    );
-
-
-    activo.addEventListener(
-      "focusin",
-      ()=>{
-        animarPing("rebote");
-      }
-    );
-
-  }
-
+document.querySelectorAll(".cp[data-week]").forEach(cp=>{
+const semana=Number(cp.dataset.week);
+const dot=cp.querySelector(".dot");
+const estado=cp.querySelector(".state");
+const boton=cp.querySelector(".btn");
+cp.classList.remove("done","active","locked");
+if(semana<semanaActual){
+cp.classList.add("done");
+dot.textContent="✓";
+estado.textContent="COMPLETADO";
+boton.textContent="Volver";
+}else if(semana===semanaActual){
+cp.classList.add("active");
+dot.textContent=semana;
+estado.textContent="DISPONIBLE AHORA";
+boton.textContent="Entrar";
+}else{
+cp.classList.add("locked");
+dot.textContent="🔒";
+estado.textContent=semana===16?"META BLOQUEADA":"BLOQUEADO";
 }
-
-
-/* ------------------------------------------------
-   FECHA
------------------------------------------------- */
-
+});
+const progreso=semanaActual<=1?0:Math.min(100,((semanaActual-1)/15)*100);
+document.documentElement.style.setProperty("--progreso-mobile",progreso+"%");
+const camino=document.getElementById("roadProgress");
+if(camino){
+camino.style.strokeDasharray="0 100";
+requestAnimationFrame(()=>{
+requestAnimationFrame(()=>{
+camino.classList.add("ready");
+camino.style.strokeDasharray=progreso+" "+(100-progreso);
+});
+});
+}
+ubicarPing();
+activarReaccionPing();
+}
 async function actualizarRecorrido(){
-
-  let fechaActual;
-
-
-  try{
-
-    const url =
-      window.location.pathname+
-      "?fecha="+Date.now();
-
-
-    const respuesta =
-      await fetch(
-        url,
-        {
-          method:"HEAD",
-          cache:"no-store"
-        }
-      );
-
-
-    const fechaServidor =
-      respuesta.headers.get(
-        "date"
-      );
-
-
-    if(!fechaServidor){
-
-      throw new Error(
-        "No se recibió fecha del servidor"
-      );
-
-    }
-
-
-    fechaActual =
-      new Date(fechaServidor);
-
-  }
-
-
-  catch(error){
-
-    console.warn(
-      "No se pudo obtener la fecha del servidor. Se utiliza la fecha del dispositivo."
-    );
-
-
-    fechaActual =
-      new Date();
-
-  }
-
-
-  const semanaActual =
-    obtenerSemana(fechaActual);
-
-
-  pintarRecorrido(
-    semanaActual
-  );
-
-
-  console.log(
-    "Fecha utilizada:",
-    fechaActual
-  );
-
-
-  console.log(
-    "Semana activa:",
-    semanaActual
-  );
-
+let fechaActual;
+try{
+const url=window.location.pathname+"?fecha="+Date.now();
+const respuesta=await fetch(url,{method:"HEAD",cache:"no-store"});
+const fechaServidor=respuesta.headers.get("date");
+if(!fechaServidor) throw new Error("No se recibió fecha del servidor");
+fechaActual=new Date(fechaServidor);
+}catch(error){
+console.warn("No se pudo obtener la fecha del servidor. Se utiliza la fecha del dispositivo.");
+fechaActual=new Date();
 }
-
-
-/* ------------------------------------------------
-   REACOMODAR PING
------------------------------------------------- */
-
+const semanaActual=obtenerSemana(fechaActual);
+pintarRecorrido(semanaActual);
+console.log("Fecha utilizada:",fechaActual);
+console.log("Semana activa:",semanaActual);
+}
 let resizeTimer;
-
-
-window.addEventListener(
-  "resize",
-  ()=>{
-
-    clearTimeout(
-      resizeTimer
-    );
-
-
-    resizeTimer =
-      setTimeout(
-        ubicarPing,
-        120
-      );
-
-  }
-);
-
-
-/* ------------------------------------------------
-   INICIO
------------------------------------------------- */
-
+window.addEventListener("resize",()=>{
+clearTimeout(resizeTimer);
+resizeTimer=setTimeout(ubicarPing,120);
+});
 actualizarRecorrido();
-
 </script>
-
 </body>
 </html>
