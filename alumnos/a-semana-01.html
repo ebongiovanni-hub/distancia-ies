@@ -6,6 +6,7 @@
 <title>Distancia | Tu recorrido · Semana 1</title>
 <link rel="stylesheet" href="../css/a-semanas.css">
 <link rel="stylesheet" href="../css/a-semana-inicio.css">
+<link rel="stylesheet" href="../css/ping.css">
 </head>
 <body class="tema-inicio">
 <div class="wrap">
@@ -13,20 +14,16 @@
 <div class="topline">DISTANCIA | TU RECORRIDO</div>
 <img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
 </div>
-
 <section class="hero">
 <div class="badge">🚀 SEMANA 1 · PRIMER LOGRO</div>
 <h1>¡Aulas <span>en marcha!</span></h1>
 <p>Hace apenas unos días comenzaste este recorrido. Ya conociste tus aulas, empezaste a ubicar tus espacios de estudio y diste el primer paso en esta etapa.</p>
 <div class="rule">🎯 Primer desafío: comprobar que todo esté listo para avanzar</div>
 </section>
-
 <section class="section">
 <h2>Tu primer check</h2>
 <p class="intro">Hace apenas unos días comenzaste este recorrido. Ya conociste tus aulas, empezaste a ubicar tus espacios de estudio y diste el primer paso en esta etapa. <strong>Ahora revisemos juntos cuatro cosas simples.</strong></p>
-
 <div class="checks">
-
 <div class="check" tabindex="0">
 <div class="mark">✓</div>
 <div class="top">
@@ -35,7 +32,6 @@
 </div>
 <p>¿Puedo ingresar a todas mis materias en IES Virtual?</p>
 </div>
-
 <div class="check" tabindex="0">
 <div class="mark">✓</div>
 <div class="top">
@@ -44,7 +40,6 @@
 </div>
 <p>¿Ya sé dónde encontrar lo que tengo que estudiar y hacer cada semana?</p>
 </div>
-
 <div class="check" tabindex="0">
 <div class="mark">✓</div>
 <div class="top">
@@ -53,7 +48,6 @@
 </div>
 <p>¿Revisé los cronogramas y sé qué tengo por delante?</p>
 </div>
-
 <div class="check" tabindex="0">
 <div class="mark">✓</div>
 <div class="top">
@@ -62,9 +56,7 @@
 </div>
 <p>¿Ya ubiqué cuándo y cómo participar de mis encuentros?</p>
 </div>
-
 </div>
-
 <div class="monitor">
 <div class="monitor-head">
 <strong>Tu primer logro</strong>
@@ -73,49 +65,66 @@
 <div class="meter"><div id="bar"></div></div>
 <div class="feedback" id="feedback">Marcá cada punto que ya tengas resuelto.</div>
 </div>
-
 <div class="alert">
 <strong>💡 ¿Algo no está funcionando?</strong><br>
 No lo dejes para después. Si no podés ingresar a una materia, no encontrás una clase o tenés alguna dificultad para ubicarte, consultá a tiempo.
 </div>
 </section>
-
 <section class="focus">
 <div class="focusbox">
 <h3>🧭 Primero, ubicarnos</h3>
 <p>Conocer tus aulas, encontrar las clases y saber qué viene te permite empezar el cursado con mayor seguridad.</p>
 </div>
-
 <div class="focusbox orange">
 <h3>🙋 Pedir ayuda también es avanzar</h3>
 <p>Si algo no funciona como esperabas, consultar a tiempo evita que una dificultad pequeña se transforme en un problema más adelante.</p>
 </div>
 </section>
-
 <section class="cta">
 <h2>Primer paso completado 🚀</h2>
 <p>Si ya pudiste resolver estos cuatro puntos, tu recorrido está oficialmente en marcha.</p>
 <div class="next">🧭 Próximo desafío: encontrá tu ritmo</div>
 </section>
-
 <div class="back">
 <a href="a-camino.html">← Volver a TU RECORRIDO</a>
 </div>
-
 <footer class="footer-proyecto"></footer>
 </div>
-
+<script src="../js/ping.js"></script>
 <script>
 const checks=[...document.querySelectorAll(".checks>.check")];
 const count=document.getElementById("count");
 const bar=document.getElementById("bar");
 const feedback=document.getElementById("feedback");
-
+let estadoAnterior=-1;
+function reaccionPing(selected){
+if(typeof PING==="undefined") return;
+if(selected===0){
+PING.neutral();
+return;
+}
+if(selected===1){
+PING.neutral();
+PING.reaccion();
+return;
+}
+if(selected===2){
+PING.contento();
+return;
+}
+if(selected===3){
+PING.neutral();
+PING.reaccion();
+return;
+}
+if(selected===4){
+PING.celebrando();
+}
+}
 function update(){
 const selected=checks.filter(item=>item.classList.contains("selected")).length;
 count.textContent=`${selected} de 4 listos`;
 bar.style.width=`${selected*25}%`;
-
 const messages=[
 "Marcá cada punto que ya tengas resuelto.",
 "¡Buen comienzo! Ya tenés una parte de tu recorrido preparada.",
@@ -123,18 +132,18 @@ const messages=[
 "¡Casi listo! Te queda solamente un punto por revisar.",
 "🚀 ¡Primer logro completado! Tus aulas están en marcha."
 ];
-
 feedback.textContent=messages[selected];
+if(selected!==estadoAnterior){
+reaccionPing(selected);
+estadoAnterior=selected;
 }
-
+}
 checks.forEach(item=>{
 function toggle(){
 item.classList.toggle("selected");
 update();
 }
-
 item.addEventListener("click",toggle);
-
 item.addEventListener("keydown",event=>{
 if(event.key==="Enter"||event.key===" "){
 event.preventDefault();
@@ -142,10 +151,8 @@ toggle();
 }
 });
 });
-
 update();
 </script>
-
 <script src="../js/firma.js"></script>
 </body>
 </html>
