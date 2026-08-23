@@ -40,62 +40,74 @@ Un momento, por favor.
 </div>
 </div>
 
-<form
-id="formRespuesta"
-method="post"
-target="registroOculto"
-action="https://script.google.com/macros/s/AKfycbyGF22F5jPQ_mzmOwBnxoppg_7SgexTghxSGV4h7phtZoqv7ISodE3B-Bh1Ag7B7dkt/exec"
-style="display:none">
-
-<input type="hidden" name="dni" id="dni">
-<input type="hidden" name="email" id="email">
-<input type="hidden" name="motivo" id="motivo">
-
-</form>
-
-<iframe
-name="registroOculto"
-id="registroOculto"
-style="display:none">
-</iframe>
+<img id="registro" alt="" style="display:none">
 
 <script>
 
-const params=new URLSearchParams(window.location.search);
+const APP_RESPUESTAS =
+"https://script.google.com/macros/s/AKfycbyGF22F5jPQ_mzmOwBnxoppg_7SgexTghxSGV4h7phtZoqv7ISodE3B-Bh1Ag7B7dkt/exec";
 
-const dni=params.get("dni");
-const email=params.get("email");
-const motivo=params.get("motivo");
+const params =
+new URLSearchParams(window.location.search);
 
-const titulo=document.getElementById("titulo");
-const mensaje=document.getElementById("mensaje");
-const card=document.getElementById("card");
+const dni =
+params.get("dni");
+
+const email =
+params.get("email");
+
+const motivo =
+params.get("motivo");
+
+const titulo =
+document.getElementById("titulo");
+
+const mensaje =
+document.getElementById("mensaje");
+
+const card =
+document.getElementById("card");
 
 if(!dni || !email || !motivo){
 
   card.classList.add("error");
 
-  titulo.textContent="No pudimos registrar tu respuesta";
+  titulo.textContent =
+  "No pudimos registrar tu respuesta";
 
-  mensaje.textContent=
-    "El enlace utilizado no contiene toda la información necesaria.";
+  mensaje.textContent =
+  "El enlace utilizado no contiene toda la información necesaria.";
 
 }else{
 
-  document.getElementById("dni").value=dni;
-  document.getElementById("email").value=email;
-  document.getElementById("motivo").value=motivo;
+  const urlRegistro =
+    APP_RESPUESTAS +
+    "?dni=" +
+    encodeURIComponent(dni) +
+    "&email=" +
+    encodeURIComponent(email) +
+    "&motivo=" +
+    encodeURIComponent(motivo) +
+    "&t=" +
+    Date.now();
 
-  document.getElementById("formRespuesta").submit();
+  const imagen =
+    document.getElementById("registro");
 
-  setTimeout(function(){
+  imagen.onload =
+  imagen.onerror =
+  function(){
 
-    titulo.textContent="¡Gracias por ayudarnos!";
+    titulo.textContent =
+    "¡Gracias por ayudarnos!";
 
-    mensaje.textContent=
-      "Tu respuesta fue registrada. Gracias por regalarnos un minuto y ayudarnos a seguir mejorando.";
+    mensaje.textContent =
+    "Tu respuesta fue registrada. Gracias por regalarnos un minuto y ayudarnos a seguir mejorando.";
 
-  },1000);
+  };
+
+  imagen.src =
+    urlRegistro;
 
 }
 
