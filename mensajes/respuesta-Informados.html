@@ -20,98 +20,101 @@ p{margin:0;font-size:16px;line-height:1.7;color:#4b5965}
 </style>
 </head>
 <body>
-
 <div class="card" id="card">
 <div class="top"></div>
-
 <div class="content">
 <div class="tag">IES · MODALIDAD DISTANCIA</div>
-
 <h1 id="titulo">Registrando tu respuesta...</h1>
-
-<p id="mensaje">
-Un momento, por favor.
-</p>
+<p id="mensaje">Un momento, por favor.</p>
 </div>
-
 <div class="footer">
 <div></div>
 <div></div>
 </div>
 </div>
 
-<img id="registro" alt="" style="display:none">
-
 <script>
+const APP_RESPUESTAS="https://script.google.com/macros/s/AKfycbyGF22F5jPQ_mzmOwBnxoppg_7SgexTghxSGV4h7phtZoqv7ISodE3B-Bh1Ag7B7dkt/exec";
 
-const APP_RESPUESTAS =
-"https://script.google.com/macros/s/AKfycbyGF22F5jPQ_mzmOwBnxoppg_7SgexTghxSGV4h7phtZoqv7ISodE3B-Bh1Ag7B7dkt/exec";
+const parametros=new URLSearchParams(window.location.search);
 
-const params =
-new URLSearchParams(window.location.search);
+const dni=parametros.get("dni");
+const email=parametros.get("email");
+const motivo=parametros.get("motivo");
 
-const dni =
-params.get("dni");
+const card=document.getElementById("card");
+const titulo=document.getElementById("titulo");
+const mensaje=document.getElementById("mensaje");
 
-const email =
-params.get("email");
-
-const motivo =
-params.get("motivo");
-
-const titulo =
-document.getElementById("titulo");
-
-const mensaje =
-document.getElementById("mensaje");
-
-const card =
-document.getElementById("card");
-
-if(!dni || !email || !motivo){
-
+function mostrarError(texto){
   card.classList.add("error");
-
-  titulo.textContent =
-  "No pudimos registrar tu respuesta";
-
-  mensaje.textContent =
-  "El enlace utilizado no contiene toda la información necesaria.";
-
-}else{
-
-  const urlRegistro =
-    APP_RESPUESTAS +
-    "?dni=" +
-    encodeURIComponent(dni) +
-    "&email=" +
-    encodeURIComponent(email) +
-    "&motivo=" +
-    encodeURIComponent(motivo) +
-    "&t=" +
-    Date.now();
-
-  const imagen =
-    document.getElementById("registro");
-
-  imagen.onload =
-  imagen.onerror =
-  function(){
-
-    titulo.textContent =
-    "¡Gracias por ayudarnos!";
-
-    mensaje.textContent =
-    "Tu respuesta fue registrada. Gracias por regalarnos un minuto y ayudarnos a seguir mejorando.";
-
-  };
-
-  imagen.src =
-    urlRegistro;
-
+  titulo.textContent="No pudimos registrar tu respuesta";
+  mensaje.textContent=texto;
 }
 
-</script>
+function mostrarExito(){
+  card.classList.remove("error");
+  titulo.textContent="¡Gracias por ayudarnos!";
+  mensaje.textContent="Tu respuesta fue registrada. Gracias por regalarnos un minuto y ayudarnos a seguir mejorando.";
+}
 
+if(!dni || !email || !motivo){
+  mostrarError("El enlace utilizado no contiene toda la información necesaria.");
+}else{
+  const url=
+    APP_RESPUESTAS+
+    "?dni="+encodeURIComponent(dni)+
+    "&email="+encodeURIComponent(email)+
+    "&motivo="+encodeURIComponent(motivo)+
+    "&origen=informados"+
+    "&t="+Date.now();
+
+  fetch(url,{
+    method:"GET",
+    redirect:"follow",
+    cache:"no-store"
+  })
+  .then(function(respuesta){
+    if(!respuesta.ok){
+      throw new Error("HTTP "+respuesta.status);
+    }
+    return respuesta.text();
+  })
+  .then(function(resultado){
+    const texto=resultado.trim().toUpperCase();
+
+    if(texto==="OK"){
+      mostrarExito();
+      return;
+    }
+
+    if(texto==="NO_ENCONTRADO"){
+      mostrarError("No pudimos identificar tus datos en nuestra base.");
+      return;
+    }
+
+    if(texto==="DATOS_INCOMPLETOS"){
+      mostrarError("El enlace no contiene toda la información necesaria.");
+      return;
+    }
+
+    if(texto==="MOTIVO_INVALIDO"){
+      mostrarError("La opción seleccionada no pudo ser procesada.");
+      return;
+    }
+
+    if(texto==="ERROR_HOJA"){
+      mostrarError("No pudimos acceder al registro de respuestas.");
+      return;
+    }
+
+    mostrarError("No pudimos confirmar que la respuesta se haya registrado.");
+  })
+  .catch(function(error){
+    console.error(error);
+    mostrarError("No pudimos registrar tu respuesta. Por favor, intentá nuevamente.");
+  });
+}
+</script>
 </body>
 </html>
