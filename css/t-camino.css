@@ -82,7 +82,12 @@ h1 span{color:#FF7A20}
 .c15{left:62%;top:72%}
 .c16{left:82%;top:83%}
 .ping-companion{position:absolute;width:74px;height:74px;z-index:2;pointer-events:none;opacity:0;transform-origin:center center;transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.3,1)}
-.ping-companion img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 5px 6px rgba(31,52,76,.16))}
+.ping-companion img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 5px 6px rgba(31,52,76,.16));position:relative;z-index:1}
+.ping-companion::before,.ping-companion::after{content:"";position:absolute;inset:0;background-position:center;background-repeat:no-repeat;background-size:contain;opacity:0;z-index:2;filter:drop-shadow(0 5px 6px rgba(31,52,76,.16));pointer-events:none}
+.ping-companion::before{background-image:url("../imagenes/ping/ping-guino.png?v=3");animation:pingGuino 12s linear infinite}
+.ping-companion::after{background-image:url("../imagenes/ping/ping-sonrie.png?v=3");animation:pingSonrie 12s linear infinite}
+@keyframes pingGuino{0%,15%,100%{opacity:0}18%,23%{opacity:1}26%,100%{opacity:0}}
+@keyframes pingSonrie{0%,52%{opacity:0}55%,63%{opacity:1}67%,100%{opacity:0}}
 .ping-companion.ping-derecha{right:-47px;top:48px;transform:translateX(-16px) rotate(-4deg) scale(.94)}
 .ping-companion.ping-izquierda{left:-47px;top:48px;transform:translateX(16px) rotate(4deg) scale(.94)}
 .ping-companion.visible.ping-derecha{opacity:1;transform:translateX(0) rotate(-2deg) scale(1);animation:pingAsomaDerecha 7s ease-in-out 1.2s infinite}
@@ -103,25 +108,5 @@ h1 span{color:#FF7A20}
 .final strong{font-size:14px;color:var(--celeste)}
 .final p{margin:4px 0 0;color:var(--gris);font-size:11px}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(0,170,228,.35)}70%{box-shadow:0 0 0 11px rgba(0,170,228,0)}100%{box-shadow:0 0 0 0 rgba(0,170,228,0)}}
-@media(prefers-reduced-motion:reduce){.ping-companion,.cp.active .dot,.road-progress{animation:none!important;transition:none!important}}
-@media(max-width:650px){
-.brandbar{padding:0 3px}
-.topline{font-size:14px}
-.logo-ies{height:48px}
-.hero{padding:16px 17px}
-h1{font-size:23px;line-height:1.08}
-.map{height:auto;min-height:1280px}
-.road{display:none}
-.map::before{content:"";position:absolute;left:27px;top:25px;bottom:25px;width:5px;background:linear-gradient(to bottom,var(--celeste) 0%,var(--celeste) var(--progreso-mobile),#DCE8EE var(--progreso-mobile),#DCE8EE 100%);border-radius:999px}
-.cp,.c1,.c2,.c3,.c4,.c5,.c6,.c7,.c8,.c9,.c10,.c11,.c12,.c13,.c14,.c15,.c16{position:relative;left:auto;top:auto;transform:none;width:calc(100% - 52px);margin-left:52px;margin-top:10px;text-align:left}
-.cp.active{margin-top:42px}
-.dot{position:absolute;left:-43px;top:7px;width:32px;height:32px;font-size:11px;margin:0}
-.label{min-height:52px}
-.ping-companion,.ping-companion.ping-mobile{width:62px;height:62px;left:auto;right:8px;top:-43px;opacity:0;transform:translateY(15px) rotate(-3deg) scale(.92)}
-.ping-companion.ping-mobile.visible{opacity:1;transform:translateY(0) rotate(-2deg) scale(1);animation:pingMobile 7s ease-in-out 1.2s infinite}
-.ping-companion.ping-mobile.reacciona{animation:pingMobileReacciona .7s ease!important}
-@keyframes pingMobile{0%,58%,100%{transform:translateX(0) rotate(-2deg)}66%{transform:translateX(-6px) rotate(-6deg)}73%{transform:translateX(2px) rotate(1deg)}80%{transform:translateX(0) rotate(-2deg)}}
-@keyframes pingMobileReacciona{0%,100%{transform:translateX(0) rotate(-2deg)}45%{transform:translateX(-7px) rotate(-8deg) scale(1.04)}}
-.finish{position:relative;right:auto;bottom:auto;margin:18px 15px 10px 52px;display:inline-block}
-.actions-grid{grid-template-columns:repeat(3,1fr)}
-}
+@media(prefers-reduced-motion:reduce){.ping-companion,.ping-companion::before,.ping-companion::after,.cp.active .dot,.road-progress{animation:none!important;transition:none!important}.ping-companion::before,.ping-companion::after{display:none}}
+@media(max-width:650px){.brandbar{padding:0 3px}.topline{font-size:14px}.logo-ies{height:48px}.hero{padding:16px 17px}h1{font-size:23px;line-height:1.08}.map{height:auto;min-height:1280px}.road{display:none}.map::before{content:"";position:absolute;left:27px;top:25px;bottom:25px;width:5px;background:linear-gradient(to bottom,var(--celeste) 0%,var(--celeste) var(--progreso-mobile),#DCE8EE var(--progreso-mobile),#DCE8EE 100%);border-radius:999px}.cp,.c1,.c2,.c3,.c4,.c5,.c6,.c7,.c8,.c9,.c10,.c11,.c12,.c13,.c14,.c15,.c16{position:relative;left:auto;top:auto;transform:none;width:calc(100% - 52px);margin-left:52px;margin-top:10px;text-align:left}.cp.active{margin-top:42px}.dot{position:absolute;left:-43px;top:7px;width:32px;height:32px;font-size:11px;margin:0}.label{min-height:52px}.ping-companion,.ping-companion.ping-mobile{width:62px;height:62px;left:auto;right:8px;top:-43px;opacity:0;transform:translateY(15px) rotate(-3deg) scale(.92)}.ping-companion.ping-mobile.visible{opacity:1;transform:translateY(0) rotate(-2deg) scale(1);animation:pingMobile 7s ease-in-out 1.2s infinite}.ping-companion.ping-mobile.reacciona{animation:pingMobileReacciona .7s ease!important}@keyframes pingMobile{0%,58%,100%{transform:translateX(0) rotate(-2deg)}66%{transform:translateX(-6px) rotate(-6deg)}73%{transform:translateX(2px) rotate(1deg)}80%{transform:translateX(0) rotate(-2deg)}}@keyframes pingMobileReacciona{0%,100%{transform:translateX(0) rotate(-2deg)}45%{transform:translateX(-7px) rotate(-8deg) scale(1.04)}}.finish{position:relative;right:auto;bottom:auto;margin:18px 15px 10px 52px;display:inline-block}.actions-grid{grid-template-columns:repeat(3,1fr)}}
