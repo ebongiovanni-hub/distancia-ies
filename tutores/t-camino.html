@@ -1,942 +1,159 @@
 <!doctype html>
 <html lang="es">
-
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
 <title>Distancia en Acción</title>
-
-<link rel="stylesheet" href="../css/t-camino.css">
+<link rel="stylesheet" href="../css/t-camino.css?v=2">
 </head>
-
 <body>
-
 <div class="wrap">
-
-  <!-- CABECERA -->
-  <div class="brandbar">
-    <div class="topline">DISTANCIA EN ACCIÓN</div>
-
-    <img
-      class="logo-ies"
-      src="../imagenes/LOGO_IES21.png"
-      alt="Colegio Universitario IES"
-    >
-  </div>
-
-
-  <!-- PRESENTACIÓN -->
-  <section class="hero">
-
-    <div class="badge">
-      🗺️ TU MAPA DE GESTIÓN TUTORIAL
-    </div>
-
-    <h1>
-      Cada semana,
-      <span>una acción clave</span>
-    </h1>
-
-    <p>
-      Este recorrido acompaña tu tarea tutorial durante todo el semestre.
-      Cada viernes se habilita un nuevo checkpoint para revisar una acción
-      concreta de seguimiento, comunicación, acompañamiento y gestión.
-    </p>
-
-  </section>
-
-
-  <!-- CAMINO -->
-  <section class="map">
-
-    <div class="sun"></div>
-    <div class="decor1"></div>
-    <div class="decor2"></div>
-    <div class="decor3"></div>
-
-
-    <!-- RECORRIDO -->
-    <svg
-      class="road"
-      viewBox="0 0 1000 1120"
-      preserveAspectRatio="none"
-    >
-
-      <path
-        class="road-shadow"
-        d="M120 90
-        C230 70 290 150 390 150
-        S610 80 700 110
-        S900 140 860 220
-        S680 300 560 285
-        S260 250 160 350
-        S240 470 390 470
-        S720 390 850 510
-        S680 640 570 625
-        S260 580 150 700
-        S260 840 400 830
-        S700 760 820 900"
-      />
-
-      <path
-        class="road-line"
-        d="M120 90
-        C230 70 290 150 390 150
-        S610 80 700 110
-        S900 140 860 220
-        S680 300 560 285
-        S260 250 160 350
-        S240 470 390 470
-        S720 390 850 510
-        S680 640 570 625
-        S260 580 150 700
-        S260 840 400 830
-        S700 760 820 900"
-      />
-
-      <path
-        class="road-center"
-        d="M120 90
-        C230 70 290 150 390 150
-        S610 80 700 110
-        S900 140 860 220
-        S680 300 560 285
-        S260 250 160 350
-        S240 470 390 470
-        S720 390 850 510
-        S680 640 570 625
-        S260 580 150 700
-        S260 840 400 830
-        S700 760 820 900"
-      />
-
-      <path
-        id="roadProgress"
-        class="road-progress"
-        pathLength="100"
-        d="M120 90
-        C230 70 290 150 390 150
-        S610 80 700 110
-        S900 140 860 220
-        S680 300 560 285
-        S260 250 160 350
-        S240 470 390 470
-        S720 390 850 510
-        S680 640 570 625
-        S260 580 150 700
-        S260 840 400 830
-        S700 760 820 900"
-      />
-
-    </svg>
-
-
-    <!-- SEMANA 1 -->
-    <div class="cp locked c1" data-week="1">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 1
-        </div>
-
-        <strong>
-          🚀 ¡Aulas en marcha!
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="t-semana-01.html"
-        >
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 2 -->
-    <div class="cp locked c2" data-week="2">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 2
-        </div>
-
-        <strong>
-          👀 Que nadie quede fuera del radar
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="t-semana-02.html"
-        >
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 3 -->
-    <div class="cp locked c3" data-week="3">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 3
-        </div>
-
-        <strong>
-          🎯 Anticiparnos hace la diferencia
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="t-semana-03.html"
-        >
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 4 -->
-    <div class="cp locked c4" data-week="4">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 4
-        </div>
-
-        <strong>
-          ✍️ Devolver también es enseñar
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="t-semana-04.html"
-        >
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 5 -->
-    <div class="cp locked c5" data-week="5">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 5
-        </div>
-
-        <strong>
-          📡 Seguimiento activo
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="t-semana-05.html"
-        >
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 6 -->
-    <div class="cp locked c6" data-week="6">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 6
-        </div>
-
-        <strong>
-          🧭 Antes de avanzar, hagamos un check
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="t-semana-06.html"
-        >
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 7 -->
-    <div class="cp locked c7" data-week="7">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 7
-        </div>
-
-        <strong>
-          📊 Información al día
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="t-semana-07.html"
-        >
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 8 -->
-    <div class="cp locked c8" data-week="8">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 8
-        </div>
-
-        <strong>
-          🏁 Cerramos un tramo
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="t-semana-08.html"
-        >
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 9 -->
-    <div class="cp locked c9" data-week="9">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 9
-        </div>
-
-        <strong>
-          🚀 ¡Nuevo ciclo en marcha!
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="t-semana-09.html"
-        >
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 10 -->
-    <div class="cp locked c10" data-week="10">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 10
-        </div>
-
-        <strong>
-          🔎 Detectar temprano para acompañar mejor
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="t-semana-10.html"
-        >
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 11 -->
-    <div class="cp locked c11" data-week="11">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 11
-        </div>
-
-        <strong>
-          💬 Una respuesta a tiempo cambia el recorrido
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="t-semana-11.html"
-        >
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 12 -->
-    <div class="cp locked c12" data-week="12">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 12
-        </div>
-
-        <strong>
-          🎯 Acompañar también es estar atentos
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="t-semana-12.html"
-        >
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 13 -->
-    <div class="cp locked c13" data-week="13">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 13
-        </div>
-
-        <strong>
-          📍 Checkpoint del tutor
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="t-semana-13.html"
-        >
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 14 -->
-    <div class="cp locked c14" data-week="14">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 14
-        </div>
-
-        <strong>
-          🔥 ¡Entramos en la recta final!
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="t-semana-14.html"
-        >
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 15 -->
-    <div class="cp locked c15" data-week="15">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 15
-        </div>
-
-        <strong>
-          🧩 Que no queden cabos sueltos
-        </strong>
-
-        <span class="state">
-          BLOQUEADO
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="t-semana-15.html"
-        >
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SEMANA 16 -->
-    <div class="cp locked c16" data-week="16">
-
-      <div class="dot">🔒</div>
-
-      <div class="label">
-
-        <div class="week">
-          Semana 16
-        </div>
-
-        <strong>
-          🏆 ¡Acompañamiento cumplido!
-        </strong>
-
-        <span class="state">
-          META BLOQUEADA
-        </span>
-
-        <br>
-
-        <a
-          class="btn"
-          href="t-semana-16.html"
-        >
-          Hacer check
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="finish">
-      🏁 META
-    </div>
-
-  </section>
-
-
-  <!-- ACCIONES DEL RECORRIDO -->
-  <section class="actions">
-
-    <div class="actions-title">
-      ACCIONES QUE SOSTIENEN EL RECORRIDO
-    </div>
-
-    <div class="actions-grid">
-
-      <div class="action">
-        <span>👀</span>
-        Detectar
-      </div>
-
-      <div class="action">
-        <span>💬</span>
-        Contactar
-      </div>
-
-      <div class="action">
-        <span>🤝</span>
-        Acompañar
-      </div>
-
-      <div class="action">
-        <span>✍️</span>
-        Corregir
-      </div>
-
-      <div class="action">
-        <span>📊</span>
-        Registrar
-      </div>
-
-      <div class="action">
-        <span>↗️</span>
-        Derivar
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CIERRE -->
-  <section class="final">
-
-    <strong>
-      💙🧡 Cada viernes, una acción clave.
-    </strong>
-
-    <p>
-      Volvé para descubrir qué nuevo checkpoint se habilitó
-      en DISTANCIA EN ACCIÓN.
-    </p>
-
-  </section>
-
+<div class="brandbar">
+<div class="topline">DISTANCIA EN ACCIÓN</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
 </div>
-
-
+<section class="hero">
+<div class="badge">🗺️ TU MAPA DE GESTIÓN TUTORIAL</div>
+<h1>Cada semana, <span>una acción clave</span></h1>
+<p>Este recorrido acompaña tu tarea tutorial durante todo el semestre. Cada viernes se habilita un nuevo checkpoint para revisar una acción concreta de seguimiento, comunicación, acompañamiento y gestión.</p>
+</section>
+<section class="map" id="mapaRecorrido">
+<div class="sun"></div>
+<div class="decor1"></div>
+<div class="decor2"></div>
+<div class="decor3"></div>
+<svg class="road" viewBox="0 0 1000 1120" preserveAspectRatio="none" aria-hidden="true">
+<path class="road-shadow" d="M120 90 C230 70 290 150 390 150 S610 80 700 110 S900 140 860 220 S680 300 560 285 S260 250 160 350 S240 470 390 470 S720 390 850 510 S680 640 570 625 S260 580 150 700 S260 840 400 830 S700 760 820 900"/>
+<path class="road-line" d="M120 90 C230 70 290 150 390 150 S610 80 700 110 S900 140 860 220 S680 300 560 285 S260 250 160 350 S240 470 390 470 S720 390 850 510 S680 640 570 625 S260 580 150 700 S260 840 400 830 S700 760 820 900"/>
+<path class="road-center" d="M120 90 C230 70 290 150 390 150 S610 80 700 110 S900 140 860 220 S680 300 560 285 S260 250 160 350 S240 470 390 470 S720 390 850 510 S680 640 570 625 S260 580 150 700 S260 840 400 830 S700 760 820 900"/>
+<path id="roadProgress" class="road-progress" pathLength="100" d="M120 90 C230 70 290 150 390 150 S610 80 700 110 S900 140 860 220 S680 300 560 285 S260 250 160 350 S240 470 390 470 S720 390 850 510 S680 640 570 625 S260 580 150 700 S260 840 400 830 S700 760 820 900"/>
+</svg>
+<div id="pingCompanion" class="ping-companion" aria-hidden="true">
+<img src="../imagenes/ping/ping-neutral.png?v=2" alt="">
+</div>
+<div class="cp locked c1" data-week="1"><div class="dot">🔒</div><div class="label"><div class="week">Semana 1</div><strong>🚀 ¡Aulas en marcha!</strong><span class="state">BLOQUEADO</span><br><a class="btn" href="t-semana-01.html">Hacer check</a></div></div>
+<div class="cp locked c2" data-week="2"><div class="dot">🔒</div><div class="label"><div class="week">Semana 2</div><strong>👀 Que nadie quede fuera del radar</strong><span class="state">BLOQUEADO</span><br><a class="btn" href="t-semana-02.html">Hacer check</a></div></div>
+<div class="cp locked c3" data-week="3"><div class="dot">🔒</div><div class="label"><div class="week">Semana 3</div><strong>🎯 Anticiparnos hace la diferencia</strong><span class="state">BLOQUEADO</span><br><a class="btn" href="t-semana-03.html">Hacer check</a></div></div>
+<div class="cp locked c4" data-week="4"><div class="dot">🔒</div><div class="label"><div class="week">Semana 4</div><strong>✍️ Devolver también es enseñar</strong><span class="state">BLOQUEADO</span><br><a class="btn" href="t-semana-04.html">Hacer check</a></div></div>
+<div class="cp locked c5" data-week="5"><div class="dot">🔒</div><div class="label"><div class="week">Semana 5</div><strong>📡 Seguimiento activo</strong><span class="state">BLOQUEADO</span><br><a class="btn" href="t-semana-05.html">Hacer check</a></div></div>
+<div class="cp locked c6" data-week="6"><div class="dot">🔒</div><div class="label"><div class="week">Semana 6</div><strong>🧭 Antes de avanzar, hagamos un check</strong><span class="state">BLOQUEADO</span><br><a class="btn" href="t-semana-06.html">Hacer check</a></div></div>
+<div class="cp locked c7" data-week="7"><div class="dot">🔒</div><div class="label"><div class="week">Semana 7</div><strong>📊 Información al día</strong><span class="state">BLOQUEADO</span><br><a class="btn" href="t-semana-07.html">Hacer check</a></div></div>
+<div class="cp locked c8" data-week="8"><div class="dot">🔒</div><div class="label"><div class="week">Semana 8</div><strong>🏁 Cerramos un tramo</strong><span class="state">BLOQUEADO</span><br><a class="btn" href="t-semana-08.html">Hacer check</a></div></div>
+<div class="cp locked c9" data-week="9"><div class="dot">🔒</div><div class="label"><div class="week">Semana 9</div><strong>🚀 ¡Nuevo ciclo en marcha!</strong><span class="state">BLOQUEADO</span><br><a class="btn" href="t-semana-09.html">Hacer check</a></div></div>
+<div class="cp locked c10" data-week="10"><div class="dot">🔒</div><div class="label"><div class="week">Semana 10</div><strong>🔎 Detectar temprano para acompañar mejor</strong><span class="state">BLOQUEADO</span><br><a class="btn" href="t-semana-10.html">Hacer check</a></div></div>
+<div class="cp locked c11" data-week="11"><div class="dot">🔒</div><div class="label"><div class="week">Semana 11</div><strong>💬 Una respuesta a tiempo cambia el recorrido</strong><span class="state">BLOQUEADO</span><br><a class="btn" href="t-semana-11.html">Hacer check</a></div></div>
+<div class="cp locked c12" data-week="12"><div class="dot">🔒</div><div class="label"><div class="week">Semana 12</div><strong>🎯 Acompañar también es estar atentos</strong><span class="state">BLOQUEADO</span><br><a class="btn" href="t-semana-12.html">Hacer check</a></div></div>
+<div class="cp locked c13" data-week="13"><div class="dot">🔒</div><div class="label"><div class="week">Semana 13</div><strong>📍 Checkpoint del tutor</strong><span class="state">BLOQUEADO</span><br><a class="btn" href="t-semana-13.html">Hacer check</a></div></div>
+<div class="cp locked c14" data-week="14"><div class="dot">🔒</div><div class="label"><div class="week">Semana 14</div><strong>🔥 ¡Entramos en la recta final!</strong><span class="state">BLOQUEADO</span><br><a class="btn" href="t-semana-14.html">Hacer check</a></div></div>
+<div class="cp locked c15" data-week="15"><div class="dot">🔒</div><div class="label"><div class="week">Semana 15</div><strong>🧩 Que no queden cabos sueltos</strong><span class="state">BLOQUEADO</span><br><a class="btn" href="t-semana-15.html">Hacer check</a></div></div>
+<div class="cp locked c16" data-week="16"><div class="dot">🔒</div><div class="label"><div class="week">Semana 16</div><strong>🏆 ¡Acompañamiento cumplido!</strong><span class="state">META BLOQUEADA</span><br><a class="btn" href="t-semana-16.html">Hacer check</a></div></div>
+<div class="finish">🏁 META</div>
+</section>
+<section class="actions">
+<div class="actions-title">ACCIONES QUE SOSTIENEN EL RECORRIDO</div>
+<div class="actions-grid">
+<div class="action"><span>👀</span>Detectar</div>
+<div class="action"><span>💬</span>Contactar</div>
+<div class="action"><span>🤝</span>Acompañar</div>
+<div class="action"><span>✍️</span>Corregir</div>
+<div class="action"><span>📊</span>Registrar</div>
+<div class="action"><span>↗️</span>Derivar</div>
+</div>
+</section>
+<section class="final">
+<strong>💙🧡 Cada viernes, una acción clave.</strong>
+<p>Volvé para descubrir qué nuevo checkpoint se habilitó en DISTANCIA EN ACCIÓN.</p>
+</section>
+</div>
 <script>
-
-/* =========================================================
-   CALENDARIO DE HABILITACIÓN
-   Formato:
-   [semana, año, mes, día]
-   ========================================================= */
-
-const calendario = [
-
-  [1, 2026, 8, 14],
-  [2, 2026, 8, 21],
-  [3, 2026, 8, 28],
-  [4, 2026, 9, 4],
-  [5, 2026, 9, 11],
-  [6, 2026, 9, 18],
-  [7, 2026, 9, 25],
-  [8, 2026, 10, 2],
-  [9, 2026, 10, 9],
-  [10, 2026, 10, 16],
-  [11, 2026, 10, 23],
-  [12, 2026, 10, 30],
-  [13, 2026, 11, 6],
-  [14, 2026, 11, 13],
-  [15, 2026, 11, 20],
-  [16, 2026, 11, 27]
-
-];
-
-
-/* =========================================================
-   DETECTAR SEMANA ACTUAL
-   ========================================================= */
-
+const calendario=[[1,2026,8,14],[2,2026,8,21],[3,2026,8,28],[4,2026,9,4],[5,2026,9,11],[6,2026,9,18],[7,2026,9,25],[8,2026,10,2],[9,2026,10,9],[10,2026,10,16],[11,2026,10,23],[12,2026,10,30],[13,2026,11,6],[14,2026,11,13],[15,2026,11,20],[16,2026,11,27]];
 function obtenerSemanaActual(){
-
-  const hoy = new Date();
-
-  const fechaHoy = new Date(
-    hoy.getFullYear(),
-    hoy.getMonth(),
-    hoy.getDate()
-  ).getTime();
-
-  let semanaActual = 0;
-
-
-  calendario.forEach(item => {
-
-    const semana = item[0];
-    const anio = item[1];
-    const mes = item[2];
-    const dia = item[3];
-
-    const fechaActivacion = new Date(
-      anio,
-      mes - 1,
-      dia
-    ).getTime();
-
-
-    if(fechaHoy >= fechaActivacion){
-
-      semanaActual = semana;
-
-    }
-
-  });
-
-
-  return semanaActual;
-
+const hoy=new Date();
+const fechaHoy=new Date(hoy.getFullYear(),hoy.getMonth(),hoy.getDate()).getTime();
+let semanaActual=0;
+calendario.forEach(item=>{
+const fechaActivacion=new Date(item[1],item[2]-1,item[3]).getTime();
+if(fechaHoy>=fechaActivacion) semanaActual=item[0];
+});
+return semanaActual;
 }
-
-
-/* =========================================================
-   ACTUALIZAR CAMINO
-   ========================================================= */
-
+function ubicarPing(){
+const ping=document.getElementById("pingCompanion");
+const mapa=document.getElementById("mapaRecorrido");
+const activo=document.querySelector(".cp.active");
+if(!ping||!mapa||!activo){
+if(ping) ping.classList.remove("visible");
+return;
+}
+if(ping.parentElement!==activo) activo.appendChild(ping);
+ping.classList.remove("ping-izquierda","ping-derecha","ping-mobile","visible");
+if(window.innerWidth<=650){
+ping.classList.add("ping-mobile");
+}else{
+const mapaRect=mapa.getBoundingClientRect();
+const activoRect=activo.getBoundingClientRect();
+const centroActivo=activoRect.left+(activoRect.width/2);
+const centroMapa=mapaRect.left+(mapaRect.width/2);
+if(centroActivo>centroMapa) ping.classList.add("ping-izquierda");
+else ping.classList.add("ping-derecha");
+}
+requestAnimationFrame(()=>requestAnimationFrame(()=>ping.classList.add("visible")));
+}
+function activarReaccionPing(){
+const activo=document.querySelector(".cp.active");
+const ping=document.getElementById("pingCompanion");
+if(!activo||!ping) return;
+const reaccion=()=>{
+ping.classList.remove("reacciona");
+void ping.offsetWidth;
+ping.classList.add("reacciona");
+};
+activo.addEventListener("mouseenter",reaccion);
+activo.addEventListener("focusin",reaccion);
+}
 function actualizarRecorrido(){
-
-  const semanaActual = obtenerSemanaActual();
-
-  console.log(
-    "Semana detectada:",
-    semanaActual
-  );
-
-
-  document
-    .querySelectorAll(".cp[data-week]")
-    .forEach(cp => {
-
-      const semana =
-        Number(cp.dataset.week);
-
-      const dot =
-        cp.querySelector(".dot");
-
-      const estado =
-        cp.querySelector(".state");
-
-      const boton =
-        cp.querySelector(".btn");
-
-
-      cp.classList.remove(
-        "done",
-        "active",
-        "locked"
-      );
-
-
-      /* SEMANAS ANTERIORES */
-
-      if(semana < semanaActual){
-
-        cp.classList.add("done");
-
-        dot.textContent = "✓";
-
-        estado.textContent =
-          "COMPLETADO";
-
-        boton.textContent =
-          "Volver al check";
-
-      }
-
-
-      /* SEMANA ACTUAL */
-
-      else if(semana === semanaActual){
-
-        cp.classList.add("active");
-
-        dot.textContent = semana;
-
-        estado.textContent =
-          "DISPONIBLE AHORA";
-
-        boton.textContent =
-          "Hacer check";
-
-      }
-
-
-      /* SEMANAS FUTURAS */
-
-      else{
-
-        cp.classList.add("locked");
-
-        dot.textContent = "🔒";
-
-        estado.textContent =
-          semana === 16
-            ? "META BLOQUEADA"
-            : "BLOQUEADO";
-
-      }
-
-    });
-
-
-  /* =======================================================
-     PROGRESO DEL CAMINO
-     ======================================================= */
-
-  const progreso =
-    semanaActual <= 1
-      ? 0
-      : Math.min(
-          100,
-          ((semanaActual - 1) / 15) * 100
-        );
-
-
-  const camino =
-    document.getElementById(
-      "roadProgress"
-    );
-
-
-  if(camino){
-
-    camino.style.strokeDasharray =
-      progreso + " " + (100 - progreso);
-
-  }
-
-
-  /* PROGRESO PARA CELULAR */
-
-  document.documentElement
-    .style
-    .setProperty(
-      "--progreso-mobile",
-      progreso + "%"
-    );
-
+const semanaActual=obtenerSemanaActual();
+document.querySelectorAll(".cp[data-week]").forEach(cp=>{
+const semana=Number(cp.dataset.week);
+const dot=cp.querySelector(".dot");
+const estado=cp.querySelector(".state");
+const boton=cp.querySelector(".btn");
+cp.classList.remove("done","active","locked");
+if(semana<semanaActual){
+cp.classList.add("done");
+dot.textContent="✓";
+estado.textContent="COMPLETADO";
+boton.textContent="Volver al check";
+}else if(semana===semanaActual){
+cp.classList.add("active");
+dot.textContent=semana;
+estado.textContent="DISPONIBLE AHORA";
+boton.textContent="Hacer check";
+}else{
+cp.classList.add("locked");
+dot.textContent="🔒";
+estado.textContent=semana===16?"META BLOQUEADA":"BLOQUEADO";
 }
-
-
-/* INICIAR */
-
+});
+const progreso=semanaActual<=1?0:Math.min(100,((semanaActual-1)/15)*100);
+document.documentElement.style.setProperty("--progreso-mobile",progreso+"%");
+const camino=document.getElementById("roadProgress");
+if(camino){
+camino.style.strokeDasharray="0 100";
+requestAnimationFrame(()=>requestAnimationFrame(()=>{
+camino.classList.add("ready");
+camino.style.strokeDasharray=progreso+" "+(100-progreso);
+}));
+}
+ubicarPing();
+activarReaccionPing();
+}
+let resizeTimer;
+window.addEventListener("resize",()=>{
+clearTimeout(resizeTimer);
+resizeTimer=setTimeout(ubicarPing,120);
+});
 actualizarRecorrido();
-
 </script>
-
 </body>
 </html>
