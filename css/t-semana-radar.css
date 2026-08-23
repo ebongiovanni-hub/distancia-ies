@@ -1,153 +1,251 @@
 body.tema-radar{
 background:
-radial-gradient(circle at 10% 8%,rgba(0,170,228,.12),transparent 24%),
-radial-gradient(circle at 88% 12%,rgba(31,52,76,.05),transparent 25%),
-linear-gradient(180deg,#EFF8FC 0%,#F8FCFE 58%,#F2F7FA 100%);
+radial-gradient(circle at 8% 10%,rgba(0,170,228,.10),transparent 25%),
+radial-gradient(circle at 92% 12%,rgba(31,52,76,.045),transparent 24%),
+linear-gradient(180deg,#F3FAFD 0%,#F8FCFE 58%,#F1F7FA 100%);
 }
 .tema-radar .hero{
 position:relative;
+overflow:hidden;
 background:
-radial-gradient(circle at 88% 20%,rgba(0,170,228,.10),transparent 27%),
-linear-gradient(125deg,#FFFFFF 0%,#F4FBFE 58%,#EAF7FC 100%);
+radial-gradient(circle at 86% 22%,rgba(0,170,228,.09),transparent 26%),
+linear-gradient(125deg,#FFFFFF 0%,#F4FBFE 62%,#EAF7FC 100%);
+border:1px solid rgba(0,170,228,.14);
 border-top:5px solid #00AAE4;
-border-color:rgba(0,170,228,.17);
-box-shadow:0 12px 28px rgba(31,52,76,.07);
+border-radius:22px;
+box-shadow:0 12px 30px rgba(31,52,76,.055);
 }
 .tema-radar .hero::before{
 content:"";
 position:absolute;
-width:230px;
-height:230px;
-right:-70px;
-top:-90px;
+width:240px;
+height:240px;
+right:-72px;
+top:-88px;
 border-radius:50%;
-border:18px solid rgba(0,170,228,.05);
-box-shadow:0 0 0 22px rgba(0,170,228,.025),0 0 0 44px rgba(0,170,228,.015);
+border:18px solid rgba(0,170,228,.045);
+box-shadow:0 0 0 22px rgba(0,170,228,.022),0 0 0 44px rgba(0,170,228,.012);
 pointer-events:none;
 }
 .tema-radar .hero::after{
 content:"";
 position:absolute;
-width:235px;
-height:135px;
-right:-20px;
-bottom:-45px;
-background:repeating-radial-gradient(circle at 72% 40%,rgba(0,170,228,.09) 0 2px,transparent 3px 15px);
-opacity:.65;
+width:230px;
+height:130px;
+right:-18px;
+bottom:-44px;
+background:repeating-radial-gradient(circle at 72% 40%,rgba(0,170,228,.075) 0 2px,transparent 3px 15px);
+opacity:.7;
 pointer-events:none;
 }
 .tema-radar .badge{
 background:#E8F7FC;
-border:1px solid rgba(0,170,228,.18);
+border:1px solid rgba(0,170,228,.17);
 color:#007198;
 }
 .tema-radar h1{color:#1F344C}
 .tema-radar h1 span{color:#00AAE4}
-.tema-radar .hero p{color:#536A7A}
+.tema-radar .hero p{color:#536A79}
 .tema-radar .rule{
 background:#EDF8FC;
-border-color:rgba(0,170,228,.15);
+border:1px solid rgba(0,170,228,.14);
 color:#007198;
 }
 .tema-radar .section{
-background:rgba(255,255,255,.97);
-border-color:rgba(0,170,228,.13);
-box-shadow:0 10px 24px rgba(31,52,76,.045);
+background:rgba(255,255,255,.96);
+border:1px solid rgba(0,170,228,.12);
+border-radius:20px;
+box-shadow:0 10px 24px rgba(31,52,76,.04);
 }
-.tema-radar .section h2{color:#1F344C}
-.tema-radar .intro{color:#5B7180}
+.tema-radar .section h2{
+color:#1F344C;
+}
+.tema-radar .intro{
+color:#5B7180;
+}
+.tema-radar .checks,
+.tema-radar .grid,
+.tema-radar .radar-grid{
+gap:16px;
+}
 .tema-radar .checkcard,
 .tema-radar .choice,
 .tema-radar .radar-card{
-background:#FFFFFF;
-border-color:#DCE8EE;
+position:relative;
+background:linear-gradient(180deg,#FFFFFF 0%,#FCFEFF 100%);
+border:1px solid #DCE9EF;
+border-radius:17px;
+box-shadow:0 5px 14px rgba(31,52,76,.045);
+transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease,background .2s ease;
+overflow:visible;
 }
 .tema-radar .checkcard:hover,
 .tema-radar .choice:hover,
 .tema-radar .radar-card:hover{
-border-color:#9EDBED;
-box-shadow:0 7px 16px rgba(0,170,228,.07);
+transform:translateY(-2px);
+border-color:#A7DDED;
+box-shadow:0 9px 20px rgba(31,52,76,.07);
 }
 .tema-radar .checkcard.active,
 .tema-radar .choice.active,
 .tema-radar .radar-card.active{
+background:linear-gradient(180deg,#FFFFFF 0%,#F0FAFD 100%);
 border-color:#00AAE4;
-background:#F3FBFE;
-box-shadow:0 0 0 2px rgba(0,170,228,.055);
+box-shadow:0 0 0 2px rgba(0,170,228,.055),0 9px 20px rgba(31,52,76,.065);
+}
+.tema-radar .checkcard::after,
+.tema-radar .choice::after,
+.tema-radar .radar-card::after{
+content:"";
+position:absolute;
+right:14px;
+top:14px;
+width:26px;
+height:26px;
+border-radius:50%;
+background:#FFFFFF;
+border:2px solid #C1D4DE;
+box-shadow:0 1px 3px rgba(31,52,76,.06);
+transition:.2s ease;
+}
+.tema-radar .checkcard:hover::after,
+.tema-radar .choice:hover::after,
+.tema-radar .radar-card:hover::after{
+border-color:#7CCFE8;
+}
+.tema-radar .checkcard.active::after,
+.tema-radar .choice.active::after,
+.tema-radar .radar-card.active::after{
+content:"✓";
+display:grid;
+place-items:center;
+background:#00AAE4;
+border-color:#00AAE4;
+color:#FFFFFF;
+font-size:14px;
+font-weight:900;
 }
 .tema-radar .checkcard .status,
 .tema-radar .choice .check,
 .tema-radar .radar-card .status{
-background:#FFFFFF;
-border-color:#BFD1DC;
-}
-.tema-radar .checkcard.active .status,
-.tema-radar .choice.active .check,
-.tema-radar .radar-card.active .status{
-background:#00AAE4;
-border-color:#00AAE4;
-color:#FFFFFF;
+display:none;
 }
 .tema-radar .checkcard h3,
 .tema-radar .choice h3,
-.tema-radar .radar-card h3{color:#1F344C}
+.tema-radar .radar-card h3{
+color:#1F344C;
+padding-right:34px;
+}
 .tema-radar .checkcard p,
 .tema-radar .choice p,
-.tema-radar .radar-card p{color:#5B7180}
+.tema-radar .radar-card p{
+color:#587180;
+}
+.tema-radar .checkcard .emoji,
+.tema-radar .choice .emoji,
+.tema-radar .radar-card .emoji{
+display:inline-grid;
+place-items:center;
+min-width:38px;
+height:38px;
+padding:0 8px;
+border-radius:11px;
+background:#E8F7FC;
+}
+.tema-radar .checkcard:nth-child(2) .emoji,
+.tema-radar .choice:nth-child(2) .emoji,
+.tema-radar .radar-card:nth-child(2) .emoji{
+background:#EEF3F7;
+}
+.tema-radar .checkcard:nth-child(3) .emoji,
+.tema-radar .choice:nth-child(3) .emoji,
+.tema-radar .radar-card:nth-child(3) .emoji{
+background:#EDF8F4;
+}
+.tema-radar .checkcard:nth-child(4) .emoji,
+.tema-radar .choice:nth-child(4) .emoji,
+.tema-radar .radar-card:nth-child(4) .emoji{
+background:#FFF3EF;
+}
 .tema-radar .monitor,
 .tema-radar .rhythm-box{
-background:linear-gradient(125deg,#EAF8FD,#F7FCFE);
-border-color:rgba(0,170,228,.18);
+background:linear-gradient(125deg,#EAF8FD 0%,#F7FCFE 100%);
+border:1px solid rgba(0,170,228,.18);
 color:#1F344C;
+box-shadow:0 5px 14px rgba(31,52,76,.035);
 }
 .tema-radar .monitor-head strong,
-.tema-radar .rhythm-head strong{color:#007198}
+.tema-radar .rhythm-head strong{
+color:#007198;
+}
 .tema-radar .meter,
-.tema-radar .bar{background:#DCEBF1}
+.tema-radar .bar{
+background:#DDEBF1;
+}
 .tema-radar .meter>div,
 .tema-radar .bar span{
 background:linear-gradient(90deg,#00AAE4,#007198);
 }
 .tema-radar .feedback,
-.tema-radar .small{color:#587181}
+.tema-radar .small{
+color:#587181;
+}
 .tema-radar .alert,
 .tema-radar .help,
 .tema-radar .tipbox,
 .tema-radar .radar-alert{
-background:#F3FAFD;
-border-left-color:#00AAE4;
+background:#F5FAFC;
+border-left:4px solid #00AAE4;
 color:#506878;
 }
 .tema-radar .alert strong,
 .tema-radar .help strong,
 .tema-radar .tipbox strong,
-.tema-radar .radar-alert strong{color:#007198}
+.tema-radar .radar-alert strong{
+color:#007198;
+}
 .tema-radar .tipicon{
-background:#E4F5FB;
+background:#E7F5FA;
 color:#007198;
 }
 .tema-radar .focusbox{
 background:#FFFFFF;
-border-color:#DCE8EE;
+border:1px solid #DCE9EF;
+box-shadow:0 5px 14px rgba(31,52,76,.035);
 }
-.tema-radar .focusbox h3{color:#1F344C}
+.tema-radar .focusbox h3{
+color:#1F344C;
+}
 .tema-radar .focusbox.orange{
-background:#F8FCFE;
-border-color:#DCE8EE;
+background:linear-gradient(135deg,#FFFFFF 0%,#FFF8F5 100%);
+border-color:#E8DDD8;
 }
-.tema-radar .focusbox.orange h3{color:#007198}
+.tema-radar .focusbox.orange h3{
+color:#1F344C;
+}
+.tema-radar .focusbox.orange::before{
+content:"";
+display:block;
+width:34px;
+height:3px;
+margin-bottom:9px;
+border-radius:99px;
+background:#FF6859;
+}
 .tema-radar .closing,
 .tema-radar .cta,
 .tema-radar .next-panel{
-background:linear-gradient(125deg,#EAF8FD 0%,#F8FCFE 70%,#FFFFFF 100%);
-border-color:rgba(0,170,228,.15);
-box-shadow:0 8px 20px rgba(31,52,76,.045);
+background:linear-gradient(125deg,#EAF8FD 0%,#F8FCFE 72%,#FFFFFF 100%);
+border:1px solid rgba(0,170,228,.14);
+box-shadow:0 8px 20px rgba(31,52,76,.04);
 }
 .tema-radar .closing h2,
 .tema-radar .cta h2,
-.tema-radar .next-panel h2{color:#1F344C}
+.tema-radar .next-panel h2{
+color:#1F344C;
+}
 .tema-radar .next{
-background:#E6F6FB;
+background:#E8F6FB;
 color:#007198;
 }
 .tema-radar .back a{
