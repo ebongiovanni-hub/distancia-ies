@@ -1,0 +1,20 @@
+:root{--ping-size:84px;--ping-size-mobile:62px;--ping-right:18px;--ping-bottom:18px}
+.ping-float{position:fixed;right:var(--ping-right);bottom:var(--ping-bottom);width:var(--ping-size);height:var(--ping-size);z-index:9999;pointer-events:none;opacity:0;transform:translateY(18px) scale(.94);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.3,1)}
+.ping-float.visible{opacity:1;transform:translateY(0) scale(1)}
+.ping-float img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 6px 8px rgba(31,52,76,.18))}
+.ping-float::before,.ping-float::after{content:"";position:absolute;inset:0;background-position:center;background-repeat:no-repeat;background-size:contain;opacity:0;pointer-events:none;filter:drop-shadow(0 6px 8px rgba(31,52,76,.18))}
+.ping-float::before{background-image:url("../imagenes/ping/ping-guino.png");animation:pingGuino 12s linear infinite}
+.ping-float::after{background-image:url("../imagenes/ping/ping-sonrie.png");animation:pingSonrie 12s linear infinite}
+@keyframes pingGuino{0%,15%,100%{opacity:0}18%,23%{opacity:1}26%,100%{opacity:0}}
+@keyframes pingSonrie{0%,52%{opacity:0}55%,63%{opacity:1}67%,100%{opacity:0}}
+.ping-float.visible{animation:pingVida 7s ease-in-out 1s infinite}
+@keyframes pingVida{0%,58%,100%{transform:translateY(0) rotate(0deg) scale(1)}66%{transform:translateY(-2px) translateX(-5px) rotate(-4deg) scale(1)}73%{transform:translateY(0) translateX(3px) rotate(3deg) scale(1.02)}80%{transform:translateY(0) rotate(0deg) scale(1)}}
+.ping-float.reacciona{animation:pingReacciona .65s ease!important}
+@keyframes pingReacciona{0%,100%{transform:translateY(0) rotate(0deg) scale(1)}45%{transform:translateY(-4px) rotate(-6deg) scale(1.06)}}
+.ping-float.pensando::before,.ping-float.pensando::after,.ping-float.sorprendido::before,.ping-float.sorprendido::after,.ping-float.contento::before,.ping-float.contento::after,.ping-float.celebrando::before,.ping-float.celebrando::after{display:none}
+.ping-float.pensando img{content:url("../imagenes/ping/ping-pensando.png")}
+.ping-float.sorprendido img{content:url("../imagenes/ping/ping-sorprendido.png")}
+.ping-float.contento img{content:url("../imagenes/ping/ping-contento.png")}
+.ping-float.celebrando img{content:url("../imagenes/ping/ping-celebrando.png")}
+@media(max-width:650px){:root{--ping-right:10px;--ping-bottom:12px}.ping-float{width:var(--ping-size-mobile);height:var(--ping-size-mobile)}}
+@media(prefers-reduced-motion:reduce){.ping-float,.ping-float::before,.ping-float::after{animation:none!important;transition:none!important}}
