@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seguimiento de inscripción | IES</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7f9;font-family:Arial,Helvetica,sans-serif;color:#1f344c;padding:24px}
+.card{max-width:580px;margin:50px auto;background:#fff;border:1px solid #dce8f0;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(31,52,76,.08)}
+.top{height:10px;background:#00aae4}
+.content{padding:42px 36px;text-align:center}
+.tag{display:inline-block;background:#eaf8fd;color:#0084b1;font-size:12px;font-weight:700;letter-spacing:.8px;padding:7px 14px;border-radius:999px;margin-bottom:22px}
+h1{margin:0 0 18px;color:#ff6859;font-size:28px;line-height:1.25}
+p{margin:0 0 20px;font-size:16px;line-height:1.7;color:#4b5965}
+.question{font-size:19px;color:#1f344c;font-weight:700;margin:26px 0 22px}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+.btn{display:block;width:100%;border:0;border-radius:11px;padding:14px 16px;font-size:15px;font-weight:700;cursor:pointer}
+.btn-si{background:#00aae4;color:#fff}
+.btn-no{background:#fff3f1;color:#d84f43;border:1px solid #ffb0a8}
+.motivos{display:none;margin-top:26px}
+.motivo{display:block;width:100%;margin:10px 0;padding:14px 16px;background:#f7fbfd;border:1px solid #d5e8f1;border-radius:10px;color:#1f344c;font-size:15px;font-weight:700;cursor:pointer}
+.estado{display:none}
+.error h1{color:#ff6859}
+.contacto{margin-top:24px;padding:18px 20px;background:#f7fbfd;border-left:5px solid #ff6859;border-radius:12px;text-align:left}
+.contacto a{display:inline-block;margin-top:12px;background:#00aae4;color:#fff;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:999px}
+.footer{display:flex;height:7px}
+.footer div:first-child{width:70%;background:#00aae4}
+.footer div:last-child{width:30%;background:#ff6859}
+@media(max-width:520px){
+body{padding:12px}
+.card{margin:20px auto}
+.content{padding:34px 22px}
+.actions{grid-template-columns:1fr}
+h1{font-size:25px}
+}
+</style>
+</head>
+<body>
+<div class="card" id="card">
+<div class="top"></div>
+<div class="content">
+<div class="tag">IES · MODALIDAD DISTANCIA</div>
+
+<div id="inicio">
+<h1>Queremos acompañarte</h1>
+<p>Queremos saber si tenés previsto continuar con tu inscripción.</p>
+<div class="question">¿Vas a completar tu inscripción?</div>
+<div class="actions">
+<button class="btn btn-si" onclick="responderSi()">Sí, voy a inscribirme</button>
+<button class="btn btn-no" onclick="mostrarMotivos()">No, por el momento</button>
+</div>
+</div>
+
+<div class="motivos" id="motivos">
+<h1>Gracias por contarnos</h1>
+<p>¿Cuál es el principal motivo por el que decidiste no continuar con tu inscripción?</p>
+
+<button class="motivo" onclick="responderNo('ECONOMICO')">
+Por motivos económicos
+</button>
+
+<button class="motivo" onclick="responderNo('LABORAL')">
+Por motivos laborales
+</button>
+
+<button class="motivo" onclick="responderNo('PERSONAL_FAMILIAR')">
+Por motivos personales o familiares
+</button>
+
+<button class="motivo" onclick="responderNo('MODALIDAD')">
+La modalidad a distancia no se adapta a mí
+</button>
+
+<button class="motivo" onclick="responderNo('VOCACIONAL')">
+Por motivos vocacionales
+</button>
+
+<button class="motivo" onclick="responderNo('OTRO')">
+Otro motivo
+</button>
+</div>
+
+<div class="estado" id="cargando">
+<h1>Registrando tu respuesta...</h1>
+<p>Un momento, por favor.</p>
+</div>
+
+<div class="estado" id="exitoSi">
+<h1>¡Te esperamos en IES Virtual!</h1>
+<p>Nos alegra saber que vas a continuar con tu inscripción.</p>
+<div class="contacto">
+Si necesitás ayuda o tenés alguna duda para completar el proceso, podés comunicarte con <strong>Atención Académica</strong>.
+<br>
+<a href="https://wa.me/5493516363634" target="_blank">Contactar a Atención Académica</a>
+</div>
+</div>
+
+<div class="estado" id="exitoNo">
+<h1>¡Gracias por responder!</h1>
+<p>Tu respuesta fue registrada y nos ayuda a seguir mejorando nuestro acompañamiento.</p>
+</div>
+
+<div class="estado error" id="error">
+<h1>No pudimos registrar tu respuesta</h1>
+<p id="mensajeError">Por favor, intentá nuevamente.</p>
+</div>
+</div>
+
+<div class="footer">
+<div></div>
+<div></div>
+</div>
+</div>
+
+<script>
+const APP_RESPUESTAS="https://script.google.com/macros/s/AKfycbxB2F7H6HQiBtUhkrDVfFCymIaJYMGHw4d3jRRymy1C8BItX8lCx7l_hWjWP3IPJ9Ww2A/exec";
+
+const params=new URLSearchParams(window.location.search);
+const dni=params.get("dni");
+const email=params.get("email");
+
+function ocultarTodo(){
+document.getElementById("inicio").style.display="none";
+document.getElementById("motivos").style.display="none";
+document.getElementById("cargando").style.display="none";
+document.getElementById("exitoSi").style.display="none";
+document.getElementById("exitoNo").style.display="none";
+document.getElementById("error").style.display="none";
+}
+
+function mostrarError(texto){
+ocultarTodo();
+document.getElementById("mensajeError").textContent=texto;
+document.getElementById("error").style.display="block";
+}
+
+function mostrarMotivos(){
+if(!dni || !email){
+mostrarError("El enlace utilizado no contiene toda la información necesaria.");
+return;
+}
+document.getElementById("inicio").style.display="none";
+document.getElementById("motivos").style.display="block";
+}
+
+function responderSi(){
+registrarRespuesta("SI","");
+}
+
+function responderNo(motivo){
+registrarRespuesta("NO",motivo);
+}
+
+function registrarRespuesta(respuesta,motivo){
+if(!dni || !email){
+mostrarError("El enlace utilizado no contiene toda la información necesaria.");
+return;
+}
+
+ocultarTodo();
+document.getElementById("cargando").style.display="block";
+
+let url=APP_RESPUESTAS+
+"?dni="+encodeURIComponent(dni)+
+"&email="+encodeURIComponent(email)+
+"&respuesta="+encodeURIComponent(respuesta);
+
+if(motivo){
+url+="&motivo="+encodeURIComponent(motivo);
+}
+
+url+="&t="+Date.now();
+
+fetch(url,{
+method:"GET",
+redirect:"follow",
+cache:"no-store"
+})
+.then(function(respuestaWeb){
+if(!respuestaWeb.ok){
+throw new Error("HTTP "+respuestaWeb.status);
+}
+return respuestaWeb.text();
+})
+.then(function(resultado){
+const texto=resultado.trim().toUpperCase();
+
+if(texto==="OK_SI"){
+ocultarTodo();
+document.getElementById("exitoSi").style.display="block";
+return;
+}
+
+if(texto==="OK_NO"){
+ocultarTodo();
+document.getElementById("exitoNo").style.display="block";
+return;
+}
+
+if(texto==="NO_ENCONTRADO"){
+mostrarError("No pudimos identificar tus datos en nuestra base.");
+return;
+}
+
+if(texto==="DATOS_INCOMPLETOS"){
+mostrarError("El enlace no contiene toda la información necesaria.");
+return;
+}
+
+if(texto==="FALTA_MOTIVO"){
+mostrarError("Necesitamos que selecciones un motivo.");
+return;
+}
+
+if(texto==="MOTIVO_INVALIDO" || texto==="RESPUESTA_INVALIDA"){
+mostrarError("La opción seleccionada no pudo ser procesada.");
+return;
+}
+
+if(texto==="ERROR_HOJA"){
+mostrarError("No pudimos acceder al registro de respuestas.");
+return;
+}
+
+mostrarError("No pudimos confirmar que la respuesta se haya registrado.");
+})
+.catch(function(error){
+console.error(error);
+mostrarError("No pudimos registrar tu respuesta. Por favor, intentá nuevamente.");
+});
+}
+
+if(!dni || !email){
+mostrarError("El enlace utilizado no contiene toda la información necesaria.");
+}
+</script>
+</body>
+</html>
