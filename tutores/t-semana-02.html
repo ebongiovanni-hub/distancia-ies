@@ -6,105 +6,99 @@
 <title>Distancia | En acción · Semana 2</title>
 <link rel="stylesheet" href="../css/semanas.css">
 <link rel="stylesheet" href="../css/t-semana-radar.css">
-<style>
-.radar-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.radar-card{position:relative;border:1px solid #DCE8F0;border-radius:16px;padding:16px;background:#FFF;cursor:pointer;transition:.2s ease;min-height:132px}
-.radar-card:hover{transform:translateY(-2px);border-color:#BDD7E9;box-shadow:0 8px 18px rgba(31,95,158,.07)}
-.radar-card.active{border-color:var(--verde);background:linear-gradient(180deg,#FBFFFD,#F0FAF5);box-shadow:0 0 0 3px rgba(79,157,120,.07)}
-.radar-card .status{position:absolute;right:13px;top:13px;width:25px;height:25px;border-radius:50%;display:grid;place-items:center;border:2px solid #D9E4EB;color:transparent;font-weight:900;background:#FFF}
-.radar-card.active .status{background:var(--verde);border-color:var(--verde);color:#FFF}
-.radar-card .emoji{font-size:1.5rem}
-.radar-card h3{margin:8px 0 5px;font-size:1rem;color:var(--tinta)}
-.radar-card p{margin:0;color:#5B7183;line-height:1.5;font-size:.91rem}
-.radar-alert{margin-top:16px;padding:13px 15px;border-left:4px solid var(--naranja);background:#FFF8EE;border-radius:13px;line-height:1.5;font-size:.91rem;color:#66503A}
-.radar-alert strong{color:#9B5719}
-@media(max-width:760px){.radar-grid{grid-template-columns:1fr}}
-</style>
+<link rel="stylesheet" href="../css/ping.css">
 </head>
 <body class="tema-radar">
 <div class="wrap">
 <div class="brandbar">
-  <div class="topline">DISTANCIA | EN ACCIÓN</div>
-  <img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
+<div class="topline">DISTANCIA | EN ACCIÓN</div>
+<img class="logo-ies" src="../imagenes/LOGO_IES21.png" alt="Colegio Universitario IES">
 </div>
 <section class="hero">
-  <div class="badge">👀 SEMANA 2 · SEGUIMIENTO TEMPRANO</div>
-  <h1>Que nadie quede <span>fuera del radar</span></h1>
-  <p>Después de la puesta en marcha, el siguiente paso es mirar qué está pasando con nuestros estudiantes. Detectar una ausencia, una dificultad o una señal de desconexión a tiempo nos permite intervenir antes de que el problema crezca.</p>
-  <div class="rule">⏱️ Un check rápido para esta semana</div>
+<div class="badge">👀 SEMANA 2 · SEGUIMIENTO TEMPRANO</div>
+<h1>Que nadie quede <span>fuera del radar</span></h1>
+<p>Después de la puesta en marcha, el siguiente paso es mirar qué está pasando con nuestros estudiantes. Detectar una ausencia, una dificultad o una señal de desconexión a tiempo nos permite intervenir antes de que el problema crezca.</p>
+<div class="rule">⏱️ Un check rápido para esta semana</div>
 </section>
 <section class="section">
-  <h2>¿Tenés a todos tus estudiantes en el radar?</h2>
-  <p class="intro">Marcá las acciones que ya realizaste. El objetivo no es sumar controles, sino asegurarnos de que ningún estudiante quede sin acompañamiento durante estas primeras semanas.</p>
-  <div class="radar-grid"
-    data-interaction="checklist"
-    data-items=".radar-card"
-    data-active-class="active"
-    data-count="count"
-    data-bar="bar"
-    data-feedback="feedback"
-    data-unit="acciones realizadas"
-    data-msg0="Empezá por revisar quiénes necesitan hoy una mirada más cercana."
-    data-msg1="Buen comienzo. Ya pusiste una parte del seguimiento en marcha."
-    data-msg2="Vas por la mitad. El radar empieza a mostrar una imagen más completa."
-    data-msg3="Casi listo. Te queda una última acción por revisar."
-    data-msg4="👀 ¡Radar activo! Completaste el seguimiento de esta semana.">
-    <div class="radar-card" tabindex="0">
-      <div class="status">✓</div>
-      <div class="emoji">👀</div>
-      <h3>Revisé la actividad</h3>
-      <p>Identifiqué estudiantes con poca o ninguna participación reciente en el aula.</p>
-    </div>
-    <div class="radar-card" tabindex="0">
-      <div class="status">✓</div>
-      <div class="emoji">💬</div>
-      <h3>Realicé el contacto</h3>
-      <p>Me comuniqué con quienes muestran señales de desconexión para conocer qué está sucediendo.</p>
-    </div>
-    <div class="radar-card" tabindex="0">
-      <div class="status">✓</div>
-      <div class="emoji">✍️</div>
-      <h3>Revisé las devoluciones</h3>
-      <p>Verifiqué que las actividades que requieren corrección estén siendo acompañadas con devoluciones oportunas.</p>
-    </div>
-    <div class="radar-card" tabindex="0">
-      <div class="status">✓</div>
-      <div class="emoji">📊</div>
-      <h3>Registré y derivé cuando fue necesario</h3>
-      <p>Dejé registro del seguimiento y derivé las situaciones que requieren intervención de otra área.</p>
-    </div>
-  </div>
-  <div class="monitor">
-    <div class="monitor-head">
-      <strong>Estado del seguimiento</strong>
-      <span id="count">0 de 4 acciones realizadas</span>
-    </div>
-    <div class="meter"><div id="bar"></div></div>
-    <div class="feedback" id="feedback">Empezá por revisar quiénes necesitan hoy una mirada más cercana.</div>
-  </div>
-  <div class="radar-alert"><strong>📌 Una señal a tiempo importa:</strong> varios días sin actividad, ausencia sostenida en los encuentros o falta de respuesta pueden indicar una dificultad que todavía estamos a tiempo de acompañar.</div>
+<h2>¿Tenés a todos tus estudiantes en el radar?</h2>
+<p class="intro">Marcá las acciones que ya realizaste. El objetivo no es sumar controles, sino asegurarnos de que ningún estudiante quede sin acompañamiento durante estas primeras semanas.</p>
+<div class="radar-grid" data-interaction="checklist" data-items=".radar-card" data-active-class="active" data-count="count" data-bar="bar" data-feedback="feedback" data-unit="acciones realizadas" data-msg0="Empezá por revisar quiénes necesitan hoy una mirada más cercana." data-msg1="Buen comienzo. Ya pusiste una parte del seguimiento en marcha." data-msg2="Vas por la mitad. El radar empieza a mostrar una imagen más completa." data-msg3="Casi listo. Te queda una última acción por revisar." data-msg4="👀 ¡Radar activo! Completaste el seguimiento de esta semana.">
+<div class="radar-card" tabindex="0">
+<div class="status">✓</div>
+<div class="emoji">👀</div>
+<h3>Revisé la actividad</h3>
+<p>Identifiqué estudiantes con poca o ninguna participación reciente en el aula.</p>
+</div>
+<div class="radar-card" tabindex="0">
+<div class="status">✓</div>
+<div class="emoji">💬</div>
+<h3>Realicé el contacto</h3>
+<p>Me comuniqué con quienes muestran señales de desconexión para conocer qué está sucediendo.</p>
+</div>
+<div class="radar-card" tabindex="0">
+<div class="status">✓</div>
+<div class="emoji">✍️</div>
+<h3>Revisé las devoluciones</h3>
+<p>Verifiqué que las actividades que requieren corrección estén siendo acompañadas con devoluciones oportunas.</p>
+</div>
+<div class="radar-card" tabindex="0">
+<div class="status">✓</div>
+<div class="emoji">📊</div>
+<h3>Registré y derivé cuando fue necesario</h3>
+<p>Dejé registro del seguimiento y derivé las situaciones que requieren intervención de otra área.</p>
+</div>
+</div>
+<div class="monitor">
+<div class="monitor-head">
+<strong>Estado del seguimiento</strong>
+<span id="count">0 de 4 acciones realizadas</span>
+</div>
+<div class="meter"><div id="bar"></div></div>
+<div class="feedback" id="feedback">Empezá por revisar quiénes necesitan hoy una mirada más cercana.</div>
+</div>
+<div class="radar-alert"><strong>📌 Una señal a tiempo importa:</strong> varios días sin actividad, ausencia sostenida en los encuentros o falta de respuesta pueden indicar una dificultad que todavía estamos a tiempo de acompañar.</div>
 </section>
 <section class="focus">
-  <div class="focusbox">
-    <h3>🔎 Mirar antes de que aparezca el problema</h3>
-    <p>El seguimiento temprano permite identificar situaciones que muchas veces no llegan espontáneamente como una consulta. La ausencia también comunica.</p>
-  </div>
-  <div class="focusbox orange">
-    <h3>🤝 Contactar también es acompañar</h3>
-    <p>Un mensaje breve, cercano y oportuno puede volver a conectar al estudiante con su cursado y recordarle que hay alguien observando su recorrido.</p>
-  </div>
+<div class="focusbox">
+<h3>🔎 Mirar antes de que aparezca el problema</h3>
+<p>El seguimiento temprano permite identificar situaciones que muchas veces no llegan espontáneamente como una consulta. La ausencia también comunica.</p>
+</div>
+<div class="focusbox orange">
+<h3>🤝 Contactar también es acompañar</h3>
+<p>Un mensaje breve, cercano y oportuno puede volver a conectar al estudiante con su cursado y recordarle que hay alguien observando su recorrido.</p>
+</div>
 </section>
 <section class="closing">
-  <h2>Seguimiento activado 👀</h2>
-  <p>Esta semana el desafío es simple: saber quiénes avanzan normalmente y detectar a tiempo a quienes pueden estar necesitando una intervención.</p>
-  <div class="next">🔜 Próximo viernes: anticiparnos hace la diferencia</div>
+<h2>Seguimiento activado 👀</h2>
+<p>Esta semana el desafío es simple: saber quiénes avanzan normalmente y detectar a tiempo a quienes pueden estar necesitando una intervención.</p>
+<div class="next">🔜 Próximo viernes: anticiparnos hace la diferencia</div>
 </section>
 <div class="back">
-  <a href="t-camino.html">← Volver a DISTANCIA EN ACCIÓN</a>
+<a href="t-camino.html">← Volver a DISTANCIA EN ACCIÓN</a>
 </div>
 <footer class="footer-proyecto"></footer>
 </div>
 <script src="../js/interacciones.js"></script>
+<script src="../js/ping.js"></script>
+<script>
+const tarjetasPing=[...document.querySelectorAll(".radar-card")];
+let cantidadPingAnterior=-1;
+function actualizarPingRadar(){
+if(typeof PING==="undefined") return;
+const seleccionadas=tarjetasPing.filter(item=>item.classList.contains("active")).length;
+if(seleccionadas===cantidadPingAnterior) return;
+cantidadPingAnterior=seleccionadas;
+if(seleccionadas===0){PING.neutral();return;}
+if(seleccionadas===1){PING.reaccion();return;}
+if(seleccionadas===2){PING.pensando();return;}
+if(seleccionadas===3){PING.sorprendido();return;}
+if(seleccionadas===4){PING.contento();PING.reaccion();}
+}
+const observadorPing=new MutationObserver(actualizarPingRadar);
+tarjetasPing.forEach(item=>observadorPing.observe(item,{attributes:true,attributeFilter:["class"]}));
+actualizarPingRadar();
+</script>
 <script src="../js/firma.js"></script>
 </body>
 </html>
