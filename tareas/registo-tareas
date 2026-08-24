@@ -42,8 +42,10 @@ textarea{min-height:125px;resize:vertical;line-height:1.5}
 .note:before{content:"i";width:19px;height:19px;border-radius:50%;background:var(--celeste-suave);color:var(--celeste);display:flex;align-items:center;justify-content:center;font-weight:800}
 button{border:0;background:var(--naranja);color:#FFF;border-radius:13px;padding:15px 28px;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 7px 18px rgba(255,104,89,.24);transition:.2s}
 button:hover{background:#FF5140;transform:translateY(-1px)}
+button:disabled{opacity:.6;cursor:not-allowed;transform:none}
 .message{display:none;margin-top:16px;border-radius:12px;padding:13px 15px;font-size:14px;font-weight:700}
 .message.ok{display:block;background:#EAF9FE;color:#007198;border:1px solid #BFE8F8}
+.message.error{display:block;background:#FFF1EF;color:#B83B31;border:1px solid #FFD2CD}
 @media(max-width:850px){.grid-4{grid-template-columns:repeat(2,1fr)}.activities{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:600px){.page{padding:18px 10px}.card{padding:20px}.header h1{font-size:28px}.options,.grid-4{grid-template-columns:1fr}.activities{grid-template-columns:repeat(2,1fr)}.footer{flex-direction:column;align-items:stretch}button{width:100%}}
 @media(max-width:400px){.activities{grid-template-columns:1fr}}
@@ -62,15 +64,15 @@ button:hover{background:#FF5140;transform:translateY(-1px)}
 <div class="section">
 <div class="section-title">¿Dónde trabajaste?</div>
 <div class="options">
-<div class="option"><input type="radio" name="lugar" id="trabajo" value="Trabajo" required><label for="trabajo">🏢 Lugar de trabajo</label></div>
+<div class="option"><input type="radio" name="lugar" id="ies" value="IES" required><label for="ies">🏢 IES</label></div>
 <div class="option"><input type="radio" name="lugar" id="casa" value="Casa" required><label for="casa">🏠 Casa</label></div>
 </div>
 </div>
 <div class="section">
 <div class="grid-4">
-<label class="field"><span>Fecha</span><input type="date" id="fecha" name="fecha" required></label>
-<label class="field"><span>Desde</span><input type="time" id="desde" name="desde" required></label>
-<label class="field"><span>Hasta</span><input type="time" id="hasta" name="hasta" required></label>
+<label class="field"><span>Fecha</span><input type="date" id="fecha" required></label>
+<label class="field"><span>Desde</span><input type="time" id="desde" required></label>
+<label class="field"><span>Hasta</span><input type="time" id="hasta" required></label>
 <label class="field"><span>Horas</span><div class="hours-box" id="horas">—</div></label>
 </div>
 </div>
@@ -86,11 +88,11 @@ button:hover{background:#FF5140;transform:translateY(-1px)}
 </div>
 </div>
 <div class="section">
-<label class="field"><span>Descripción de la tarea</span><textarea id="descripcion" name="descripcion" placeholder="Contá brevemente qué tarea realizaste..." required></textarea></label>
+<label class="field"><span>Descripción de la tarea</span><textarea id="descripcion" maxlength="500" placeholder="Contá brevemente qué tarea realizaste..." required></textarea></label>
 </div>
 <div class="footer">
 <div class="note">La marca temporal se registrará automáticamente.</div>
-<button type="submit">Guardar tarea</button>
+<button type="submit" id="btnGuardar">Guardar tarea</button>
 </div>
 <div id="message" class="message"></div>
 </form>
@@ -98,14 +100,18 @@ button:hover{background:#FF5140;transform:translateY(-1px)}
 </div>
 </div>
 <script>
+const ENDPOINT="https://script.google.com/macros/s/AKfycbyOjafpH4gu7O-G68X-aG60SiJtPv-xjmJV4ZrEFMNHjqEpUoEmTcfAkFBjtm4cw46jYA/exec";
 const fecha=document.getElementById("fecha");
 const desde=document.getElementById("desde");
 const hasta=document.getElementById("hasta");
 const horas=document.getElementById("horas");
 const form=document.getElementById("taskForm");
 const message=document.getElementById("message");
+const btnGuardar=document.getElementById("btnGuardar");
+function ponerFechaHoy(){
 const hoy=new Date();
 fecha.value=hoy.getFullYear()+"-"+String(hoy.getMonth()+1).padStart(2,"0")+"-"+String(hoy.getDate()).padStart(2,"0");
+}
 function calcularHoras(){
 if(!desde.value||!hasta.value){horas.textContent="—";return}
 const [dh,dm]=desde.value.split(":").map(Number);
@@ -114,15 +120,46 @@ let minutos=(hh*60+hm)-(dh*60+dm);
 if(minutos<0)minutos+=1440;
 const h=Math.floor(minutos/60);
 const m=minutos%60;
-horas.textContent=h+":"+(m<10?"0":"")+m;
+horas.textContent=h+":"+String(m).padStart(2,"0");
 }
 desde.addEventListener("input",calcularHoras);
 hasta.addEventListener("input",calcularHoras);
-form.addEventListener("submit",function(e){
+form.addEventListener("submit",async function(e){
 e.preventDefault();
-message.className="message ok";
-message.textContent="✓ Tarea lista para registrar.";
+const lugar=document.querySelector('input[name="lugar"]:checked');
+const tipo=document.querySelector('input[name="tipo"]:checked');
+if(!lugar||!tipo)return;
+const datos={
+lugar:lugar.value,
+fecha:fecha.value,
+desde:desde.value,
+hasta:hasta.value,
+tipo:tipo.value,
+descripcion:document.getElementById("descripcion").value.trim()
+};
+btnGuardar.disabled=true;
+btnGuardar.textContent="Guardando...";
+message.style.display="none";
+try{
+await fetch(ENDPOINT,{
+method:"POST",
+mode:"no-cors",
+headers:{"Content-Type":"text/plain;charset=utf-8"},
+body:JSON.stringify(datos)
 });
+message.className="message ok";
+message.textContent="✓ Tarea registrada correctamente.";
+form.reset();
+ponerFechaHoy();
+horas.textContent="—";
+}catch(error){
+message.className="message error";
+message.textContent="No se pudo registrar la tarea.";
+}
+btnGuardar.disabled=false;
+btnGuardar.textContent="Guardar tarea";
+});
+ponerFechaHoy();
 </script>
 </body>
 </html>
