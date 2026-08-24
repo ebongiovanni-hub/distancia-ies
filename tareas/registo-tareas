@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Registro de tareas</title>
+<style>
+*{box-sizing:border-box}
+:root{--celeste:#00AAE4;--celeste2:#18C4FF;--celeste-suave:#EAF9FE;--naranja:#FF6859;--naranja-suave:#FFF1EF;--azul:#1F344C;--gris:#697887;--borde:#DDE7EE;--blanco:#FFF;--fondo:#F7FAFC}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#F3FBFE 0%,#FFFFFF 55%,#FFF8F6 100%);color:var(--azul)}
+.page{min-height:100vh;padding:32px 16px}
+.container{width:min(960px,100%);margin:auto}
+.header{margin-bottom:22px}
+.topline{width:62px;height:5px;background:var(--naranja);border-radius:20px;margin-bottom:14px}
+.header h1{margin:0;font-size:34px;letter-spacing:-.8px}
+.header h1 span{color:var(--celeste)}
+.header p{margin:7px 0 0;color:var(--gris);font-size:15px}
+.card{background:rgba(255,255,255,.97);border:1px solid var(--borde);border-radius:24px;padding:28px;box-shadow:0 12px 35px rgba(31,52,76,.07);position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;top:0;left:0;width:100%;height:5px;background:linear-gradient(90deg,var(--celeste) 0 78%,var(--naranja) 78% 100%)}
+.section{margin-bottom:25px}
+.section-title{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:800;margin-bottom:11px}
+.section-title:before{content:"";width:8px;height:8px;background:var(--naranja);border-radius:50%}
+.options{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.option input,.activity input{display:none}
+.option label{display:flex;align-items:center;gap:10px;padding:15px;border:1px solid var(--borde);border-radius:14px;background:#FFF;cursor:pointer;font-weight:700;transition:.2s}
+.option label:before{content:"";width:18px;height:18px;border:2px solid #B8C7D1;border-radius:50%;flex:0 0 auto}
+.option input:checked+label{border-color:var(--celeste);background:var(--celeste-suave);color:#0084B1;box-shadow:0 0 0 2px rgba(0,170,228,.06)}
+.option input:checked+label:before{border:5px solid var(--celeste)}
+.grid-4{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:15px}
+.field{display:block}
+.field span{display:block;font-size:13px;font-weight:700;margin-bottom:7px}
+input,textarea{width:100%;border:1px solid var(--borde);background:#FFF;border-radius:13px;padding:13px 14px;font:inherit;color:var(--azul);outline:none;transition:.2s}
+input:focus,textarea:focus{border-color:var(--celeste);box-shadow:0 0 0 3px rgba(0,170,228,.11)}
+.hours-box{height:48px;border:1px solid #BFE8F8;border-radius:13px;background:linear-gradient(90deg,#F1FBFE,#FFFFFF);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:var(--celeste)}
+.activities{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.activity label{min-height:52px;display:flex;align-items:center;justify-content:center;text-align:center;border:1px solid var(--borde);border-radius:13px;background:#FFF;font-size:14px;font-weight:700;cursor:pointer;transition:.2s;padding:9px}
+.activity label:hover{transform:translateY(-1px);border-color:#BBDCEA}
+.activity input:checked+label{background:var(--celeste);border-color:var(--celeste);color:#FFF;box-shadow:0 5px 14px rgba(0,170,228,.18)}
+textarea{min-height:125px;resize:vertical;line-height:1.5}
+.footer{margin-top:26px;padding-top:21px;border-top:1px solid #EDF1F4;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.note{font-size:12px;color:#7B8995;display:flex;align-items:center;gap:7px}
+.note:before{content:"i";width:19px;height:19px;border-radius:50%;background:var(--celeste-suave);color:var(--celeste);display:flex;align-items:center;justify-content:center;font-weight:800}
+button{border:0;background:var(--naranja);color:#FFF;border-radius:13px;padding:15px 28px;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 7px 18px rgba(255,104,89,.24);transition:.2s}
+button:hover{background:#FF5140;transform:translateY(-1px)}
+.message{display:none;margin-top:16px;border-radius:12px;padding:13px 15px;font-size:14px;font-weight:700}
+.message.ok{display:block;background:#EAF9FE;color:#007198;border:1px solid #BFE8F8}
+@media(max-width:850px){.grid-4{grid-template-columns:repeat(2,1fr)}.activities{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.page{padding:18px 10px}.card{padding:20px}.header h1{font-size:28px}.options,.grid-4{grid-template-columns:1fr}.activities{grid-template-columns:repeat(2,1fr)}.footer{flex-direction:column;align-items:stretch}button{width:100%}}
+@media(max-width:400px){.activities{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="container">
+<header class="header">
+<div class="topline"></div>
+<h1>Registro de <span>tareas</span></h1>
+<p>Cargá tu actividad diaria de forma rápida y sencilla.</p>
+</header>
+<main class="card">
+<form id="taskForm">
+<div class="section">
+<div class="section-title">¿Dónde trabajaste?</div>
+<div class="options">
+<div class="option"><input type="radio" name="lugar" id="trabajo" value="Trabajo" required><label for="trabajo">🏢 Lugar de trabajo</label></div>
+<div class="option"><input type="radio" name="lugar" id="casa" value="Casa" required><label for="casa">🏠 Casa</label></div>
+</div>
+</div>
+<div class="section">
+<div class="grid-4">
+<label class="field"><span>Fecha</span><input type="date" id="fecha" name="fecha" required></label>
+<label class="field"><span>Desde</span><input type="time" id="desde" name="desde" required></label>
+<label class="field"><span>Hasta</span><input type="time" id="hasta" name="hasta" required></label>
+<label class="field"><span>Horas</span><div class="hours-box" id="horas">—</div></label>
+</div>
+</div>
+<div class="section">
+<div class="section-title">Tipo de actividad</div>
+<div class="activities">
+<div class="activity"><input type="radio" name="tipo" id="reunion" value="Reunión" required><label for="reunion">Reunión</label></div>
+<div class="activity"><input type="radio" name="tipo" id="desarrollo" value="Desarrollo"><label for="desarrollo">Desarrollo</label></div>
+<div class="activity"><input type="radio" name="tipo" id="gestion" value="Gestión"><label for="gestion">Gestión</label></div>
+<div class="activity"><input type="radio" name="tipo" id="seguimiento" value="Seguimiento"><label for="seguimiento">Seguimiento</label></div>
+<div class="activity"><input type="radio" name="tipo" id="soporte" value="Soporte"><label for="soporte">Soporte</label></div>
+<div class="activity"><input type="radio" name="tipo" id="otro" value="Otro"><label for="otro">Otro</label></div>
+</div>
+</div>
+<div class="section">
+<label class="field"><span>Descripción de la tarea</span><textarea id="descripcion" name="descripcion" placeholder="Contá brevemente qué tarea realizaste..." required></textarea></label>
+</div>
+<div class="footer">
+<div class="note">La marca temporal se registrará automáticamente.</div>
+<button type="submit">Guardar tarea</button>
+</div>
+<div id="message" class="message"></div>
+</form>
+</main>
+</div>
+</div>
+<script>
+const fecha=document.getElementById("fecha");
+const desde=document.getElementById("desde");
+const hasta=document.getElementById("hasta");
+const horas=document.getElementById("horas");
+const form=document.getElementById("taskForm");
+const message=document.getElementById("message");
+const hoy=new Date();
+fecha.value=hoy.getFullYear()+"-"+String(hoy.getMonth()+1).padStart(2,"0")+"-"+String(hoy.getDate()).padStart(2,"0");
+function calcularHoras(){
+if(!desde.value||!hasta.value){horas.textContent="—";return}
+const [dh,dm]=desde.value.split(":").map(Number);
+const [hh,hm]=hasta.value.split(":").map(Number);
+let minutos=(hh*60+hm)-(dh*60+dm);
+if(minutos<0)minutos+=1440;
+const h=Math.floor(minutos/60);
+const m=minutos%60;
+horas.textContent=h+":"+(m<10?"0":"")+m;
+}
+desde.addEventListener("input",calcularHoras);
+hasta.addEventListener("input",calcularHoras);
+form.addEventListener("submit",function(e){
+e.preventDefault();
+message.className="message ok";
+message.textContent="✓ Tarea lista para registrar.";
+});
+</script>
+</body>
+</html>
