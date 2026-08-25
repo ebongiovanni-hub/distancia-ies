@@ -3,73 +3,165 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--fondo);font-family:Arial,Helvetica,sans-serif;color:var(--texto);font-size:15px;line-height:1.55}
 img{display:block;max-width:100%}
+
 .sabias-page{width:min(920px,calc(100% - 28px));margin:20px auto;background:#FFF;border-radius:18px;overflow:hidden;box-shadow:0 12px 35px rgba(31,52,76,.09)}
+
 .sabias-hero{position:relative;padding:38px 48px 36px;background:linear-gradient(135deg,#FFF 0%,#FFF 65%,#F1FAFD 100%);border-bottom:1px solid var(--linea);overflow:hidden}
 .sabias-hero:before{content:"";position:absolute;width:210px;height:210px;border-radius:50%;right:-95px;top:-120px;background:rgba(0,170,228,.07)}
 .sabias-hero:after{content:"";position:absolute;width:110px;height:110px;border:1px solid rgba(0,170,228,.18);border-radius:50%;right:25px;bottom:-75px}
 .sabias-brand{position:relative;z-index:2;max-width:680px}
+.logo-ies{position:absolute;top:25px;right:30px;width:95px;height:auto;z-index:5}
+
 .sabias-kicker{display:block;margin:0 0 10px;color:var(--naranja);font-size:36px;font-weight:900;line-height:1;letter-spacing:-.8px}
 .sabias-hero h1{margin:0;color:var(--azul);font-size:36px;line-height:1.08;letter-spacing:-.8px;font-weight:800}
 .sabias-hero h1 strong{color:var(--ies);font-weight:900}
 .sabias-hero p{max-width:650px;margin:18px 0 0;font-size:16px;line-height:1.55;color:var(--texto)}
 .sabias-hero p:before{content:"";display:block;width:50px;height:3px;margin-bottom:14px;background:var(--ies);border-radius:10px}
+
 .sabias-section,.sabias-benefits{padding:36px 48px}
 .sabias-section.alt{background:var(--ies-muy-claro);border-top:1px solid #E5F4F9;border-bottom:1px solid #E5F4F9}
+
 .section-title{margin-bottom:20px}
 .eyebrow{display:inline-flex;align-items:center;padding:5px 10px;margin-bottom:8px;border-radius:999px;background:var(--ies-claro);color:#007FAE;font-size:11px;font-weight:900;letter-spacing:.7px;text-transform:uppercase}
 .section-title h2{margin:0;color:var(--azul);font-size:24px;line-height:1.2;letter-spacing:-.3px}
 .section-intro{max-width:700px;margin:-5px 0 20px;color:var(--gris);font-size:15px}
+
 .sabias-benefits{position:relative}
 .sabias-benefits:before{content:"";position:absolute;left:48px;top:0;width:42px;height:3px;background:var(--naranja)}
 .sabias-benefits>p{max-width:720px;margin:-4px 0 22px;font-size:15px}
+
 .benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .benefit-card{padding:16px 14px;border:1px solid var(--linea);border-radius:12px;background:#FFF}
 .benefit-card:hover{border-color:#B9E8F7;box-shadow:0 5px 14px rgba(31,52,76,.05)}
 .benefit-icon{display:flex;align-items:center;justify-content:center;width:32px;height:32px;margin-bottom:10px;border-radius:8px;background:var(--ies-claro);color:var(--ies);font-size:16px;font-weight:800}
 .benefit-card h3{margin:0 0 5px;color:var(--azul);font-size:14px}
 .benefit-card p{margin:0;color:var(--gris);font-size:12px;line-height:1.45}
+
 .content-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center;gap:28px}
 .content-text p{margin:0 0 12px;font-size:15px}
 .content-text p:last-child{margin-bottom:0}
-.image-card{position:relative;padding:6px;background:#FFF;border:1px solid var(--linea);border-radius:13px;box-shadow:var(--sombra);overflow:hidden}
-.image-card img{width:100%;height:auto;border-radius:8px}
-.option-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
-.option-card{padding:20px;background:#FFF;border:1px solid var(--linea);border-radius:14px;box-shadow:0 5px 15px rgba(31,52,76,.04)}
-.option-number{display:flex;align-items:center;justify-content:center;width:34px;height:34px;margin-bottom:12px;border-radius:50%;background:var(--ies);color:#FFF;font-size:15px;font-weight:900}
-.option-card:nth-child(2) .option-number{background:var(--naranja)}
-.option-card h3{margin:0 0 10px;color:var(--azul);font-size:18px}
-.option-card p{margin:0 0 10px;font-size:14px}
-.option-card ul{margin:13px 0 16px;padding:0;list-style:none}
-.option-card li{position:relative;margin:7px 0;padding-left:20px;font-size:14px}
-.option-card li:before{content:"✓";position:absolute;left:0;color:var(--ies);font-weight:900}
-.notice{margin:15px 0;padding:12px 14px;border-radius:10px;background:var(--naranja-claro);border-left:3px solid var(--naranja);font-size:13px;line-height:1.5}
-.notice strong{color:var(--azul)}
+
+.paso-imagen{margin-top:22px;text-align:center}
+.paso-imagen img{display:block;max-width:100%;height:auto;margin:auto;border-radius:14px;border:1px solid #DCE8EE;box-shadow:0 8px 24px rgba(31,52,76,.09)}
+.paso-imagen.celular img{width:auto;max-height:580px}
+.paso-imagen.pc img{width:100%;max-width:850px}
+
+.dos-opciones{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.opcion-ingreso{padding:23px;background:#FFF;border:1px solid #DCE8EE;border-radius:17px}
+.opcion-ingreso h3{margin:0 0 12px;color:#1F344C;font-size:18px}
+.opcion-letra{display:flex;align-items:center;justify-content:center;width:36px;height:36px;margin-bottom:13px;border-radius:50%;background:#00AAE4;color:#FFF;font-size:14px;font-weight:900}
+.opcion-ingreso:nth-child(2) .opcion-letra{background:#FF6859}
+
+.datos-acceso{margin:16px 0;padding:0;list-style:none}
+.datos-acceso li{position:relative;margin:9px 0;padding-left:21px;font-size:14px}
+.datos-acceso li:before{content:"✓";position:absolute;left:0;color:#00AAE4;font-weight:900}
+
+.campus{display:block;margin-top:6px;padding:8px 10px;border-radius:9px;background:#EAF9FE;color:#007FAE;font-weight:800;word-break:break-all}
+
+.aviso-privacidad{margin-top:18px;padding:14px 16px;border-left:4px solid #FF6859;border-radius:12px;background:#FFF1EF;font-size:13px}
+.aviso-privacidad strong{color:#1F344C}
+
+.secuencia{display:flex;align-items:center;gap:12px;margin:17px 0}
+.secuencia-numero{display:flex;flex:0 0 35px;align-items:center;justify-content:center;width:35px;height:35px;border-radius:50%;background:#00AAE4;color:#FFF;font-size:13px;font-weight:900}
+.secuencia p{margin:0;font-size:14px}
+
 .security-box{display:flex;flex-direction:column;gap:3px;margin-top:16px;padding:13px 15px;border-radius:10px;background:#F0FAFE;border:1px solid #C9EDF8;border-left:3px solid var(--ies)}
 .security-box strong{color:var(--azul);font-size:14px}
 .security-box span{font-size:13px;color:var(--gris)}
+
 .sabias-computer{display:grid;grid-template-columns:50px 1fr;gap:17px;padding:30px 48px;background:var(--azul);color:#FFF}
 .computer-icon{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:11px;background:rgba(255,255,255,.12);font-size:21px}
 .sabias-computer h2{margin:0 0 8px;color:#FFF;font-size:21px}
 .sabias-computer p{margin:5px 0;color:rgba(255,255,255,.9);font-size:14px}
 .sabias-computer strong{color:#FFF}
+
 .sabias-closing{display:flex;align-items:center;gap:15px;padding:27px 48px;background:linear-gradient(90deg,#F1FAFD 0%,#FFF 75%)}
 .closing-icon{display:flex;flex:0 0 auto;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--ies);font-size:20px}
 .sabias-closing h2{margin:0 0 4px;color:var(--azul);font-size:18px}
 .sabias-closing p{margin:0;color:var(--gris);font-size:14px}
+
+.sabias-pregunta{padding:45px 60px;text-align:center;background:#FFF;border-top:1px solid #DCE8EE}
+.sabias-pregunta-contenido{max-width:680px;margin:auto}
+.sabias-pregunta .mini{display:inline-block;margin-bottom:8px;color:#FF6859;font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase}
+.sabias-pregunta h2{margin:0;color:#1F344C;font-size:25px}
+.sabias-pregunta-contenido>p{margin:8px 0 20px;color:#667681;font-size:14px}
+
+.sabias-respuestas{display:flex;justify-content:center;gap:12px}
+.sabias-respuestas button{min-width:110px;padding:10px 24px;border:2px solid #00AAE4;border-radius:999px;background:#FFF;color:#007FAE;font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:800;cursor:pointer;transition:.2s}
+.sabias-respuestas button:hover{background:#EAF9FE;transform:translateY(-1px)}
+.sabias-respuestas button.seleccionado{background:#00AAE4;color:#FFF}
+.sabias-respuestas button:disabled{cursor:default}
+
+.sabias-respuesta-mensaje{max-width:580px;margin:20px auto 0;padding:15px 19px;border:1px solid #C9EDF8;border-radius:14px;background:#F0FAFE;color:#34495E;font-size:14px}
+
 .sabias-footer{padding:14px 48px;background:#FFF;border-top:1px solid var(--linea);color:#82909A;font-size:11px;font-weight:700;text-align:center}
+
+/* PING FLOTANTE */
+.ping-floating{
+position:fixed;
+z-index:50;
+width:115px;
+right:max(20px,calc((100vw - 1180px)/2));
+top:50%;
+opacity:0;
+pointer-events:auto;
+transform:translateY(-50%) translateY(12px) scale(.94);
+transition:opacity .45s ease,transform .45s ease;
+filter:drop-shadow(0 8px 14px rgba(31,52,76,.18));
+cursor:pointer;
+}
+
+.ping-floating.visible{
+opacity:1;
+transform:translateY(-50%) scale(1);
+animation:pingFlota 3.2s ease-in-out infinite;
+}
+
+.ping-floating img{
+display:block;
+width:100%;
+height:auto;
+}
+
+.ping-floating.reacciona{
+animation:pingReacciona .55s ease;
+}
+
+@keyframes pingFlota{
+0%,100%{transform:translateY(-50%) translateY(0) rotate(0deg)}
+50%{transform:translateY(-50%) translateY(-9px) rotate(1.5deg)}
+}
+
+@keyframes pingReacciona{
+0%{transform:translateY(-50%) scale(1) rotate(0deg)}
+35%{transform:translateY(-50%) scale(1.12) rotate(-5deg)}
+65%{transform:translateY(-50%) scale(1.08) rotate(5deg)}
+100%{transform:translateY(-50%) scale(1) rotate(0deg)}
+}
+
+@media(max-width:1180px){
+.ping-floating{
+right:14px;
+width:90px;
+}
+}
+
 @media(max-width:850px){
 .sabias-page{width:min(100% - 18px,920px);margin:9px auto;border-radius:15px}
 .sabias-hero,.sabias-section,.sabias-benefits{padding:30px 25px}
+.logo-ies{position:static;display:block;width:78px;margin:0 0 18px auto}
 .sabias-kicker,.sabias-hero h1{font-size:31px}
 .sabias-hero p{font-size:15px}
 .benefit-grid{grid-template-columns:repeat(2,1fr)}
 .content-grid{grid-template-columns:1fr;gap:22px}
-.option-grid{grid-template-columns:1fr}
+.dos-opciones{grid-template-columns:1fr}
 .sabias-computer{padding:27px 25px}
 .sabias-closing{padding:24px 25px}
 .sabias-footer{padding:13px 25px}
 .sabias-benefits:before{left:25px}
+.ping-floating{width:76px;right:8px;top:52%}
 }
+
 @media(max-width:520px){
 body{font-size:14px;background:#FFF}
 .sabias-page{width:100%;margin:0;border-radius:0;box-shadow:none}
@@ -86,9 +178,9 @@ body{font-size:14px;background:#FFF}
 .benefit-card h3{font-size:13px}
 .benefit-card p{font-size:11.5px}
 .content-text p{font-size:14px}
-.option-card{padding:17px 15px}
-.option-card h3{font-size:17px}
-.option-card p,.option-card li{font-size:13px}
+.opcion-ingreso{padding:17px 15px}
+.opcion-ingreso h3{font-size:17px}
+.datos-acceso li{font-size:13px}
 .sabias-computer{grid-template-columns:42px 1fr;padding:24px 18px;gap:13px}
 .computer-icon{width:39px;height:39px;font-size:18px}
 .sabias-computer h2{font-size:18px}
@@ -97,5 +189,19 @@ body{font-size:14px;background:#FFF}
 .closing-icon{width:39px;height:39px;font-size:18px}
 .sabias-closing h2{font-size:17px}
 .sabias-closing p{font-size:13px}
+.sabias-pregunta{padding:35px 18px}
 .sabias-footer{padding:12px 18px;font-size:10px}
+
+/* En celular queda pequeño a la derecha para no tapar la lectura */
+.ping-floating{
+width:62px;
+right:6px;
+top:58%;
+filter:drop-shadow(0 5px 9px rgba(31,52,76,.16));
+}
+}
+
+@media(prefers-reduced-motion:reduce){
+.ping-floating.visible{animation:none}
+.ping-floating.reacciona{animation:none}
 }
