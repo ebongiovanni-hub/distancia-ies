@@ -1,6 +1,6 @@
 (function(){
 "use strict";
-const URL_REGISTRO="PEGAR_AQUI_URL_DEL_APPS_SCRIPT";
+const URL_REGISTRO="https://script.google.com/macros/s/AKfycbxVobWIscHzotTOoKhLYpuzX7CWdUUzByD5AI1zeIZ3vvA-YtEtZSRM3aZIPjO0ySnh/exec";
 const inicio=Date.now();
 let enviado=false;
 function preparar(){
@@ -27,15 +27,6 @@ mostrarMensaje(respuesta,mensaje);
 });
 }
 function registrar(pagina,descripcion,respuesta,tiempo){
-if(!URL_REGISTRO||URL_REGISTRO.indexOf("PEGAR_AQUI")!==-1){
-console.log("Registro pendiente de configurar:",{
-pagina:pagina,
-descripcion:descripcion,
-respuesta:respuesta,
-tiempo:tiempo
-});
-return;
-}
 const datos=new URLSearchParams();
 datos.append("pagina",pagina);
 datos.append("descripcion",descripcion);
