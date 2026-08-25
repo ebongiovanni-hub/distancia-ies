@@ -26,7 +26,7 @@
 <body data-pagina="sabias-01" data-descripcion="App Educativa Mobile">
 
 <div class="ping-floating" id="pingFloating" aria-hidden="true">
-<img id="pingImg" src="../imagenes/ping/ping-neutral.png?v=6" alt="">
+<img id="pingImg" src="../imagenes/ping/ping-neutral.png?v=7" alt="">
 </div>
 
 <main class="sabias-page">
@@ -53,16 +53,19 @@
 <h3>Mensajes</h3>
 <p>Leer y responder mensajes.</p>
 </div>
+
 <div class="benefit-card">
 <span class="benefit-icon">▣</span>
 <h3>Contenidos</h3>
 <p>Consultar contenidos del aula.</p>
 </div>
+
 <div class="benefit-card">
 <span class="benefit-icon">☰</span>
 <h3>Foros</h3>
 <p>Leer participaciones y responder intervenciones.</p>
 </div>
+
 <div class="benefit-card">
 <span class="benefit-icon">⌕</span>
 <h3>Consultas rápidas</h3>
@@ -99,6 +102,7 @@
 <p class="section-intro">Una vez instalada la aplicación, tenés dos alternativas para acceder al IES Virtual.</p>
 
 <div class="dos-opciones">
+
 <article class="opcion-ingreso">
 <div class="opcion-letra">A</div>
 <h3>Si recordás tu usuario de Educativa</h3>
@@ -126,6 +130,7 @@
 <strong>Importante:</strong> antes de seleccionar <strong>Utilizar QR</strong>, también tenés que marcar la casilla <strong>“He leído y acepto la Política de Privacidad”</strong>.
 </div>
 </article>
+
 </div>
 
 <div class="captura captura-celular">
@@ -136,22 +141,14 @@
 <section class="sabias-section alt">
 <div class="section-title">
 <span class="eyebrow">Paso 3</span>
-<h2>Si elegiste QR, obtenelo desde una computadora</h2>
+<h2>Obtené el código QR desde una computadora</h2>
 </div>
 
-<div class="paso-tres-layout">
-<div class="paso-tres-textos">
-<div class="mini-paso">
-<div class="mini-numero">1</div>
-<h3>Ingresá desde una computadora</h3>
-<p>Abrí normalmente el <strong>IES Virtual</strong> desde una computadora.</p>
-</div>
-
-<div class="mini-paso">
-<div class="mini-numero">2</div>
-<h3>Abrí Educativa Mobile</h3>
-<p>Hacé clic sobre <strong>tu nombre</strong> en la esquina superior derecha y seleccioná <strong>Educativa Mobile</strong>.</p>
-</div>
+<div class="paso-dos-columnas">
+<div class="paso-texto">
+<p>Ingresá al <strong>IES Virtual desde una computadora</strong>.</p>
+<p>En la esquina superior derecha, hacé clic sobre <strong>tu nombre</strong> para abrir el menú de usuario.</p>
+<p>Seleccioná la opción <strong>Educativa Mobile</strong>.</p>
 </div>
 
 <div class="captura captura-menu">
@@ -163,14 +160,14 @@
 <section class="sabias-section">
 <div class="section-title">
 <span class="eyebrow">Paso 4</span>
-<h2>Escaneá tu código QR</h2>
+<h2>Leé el código QR desde tu celular</h2>
 </div>
 
 <div class="paso-dos-columnas">
 <div class="paso-texto">
-<p>Al seleccionar <strong>Educativa Mobile</strong>, la plataforma mostrará en pantalla tu <strong>código QR personal</strong>.</p>
-<p>Volvé a Educativa Mobile en el celular y presioná <strong>Utilizar QR</strong>.</p>
-<p>Escaneá con el celular el código que aparece en la pantalla de la computadora.</p>
+<p>Educativa mostrará en la computadora tu <strong>código QR personal</strong>.</p>
+<p>En Educativa Mobile, desde tu celular, presioná <strong>Utilizar QR</strong> y escaneá el código que aparece en la pantalla.</p>
+<p><strong>¡Listo!</strong> La aplicación quedará configurada y vas a poder acceder al IES Virtual desde tu celular.</p>
 
 <div class="security-box">
 <strong>🔐 Tu código QR es personal.</strong>
@@ -228,39 +225,35 @@ const ping=document.getElementById("pingFloating");
 const pingImg=document.getElementById("pingImg");
 if(!ping||!pingImg)return;
 
-const expresiones=[
-{src:"../imagenes/ping/ping-neutral.png?v=6",dur:11000},
-{src:"../imagenes/ping/ping-guino.png?v=6",dur:2200},
-{src:"../imagenes/ping/ping-neutral.png?v=6",dur:12000},
-{src:"../imagenes/ping/ping-sonrie.png?v=6",dur:2800},
-{src:"../imagenes/ping/ping-neutral.png?v=6",dur:13000}
-];
+const neutral="../imagenes/ping/ping-neutral.png?v=7";
+const guino="../imagenes/ping/ping-guino.png?v=7";
+const sonrisa="../imagenes/ping/ping-sonrie.png?v=7";
 
-let indice=0;
 let timer=null;
+let expresion=0;
 
-function cambiarExpresion(){
-const actual=expresiones[indice];
-
-pingImg.classList.add("cambio");
-
-setTimeout(function(){
-pingImg.src=actual.src;
-
-const continuar=function(){
-pingImg.classList.remove("cambio");
-timer=setTimeout(function(){
-indice=(indice+1)%expresiones.length;
-cambiarExpresion();
-},actual.dur);
-};
-
-if(pingImg.complete){
-continuar();
-}else{
-pingImg.onload=continuar;
+function mostrarNeutral(){
+pingImg.src=neutral;
 }
-},140);
+
+function proximaExpresion(){
+mostrarNeutral();
+
+timer=setTimeout(function(){
+expresion=(expresion+1)%2;
+
+if(expresion===0){
+pingImg.src=guino;
+}else{
+pingImg.src=sonrisa;
+}
+
+timer=setTimeout(function(){
+mostrarNeutral();
+proximaExpresion();
+},1800);
+
+},14000);
 }
 
 function reaccionar(){
@@ -275,7 +268,8 @@ ping.classList.add("visible");
 });
 });
 
-cambiarExpresion();
+mostrarNeutral();
+proximaExpresion();
 
 ping.addEventListener("mouseenter",reaccionar);
 ping.addEventListener("click",reaccionar);
