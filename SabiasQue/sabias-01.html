@@ -18,48 +18,14 @@
 <meta name="twitter:title" content="¿Sabías que podés llevar el IES Virtual en tu celular?">
 <meta name="twitter:description" content="Descubrimientos que simplifican tu tarea docente.">
 <meta name="twitter:image" content="https://ebongiovanni-hub.github.io/distancia-ies/SabiasQue/imagenes/Sabias-que.png">
-<link rel="stylesheet" href="CSS/sabias.css">
-<style>
-.logo-ies{position:absolute;top:25px;right:30px;width:95px;height:auto;z-index:5}
-.paso-imagen{margin-top:22px;text-align:center}
-.paso-imagen img{display:block;max-width:100%;height:auto;margin:auto;border-radius:14px;border:1px solid #DCE8EE;box-shadow:0 8px 24px rgba(31,52,76,.09)}
-.paso-imagen.celular img{width:auto;max-height:580px}
-.paso-imagen.pc img{width:100%;max-width:850px}
-.dos-opciones{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
-.opcion-ingreso{padding:23px;background:#FFF;border:1px solid #DCE8EE;border-radius:17px}
-.opcion-ingreso h3{margin:0 0 12px;color:#1F344C;font-size:18px}
-.opcion-letra{display:flex;align-items:center;justify-content:center;width:36px;height:36px;margin-bottom:13px;border-radius:50%;background:#00AAE4;color:#FFF;font-size:14px;font-weight:900}
-.opcion-ingreso:nth-child(2) .opcion-letra{background:#FF6859}
-.datos-acceso{margin:16px 0;padding:0;list-style:none}
-.datos-acceso li{position:relative;margin:9px 0;padding-left:21px;font-size:14px}
-.datos-acceso li:before{content:"✓";position:absolute;left:0;color:#00AAE4;font-weight:900}
-.campus{display:block;margin-top:6px;padding:8px 10px;border-radius:9px;background:#EAF9FE;color:#007FAE;font-weight:800;word-break:break-all}
-.aviso-privacidad{margin-top:18px;padding:14px 16px;border-left:4px solid #FF6859;border-radius:12px;background:#FFF1EF;font-size:13px}
-.aviso-privacidad strong{color:#1F344C}
-.secuencia{display:flex;align-items:center;gap:12px;margin:17px 0}
-.secuencia-numero{display:flex;flex:0 0 35px;align-items:center;justify-content:center;width:35px;height:35px;border-radius:50%;background:#00AAE4;color:#FFF;font-size:13px;font-weight:900}
-.secuencia p{margin:0;font-size:14px}
-.sabias-pregunta{padding:45px 60px;text-align:center;background:#FFF;border-top:1px solid #DCE8EE}
-.sabias-pregunta-contenido{max-width:680px;margin:auto}
-.sabias-pregunta .mini{display:inline-block;margin-bottom:8px;color:#FF6859;font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase}
-.sabias-pregunta h2{margin:0;color:#1F344C;font-size:25px}
-.sabias-pregunta-contenido>p{margin:8px 0 20px;color:#667681;font-size:14px}
-.sabias-respuestas{display:flex;justify-content:center;gap:12px}
-.sabias-respuestas button{min-width:110px;padding:10px 24px;border:2px solid #00AAE4;border-radius:999px;background:#FFF;color:#007FAE;font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:800;cursor:pointer;transition:.2s}
-.sabias-respuestas button:hover{background:#EAF9FE;transform:translateY(-1px)}
-.sabias-respuestas button.seleccionado{background:#00AAE4;color:#FFF}
-.sabias-respuestas button:disabled{cursor:default}
-.sabias-respuesta-mensaje{max-width:580px;margin:20px auto 0;padding:15px 19px;border:1px solid #C9EDF8;border-radius:14px;background:#F0FAFE;color:#34495E;font-size:14px}
-@media(max-width:750px){
-.logo-ies{position:static;display:block;width:78px;margin:0 0 18px auto}
-.dos-opciones{grid-template-columns:1fr}
-.sabias-pregunta{padding:35px 18px}
-}
-</style>
+<link rel="stylesheet" href="css/sabias.css">
 <script src="js/sabias.js" defer></script>
 </head>
-
 <body data-pagina="sabias-01" data-descripcion="App Educativa Mobile">
+
+<div class="ping-floating" id="pingFloating" aria-hidden="true">
+<img src="../imagenes/ping/ping-neutral.png" alt="">
+</div>
 
 <main class="sabias-page">
 
@@ -77,6 +43,7 @@
 <span class="eyebrow">¿Para qué te puede servir?</span>
 <h2>El IES Virtual también puede acompañarte en el celular</h2>
 </div>
+
 <p>Tener Educativa Mobile en el celular es una muy buena opción para resolver <strong>tareas rápidas</strong> cuando no estás frente a una computadora.</p>
 
 <div class="benefit-grid">
@@ -128,7 +95,6 @@
 </div>
 
 </div>
-
 </section>
 
 <section class="sabias-section">
@@ -143,52 +109,31 @@
 <div class="dos-opciones">
 
 <article class="opcion-ingreso">
-
 <div class="opcion-letra">A</div>
-
 <h3>Si recordás tu usuario de Educativa</h3>
-
 <p>Podés ingresar directamente completando los datos de la pantalla inicial.</p>
 
 <ul class="datos-acceso">
-
-<li>
-<strong>Dirección del campus</strong>
-<span class="campus">https://adistancia.ies21.edu.ar/</span>
-</li>
-
-<li>
-<strong>Usuario:</strong> tu usuario habitual de Educativa.
-</li>
-
-<li>
-<strong>Clave:</strong> la misma contraseña que utilizás para ingresar a Autogestión.
-</li>
-
+<li><strong>Dirección del campus</strong><span class="campus">https://adistancia.ies21.edu.ar/</span></li>
+<li><strong>Usuario:</strong> tu usuario habitual de Educativa.</li>
+<li><strong>Clave:</strong> la misma contraseña que utilizás para ingresar a Autogestión.</li>
 </ul>
 
 <div class="aviso-privacidad">
 <strong>Antes de continuar:</strong> marcá la casilla <strong>“He leído y acepto la Política de Privacidad”</strong> y luego presioná <strong>Ingresar</strong>.
 </div>
-
 </article>
 
 <article class="opcion-ingreso">
-
 <div class="opcion-letra">B</div>
-
 <h3>Si no recordás tu usuario de Educativa</h3>
-
 <p>No necesitás recuperarlo para utilizar la aplicación.</p>
-
 <p>Podés vincular tu cuenta utilizando un <strong>código QR</strong>.</p>
-
 <p>Para obtenerlo necesitás tener el IES Virtual abierto desde una computadora.</p>
 
 <div class="aviso-privacidad">
 <strong>Importante:</strong> antes de seleccionar <strong>Utilizar QR</strong>, también tenés que marcar la casilla <strong>“He leído y acepto la Política de Privacidad”</strong>.
 </div>
-
 </article>
 
 </div>
@@ -237,18 +182,14 @@
 <div class="content-grid">
 
 <div class="content-text">
-
 <p>Al seleccionar <strong>Educativa Mobile</strong>, la plataforma mostrará en pantalla tu <strong>código QR personal</strong>.</p>
-
 <p>Volvé a Educativa Mobile en tu celular y presioná <strong>Utilizar QR</strong>.</p>
-
 <p>Escaneá con el celular el código que aparece en la pantalla de la computadora.</p>
 
 <div class="security-box">
 <strong>🔐 Tu código QR es personal.</strong>
 <span>Está asociado a tu cuenta. No lo compartas con otras personas.</span>
 </div>
-
 </div>
 
 <div class="paso-imagen pc">
@@ -256,54 +197,40 @@
 </div>
 
 </div>
-
 </section>
 
 <section class="sabias-computer">
-
 <div class="computer-icon">💻</div>
-
 <div>
 <h2>El celular es un complemento</h2>
 <p>Educativa Mobile es especialmente útil para <strong>leer y responder mensajes, consultar contenidos, revisar participaciones de los foros, responder intervenciones y realizar consultas rápidas dentro del IES Virtual</strong>.</p>
 <p>Para <strong>corregir actividades</strong> y acceder a la <strong>administración y configuración del aula</strong>, es necesario utilizar Educativa desde una computadora.</p>
 </div>
-
 </section>
 
 <section class="sabias-closing">
-
 <span class="closing-icon">💡</span>
-
 <div>
 <h2>Una herramienta más para simplificar tu tarea docente</h2>
 <p>Ahora podés mantenerte conectado con tus aulas incluso cuando no estás frente a una computadora.</p>
 </div>
-
 </section>
 
 <section class="sabias-pregunta">
-
 <div class="sabias-pregunta-contenido">
 
 <span class="mini">Antes de irte…</span>
-
 <h2>¿Lo sabías de antes?</h2>
-
 <p>Tu respuesta nos ayuda a elegir los próximos temas de ¿Sabías que…</p>
 
 <div class="sabias-respuestas">
-
 <button type="button" data-respuesta="SI">Sí</button>
-
 <button type="button" data-respuesta="NO">No</button>
-
 </div>
 
 <div class="sabias-respuesta-mensaje" hidden></div>
 
 </div>
-
 </section>
 
 <footer class="sabias-footer">
@@ -311,6 +238,28 @@
 </footer>
 
 </main>
+
+<script>
+(function(){
+const ping=document.getElementById("pingFloating");
+if(!ping)return;
+
+requestAnimationFrame(function(){
+requestAnimationFrame(function(){
+ping.classList.add("visible");
+});
+});
+
+function reaccionar(){
+ping.classList.remove("reacciona");
+void ping.offsetWidth;
+ping.classList.add("reacciona");
+}
+
+ping.addEventListener("mouseenter",reaccionar);
+ping.addEventListener("click",reaccionar);
+})();
+</script>
 
 </body>
 </html>
