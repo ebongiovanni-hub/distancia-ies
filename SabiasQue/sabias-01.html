@@ -26,7 +26,7 @@
 <body data-pagina="sabias-01" data-descripcion="App Educativa Mobile">
 
 <div class="ping-floating" id="pingFloating" aria-hidden="true">
-<img id="pingImg" src="../imagenes/ping/ping-neutral.png?v=5" alt="">
+<img id="pingImg" src="../imagenes/ping/ping-neutral.png?v=6" alt="">
 </div>
 
 <main class="sabias-page">
@@ -46,6 +46,7 @@
 <h2>El IES Virtual también puede acompañarte en el celular</h2>
 </div>
 <p>Tener Educativa Mobile en el celular es una muy buena opción para resolver <strong>tareas rápidas</strong> cuando no estás frente a una computadora.</p>
+
 <div class="benefit-grid">
 <div class="benefit-card">
 <span class="benefit-icon">✉</span>
@@ -84,7 +85,7 @@
 </div>
 
 <div class="captura captura-store">
-<img src="imagenes/Descarda-educativa.png" alt="Educativa Mobile en Google Play Store">
+<img src="imagenes/Descarda-edudativa.png" alt="Educativa Mobile en Google Play Store">
 </div>
 </div>
 </section>
@@ -98,7 +99,6 @@
 <p class="section-intro">Una vez instalada la aplicación, tenés dos alternativas para acceder al IES Virtual.</p>
 
 <div class="dos-opciones">
-
 <article class="opcion-ingreso">
 <div class="opcion-letra">A</div>
 <h3>Si recordás tu usuario de Educativa</h3>
@@ -126,11 +126,10 @@
 <strong>Importante:</strong> antes de seleccionar <strong>Utilizar QR</strong>, también tenés que marcar la casilla <strong>“He leído y acepto la Política de Privacidad”</strong>.
 </div>
 </article>
-
 </div>
 
 <div class="captura captura-celular">
-<img src="imagenes/Aplicacion educativa.png" alt="Pantalla de acceso de Educativa Mobile">
+<img src="imagenes/App-educativa.png" alt="Pantalla de acceso de Educativa Mobile">
 </div>
 </section>
 
@@ -140,16 +139,12 @@
 <h2>Si elegiste QR, obtenelo desde una computadora</h2>
 </div>
 
-<div class="paso-tres-columnas">
-
+<div class="paso-tres-layout">
+<div class="paso-tres-textos">
 <div class="mini-paso">
 <div class="mini-numero">1</div>
 <h3>Ingresá desde una computadora</h3>
 <p>Abrí normalmente el <strong>IES Virtual</strong> desde una computadora.</p>
-</div>
-
-<div class="captura captura-menu">
-<img src="imagenes/Menu-Educativa.png" alt="Menú del IES Virtual con la opción Educativa Mobile">
 </div>
 
 <div class="mini-paso">
@@ -157,7 +152,11 @@
 <h3>Abrí Educativa Mobile</h3>
 <p>Hacé clic sobre <strong>tu nombre</strong> en la esquina superior derecha y seleccioná <strong>Educativa Mobile</strong>.</p>
 </div>
+</div>
 
+<div class="captura captura-menu">
+<img src="imagenes/Menu-Educativa.png" alt="Menú del IES Virtual con la opción Educativa Mobile">
+</div>
 </div>
 </section>
 
@@ -168,7 +167,6 @@
 </div>
 
 <div class="paso-dos-columnas">
-
 <div class="paso-texto">
 <p>Al seleccionar <strong>Educativa Mobile</strong>, la plataforma mostrará en pantalla tu <strong>código QR personal</strong>.</p>
 <p>Volvé a Educativa Mobile en el celular y presioná <strong>Utilizar QR</strong>.</p>
@@ -183,7 +181,6 @@
 <div class="captura captura-qr">
 <img src="imagenes/Qr-Educativa.png" alt="Código QR personal generado desde Educativa">
 </div>
-
 </div>
 </section>
 
@@ -232,11 +229,11 @@ const pingImg=document.getElementById("pingImg");
 if(!ping||!pingImg)return;
 
 const expresiones=[
-{src:"../imagenes/ping/ping-neutral.png?v=5",dur:4800},
-{src:"../imagenes/ping/ping-guino.png?v=5",dur:1700},
-{src:"../imagenes/ping/ping-neutral.png?v=5",dur:3500},
-{src:"../imagenes/ping/ping-sonrie.png?v=5",dur:2400},
-{src:"../imagenes/ping/ping-neutral.png?v=5",dur:5000}
+{src:"../imagenes/ping/ping-neutral.png?v=6",dur:11000},
+{src:"../imagenes/ping/ping-guino.png?v=6",dur:2200},
+{src:"../imagenes/ping/ping-neutral.png?v=6",dur:12000},
+{src:"../imagenes/ping/ping-sonrie.png?v=6",dur:2800},
+{src:"../imagenes/ping/ping-neutral.png?v=6",dur:13000}
 ];
 
 let indice=0;
@@ -244,6 +241,7 @@ let timer=null;
 
 function cambiarExpresion(){
 const actual=expresiones[indice];
+
 pingImg.classList.add("cambio");
 
 setTimeout(function(){
@@ -262,7 +260,7 @@ continuar();
 }else{
 pingImg.onload=continuar;
 }
-},100);
+},140);
 }
 
 function reaccionar(){
