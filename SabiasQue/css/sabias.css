@@ -41,10 +41,20 @@ img{display:block;max-width:100%}
 .content-text p{margin:0 0 12px;font-size:15px}
 .content-text p:last-child{margin-bottom:0}
 
-.paso-imagen{margin-top:22px;text-align:center}
-.paso-imagen img{display:block;max-width:100%;height:auto;margin:auto;border-radius:14px;border:1px solid #DCE8EE;box-shadow:0 8px 24px rgba(31,52,76,.09)}
-.paso-imagen.celular img{width:auto;max-height:580px}
-.paso-imagen.pc img{width:100%;max-width:850px}
+.captura{margin:22px auto 0;text-align:center}
+.captura img{display:block;width:auto;height:auto;margin:0 auto;border:1px solid #DCE8EE;border-radius:12px;box-shadow:0 7px 20px rgba(31,52,76,.08)}
+
+.captura-store{max-width:320px}
+.captura-store img{max-width:100%;max-height:400px}
+
+.captura-celular{max-width:260px}
+.captura-celular img{max-width:100%;max-height:470px}
+
+.captura-menu{max-width:470px}
+.captura-menu img{max-width:100%;max-height:330px}
+
+.captura-qr{max-width:480px}
+.captura-qr img{max-width:100%;max-height:390px}
 
 .dos-opciones{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
 .opcion-ingreso{padding:23px;background:#FFF;border:1px solid #DCE8EE;border-radius:17px}
@@ -96,40 +106,16 @@ img{display:block;max-width:100%}
 
 .sabias-footer{padding:14px 48px;background:#FFF;border-top:1px solid var(--linea);color:#82909A;font-size:11px;font-weight:700;text-align:center}
 
-/* PING FLOTANTE */
-.ping-floating{
-position:fixed;
-z-index:50;
-width:115px;
-right:max(20px,calc((100vw - 1180px)/2));
-top:50%;
-opacity:0;
-pointer-events:auto;
-transform:translateY(-50%) translateY(12px) scale(.94);
-transition:opacity .45s ease,transform .45s ease;
-filter:drop-shadow(0 8px 14px rgba(31,52,76,.18));
-cursor:pointer;
-}
-
-.ping-floating.visible{
-opacity:1;
-transform:translateY(-50%) scale(1);
-animation:pingFlota 3.2s ease-in-out infinite;
-}
-
-.ping-floating img{
-display:block;
-width:100%;
-height:auto;
-}
-
-.ping-floating.reacciona{
-animation:pingReacciona .55s ease;
-}
+/* PING */
+.ping-floating{position:fixed;z-index:50;width:110px;right:max(18px,calc((100vw - 1180px)/2));top:72%;opacity:0;pointer-events:auto;transform:translateY(-50%) translateY(12px) scale(.94);transition:opacity .45s ease,transform .45s ease;filter:drop-shadow(0 8px 14px rgba(31,52,76,.18));cursor:pointer}
+.ping-floating.visible{opacity:1;transform:translateY(-50%) scale(1);animation:pingFlota 3.2s ease-in-out infinite}
+.ping-floating img{display:block;width:100%;height:auto;transition:opacity .15s ease,transform .15s ease}
+.ping-floating img.cambio{opacity:.3;transform:scale(.95)}
+.ping-floating.reacciona{animation:pingReacciona .55s ease}
 
 @keyframes pingFlota{
 0%,100%{transform:translateY(-50%) translateY(0) rotate(0deg)}
-50%{transform:translateY(-50%) translateY(-9px) rotate(1.5deg)}
+50%{transform:translateY(-50%) translateY(-8px) rotate(1.5deg)}
 }
 
 @keyframes pingReacciona{
@@ -140,10 +126,7 @@ animation:pingReacciona .55s ease;
 }
 
 @media(max-width:1180px){
-.ping-floating{
-right:14px;
-width:90px;
-}
+.ping-floating{right:10px;width:85px;top:73%}
 }
 
 @media(max-width:850px){
@@ -159,7 +142,11 @@ width:90px;
 .sabias-closing{padding:24px 25px}
 .sabias-footer{padding:13px 25px}
 .sabias-benefits:before{left:25px}
-.ping-floating{width:76px;right:8px;top:52%}
+.captura-store{max-width:290px}
+.captura-celular{max-width:230px}
+.captura-menu{max-width:410px}
+.captura-qr{max-width:420px}
+.ping-floating{width:72px;right:6px;top:74%}
 }
 
 @media(max-width:520px){
@@ -181,6 +168,10 @@ body{font-size:14px;background:#FFF}
 .opcion-ingreso{padding:17px 15px}
 .opcion-ingreso h3{font-size:17px}
 .datos-acceso li{font-size:13px}
+.captura-store{max-width:240px}
+.captura-celular{max-width:205px}
+.captura-menu{max-width:330px}
+.captura-qr{max-width:330px}
 .sabias-computer{grid-template-columns:42px 1fr;padding:24px 18px;gap:13px}
 .computer-icon{width:39px;height:39px;font-size:18px}
 .sabias-computer h2{font-size:18px}
@@ -191,14 +182,7 @@ body{font-size:14px;background:#FFF}
 .sabias-closing p{font-size:13px}
 .sabias-pregunta{padding:35px 18px}
 .sabias-footer{padding:12px 18px;font-size:10px}
-
-/* En celular queda pequeño a la derecha para no tapar la lectura */
-.ping-floating{
-width:62px;
-right:6px;
-top:58%;
-filter:drop-shadow(0 5px 9px rgba(31,52,76,.16));
-}
+.ping-floating{width:58px;right:4px;top:76%;filter:drop-shadow(0 5px 9px rgba(31,52,76,.16))}
 }
 
 @media(prefers-reduced-motion:reduce){
